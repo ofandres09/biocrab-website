@@ -54,3 +54,11 @@ El hero ocupa al menos la altura disponible de la pantalla. El fondo oceánico c
 `app/components/visuals.tsx` reúne la atmósfera, las señales de validación y el mapa comparativo cualitativo. Sus nodos no codifican cantidades ni puntuaciones. Los indicadores científicos conservan su estado pendiente, sin contadores numéricos ficticios.
 
 Las nuevas secciones «¿Por qué BioCrab?» y «Aplicaciones futuras» distinguen el propósito del proyecto de las aplicaciones que todavía requieren ensayos. El recorrido horizontal admite teclado y desplazamiento táctil. Los espacios fotográficos adicionales utilizan los mismos originales pendientes descritos en `public/images/README.md`.
+
+## Cuaderno de investigación y archivo editorial
+
+La tercera evolución incorpora el recorrido interactivo «Del residuo al biomaterial», un comparador por material y dimensión, y un planteamiento de investigación con problema, hipótesis, objetivos y metodología **propuestos**. No se presenta como artículo revisado por pares ni como resultados publicados.
+
+La galería editorial utiliza fotografías de gran formato con pies descriptivos, ampliación accesible y parallax suave. El movimiento se desactiva en móviles y con preferencia de movimiento reducido. La progresión lateral del recorrido indica lectura, nunca etapas experimentales completadas.
+
+Añade originales en `public/images` siguiendo su README y vuelve a compilar; el inventario de fotos disponibles se detecta durante la generación de la página. Para agregar nuevas fotos o cambiar sus pies, edita `photos` en `lib/project.ts`. No publicar marcadores como evidencia experimental.

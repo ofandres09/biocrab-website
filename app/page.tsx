@@ -1,8 +1,8 @@
 import {
-  OceanAtmosphere,
-  ReadingProgress,
-  VisualComparison,
-} from "./components/visuals";
+  MaterialJourney,
+  MaterialComparator,
+} from "./components/research-experience";
+import { OceanAtmosphere, ReadingProgress } from "./components/visuals";
 import { readdirSync } from "node:fs";
 import path from "node:path";
 import {
@@ -381,6 +381,131 @@ export default function Home() {
           />
           <Timeline />
         </section>
+        <section
+          id="del-residuo-al-biomaterial"
+          className="section transformation-section"
+        >
+          <Heading
+            number="→"
+            label="DEL RESIDUO AL BIOMATERIAL"
+            title={
+              <>
+                Otra vida para el recurso.
+                <br />
+                <span>Nuevas preguntas para la ciencia.</span>
+              </>
+            }
+            description="Selecciona una etapa para explorar la ruta conceptual desde la materia prima hasta una posible aplicación alimentaria."
+          />
+          <MaterialJourney />
+        </section>
+        <section id="investigacion" className="section research-article">
+          <div className="article-header">
+            <span className="eyebrow">BIOCRAB / CUADERNO DE INVESTIGACIÓN</span>
+            <span className="status-pill">
+              Planteamiento propuesto · No revisado por pares
+            </span>
+          </div>
+          <article>
+            <header className="paper-heading">
+              <p className="micro">
+                BIOMATERIALES · CIENCIA DE ALIMENTOS · ECONOMÍA CIRCULAR
+              </p>
+              <h2>
+                Quitosano y almidón de yuca:
+                <br />
+                <span>una matriz por investigar.</span>
+              </h2>
+              <p>
+                Marco de trabajo para orientar preguntas, documentar métodos y
+                distinguir hipótesis de conclusiones.
+              </p>
+            </header>
+            <div className="paper-layout">
+              <aside aria-label="Índice de investigación">
+                <span className="micro">EN ESTE PLANTEAMIENTO</span>
+                <a href="#problema">El problema</a>
+                <a href="#hipotesis">La hipótesis</a>
+                <a href="#objetivos">Los objetivos</a>
+                <a href="#metodo-propuesto">La metodología</a>
+              </aside>
+              <div className="paper-content">
+                <section id="problema">
+                  <p className="micro">01 / CONTEXTO</p>
+                  <h3>Problema de investigación</h3>
+                  <p>
+                    La conservación de alimentos exige materiales con
+                    propiedades específicas y una gestión responsable de su fin
+                    de vida. BioCrab plantea estudiar el aprovechamiento de
+                    exoesqueletos y almidón de yuca, sin asumir que el origen
+                    biológico garantiza menor impacto.
+                  </p>
+                </section>
+                <section id="hipotesis">
+                  <p className="micro">02 / PREGUNTA CONTRASTABLE</p>
+                  <h3>Hipótesis de trabajo propuesta</h3>
+                  <blockquote>
+                    La combinación de quitosano y almidón de yuca podría
+                    permitir la formación de películas cuyas propiedades físicas
+                    cambien con la formulación y las condiciones de preparación.
+                  </blockquote>
+                  <p>
+                    La hipótesis requiere contrastación mediante controles y
+                    ensayos. No afirma eficacia en conservación ni superioridad
+                    ambiental.
+                  </p>
+                </section>
+                <section id="objetivos">
+                  <p className="micro">03 / PROPÓSITO</p>
+                  <h3>Objetivos propuestos</h3>
+                  <ul>
+                    <li>
+                      Documentar materias primas, preparación y trazabilidad.
+                    </li>
+                    <li>
+                      Explorar la formación de películas con mezclas de los
+                      biopolímeros.
+                    </li>
+                    <li>
+                      Caracterizar propiedades físicas y su variación entre
+                      formulaciones.
+                    </li>
+                    <li>
+                      Identificar ensayos adicionales necesarios para evaluar
+                      aplicaciones alimentarias y fin de vida.
+                    </li>
+                  </ul>
+                </section>
+                <section id="metodo-propuesto">
+                  <p className="micro">04 / DISEÑO A DOCUMENTAR</p>
+                  <h3>Metodología propuesta</h3>
+                  <p>
+                    Definir formulaciones y controles, estandarizar preparación
+                    y secado, y establecer ensayos físicos con réplicas.
+                    Registrar unidades, instrumentos, condiciones e
+                    incertidumbre antes de interpretar resultados.
+                  </p>
+                  <p>
+                    La evaluación ambiental y alimentaria requiere protocolos
+                    específicos adicionales. Los parámetros concretos permanecen
+                    pendientes de validación.
+                  </p>
+                  <a className="text-link" href="#metodologia">
+                    Explorar las etapas del proceso <ArrowUpRight size={16} />
+                  </a>
+                </section>
+                <div className="paper-note">
+                  <CircleDashed size={18} />
+                  <p>
+                    Este planteamiento organiza la investigación; no constituye
+                    una publicación de resultados. Fechas, autoría, protocolos y
+                    datos se añadirán al confirmarse.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
         <section id="metodologia" className="section method-section">
           <Heading
             number="04"
@@ -470,6 +595,7 @@ export default function Home() {
             }
             description="Una comparación cualitativa. El desempeño depende del polímero, la formulación y las condiciones de uso; no se declara superioridad experimental."
           />
+          <MaterialComparator />
           <div
             className="comparison-scroll"
             tabIndex={0}
@@ -654,7 +780,33 @@ export default function Home() {
             </a>
           </div>
         </section>
-        <section id="galeria" className="section">
+        <section id="impacto-potencial" className="section potential-impact">
+          <div>
+            <p className="eyebrow">IMPACTO POTENCIAL / HORIZONTES ABIERTOS</p>
+            <h2>
+              Del material al contexto.
+              <br />
+              <span>Del potencial a la evidencia.</span>
+            </h2>
+          </div>
+          <div>
+            <p className="lead">
+              Conservación de frutas y verduras, empaques e industria
+              alimentaria: posibles destinos para una investigación que aún debe
+              validar sus condiciones de uso.
+            </p>
+            <p>
+              El aporte potencial está en explorar recursos biológicos y diseñar
+              materiales para necesidades concretas. La reducción de residuos o
+              de impactos solo podrá afirmarse al comparar función, consumo de
+              recursos y fin de vida con métodos apropiados.
+            </p>
+            <a className="text-link" href="#aplicaciones-futuras">
+              Explorar aplicaciones futuras <ArrowUpRight size={16} />
+            </a>
+          </div>
+        </section>
+        <section id="galeria" className="section editorial-gallery">
           <Heading
             number="09"
             label="ARCHIVO DEL PROYECTO"
@@ -897,6 +1049,8 @@ export default function Home() {
           <div className="footer-links">
             <span>EL SIGUIENTE CAPÍTULO</span>
             <a href="#por-que-biocrab">¿Por qué BioCrab?</a>
+            <a href="#investigacion">Cuaderno de investigación</a>
+            <a href="#del-residuo-al-biomaterial">Del residuo al biomaterial</a>
             <a href="#innovacion">Innovación</a>
             <a href="#aplicaciones-futuras">Aplicaciones futuras</a>
             <a href="#galeria">Archivo del proyecto</a>

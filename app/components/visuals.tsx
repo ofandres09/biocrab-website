@@ -1,5 +1,12 @@
 "use client";
-import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import {
   ArrowRight,
   CircleDashed,
@@ -115,5 +122,53 @@ export function EvidenceSignal() {
       <i />
       <i />
     </span>
+  );
+}
+
+export function ParallaxFrame({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [18, -18]);
+  return (
+    <div ref={ref} className={`parallax-frame ${className}`}>
+      <motion.div className="parallax-inner" style={{ y: reduced ? 0 : y }}>
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+export function ScrollScene({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start 85%", "end 35%"],
+  });
+  return (
+    <div ref={ref} className={`scroll-scene ${className}`}>
+      <div className="scene-progress" aria-hidden="true">
+        <motion.span style={{ scaleY: reduced ? 1 : scrollYProgress }} />
+      </div>
+      {children}
+      <span className="scene-progress-note">
+        Progresión de lectura · No representa avance experimental
+      </span>
+    </div>
   );
 }

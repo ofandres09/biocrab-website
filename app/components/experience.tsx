@@ -8,7 +8,7 @@ import {
   type FormEvent,
 } from "react";
 import Image from "next/image";
-import { EvidenceSignal } from "./visuals";
+import { EvidenceSignal, ParallaxFrame, ScrollScene } from "./visuals";
 import {
   motion,
   AnimatePresence,
@@ -233,7 +233,7 @@ export function Photo({
 export function Timeline() {
   const [active, setActive] = useState(0);
   return (
-    <div className="timeline-component">
+    <ScrollScene className="timeline-component">
       <div className="timeline-caption">
         <span className="micro">TRAYECTORIA DEL PROYECTO</span>
         <span>
@@ -323,7 +323,7 @@ export function Timeline() {
           </motion.div>
         </AnimatePresence>
       </div>
-    </div>
+    </ScrollScene>
   );
 }
 const icons = [Shell, Atom, FlaskConical, Layers, Microscope];
@@ -435,10 +435,13 @@ export function Gallery() {
             onClick={() => setActive(i)}
             aria-label={`Ampliar: ${p.title}`}
           >
-            <Photo name={p.src} alt={p.title} />
+            <ParallaxFrame>
+              <Photo name={p.src} alt={p.title} />
+            </ParallaxFrame>
             <span>
               <small>ARCHIVO / 0{i + 1}</small>
               <strong>{p.title}</strong>
+              <span className="gallery-caption">{p.caption}</span>
               <ArrowUpRight size={20} />
             </span>
           </button>
