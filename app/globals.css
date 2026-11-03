@@ -3483,3 +3483,234 @@ tbody tr:last-child > * {
     gap: 30px;
   }
 }
+
+/* Final ocean / biotechnology identity */
+:root {
+  --bg: #021827;
+  --surface: #062235;
+  --surface-2: #0a3048;
+  --text: #f8fafc;
+  --muted: #a9c4d3;
+  --blue: #17d4c5;
+  --green: #4ade80;
+  --technology: #0a4b78;
+  --header: #021827e8;
+  --shadow: 0 24px 75px #0003;
+}
+:root[data-theme="light"] {
+  --bg: #f8fafc;
+  --surface: #fff;
+  --surface-2: #e8f3f5;
+  --text: #021827;
+  --muted: #3f6072;
+  --blue: #086e80;
+  --green: #147548;
+  --technology: #0a4b78;
+  --header: #f8fafce8;
+  --shadow: 0 24px 75px #0a4b7812;
+}
+.depth-stage {
+  perspective: 1000px;
+}
+.depth-surface {
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+  isolation: isolate;
+}
+.surface-reflection {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    #b5f5ff08,
+    transparent 32%,
+    #17d4c507 65%,
+    transparent
+  );
+  opacity: 0.6;
+}
+.depth-surface .diagram-center {
+  transform: translateZ(22px);
+}
+.depth-surface .diagram-label {
+  transform: translateZ(12px);
+}
+.brand-image {
+  width: auto;
+  max-width: 155px;
+  height: 45px;
+  object-fit: contain;
+}
+.loading-scene {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background:
+    radial-gradient(ellipse at 50% 40%, #0a4b7838, transparent 65%), var(--bg);
+}
+.loading-scene > p {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+.loading-orbit {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  border-top-color: var(--green);
+  animation: loading-turn 1.5s linear infinite;
+}
+.reference-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+.reference-backdrop img {
+  object-fit: cover;
+  opacity: 0.2;
+  filter: saturate(0.7);
+}
+.reference-backdrop:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--bg) 5%, transparent 80%),
+    linear-gradient(
+      0deg,
+      var(--bg),
+      transparent 40%,
+      transparent 60%,
+      var(--bg)
+    );
+}
+.reference-label {
+  position: absolute;
+  z-index: 2;
+  bottom: 12px;
+  right: 5%;
+  font-size: 7px;
+  letter-spacing: 0.7px;
+  color: var(--muted);
+  max-width: 250px;
+  text-align: right;
+}
+.hero > .reference-backdrop img {
+  opacity: 0.55;
+  object-position: 65% center;
+}
+.hero > .reference-backdrop:after {
+  background:
+    linear-gradient(90deg, var(--bg) 15%, #021827aa 55%, #02182766),
+    linear-gradient(0deg, var(--bg), transparent 45%);
+}
+.hero:has(> .reference-backdrop) .hero-visual {
+  background: radial-gradient(ellipse, #02182755, transparent 75%);
+}
+.hero > .reference-backdrop .reference-label {
+  bottom: 65px;
+}
+.section:has(> .reference-backdrop) {
+  isolation: isolate;
+}
+.section:has(> .reference-backdrop) > .reference-backdrop img {
+  opacity: 0.12;
+}
+.glass,
+.science-card,
+.impact-card {
+  box-shadow:
+    0 1px 0 #ffffff08 inset,
+    var(--shadow);
+}
+.hero .material-card {
+  border-color: #17d4c533;
+  background: linear-gradient(120deg, #0a4b7826, #17d4c508);
+  box-shadow:
+    0 15px 65px #0002,
+    0 1px 0 #ffffff0d inset;
+}
+.button.primary {
+  background: linear-gradient(110deg, var(--green), var(--blue));
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s;
+}
+.button.primary:hover {
+  box-shadow: 0 8px 40px #17d4c525;
+  transform: translateY(-3px);
+}
+.gallery-card:hover .project-photo img {
+  scale: 1.025;
+}
+.project-photo img {
+  transition: scale 0.7s ease;
+}
+.future-card:hover,
+.science-card:hover {
+  border-color: #17d4c544;
+}
+.paper-content > section:target {
+  border-top-color: var(--green);
+}
+.site-footer {
+  background:
+    radial-gradient(ellipse at 20% 100%, #0a4b781c, transparent 60%),
+    var(--surface);
+}
+@keyframes loading-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 800px) {
+  .depth-surface {
+    transform: none !important;
+  }
+  .surface-reflection {
+    display: none;
+  }
+  .reference-backdrop img {
+    filter: none;
+  }
+  .hero > .reference-backdrop img {
+    opacity: 0.3;
+  }
+  .brand-image {
+    max-width: 130px;
+    height: 38px;
+  }
+  .gallery-card:hover .project-photo img {
+    scale: 1;
+  }
+  .reference-label {
+    font-size: 6px;
+    max-width: 190px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .depth-surface {
+    transform: none !important;
+  }
+  .loading-orbit {
+    animation: none;
+    border-color: var(--green);
+  }
+  .project-photo img {
+    transition: none;
+  }
+  .gallery-card:hover .project-photo img {
+    scale: 1;
+  }
+  .surface-reflection {
+    display: none;
+  }
+}

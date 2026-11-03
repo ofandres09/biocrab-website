@@ -62,3 +62,9 @@ La tercera evolución incorpora el recorrido interactivo «Del residuo al biomat
 La galería editorial utiliza fotografías de gran formato con pies descriptivos, ampliación accesible y parallax suave. El movimiento se desactiva en móviles y con preferencia de movimiento reducido. La progresión lateral del recorrido indica lectura, nunca etapas experimentales completadas.
 
 Añade originales en `public/images` siguiendo su README y vuelve a compilar; el inventario de fotos disponibles se detecta durante la generación de la página. Para agregar nuevas fotos o cambiar sus pies, edita `photos` en `lib/project.ts`. No publicar marcadores como evidencia experimental.
+
+## Recursos premium e identidad
+
+`lib/media.ts` centraliza las fotografías, la identidad y las referencias visuales. Los originales siguen pendientes de acceso como archivos: ver `public/images/README.md`. No se confunde el logo de BioFresh-Q con el de BioCrab. Los fondos de referencia se identifican explícitamente y solo aparecen si existe el recurso local.
+
+La paleta oscura utiliza #021827, #0A4B78, #17D4C5, #4ADE80 y #F8FAFC. El modo claro adapta los colores de texto para mantener contraste. `DepthSurface` limita las inclinaciones del cursor a pantallas con puntero fino y respeta movimiento reducido. La pantalla de carga corresponde al estado de carga real de Next.js, sin demoras artificiales.

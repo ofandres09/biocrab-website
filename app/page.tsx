@@ -1,3 +1,4 @@
+import { DepthSurface } from "./components/premium";
 import {
   MaterialJourney,
   MaterialComparator,
@@ -19,6 +20,8 @@ import {
   CircleDashed,
 } from "lucide-react";
 import {
+  Brand,
+  ReferenceBackdrop,
   Contact,
   Experience,
   Gallery,
@@ -65,6 +68,7 @@ export default function Home() {
       <Header />
       <main id="contenido">
         <section id="inicio" className="hero">
+          <ReferenceBackdrop role="hero" />
           <OceanAtmosphere />
           <div className="hero-grid" />
           <div className="hero-glow" />
@@ -104,7 +108,9 @@ export default function Home() {
               <span>BIOCRAB / MATERIAL EXPLORATION</span>
               <Atom size={17} />
             </div>
-            <Molecule />
+            <DepthSurface>
+              <Molecule />
+            </DepthSurface>
             <div className="glass material-card">
               <span className="live-dot" />
               <div>
@@ -173,6 +179,7 @@ export default function Home() {
           </Reveal>
         </section>
         <section id="ciencia" className="section science-section">
+          <ReferenceBackdrop role="science" />
           <Heading
             number="02"
             label="LA CIENCIA DETRÁS"
@@ -298,6 +305,7 @@ export default function Home() {
           </details>
         </section>
         <section id="por-que-biocrab" className="section why-section">
+          <ReferenceBackdrop role="biomaterials" />
           <Heading
             number="→"
             label="¿POR QUÉ BIOCRAB?"
@@ -400,6 +408,7 @@ export default function Home() {
           <MaterialJourney />
         </section>
         <section id="investigacion" className="section research-article">
+          <ReferenceBackdrop role="research" />
           <div className="article-header">
             <span className="eyebrow">BIOCRAB / CUADERNO DE INVESTIGACIÓN</span>
             <span className="status-pill">
@@ -660,6 +669,7 @@ export default function Home() {
           </div>
         </section>
         <section id="innovacion" className="section innovation">
+          <ReferenceBackdrop role="innovation" />
           <div className="innovation-copy">
             <p className="eyebrow">
               <span>07</span> INNOVACIÓN CON PROPÓSITO
@@ -711,6 +721,7 @@ export default function Home() {
           </Reveal>
         </section>
         <section id="impacto" className="section impact-section">
+          <ReferenceBackdrop role="ocean" />
           <Heading
             number="08"
             label="IMPACTO AMBIENTAL"
@@ -781,6 +792,7 @@ export default function Home() {
           </div>
         </section>
         <section id="impacto-potencial" className="section potential-impact">
+          <ReferenceBackdrop role="impact" />
           <div>
             <p className="eyebrow">IMPACTO POTENCIAL / HORIZONTES ABIERTOS</p>
             <h2>
@@ -823,8 +835,8 @@ export default function Home() {
         </section>
         <section id="gomitas" className="section application">
           <Photo
-            name="secado.jpg"
-            alt="Registro de formulaciones en bandejas durante la exploración de películas"
+            name="gomitas-fruta.jpg"
+            alt="Registro del proyecto: matriz con frutas en un recipiente"
           />
           <div>
             <p className="eyebrow">
@@ -847,8 +859,8 @@ export default function Home() {
               validado, disponible para consumo o venta.
             </p>
             <p className="annotation">
-              La fotografía corresponde a formulaciones en bandejas; no se
-              identifica como un ensayo de gomitas ni de conservación.
+              Registro visual de una matriz con frutas. La fotografía no
+              demuestra inocuidad, comestibilidad ni eficacia de conservación.
             </p>
           </div>
         </section>
@@ -856,6 +868,7 @@ export default function Home() {
           id="aplicaciones-futuras"
           className="section future-applications"
         >
+          <ReferenceBackdrop role="packaging" />
           <Heading
             number="→"
             label="APLICACIONES FUTURAS"
@@ -1026,12 +1039,7 @@ export default function Home() {
         </div>
         <div className="footer-upper">
           <div>
-            <a className="brand" href="#inicio">
-              <span className="brand-symbol">
-                <Shell size={26} />
-              </span>
-              BioCrab.
-            </a>
+            <Brand />
             <p>
               Del océano. De la tierra.
               <br />

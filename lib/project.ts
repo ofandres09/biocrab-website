@@ -45,7 +45,7 @@ export const methodology = [
     title: "Secado y formación",
     text: "Distribuir la solución sobre un soporte y controlar las condiciones de secado para obtener películas. Registrar espesor, uniformidad y defectos observables.",
     icon: "layers",
-    image: "secado.jpg",
+    image: "biopelicula-secando.jpg",
     alt: "Bandejas con formulaciones extendidas sobre una mesa de laboratorio",
   },
   {
@@ -66,6 +66,18 @@ export const navigation = [
 ] as const;
 export const photos = [
   {
+    src: "biopelicula-secando.jpg",
+    title: "Formación de la biopelícula",
+    caption:
+      "Registro del proyecto durante el secado. La imagen no sustituye la caracterización del material.",
+  },
+  {
+    src: "gomitas-fruta.jpg",
+    title: "Exploración con matrices de fruta",
+    caption:
+      "Registro de una formulación con fruta. Inocuidad, composición y desempeño pendientes de validación.",
+  },
+  {
     src: "limpieza.jpg",
     title: "El punto de partida",
     caption:
@@ -84,7 +96,7 @@ export const photos = [
       "Registro del material acondicionado. Las condiciones del tratamiento están pendientes de documentación.",
   },
   {
-    src: "secado.jpg",
+    src: "peliculas-secando.jpg",
     title: "Hacia una biopelícula",
     caption:
       "Formulaciones extendidas en bandejas. La composición y los resultados requieren validación.",

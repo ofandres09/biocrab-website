@@ -19,7 +19,7 @@ const journey = [
     label: "Materia prima",
     icon: Shell,
     text: "El recorrido comienza con la recolección y limpieza del material. La trazabilidad y el acondicionamiento deben quedar documentados.",
-    photo: "limpieza.jpg",
+    photo: "exoesqueletos-separados.jpg",
   },
   {
     title: "Obtención de quitosano",
@@ -40,14 +40,14 @@ const journey = [
     label: "Material",
     icon: Layers,
     text: "La distribución y el secado de la formulación permiten estudiar películas. Espesor, uniformidad y propiedades físicas deben medirse.",
-    photo: "secado.jpg",
+    photo: "biopelicula-secando.jpg",
   },
   {
     title: "Aplicación en alimentos",
     label: "Horizonte por validar",
     icon: Apple,
     text: "La aplicación alimentaria es una posibilidad de investigación, no un uso aprobado. Exige evaluar inocuidad, migración, alérgenos y desempeño en cada alimento.",
-    photo: "secado.jpg",
+    photo: "biopelicula-secando.jpg",
   },
 ];
 export function MaterialJourney() {

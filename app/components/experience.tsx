@@ -8,6 +8,7 @@ import {
   type FormEvent,
 } from "react";
 import Image from "next/image";
+import { resolveMedia, resolvePhoto, type MediaRole } from "@/lib/media";
 import { EvidenceSignal, ParallaxFrame, ScrollScene } from "./visuals";
 import {
   motion,
@@ -70,6 +71,7 @@ export function Reveal({
       initial={false}
       whileInView={reduce ? undefined : { y: [14, 0], opacity: [0.75, 1] }}
       viewport={{ once: true, amount: 0.15 }}
+      variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
       transition={{ duration: 0.65 }}
     >
       {children}
@@ -100,12 +102,7 @@ export function Header() {
   }, []);
   return (
     <header className="site-header">
-      <a className="brand" href="#inicio" aria-label="BioCrab, inicio">
-        <span className="brand-symbol">
-          <Shell size={25} />
-        </span>
-        BioCrab<span className="brand-period">.</span>
-      </a>
+      <Brand />
       <nav className="desktop-nav" aria-label="Navegación principal">
         {navigation.slice(0, 4).map(([n, id]) => (
           <a href={`#${id}`} key={id}>
@@ -202,14 +199,15 @@ export function Photo({
   priority?: boolean;
 }) {
   const [failed, setFailed] = useState(false);
-  const exists = useContext(ImageAssets).includes(name);
+  const source = resolvePhoto(name, useContext(ImageAssets));
+  const exists = Boolean(source);
   const unavailable = failed || !exists;
   useEffect(() => setFailed(false), [name]);
   return (
     <div className={`project-photo ${className}`}>
       {!unavailable && (
         <Image
-          src={`/images/${name}`}
+          src={`/images/${source}`}
           alt={alt}
           fill
           sizes="(max-width: 760px) 100vw, 50vw"
@@ -577,5 +575,49 @@ export function Contact() {
           "El canal oficial está pendiente. El formulario copia tu mensaje; no envía ni almacena datos."}
       </p>
     </form>
+  );
+}
+
+export function Brand({ files }: { files?: string[] }) {
+  const available = useContext(ImageAssets);
+  const source = resolveMedia("logo", files ?? available);
+  return (
+    <a className="brand" href="#inicio" aria-label="BioCrab, inicio">
+      {source ? (
+        <Image
+          className="brand-image"
+          src={`/images/${source}`}
+          width={150}
+          height={48}
+          alt="BioCrab"
+          sizes="150px"
+        />
+      ) : (
+        <>
+          <span className="brand-symbol">
+            <Shell size={25} />
+          </span>
+          BioCrab<span className="brand-period">.</span>
+        </>
+      )}
+    </a>
+  );
+}
+export function ReferenceBackdrop({ role }: { role: MediaRole }) {
+  const source = resolveMedia(role, useContext(ImageAssets));
+  if (!source) return null;
+  return (
+    <div className="reference-backdrop" aria-hidden="true">
+      <Image
+        src={`/images/${source}`}
+        alt=""
+        fill
+        sizes="100vw"
+        priority={role === "hero"}
+      />
+      <span className="reference-label">
+        Referencia visual · No representa el laboratorio BioCrab
+      </span>
+    </div>
   );
 }
