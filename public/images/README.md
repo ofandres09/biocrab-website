@@ -1,28 +1,18 @@
-# Recursos visuales de BioCrab
+# Fotografías reales de BioCrab
 
-Los archivos adjuntos aparecen visualmente en el chat, pero no se recibieron como archivos descargables en el entorno. No se han reconstruido ni reemplazado por imágenes inventadas. La integración de originales sigue pendiente.
+Importadas de `biocrab-assets.zip`, incluyendo sus siete ZIP internos. Los seis JFIF fotográficos son JPEG: se guardaron con extensión `.jpg` y nombres estables, conservando exactamente los bytes originales.
 
-## Fotografías e identidad
+| Archivo                       | Original del ZIP                             | Uso                                                |
+| ----------------------------- | -------------------------------------------- | -------------------------------------------------- |
+| `exoesqueletos-separados.jpg` | exoesqueletos separados.jfif                 | Recorrido, materia prima, metodología y galería    |
+| `lavando-cangrejitos.jpg`     | lavando cangrejitos.jfif                     | Preparación y limpieza, galería                    |
+| `cangrejitos-secos.jpg`       | cangrejitos ya secos.jfif                    | Material acondicionado y procesamiento, galería    |
+| `biopelicula-secando.jpg`     | pelicula biodregrdabale BioCrab secando.jfif | Formación y secado de película, galería            |
+| `peliculas-secando.jpg`       | Peliculas biodegrdables secando.jfif         | Películas en bandejas, galería y evaluación física |
+| `gomitas-fruta.jpg`           | BIOPOLINERO 02 GOMITAS DE FRUTA.jfif         | Matriz de fruta, aplicaciones y galería            |
 
-Coloca los originales en este directorio; se aceptan JPG, PNG, WebP y AVIF. `lib/media.ts` resuelve el nombre canónico o un alias exacto normalizado (sin acentos, extensión ni diferencias de espacios/guiones). Si hay varios candidatos ambiguos, no elige uno automáticamente.
+El archivo de logo del ZIP muestra una identidad anterior, pese a su nombre. Se conserva en el archivo adjunto original y no se publica en el sitio. Por elección del responsable del proyecto, se conserva la marca tipográfica BioCrab en navegación, footer y carga.
 
-| Nombre canónico               | Uso                                              |
-| ----------------------------- | ------------------------------------------------ |
-| `logo-biocrab.png`            | Navbar, footer y estado de carga real de Next.js |
-| `exoesqueletos-separados.jpg` | Inicio de «Del residuo al biomaterial»           |
-| `lavando-cangrejitos.jpg`     | Preparación de materia prima                     |
-| `cangrejitos-secos.jpg`       | Registro de material acondicionado               |
-| `biopelicula-secando.jpg`     | Formación de biopelícula                         |
-| `peliculas-secando.jpg`       | Galería científica                               |
-| `gomitas-fruta.jpg`           | Aplicación conceptual secundaria y archivo       |
-| `biofresh-q.jpg`              | Antecedente histórico BioFresh-Q                 |
+`lib/media.ts` resuelve las asignaciones. `lib/project.ts` contiene los pies de foto. Ninguna imagen demuestra por sí sola identidad química, inocuidad, biodegradación ni eficacia de conservación.
 
-El logo mostrado en el chat dice BioFresh-Q. No usarlo como identidad de BioCrab ni modificar su nombre. La matriz con frutas no demuestra comestibilidad ni inocuidad. Los registros de materia prima no son imágenes de quitosano aislado.
-
-## Referencias visuales
-
-La asignación completa de las referencias solicitadas vive en `lib/media.ts`; los fondos conectados aparecen solo cuando existe el archivo correspondiente. Se etiquetan como referencias, no como fotografías del laboratorio BioCrab. No se descargan imágenes de Pinterest ni se inventan URLs.
-
-Fondos conectados: `laboratorio-futurista.jpg` (hero), `investigacion-materiales.jpg` (ciencia), `innovacion-biomateriales.jpg` (por qué BioCrab), `estetica-investigacion.jpg` (investigación), `tecnologia-oceanica.jpg` (océano/impacto), `innovacion-ambiental.jpg` (innovación), `inspiracion-impacto.jpg` (impacto potencial), `empaques-sostenibles.jpg` (aplicaciones futuras). El resto queda registrado como biblioteca de referencia, sin añadir secciones vacías ni duplicar fondos.
-
-Tras añadir los archivos, ejecutar `npm run build` para regenerar la página. Revisar recortes, pies y atribución de los originales antes de publicar. Las fotos se sirven con `next/image`, tamaños adaptables y carga diferida; solo el hero tiene prioridad.
+Los recursos de referencia y sus asignaciones existentes no se modificaron en esta integración. Las fotografías experimentales no se usan como fondos de referencia. `next/image` sirve tamaños adaptables con carga diferida; los originales pueden ampliarse en la galería.

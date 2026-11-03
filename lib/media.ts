@@ -35,11 +35,6 @@ export const media = {
     aliases: ["biopolimero comestible gomitas de fruta"],
     kind: "project",
   },
-  biofresh: {
-    file: "biofresh-q.jpg",
-    aliases: ["biofresh q", "biofresh"],
-    kind: "identity",
-  },
   hero: {
     file: "laboratorio-futurista.jpg",
     aliases: ["futuristic biotechnology laboratory"],

@@ -2,14 +2,13 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 const title = "BioCrab | Quitosano, almidón de yuca y biomateriales";
 const description =
-  "Del aprendizaje de BioFresh-Q a BioCrab: investigación de biopelículas de quitosano y almidón de yuca, metodología científica y economía circular.";
+  "BioCrab: investigación de biopelículas de quitosano y almidón de yuca, metodología científica y economía circular.";
 export const metadata: Metadata = {
   title: { default: title, template: "%s | BioCrab" },
   description,
   applicationName: "BioCrab",
   keywords: [
     "BioCrab",
-    "BioFresh-Q",
     "quitosano",
     "almidón de yuca",
     "biopelículas",

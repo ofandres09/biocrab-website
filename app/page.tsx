@@ -380,12 +380,12 @@ export default function Home() {
             label="NUESTRO RECORRIDO"
             title={
               <>
-                De BioFresh-Q
+                De la materia prima
                 <br />
                 <span>a una nueva posibilidad.</span>
               </>
             }
-            description="BioCrab surge de la experiencia obtenida con BioFresh-Q y representa una evolución del proyecto. Explora las etapas para conocer esta historia."
+            description="Explora el recorrido de BioCrab: de las materias primas a la investigación de biopelículas y la validación de sus propiedades."
           />
           <Timeline />
         </section>
@@ -686,8 +686,8 @@ export default function Home() {
             <p>
               La propuesta de BioCrab integra el aprovechamiento de
               exoesqueletos, el estudio de mezclas de biopolímeros y el
-              aprendizaje de BioFresh-Q. Su identidad está en esa combinación y
-              en la voluntad de documentar el recorrido.
+              aprendizaje del trabajo de laboratorio. Su identidad está en esa
+              combinación y en la voluntad de documentar el recorrido.
             </p>
             <p>
               No se afirma exclusividad tecnológica, novedad patentable ni
@@ -1075,7 +1075,7 @@ export default function Home() {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} BioCrab</span>
-          <span>Evolución de la experiencia BioFresh-Q</span>
+          <span>Biomateriales · Ciencia de alimentos · Sostenibilidad</span>
           <a href="#inicio">Volver al inicio ↑</a>
         </div>
       </footer>

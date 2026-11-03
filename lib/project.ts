@@ -1,9 +1,9 @@
 export const pending = "Dato en proceso de validación experimental";
 export const stages = [
   {
-    title: "BioFresh-Q",
+    title: "El punto de partida",
     label: "El origen",
-    text: "BioCrab surge a partir de la experiencia obtenida con BioFresh-Q. Ese aprendizaje constituye el punto de partida de una nueva exploración de biomateriales.",
+    text: "El recorrido de BioCrab conecta el estudio de materias primas de origen biológico con la exploración de nuevos materiales. Las fotografías documentan el trabajo del proyecto, sin sustituir sus mediciones.",
     status: "Antecedente del proyecto",
   },
   {
@@ -46,7 +46,7 @@ export const methodology = [
     text: "Distribuir la solución sobre un soporte y controlar las condiciones de secado para obtener películas. Registrar espesor, uniformidad y defectos observables.",
     icon: "layers",
     image: "biopelicula-secando.jpg",
-    alt: "Bandejas con formulaciones extendidas sobre una mesa de laboratorio",
+    alt: "Biopelícula del proyecto extendida sobre un soporte durante el secado",
   },
   {
     title: "Evaluación física",
@@ -100,11 +100,5 @@ export const photos = [
     title: "Hacia una biopelícula",
     caption:
       "Formulaciones extendidas en bandejas. La composición y los resultados requieren validación.",
-  },
-  {
-    src: "biofresh-q.jpg",
-    title: "Una historia que evoluciona",
-    caption:
-      "Identidad de BioFresh-Q, antecedente de BioCrab según el relato del proyecto.",
   },
 ];

@@ -217,6 +217,7 @@ export function Photo({
       )}
       <div
         className={`photo-placeholder ${unavailable ? "visible" : ""}`}
+        aria-hidden={!unavailable}
         role={unavailable ? "img" : undefined}
         aria-label={unavailable ? alt : undefined}
       >
@@ -307,14 +308,14 @@ export function Timeline() {
             <Photo
               name={
                 active === 0
-                  ? "biofresh-q.jpg"
+                  ? "exoesqueletos-separados.jpg"
                   : active === 1
                     ? "muestra.jpg"
                     : "secado.jpg"
               }
               alt={
                 active === 0
-                  ? "Identidad de BioFresh-Q, antecedente del proyecto"
+                  ? "Materia prima del proyecto en un vaso de precipitados"
                   : "Registro de exploración de materiales del proyecto"
               }
             />

@@ -1,6 +1,6 @@
 # BioCrab — ciencia de biomateriales
 
-Sitio científico en español: Next.js 15, React 19, TypeScript, Tailwind CSS 3 y Framer Motion. Incluye identidad oceánica, temas claro/oscuro persistentes, diseño adaptable, animaciones con respeto por movimiento reducido, recorrido accesible por teclado, metodología interactiva y archivo ampliable.
+Sitio científico en español con Next.js 15, React 19, TypeScript, Tailwind CSS 3 y Framer Motion. Incluye temas claro/oscuro, navegación accesible, metodología interactiva, recorrido horizontal, comparador cualitativo, galería editorial con fotografías originales y parallax que respeta movimiento reducido.
 
 ## Ejecutar
 
@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Para instalar exactamente el lockfile, usar `npm ci`. El servidor utiliza el puerto 3000.
+Para instalación reproducible: `npm ci`. El servidor utiliza el puerto 3000.
 
 ```bash
 npm run typecheck
@@ -19,52 +19,33 @@ npm run build
 npm start
 ```
 
-## Contenido y estructura
+## Estructura
 
-- `app/page.tsx`: narrativa del proyecto, ciencia, comparación, resultados, impacto, aplicaciones y próximos pasos.
-- `app/components/experience.tsx`: navegación, tema, animaciones, recorrido, metodología, indicadores, galería y contacto.
-- `lib/project.ts`: etapas, fotografías esperadas y textos científicos editables.
-- `app/globals.css`: sistema visual, temas, diagramas conceptuales y estilos móviles.
-- `app/layout.tsx`: metadatos en español y preferencias de tema antes del primer renderizado.
-- `app/opengraph-image.tsx`: imagen social generada localmente.
-- `public/images/README.md`: nombres y uso contextual de los originales pendientes.
+- `app/page.tsx`: narrativa, ciencia, comparación, investigación, impacto y aplicaciones futuras.
+- `app/components/experience.tsx`: navegación, tema, metodología, timeline, galería y contacto.
+- `app/components/research-experience.tsx`: recorrido del material y comparador interactivo.
+- `app/components/visuals.tsx`: atmósfera, parallax y progresión de lectura.
+- `app/components/premium.tsx`: profundidad de cursor con soporte de movimiento reducido.
+- `app/globals.css`: identidad visual, temas, diagramas y estilos móviles.
+- `app/loading.tsx`: estado de carga real, sin demoras artificiales.
+- `lib/project.ts`: etapas, fotos y textos científicos.
+- `lib/media.ts`: asignación de fotografías y referencias visuales.
+- `public/images/README.md`: procedencia y uso de las seis fotografías reales importadas.
 
 ## Integridad científica
 
-La relación BioFresh-Q → BioCrab procede del relato del proyecto proporcionado por su responsable. No se atribuyen fechas, reconocimientos, perfiles de equipo ni resultados sin documentación. La literatura enlazada explica el contexto general y no acredita resultados propios.
+No se atribuyen resultados, porcentajes, certificaciones ni eficacia sin documentación. Los indicadores muestran «Dato en proceso de validación experimental»; no hay curvas simuladas ni puntuaciones de superioridad. La progresión visual indica lectura, no experimentos completados.
 
-Los indicadores animados muestran «Dato en proceso de validación experimental», sin cifras, porcentajes, barras de progreso ni curvas simuladas. La comparación es cualitativa y reconoce limitaciones. Los números de etapas y ODS son identificadores, no métricas de desempeño.
+El cuaderno de investigación presenta problema, hipótesis, objetivos y metodología propuestos; no se presenta como un artículo revisado por pares. La literatura aporta contexto general y no valida resultados de BioCrab. Toda aplicación alimentaria requiere evaluar inocuidad, migración, alérgenos y desempeño.
 
-Para publicar resultados reales, añadir protocolo, unidades, controles, réplicas, incertidumbre y condiciones de ensayo. No se afirma inocuidad, eficacia antimicrobiana, biodegradación ni superioridad ambiental de BioCrab sin validación.
+## Fotografías e identidad
 
-## Imágenes originales
+Las seis fotos del ZIP del proyecto están integradas en metodología, recorrido, aplicaciones y galería. Los JFIF se guardaron como JPEG sin alterar los bytes. Las imágenes se sirven con `next/image` y sus pies describen el registro sin atribuir resultados no medidos.
 
-Las fotos del chat no estuvieron disponibles como archivos descargables. Los componentes están preparados para integrarlas en secciones relevantes y muestran marcadores explícitos cuando faltan. Sigue `public/images/README.md` para incorporar los originales; no son ilustraciones generadas ni fotografías de stock.
+El archivo del logo suministrado muestra una identidad anterior. Se conserva en el ZIP original y no se publica; por elección del responsable del proyecto, el sitio utiliza la marca tipográfica BioCrab en navegación, footer y carga. Las asignaciones existentes de referencias visuales se mantienen.
 
 ## Contacto y publicación
 
-El formulario valida los campos y copia el mensaje en un contexto seguro; no envía ni guarda datos. El canal oficial está pendiente. No se requieren variables de entorno ni servicios externos.
+El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal oficial está pendiente. No se requieren variables de entorno ni servicios externos.
 
-Los metadatos incluyen título, descripción, Open Graph, tarjeta social e idioma. Al definir el dominio oficial de despliegue, configurar `metadataBase`, canonical y sitemap con ese dominio verificado. No se ha inventado un dominio ni una afiliación con MIT, Stanford o NASA.
-
-## Experiencia visual
-
-El hero ocupa al menos la altura disponible de la pantalla. El fondo oceánico combina contornos, partículas decorativas y luces en CSS; la barra superior indica únicamente el avance de lectura. Los efectos respetan la preferencia de movimiento reducido.
-
-`app/components/visuals.tsx` reúne la atmósfera, las señales de validación y el mapa comparativo cualitativo. Sus nodos no codifican cantidades ni puntuaciones. Los indicadores científicos conservan su estado pendiente, sin contadores numéricos ficticios.
-
-Las nuevas secciones «¿Por qué BioCrab?» y «Aplicaciones futuras» distinguen el propósito del proyecto de las aplicaciones que todavía requieren ensayos. El recorrido horizontal admite teclado y desplazamiento táctil. Los espacios fotográficos adicionales utilizan los mismos originales pendientes descritos en `public/images/README.md`.
-
-## Cuaderno de investigación y archivo editorial
-
-La tercera evolución incorpora el recorrido interactivo «Del residuo al biomaterial», un comparador por material y dimensión, y un planteamiento de investigación con problema, hipótesis, objetivos y metodología **propuestos**. No se presenta como artículo revisado por pares ni como resultados publicados.
-
-La galería editorial utiliza fotografías de gran formato con pies descriptivos, ampliación accesible y parallax suave. El movimiento se desactiva en móviles y con preferencia de movimiento reducido. La progresión lateral del recorrido indica lectura, nunca etapas experimentales completadas.
-
-Añade originales en `public/images` siguiendo su README y vuelve a compilar; el inventario de fotos disponibles se detecta durante la generación de la página. Para agregar nuevas fotos o cambiar sus pies, edita `photos` en `lib/project.ts`. No publicar marcadores como evidencia experimental.
-
-## Recursos premium e identidad
-
-`lib/media.ts` centraliza las fotografías, la identidad y las referencias visuales. Los originales siguen pendientes de acceso como archivos: ver `public/images/README.md`. No se confunde el logo de BioFresh-Q con el de BioCrab. Los fondos de referencia se identifican explícitamente y solo aparecen si existe el recurso local.
-
-La paleta oscura utiliza #021827, #0A4B78, #17D4C5, #4ADE80 y #F8FAFC. El modo claro adapta los colores de texto para mantener contraste. `DepthSurface` limita las inclinaciones del cursor a pantallas con puntero fino y respeta movimiento reducido. La pantalla de carga corresponde al estado de carga real de Next.js, sin demoras artificiales.
+Los metadatos incluyen título, descripción, Open Graph, tarjeta social e idioma. Al definir un dominio oficial, configurar `metadataBase`, canonical y sitemap con ese dominio verificado. No se declara afiliación con instituciones o concursos.
