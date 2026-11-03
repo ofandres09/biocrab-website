@@ -8,6 +8,7 @@ import {
   type FormEvent,
 } from "react";
 import Image from "next/image";
+import { EvidenceSignal } from "./visuals";
 import {
   motion,
   AnimatePresence,
@@ -141,6 +142,8 @@ export function Header() {
         >
           {[
             ...navigation,
+            ["¿Por qué BioCrab?", "por-que-biocrab"],
+            ["Aplicaciones futuras", "aplicaciones-futuras"],
             ["Galería", "galeria"],
             ["Innovación", "innovacion"],
             ["Equipo", "equipo"],
@@ -231,6 +234,12 @@ export function Timeline() {
   const [active, setActive] = useState(0);
   return (
     <div className="timeline-component">
+      <div className="timeline-caption">
+        <span className="micro">TRAYECTORIA DEL PROYECTO</span>
+        <span>
+          Selecciona una etapa <ArrowRight size={13} />
+        </span>
+      </div>
       <div
         className="timeline-tabs"
         role="tablist"
@@ -258,7 +267,13 @@ export function Timeline() {
                           stages.length) %
                         stages.length;
                 setActive(n);
-                document.getElementById(`stage-tab-${n}`)?.focus();
+                const tab = document.getElementById(`stage-tab-${n}`);
+                tab?.focus({ preventScroll: true });
+                tab?.scrollIntoView({
+                  block: "nearest",
+                  inline: "nearest",
+                  behavior: "instant",
+                });
               }
             }}
           >
@@ -377,6 +392,7 @@ export function Indicators() {
             >
               —<span className="pending-dot" />
             </motion.span>
+            <EvidenceSignal />
             <h3>{String(label)}</h3>
             <p>{pending}</p>
           </Reveal>

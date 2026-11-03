@@ -1,3 +1,8 @@
+import {
+  OceanAtmosphere,
+  ReadingProgress,
+  VisualComparison,
+} from "./components/visuals";
 import { readdirSync } from "node:fs";
 import path from "node:path";
 import {
@@ -56,9 +61,11 @@ export default function Home() {
       <a className="skip" href="#contenido">
         Saltar al contenido
       </a>
+      <ReadingProgress />
       <Header />
       <main id="contenido">
         <section id="inicio" className="hero">
+          <OceanAtmosphere />
           <div className="hero-grid" />
           <div className="hero-glow" />
           <div className="hero-content">
@@ -289,6 +296,75 @@ export default function Home() {
               resultados de BioCrab.
             </p>
           </details>
+        </section>
+        <section id="por-que-biocrab" className="section why-section">
+          <Heading
+            number="→"
+            label="¿POR QUÉ BIOCRAB?"
+            title={
+              <>
+                Una nueva mirada.
+                <br />
+                <span>Un propósito compartido.</span>
+              </>
+            }
+            description="El valor de una propuesta científica está en las preguntas que conecta y en cómo decide responderlas."
+          />
+          <div className="why-grid">
+            {[
+              [
+                Shell,
+                "Recursos con otra historia",
+                "Explorar exoesqueletos de cangrejo como punto de partida para estudiar nuevos materiales.",
+              ],
+              [
+                Leaf,
+                "Dos orígenes que dialogan",
+                "Conectar quitosano y almidón de yuca en una formulación que exige caracterización propia.",
+              ],
+              [
+                Microscope,
+                "Evidencia antes que promesas",
+                "Hacer visibles los métodos, las preguntas abiertas y los límites de lo que todavía no se ha medido.",
+              ],
+            ].map(([Icon, title, text]) => {
+              const I = Icon as typeof Shell;
+              return (
+                <Reveal className="glass why-card" key={String(title)}>
+                  <I size={32} strokeWidth={1} />
+                  <h3>{String(title)}</h3>
+                  <p>{String(text)}</p>
+                  <span className="why-card-line" />
+                </Reveal>
+              );
+            })}
+          </div>
+          <div className="field-notes">
+            <Photo
+              name="limpieza.jpg"
+              alt="Registro de limpieza de la materia prima del proyecto"
+            />
+            <div>
+              <span className="micro">OBSERVAR · DOCUMENTAR · APRENDER</span>
+              <h3>
+                La investigación empieza
+                <br />
+                con una mirada cercana.
+              </h3>
+              <p>
+                Del registro de la materia prima a la formación de películas:
+                cada fotografía puede acompañar una etapa de la historia, sin
+                sustituir sus datos.
+              </p>
+              <a className="text-link" href="#metodologia">
+                Explorar el proceso <ArrowUpRight size={16} />
+              </a>
+            </div>
+            <Photo
+              name="muestra.jpg"
+              alt="Registro de material de cangrejo en el laboratorio"
+            />
+          </div>
         </section>
         <section id="recorrido" className="section">
           <Heading
@@ -624,6 +700,73 @@ export default function Home() {
             </p>
           </div>
         </section>
+        <section
+          id="aplicaciones-futuras"
+          className="section future-applications"
+        >
+          <Heading
+            number="→"
+            label="APLICACIONES FUTURAS"
+            title={
+              <>
+                El potencial abre puertas.
+                <br />
+                <span>La ciencia decide cuáles.</span>
+              </>
+            }
+            description="Posibles líneas de exploración. No son usos aprobados, resultados demostrados ni productos disponibles."
+          />
+          <div className="future-grid">
+            {[
+              [
+                Leaf,
+                "Conservación de frutas",
+                "Explorar recubrimientos o películas para estudiar cambios de calidad durante el almacenamiento.",
+                "Evaluar intercambio de gases, humedad, compatibilidad e inocuidad.",
+              ],
+              [
+                Leaf,
+                "Conservación de verduras",
+                "Investigar la interacción de la biopelícula con matrices vegetales y condiciones de conservación.",
+                "Caracterizar barrera, estabilidad y respuesta de cada alimento.",
+              ],
+              [
+                Recycle,
+                "Empaques biodegradables",
+                "Estudiar materiales para aplicaciones de empaque que requieran propiedades específicas.",
+                "Comprobar resistencia, vida útil y biodegradación en condiciones definidas.",
+              ],
+              [
+                FlaskConical,
+                "Industria alimentaria",
+                "Explorar la viabilidad de procesos y colaboraciones para aplicaciones alimentarias concretas.",
+                "Validar escalabilidad, migración, alérgenos y requisitos normativos.",
+              ],
+            ].map(([Icon, title, text, validation], i) => {
+              const I = Icon as typeof Leaf;
+              return (
+                <Reveal className="glass future-card" key={String(title)}>
+                  <div className="future-card-top">
+                    <I size={29} strokeWidth={1} />
+                    <span>EXPLORACIÓN / 0{i + 1}</span>
+                  </div>
+                  <h3>{String(title)}</h3>
+                  <p>{String(text)}</p>
+                  <div className="validation-note">
+                    <CircleDashed size={17} />
+                    <span>{String(validation)}</span>
+                  </div>
+                  <span className="status-pill">Potencial por investigar</span>
+                </Reveal>
+              );
+            })}
+          </div>
+          <p className="annotation">
+            Toda aplicación exige ensayos específicos. No se han establecido
+            porcentajes de mejora, tiempos de conservación ni impactos
+            cuantificados para BioCrab.
+          </p>
+        </section>
         <section id="proximos-pasos" className="section next-steps">
           <Heading
             number="11"
@@ -718,6 +861,17 @@ export default function Home() {
         </section>
       </main>
       <footer className="site-footer">
+        <div className="footer-masthead">
+          <span>BIOCRAB</span>
+          <p>
+            BIOMATERIALES & CONSERVACIÓN
+            <br />
+            INVESTIGACIÓN CON PROPÓSITO
+          </p>
+          <a href="#contacto" className="footer-invitation">
+            Construyamos la próxima pregunta <ArrowUpRight size={22} />
+          </a>
+        </div>
         <div className="footer-upper">
           <div>
             <a className="brand" href="#inicio">
@@ -742,7 +896,9 @@ export default function Home() {
           </div>
           <div className="footer-links">
             <span>EL SIGUIENTE CAPÍTULO</span>
+            <a href="#por-que-biocrab">¿Por qué BioCrab?</a>
             <a href="#innovacion">Innovación</a>
+            <a href="#aplicaciones-futuras">Aplicaciones futuras</a>
             <a href="#galeria">Archivo del proyecto</a>
             <a href="#proximos-pasos">Próximos pasos</a>
             <a href="#contacto">

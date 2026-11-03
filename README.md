@@ -46,3 +46,11 @@ Las fotos del chat no estuvieron disponibles como archivos descargables. Los com
 El formulario valida los campos y copia el mensaje en un contexto seguro; no envía ni guarda datos. El canal oficial está pendiente. No se requieren variables de entorno ni servicios externos.
 
 Los metadatos incluyen título, descripción, Open Graph, tarjeta social e idioma. Al definir el dominio oficial de despliegue, configurar `metadataBase`, canonical y sitemap con ese dominio verificado. No se ha inventado un dominio ni una afiliación con MIT, Stanford o NASA.
+
+## Experiencia visual
+
+El hero ocupa al menos la altura disponible de la pantalla. El fondo oceánico combina contornos, partículas decorativas y luces en CSS; la barra superior indica únicamente el avance de lectura. Los efectos respetan la preferencia de movimiento reducido.
+
+`app/components/visuals.tsx` reúne la atmósfera, las señales de validación y el mapa comparativo cualitativo. Sus nodos no codifican cantidades ni puntuaciones. Los indicadores científicos conservan su estado pendiente, sin contadores numéricos ficticios.
+
+Las nuevas secciones «¿Por qué BioCrab?» y «Aplicaciones futuras» distinguen el propósito del proyecto de las aplicaciones que todavía requieren ensayos. El recorrido horizontal admite teclado y desplazamiento táctil. Los espacios fotográficos adicionales utilizan los mismos originales pendientes descritos en `public/images/README.md`.
