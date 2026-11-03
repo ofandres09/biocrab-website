@@ -1,19 +1,17 @@
-# BioCrab
+# BioCrab — ciencia de biomateriales
 
-Landing científica en español construida con Next.js 15, React 19, TypeScript y Tailwind CSS 3. Diseño adaptable, navegación por secciones e ilustraciones locales en CSS/SVG.
+Sitio científico en español: Next.js 15, React 19, TypeScript, Tailwind CSS 3 y Framer Motion. Incluye identidad oceánica, temas claro/oscuro persistentes, diseño adaptable, animaciones con respeto por movimiento reducido, recorrido accesible por teclado, metodología interactiva y archivo ampliable.
 
-## Desarrollo
+## Ejecutar
 
-Requiere Node.js 20.9 o superior y npm.
+Node.js 20.9 o superior y npm:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre el puerto 3000 en tu entorno de desarrollo. No se requieren variables de entorno, base de datos ni servicios externos.
-
-## Validación y producción
+Para instalar exactamente el lockfile, usar `npm ci`. El servidor utiliza el puerto 3000.
 
 ```bash
 npm run typecheck
@@ -21,19 +19,30 @@ npm run build
 npm start
 ```
 
-Para instalaciones reproducibles con el lockfile, usa `npm ci`.
+## Contenido y estructura
 
-## Estructura
+- `app/page.tsx`: narrativa del proyecto, ciencia, comparación, resultados, impacto, aplicaciones y próximos pasos.
+- `app/components/experience.tsx`: navegación, tema, animaciones, recorrido, metodología, indicadores, galería y contacto.
+- `lib/project.ts`: etapas, fotografías esperadas y textos científicos editables.
+- `app/globals.css`: sistema visual, temas, diagramas conceptuales y estilos móviles.
+- `app/layout.tsx`: metadatos en español y preferencias de tema antes del primer renderizado.
+- `app/opengraph-image.tsx`: imagen social generada localmente.
+- `public/images/README.md`: nombres y uso contextual de los originales pendientes.
 
-- `app/layout.tsx`: idioma, metadatos y estilos globales.
-- `app/page.tsx`: las diez secciones, menú adaptable y formulario.
-- `app/globals.css`: diseño editorial, ilustraciones, estilos adaptables y accesibilidad.
-- `tailwind.config.ts`, `postcss.config.js`, `next.config.js`, `tsconfig.json`: configuración del proyecto.
+## Integridad científica
 
-## Contenido y contacto
+La relación BioFresh-Q → BioCrab procede del relato del proyecto proporcionado por su responsable. No se atribuyen fechas, reconocimientos, perfiles de equipo ni resultados sin documentación. La literatura enlazada explica el contexto general y no acredita resultados propios.
 
-El contenido distingue objetivos científicos de resultados verificados. La cronología es una hoja de ruta y las imágenes son ilustraciones conceptuales. No se atribuyen certificaciones, resultados experimentales ni integrantes sin confirmar.
+Los indicadores animados muestran «Dato en proceso de validación experimental», sin cifras, porcentajes, barras de progreso ni curvas simuladas. La comparación es cualitativa y reconoce limitaciones. Los números de etapas y ODS son identificadores, no métricas de desempeño.
 
-El formulario valida los campos en el navegador y copia el mensaje al portapapeles; **no envía correos ni guarda datos**. La API del portapapeles requiere un contexto seguro (HTTPS o localhost). Para habilitar envíos reales, incorpora un canal de contacto verificado y un servicio de envío con validación de servidor y protección contra abuso. Los perfiles del equipo y el canal oficial están pendientes de publicación.
+Para publicar resultados reales, añadir protocolo, unidades, controles, réplicas, incertidumbre y condiciones de ensayo. No se afirma inocuidad, eficacia antimicrobiana, biodegradación ni superioridad ambiental de BioCrab sin validación.
 
-La referencia estética es editorial y académica; BioCrab no declara afiliación con MIT o Stanford.
+## Imágenes originales
+
+Las fotos del chat no estuvieron disponibles como archivos descargables. Los componentes están preparados para integrarlas en secciones relevantes y muestran marcadores explícitos cuando faltan. Sigue `public/images/README.md` para incorporar los originales; no son ilustraciones generadas ni fotografías de stock.
+
+## Contacto y publicación
+
+El formulario valida los campos y copia el mensaje en un contexto seguro; no envía ni guarda datos. El canal oficial está pendiente. No se requieren variables de entorno ni servicios externos.
+
+Los metadatos incluyen título, descripción, Open Graph, tarjeta social e idioma. Al definir el dominio oficial de despliegue, configurar `metadataBase`, canonical y sitemap con ese dominio verificado. No se ha inventado un dominio ni una afiliación con MIT, Stanford o NASA.
