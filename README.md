@@ -1,17 +1,17 @@
-# BioCrab — ciencia de biomateriales
+# BioCrab
 
-Sitio científico en español con Next.js 15, React 19, TypeScript, Tailwind CSS 3 y Framer Motion. Incluye temas claro/oscuro, navegación accesible, metodología interactiva, recorrido horizontal, comparador cualitativo, galería editorial con fotografías originales y parallax que respeta movimiento reducido.
+Experiencia científica en español con Next.js 15, React 19, TypeScript, Tailwind CSS y Framer Motion.
 
-## Ejecutar
+## Desarrollo
 
-Node.js 20.9 o superior y npm:
+Requiere Node.js 20.9 o superior y npm.
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Para instalación reproducible: `npm ci`. El servidor utiliza el puerto 3000.
+También admite `npm install`. El servidor usa el puerto 3000 y no requiere secretos, base de datos ni servicios externos.
 
 ```bash
 npm run typecheck
@@ -19,33 +19,46 @@ npm run build
 npm start
 ```
 
-## Estructura
+## Diseño y navegación
 
-- `app/page.tsx`: narrativa, ciencia, comparación, investigación, impacto y aplicaciones futuras.
-- `app/components/experience.tsx`: navegación, tema, metodología, timeline, galería y contacto.
-- `app/components/research-experience.tsx`: recorrido del material y comparador interactivo.
-- `app/components/visuals.tsx`: atmósfera, parallax y progresión de lectura.
-- `app/components/premium.tsx`: profundidad de cursor con soporte de movimiento reducido.
-- `app/globals.css`: identidad visual, temas, diagramas y estilos móviles.
-- `app/loading.tsx`: estado de carga real, sin demoras artificiales.
-- `lib/project.ts`: etapas, fotos y textos científicos.
-- `lib/media.ts`: asignación de fotografías y referencias visuales.
-- `public/images/README.md`: procedencia y uso de las seis fotografías reales importadas.
+El hero muestra la marca BioCrab y una fotografía original de la biopelícula. La narrativa recorre problema, propósito, transformación, investigación, metodología, trayectoria, galería, comparación, aplicaciones, impacto, fruta y equipo.
 
-## Integridad científica
+La identidad oscura utiliza #050505, #0066FF, #00FF99, #FF3B30 y #FFFFFF. El tema claro adapta el contraste. Se inicia en modo oscuro, respeta la elección guardada y permite cambiar de tema.
 
-No se atribuyen resultados, porcentajes, certificaciones ni eficacia sin documentación. Los indicadores muestran «Dato en proceso de validación experimental»; no hay curvas simuladas ni puntuaciones de superioridad. La progresión visual indica lectura, no experimentos completados.
+Las animaciones incluyen reveal de texto, entrada escalonada de tarjetas, iluminación ambiental, partículas, flotación, profundidad de cursor, parallax y progresión de lectura. El parallax se desactiva en móvil y con movimiento reducido. Todo el contenido narrativo permanece disponible sin JavaScript; las interacciones requieren JavaScript.
 
-El cuaderno de investigación presenta problema, hipótesis, objetivos y metodología propuestos; no se presenta como un artículo revisado por pares. La literatura aporta contexto general y no valida resultados de BioCrab. Toda aplicación alimentaria requiere evaluar inocuidad, migración, alérgenos y desempeño.
+## Archivos principales
 
-## Fotografías e identidad
+- `app/page.tsx`: estructura y narrativa científica.
+- `app/globals.css`: sistema visual completo, temas y estilos adaptables.
+- `app/components/brand.tsx`, `public/biocrab-wordmark.svg`: marca tipográfica vectorial BioCrab; símbolo original de exoesqueleto/hoja.
+- `app/icon.svg`, `public/icon.svg`: favicon de la misma identidad.
+- `app/components/experience.tsx`: navegación, imágenes, metodología, timeline, galería y contacto.
+- `app/components/cinematic.tsx`: reveal de título y animaciones escalonadas.
+- `app/components/premium.tsx`, `visuals.tsx`: profundidad, atmósfera y parallax.
+- `app/components/research-experience.tsx`: recorrido de cinco etapas y comparador interactivo.
+- `lib/project.ts`, `lib/media.ts`: contenido y asignaciones de imágenes.
+- `public/images/`: seis fotografías originales del ZIP, guardadas como JPEG sin alterar los bytes.
+- `app/loading.tsx`, `app/opengraph-image.tsx`: carga real e imagen social.
 
-Las seis fotos del ZIP del proyecto están integradas en metodología, recorrido, aplicaciones y galería. Los JFIF se guardaron como JPEG sin alterar los bytes. Las imágenes se sirven con `next/image` y sus pies describen el registro sin atribuir resultados no medidos.
+## Imágenes e identidad
 
-El archivo del logo suministrado muestra una identidad anterior. Se conserva en el ZIP original y no se publica; por elección del responsable del proyecto, el sitio utiliza la marca tipográfica BioCrab en navegación, footer y carga. Las asignaciones existentes de referencias visuales se mantienen.
+Se conservó la decisión del responsable de usar la marca tipográfica BioCrab. La nueva marca vectorial es una representación propia de ese nombre; el archivo del ZIP con identidad anterior no se muestra ni se altera.
+
+Las fotografías originales aparecen desde el hero, acompañan todas las secciones principales y se amplían en la galería con pies descriptivos. Los recortes priorizan el material; el visor ampliado conserva el encuadre completo. La carga es adaptable y diferida, con prioridad para la foto del hero.
+
+Los archivos de referencias externas de Pinterest no están disponibles en el checkout ni en el ZIP recibido. La ambientación se construye localmente con SVG y CSS. No se afirman como imágenes integradas. Su biblioteca de nombres en `lib/media.ts` se conserva para futuras incorporaciones.
+
+## Rigor científico
+
+El planteamiento presenta hipótesis y objetivos propuestos. La literatura proporciona contexto; no acredita resultados de BioCrab. No se atribuyen porcentajes, reconocimientos, ensayos completados ni superioridad ambiental.
+
+Los registros de materia prima no demuestran quitosano aislado. Las formulaciones con fruta no demuestran inocuidad ni eficacia. La biodegradación exige condiciones definidas. Las posibles aplicaciones requieren validación física, ambiental y alimentaria específica.
+
+El comparador usa una fotografía real de BioCrab y una ilustración conceptual del plástico, con texto cualitativo y sin puntuaciones. La progresión visual representa lectura. Los resultados se publicarán cuando haya protocolos, unidades, controles, réplicas e incertidumbre.
 
 ## Contacto y publicación
 
-El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal oficial está pendiente. No se requieren variables de entorno ni servicios externos.
+El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal oficial de contacto y los perfiles del equipo están pendientes de confirmación.
 
-Los metadatos incluyen título, descripción, Open Graph, tarjeta social e idioma. Al definir un dominio oficial, configurar `metadataBase`, canonical y sitemap con ese dominio verificado. No se declara afiliación con instituciones o concursos.
+Los metadatos incluyen idioma, título, descripción, Open Graph y tarjeta social. Configurar `metadataBase`, canonical y sitemap al confirmar un dominio oficial de despliegue.

@@ -8,8 +8,9 @@ import {
   type FormEvent,
 } from "react";
 import Image from "next/image";
-import { resolveMedia, resolvePhoto, type MediaRole } from "@/lib/media";
-import { EvidenceSignal, ParallaxFrame, ScrollScene } from "./visuals";
+import { Brand } from "./brand";
+import { resolvePhoto } from "@/lib/media";
+import { ParallaxFrame, ScrollScene } from "./visuals";
 import {
   motion,
   AnimatePresence,
@@ -36,13 +37,7 @@ import {
   Check,
   Copy,
 } from "lucide-react";
-import {
-  methodology,
-  navigation,
-  pending,
-  photos,
-  stages,
-} from "@/lib/project";
+import { methodology, pending, photos, stages } from "@/lib/project";
 const ImageAssets = createContext<string[]>([]);
 export function Experience({
   children,
@@ -69,7 +64,7 @@ export function Reveal({
     <motion.div
       className={className}
       initial={false}
-      whileInView={reduce ? undefined : { y: [14, 0], opacity: [0.75, 1] }}
+      whileInView={reduce ? undefined : { y: [30, 0], opacity: [0.6, 1] }}
       viewport={{ once: true, amount: 0.15 }}
       variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
       transition={{ duration: 0.65 }}
@@ -104,7 +99,12 @@ export function Header() {
     <header className="site-header">
       <Brand />
       <nav className="desktop-nav" aria-label="Navegación principal">
-        {navigation.slice(0, 4).map(([n, id]) => (
+        {[
+          ["El proyecto", "sobre"],
+          ["La ciencia", "investigacion"],
+          ["Galería", "galeria"],
+          ["Aplicaciones", "aplicaciones-futuras"],
+        ].map(([n, id]) => (
           <a href={`#${id}`} key={id}>
             {n}
           </a>
@@ -138,12 +138,18 @@ export function Header() {
           aria-label="Todas las secciones"
         >
           {[
-            ...navigation,
+            ["El problema", "sobre"],
             ["¿Por qué BioCrab?", "por-que-biocrab"],
+            ["Del residuo al biomaterial", "del-residuo-al-biomaterial"],
+            ["Investigación científica", "investigacion"],
+            ["Metodología", "metodologia"],
+            ["Recorrido", "recorrido"],
+            ["Galería experimental", "galeria"],
+            ["Comparador", "comparacion"],
             ["Aplicaciones futuras", "aplicaciones-futuras"],
-            ["Galería", "galeria"],
-            ["Innovación", "innovacion"],
-            ["Equipo", "equipo"],
+            ["Impacto potencial", "impacto-potencial"],
+            ["Gomitas de fruta", "gomitas"],
+            ["Equipo y proyecto", "equipo"],
             ["Contacto", "contacto"],
           ].map(([n, id]) => (
             <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>
@@ -154,37 +160,6 @@ export function Header() {
         </nav>
       )}
     </header>
-  );
-}
-export function Molecule() {
-  return (
-    <div
-      className="molecule-scene"
-      role="img"
-      aria-label="Diagrama conceptual de una matriz de biopolímeros, sin representar una estructura molecular exacta"
-    >
-      <div className="orbital orbital-a" />
-      <div className="orbital orbital-b" />
-      <div className="orbital orbital-c" />
-      <div className="membrane membrane-a" />
-      <div className="membrane membrane-b" />
-      <div className="membrane membrane-c" />
-      <div className="science-cross cross-a">+</div>
-      <div className="science-cross cross-b">+</div>
-      <span className="diagram-label label-a">
-        QUITOSANO
-        <br />
-        <small>ORIGEN MARINO</small>
-      </span>
-      <span className="diagram-label label-b">
-        ALMIDÓN
-        <br />
-        <small>ORIGEN VEGETAL</small>
-      </span>
-      <div className="diagram-center">
-        <Atom size={43} strokeWidth={0.7} />
-      </div>
-    </div>
   );
 }
 export function Photo({
@@ -204,13 +179,17 @@ export function Photo({
   const unavailable = failed || !exists;
   useEffect(() => setFailed(false), [name]);
   return (
-    <div className={`project-photo ${className}`}>
+    <div className={`project-photo ${className}`} data-photo={name}>
       {!unavailable && (
         <Image
           src={`/images/${source}`}
           alt={alt}
           fill
-          sizes="(max-width: 760px) 100vw, 50vw"
+          sizes={
+            className.includes("full-width")
+              ? "100vw"
+              : "(max-width: 800px) 100vw, 65vw"
+          }
           priority={priority}
           onError={() => setFailed(true)}
         />
@@ -358,45 +337,14 @@ export function Methodology() {
           <h3>{methodology[active].title}</h3>
           <p>{methodology[active].text}</p>
           <p className="annotation">
-            Esquema descriptivo. Los parámetros experimentales y las condiciones
-            específicas se publicarán junto con su validación. Los tratamientos
-            químicos requieren supervisión y controles de seguridad de
-            laboratorio.
+            Fotografía contextual del proyecto; no acredita la etapa ni la
+            identidad química del material. Los parámetros experimentales y las
+            condiciones específicas se publicarán junto con su validación. Los
+            tratamientos químicos requieren supervisión y controles de seguridad
+            de laboratorio.
           </p>
         </div>
       </Reveal>
-    </div>
-  );
-}
-export function Indicators() {
-  return (
-    <div className="indicators">
-      {[
-        ["Biodegradabilidad", Leaf],
-        ["Impacto ambiental", Waves],
-        ["Sostenibilidad", Recycle],
-        ["Innovación", Atom],
-      ].map(([label, Icon]) => {
-        const I = Icon as typeof Atom;
-        return (
-          <Reveal key={String(label)} className="indicator">
-            <I size={23} strokeWidth={1.3} />
-            <motion.span
-              className="pending-value"
-              initial={{ opacity: 0.4 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              aria-label="Sin valor validado"
-            >
-              —<span className="pending-dot" />
-            </motion.span>
-            <EvidenceSignal />
-            <h3>{String(label)}</h3>
-            <p>{pending}</p>
-          </Reveal>
-        );
-      })}
     </div>
   );
 }
@@ -576,49 +524,5 @@ export function Contact() {
           "El canal oficial está pendiente. El formulario copia tu mensaje; no envía ni almacena datos."}
       </p>
     </form>
-  );
-}
-
-export function Brand({ files }: { files?: string[] }) {
-  const available = useContext(ImageAssets);
-  const source = resolveMedia("logo", files ?? available);
-  return (
-    <a className="brand" href="#inicio" aria-label="BioCrab, inicio">
-      {source ? (
-        <Image
-          className="brand-image"
-          src={`/images/${source}`}
-          width={150}
-          height={48}
-          alt="BioCrab"
-          sizes="150px"
-        />
-      ) : (
-        <>
-          <span className="brand-symbol">
-            <Shell size={25} />
-          </span>
-          BioCrab<span className="brand-period">.</span>
-        </>
-      )}
-    </a>
-  );
-}
-export function ReferenceBackdrop({ role }: { role: MediaRole }) {
-  const source = resolveMedia(role, useContext(ImageAssets));
-  if (!source) return null;
-  return (
-    <div className="reference-backdrop" aria-hidden="true">
-      <Image
-        src={`/images/${source}`}
-        alt=""
-        fill
-        sizes="100vw"
-        priority={role === "hero"}
-      />
-      <span className="reference-label">
-        Referencia visual · No representa el laboratorio BioCrab
-      </span>
-    </div>
   );
 }

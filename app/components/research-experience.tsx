@@ -46,7 +46,7 @@ const journey = [
     title: "Aplicación en alimentos",
     label: "Horizonte por validar",
     icon: Apple,
-    text: "La aplicación alimentaria es una posibilidad de investigación, no un uso aprobado. Exige evaluar inocuidad, migración, alérgenos y desempeño en cada alimento.",
+    text: "La fotografía muestra una película en formación, no un ensayo sobre alimentos. La aplicación alimentaria es una posibilidad de investigación, no un uso aprobado. Exige evaluar inocuidad, migración, alérgenos y desempeño en cada alimento.",
     photo: "biopelicula-secando.jpg",
   },
 ];
@@ -186,6 +186,9 @@ export function MaterialComparator() {
       </div>
       <div className="comparator-body">
         <div className={`material-portrait ${material}`} aria-hidden="true">
+          {material === "bio" && (
+            <Photo name="biopelicula-secando.jpg" alt="" />
+          )}
           <div className="portrait-orbit" />
           <div className="portrait-sheet" />
           <div className="portrait-sheet secondary-sheet" />
@@ -244,9 +247,9 @@ export function MaterialComparator() {
         </div>
       </div>
       <p className="annotation">
-        <CircleDashed size={15} /> Ilustraciones conceptuales de igual escala
-        visual. Su aspecto no codifica resistencia, impacto ambiental ni
-        superioridad.
+        <CircleDashed size={15} /> Fotografía real de BioCrab e ilustración
+        conceptual del plástico. Su aspecto no codifica resistencia, impacto
+        ambiental ni superioridad.
       </p>
     </div>
   );

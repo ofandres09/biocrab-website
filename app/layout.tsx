@@ -41,11 +41,11 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#021827",
+  themeColor: "#050505",
   colorScheme: "dark light",
 };
 const themeScript =
-  "try{document.documentElement.dataset.theme=localStorage.getItem('biocrab-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark')}catch{document.documentElement.dataset.theme='dark'}";
+  "try{document.documentElement.dataset.theme=localStorage.getItem('biocrab-theme')||'dark'}catch{document.documentElement.dataset.theme='dark'}";
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -54,7 +54,12 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <noscript>
+          <style>{`.loading-scene{display:none!important}body>div[hidden][id^="S:"]{display:block!important}`}</style>
+        </noscript>
+        {children}
+      </body>
     </html>
   );
 }

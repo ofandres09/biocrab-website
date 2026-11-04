@@ -1,60 +1,79 @@
-import { DepthSurface } from "./components/premium";
-import {
-  MaterialJourney,
-  MaterialComparator,
-} from "./components/research-experience";
-import { OceanAtmosphere, ReadingProgress } from "./components/visuals";
 import { readdirSync } from "node:fs";
 import path from "node:path";
 import {
   ArrowUpRight,
   ArrowRight,
+  ArrowDown,
   Atom,
   Leaf,
   Recycle,
-  Microscope,
   FlaskConical,
-  Waves,
   Shell,
-  MoveDown,
+  Microscope,
+  MoveUpRight,
+  Check,
   CircleDashed,
 } from "lucide-react";
+import { Brand } from "./components/brand";
 import {
-  Brand,
-  ReferenceBackdrop,
   Contact,
   Experience,
   Gallery,
   Header,
-  Indicators,
   Methodology,
-  Molecule,
   Photo,
   Reveal,
   Timeline,
 } from "./components/experience";
-import { navigation, pending } from "@/lib/project";
-function Heading({
-  number,
+import {
+  MaterialJourney,
+  MaterialComparator,
+} from "./components/research-experience";
+import {
+  OceanAtmosphere,
+  ParallaxFrame,
+  ReadingProgress,
+} from "./components/visuals";
+import { DepthSurface } from "./components/premium";
+import { HeroTitle, Stagger } from "./components/cinematic";
+const footerLinks = [
+  ["El problema", "sobre"],
+  ["¿Por qué BioCrab?", "por-que-biocrab"],
+  ["Del residuo al biomaterial", "del-residuo-al-biomaterial"],
+  ["Investigación científica", "investigacion"],
+  ["Metodología", "metodologia"],
+  ["Galería experimental", "galeria"],
+  ["Comparador", "comparacion"],
+  ["Aplicaciones futuras", "aplicaciones-futuras"],
+  ["Impacto potencial", "impacto-potencial"],
+  ["Gomitas de fruta", "gomitas"],
+  ["Equipo y proyecto", "equipo"],
+];
+function SectionHeading({
   label,
   title,
   description,
 }: {
-  number: string;
   label: string;
   title: React.ReactNode;
   description?: string;
 }) {
   return (
-    <div className="section-heading">
+    <Reveal className="section-heading">
       <div>
-        <p className="eyebrow">
-          <span>{number}</span> {label}
-        </p>
+        <p className="eyebrow">{label}</p>
         <h2>{title}</h2>
       </div>
       {description && <p className="section-description">{description}</p>}
-    </div>
+    </Reveal>
+  );
+}
+function Caption({ children }: { children: React.ReactNode }) {
+  return (
+    <figcaption className="photo-caption">
+      <span className="photo-dot" />
+      {children}
+    </figcaption>
   );
 }
 export default function Home() {
@@ -68,1015 +87,651 @@ export default function Home() {
       <Header />
       <main id="contenido">
         <section id="inicio" className="hero">
-          <ReferenceBackdrop role="hero" />
           <OceanAtmosphere />
           <div className="hero-grid" />
-          <div className="hero-glow" />
-          <div className="hero-content">
-            <Reveal>
-              <p className="eyebrow hero-eyebrow">
-                <span className="live-dot" /> BIOMATERIALES PARA UN NUEVO
-                HORIZONTE
-              </p>
-              <h1>
-                Del océano.
-                <br />
-                De la tierra.
-                <br />
-                <span>Para el futuro.</span>
-              </h1>
-              <p className="hero-description">
-                La próxima generación de materiales empieza con una nueva mirada
-                a lo que ya existe.
-              </p>
-              <p className="hero-subcopy">
-                Exploramos biopelículas de quitosano y almidón de yuca para
-                repensar la conservación de alimentos.
-              </p>
-              <div className="hero-buttons">
-                <a className="button primary" href="#ciencia">
-                  Explora la ciencia <ArrowUpRight size={17} />
-                </a>
-                <a className="button ghost" href="#recorrido">
-                  Nuestro recorrido <ArrowRight size={16} />
-                </a>
-              </div>
-            </Reveal>
-          </div>
-          <div className="hero-visual">
-            <div className="visual-top">
-              <span>BIOCRAB / MATERIAL EXPLORATION</span>
-              <Atom size={17} />
+          <div className="hero-copy">
+            <div className="hero-brand">
+              <Brand hero link={false} />
             </div>
-            <DepthSurface>
-              <Molecule />
-            </DepthSurface>
-            <div className="glass material-card">
-              <span className="live-dot" />
-              <div>
-                <strong>Matriz de origen natural</strong>
-                <small>Quitosano + almidón de yuca</small>
-              </div>
-              <ArrowUpRight size={18} />
-            </div>
-            <p className="visual-note">
-              Visualización conceptual · No representa datos experimentales
-            </p>
-          </div>
-          <div className="hero-bottom">
-            <span>CIENCIA CON PROPÓSITO. EVIDENCIA COMO CAMINO.</span>
-            <a href="#sobre" aria-label="Descubrir el proyecto">
-              <MoveDown size={17} />
-            </a>
-            <span>DEL RESIDUO A LA POSIBILIDAD</span>
-          </div>
-        </section>
-        <div className="principles">
-          <span>UN PROYECTO EN EVOLUCIÓN</span>
-          <p>
-            <Waves size={17} /> Origen marino
-          </p>
-          <p>
-            <Leaf size={17} /> Matriz vegetal
-          </p>
-          <p>
-            <FlaskConical size={17} /> Investigación aplicada
-          </p>
-          <p>
-            <Recycle size={17} /> Visión circular
-          </p>
-        </div>
-        <section id="sobre" className="section intro">
-          <Reveal>
             <p className="eyebrow">
-              <span>01</span> SOBRE BIOCRAB
+              <span className="live-dot" /> BIOMATERIALES. NUEVAS POSIBILIDADES.
             </p>
-            <h2>
-              Los recursos cambian.
-              <br />
-              <span>La curiosidad permanece.</span>
-            </h2>
-          </Reveal>
-          <Reveal>
-            <p className="lead">
-              Una pregunta conecta nuestro trabajo: ¿podemos transformar
-              recursos biológicos en materiales con nuevas funciones?
+            <HeroTitle />
+            <p className="hero-description">
+              De exoesqueletos de cangrejo y almidón de yuca a una nueva
+              pregunta sobre el futuro de los materiales.
             </p>
-            <p>
-              BioCrab estudia la combinación de quitosano obtenido de
-              exoesqueletos de cangrejo y almidón de yuca para desarrollar
-              biopelículas. El proyecto une ciencia de materiales, conservación
-              de alimentos y una visión de aprovechamiento responsable.
-            </p>
-            <p>
-              Su potencial se construye con preguntas, ensayos y documentación.
-              Las propiedades finales dependen de cada formulación y de las
-              condiciones de uso.
-            </p>
-            <a className="text-link" href="#metodologia">
-              Del concepto al método <ArrowUpRight size={16} />
-            </a>
-          </Reveal>
-        </section>
-        <section id="ciencia" className="section science-section">
-          <ReferenceBackdrop role="science" />
-          <Heading
-            number="02"
-            label="LA CIENCIA DETRÁS"
-            title={
-              <>
-                Dos biopolímeros.
-                <br />
-                <span>Una frontera por explorar.</span>
-              </>
-            }
-            description="Comprender los componentes es el primer paso para diseñar y evaluar una nueva matriz."
-          />
-          <div className="science-cards">
-            <Reveal className="science-card ocean">
-              <div className="card-top">
-                <span>ORIGEN MARINO</span>
-                <Shell size={28} strokeWidth={1} />
-              </div>
-              <div className="polymer-art chitosan-art" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-                <span>NH₂</span>
-                <span>OH</span>
-              </div>
-              <p className="micro">DERIVADO DE LA QUITINA</p>
-              <h3>Quitosano</h3>
-              <p>
-                El quitosano se obtiene mediante la desacetilación de la
-                quitina, un polisacárido presente en exoesqueletos de
-                crustáceos. Sus grupos amino pueden protonarse en medios ácidos
-                adecuados, lo que modifica su solubilidad e interacción con
-                otros componentes.
-              </p>
-              <p>
-                Se investiga por su capacidad para formar películas y por
-                propiedades antimicrobianas observadas bajo condiciones
-                específicas. Estas no pueden asumirse para BioCrab sin ensayos
-                de la formulación.
-              </p>
-              <div className="card-bottom">
-                <span>COMPOSICIÓN · INTERACCIONES · FUNCIÓN</span>
-                <Atom size={19} />
-              </div>
-            </Reveal>
-            <Reveal className="science-card green">
-              <div className="card-top">
-                <span>ORIGEN VEGETAL</span>
-                <Leaf size={28} strokeWidth={1} />
-              </div>
-              <div className="polymer-art starch-art" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-                <i />
-                <span>OH</span>
-                <span>OH</span>
-              </div>
-              <p className="micro">AMILOSA + AMILOPECTINA</p>
-              <h3>Almidón de yuca</h3>
-              <p>
-                El almidón de yuca contiene amilosa y amilopectina, polímeros de
-                glucosa con estructuras diferentes. En presencia de agua y
-                calor, la gelatinización modifica la organización de sus
-                gránulos y permite explorar matrices filmógenas.
-              </p>
-              <p>
-                La humedad, la proporción de componentes y los plastificantes
-                pueden cambiar la flexibilidad y la resistencia. Su sensibilidad
-                al agua es una variable importante al evaluar aplicaciones
-                alimentarias.
-              </p>
-              <div className="card-bottom">
-                <span>ESTRUCTURA · GELATINIZACIÓN · MATRIZ</span>
-                <Leaf size={19} />
-              </div>
-            </Reveal>
-          </div>
-          <div className="science-equation">
-            <span>Quitosano</span>
-            <b>+</b>
-            <span>Almidón de yuca</span>
-            <ArrowRight size={23} />
-            <strong>Biopelícula en estudio</strong>
-          </div>
-          <p className="annotation">
-            Los diagramas de esta sección son esquemáticos, no estructuras
-            químicas exactas ni caracterizaciones de las muestras.
-          </p>
-          <details className="sources">
-            <summary>Fundamento científico y lecturas de referencia</summary>
-            <ul>
-              <li>
-                <a
-                  href="https://doi.org/10.1016/j.progpolymsci.2006.06.001"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Rinaudo, M. — Chitin and chitosan: Properties and
-                  applications. Progress in Polymer Science (2006).
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://doi.org/10.1007/s11947-012-0835-4"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Jiménez et al. — Edible and biodegradable starch films: a
-                  review. Food and Bioprocess Technology (2012).
-                </a>
-              </li>
-            </ul>
-            <p>
-              Las referencias aportan contexto general; no validan los
-              resultados de BioCrab.
-            </p>
-          </details>
-        </section>
-        <section id="por-que-biocrab" className="section why-section">
-          <ReferenceBackdrop role="biomaterials" />
-          <Heading
-            number="→"
-            label="¿POR QUÉ BIOCRAB?"
-            title={
-              <>
-                Una nueva mirada.
-                <br />
-                <span>Un propósito compartido.</span>
-              </>
-            }
-            description="El valor de una propuesta científica está en las preguntas que conecta y en cómo decide responderlas."
-          />
-          <div className="why-grid">
-            {[
-              [
-                Shell,
-                "Recursos con otra historia",
-                "Explorar exoesqueletos de cangrejo como punto de partida para estudiar nuevos materiales.",
-              ],
-              [
-                Leaf,
-                "Dos orígenes que dialogan",
-                "Conectar quitosano y almidón de yuca en una formulación que exige caracterización propia.",
-              ],
-              [
-                Microscope,
-                "Evidencia antes que promesas",
-                "Hacer visibles los métodos, las preguntas abiertas y los límites de lo que todavía no se ha medido.",
-              ],
-            ].map(([Icon, title, text]) => {
-              const I = Icon as typeof Shell;
-              return (
-                <Reveal className="glass why-card" key={String(title)}>
-                  <I size={32} strokeWidth={1} />
-                  <h3>{String(title)}</h3>
-                  <p>{String(text)}</p>
-                  <span className="why-card-line" />
-                </Reveal>
-              );
-            })}
-          </div>
-          <div className="field-notes">
-            <Photo
-              name="limpieza.jpg"
-              alt="Registro de limpieza de la materia prima del proyecto"
-            />
-            <div>
-              <span className="micro">OBSERVAR · DOCUMENTAR · APRENDER</span>
-              <h3>
-                La investigación empieza
-                <br />
-                con una mirada cercana.
-              </h3>
-              <p>
-                Del registro de la materia prima a la formación de películas:
-                cada fotografía puede acompañar una etapa de la historia, sin
-                sustituir sus datos.
-              </p>
-              <a className="text-link" href="#metodologia">
-                Explorar el proceso <ArrowUpRight size={16} />
+            <div className="hero-buttons">
+              <a className="button primary" href="#del-residuo-al-biomaterial">
+                Explora la transformación <ArrowUpRight size={18} />
+              </a>
+              <a className="hero-secondary" href="#galeria">
+                Ver el trabajo real <ArrowRight size={16} />
               </a>
             </div>
-            <Photo
-              name="muestra.jpg"
-              alt="Registro de material de cangrejo en el laboratorio"
-            />
+            <div className="hero-proof">
+              <span className="proof-line" />
+              <span>
+                INVESTIGACIÓN EN DESARROLLO
+                <br />
+                <small>Evidencia antes que promesas.</small>
+              </span>
+            </div>
+          </div>
+          <div className="hero-art">
+            <DepthSurface>
+              <div className="hero-photo">
+                <Photo
+                  name="biopelicula-secando.jpg"
+                  alt="Fotografía real de una formulación de BioCrab extendida durante el secado"
+                  priority
+                />
+                <div className="image-vignette" />
+                <span className="viewfinder tl" />
+                <span className="viewfinder tr" />
+                <span className="viewfinder bl" />
+                <span className="viewfinder br" />
+                <div className="specimen-label">
+                  <span className="live-dot" />
+                  <span>
+                    FORMACIÓN DE BIOPELÍCULA
+                    <br />
+                    <small>Registro real del proyecto · Secado</small>
+                  </span>
+                  <MoveUpRight size={22} />
+                </div>
+              </div>
+            </DepthSurface>
+            <div className="floating-tag">
+              <Atom size={18} />
+              <span>
+                QUITOSANO <b>+</b> ALMIDÓN DE YUCA
+              </span>
+            </div>
+          </div>
+          <div className="hero-bottom">
+            <span>ORIGEN BIOLÓGICO. MÉTODO CIENTÍFICO.</span>
+            <a href="#sobre" aria-label="Explorar el proyecto">
+              <ArrowDown size={17} />
+            </a>
+            <span>BIOCRAB / ARCHIVO DE INVESTIGACIÓN</span>
           </div>
         </section>
-        <section id="recorrido" className="section">
-          <Heading
-            number="03"
-            label="NUESTRO RECORRIDO"
+        <div className="material-strip">
+          <span>DEL RECURSO AL MATERIAL</span>
+          <div>
+            <Shell size={17} /> Exoesqueletos
+          </div>
+          <ArrowRight size={14} />
+          <div>
+            <Atom size={17} /> Quitosano
+          </div>
+          <span className="strip-plus">+</span>
+          <div>
+            <Leaf size={17} /> Almidón de yuca
+          </div>
+          <ArrowRight size={14} />
+          <div>
+            <FlaskConical size={17} /> Biopelícula en estudio
+          </div>
+        </div>
+        <section id="sobre" className="section problem-section">
+          <Reveal className="split-editorial">
+            <figure className="editorial-figure">
+              <ParallaxFrame>
+                <Photo
+                  name="lavando-cangrejitos.jpg"
+                  alt="Preparación y limpieza del material de cangrejo bajo el agua"
+                />
+              </ParallaxFrame>
+              <Caption>
+                Preparación de materia prima. El comienzo de una nueva pregunta.
+              </Caption>
+              <span className="figure-number">01 / OBSERVAR</span>
+            </figure>
+            <div className="editorial-copy">
+              <p className="eyebrow">01 / EL PROBLEMA GLOBAL</p>
+              <h2>
+                El alimento importa.
+                <br />
+                <span>Su protección también.</span>
+              </h2>
+              <p className="lead">
+                Conservar alimentos exige materiales que respondan durante su
+                uso y una gestión responsable después.
+              </p>
+              <p>
+                BioCrab explora una conexión: aprovechar recursos biológicos
+                para investigar nuevas películas. La pregunta incluye sus
+                propiedades, su seguridad y lo que sucede al terminar su vida
+                útil.
+              </p>
+              <div className="inline-note">
+                <span className="red-dot" />
+                <p>
+                  El origen biológico de un material no demuestra, por sí solo,
+                  un menor impacto ambiental.
+                </p>
+              </div>
+              <a className="text-link" href="#investigacion">
+                Conocer la pregunta científica <ArrowUpRight size={17} />
+              </a>
+            </div>
+          </Reveal>
+        </section>
+        <section id="por-que-biocrab" className="section why-section">
+          <SectionHeading
+            label="02 / ¿POR QUÉ BIOCRAB?"
             title={
               <>
-                De la materia prima
+                La innovación empieza
                 <br />
-                <span>a una nueva posibilidad.</span>
+                con <span>otra mirada.</span>
               </>
             }
-            description="Explora el recorrido de BioCrab: de las materias primas a la investigación de biopelículas y la validación de sus propiedades."
+            description="Un recurso marino. Una matriz vegetal. Un proceso que se construye con evidencia."
           />
-          <Timeline />
+          <Stagger className="why-grid">
+            {[
+              {
+                image: "exoesqueletos-separados.jpg",
+                label: "EL RECURSO",
+                title: "Ver valor donde hay un residuo.",
+                text: "Explorar exoesqueletos de cangrejo como materia prima para estudiar biopolímeros.",
+              },
+              {
+                image: "biopelicula-secando.jpg",
+                label: "EL MATERIAL",
+                title: "Conectar dos orígenes.",
+                text: "Investigar cómo el quitosano y el almidón de yuca pueden formar una matriz.",
+              },
+              {
+                image: "peliculas-secando.jpg",
+                label: "EL MÉTODO",
+                title: "De la idea a la evidencia.",
+                text: "Documentar formulaciones y contrastar propiedades, sin anticipar conclusiones.",
+              },
+            ].map((c) => (
+              <article className="why-card" key={c.title}>
+                <Photo
+                  name={c.image}
+                  alt={`Registro del proyecto: ${c.label.toLowerCase()}`}
+                />
+                <div className="why-copy">
+                  <span className="micro">{c.label}</span>
+                  <h3>{c.title}</h3>
+                  <p>{c.text}</p>
+                  <ArrowUpRight size={20} />
+                </div>
+              </article>
+            ))}
+          </Stagger>
         </section>
         <section
           id="del-residuo-al-biomaterial"
           className="section transformation-section"
         >
-          <Heading
-            number="→"
-            label="DEL RESIDUO AL BIOMATERIAL"
+          <SectionHeading
+            label="03 / DEL RESIDUO AL BIOMATERIAL"
             title={
               <>
-                Otra vida para el recurso.
+                No es un final.
                 <br />
-                <span>Nuevas preguntas para la ciencia.</span>
+                <span>Es un punto de partida.</span>
               </>
             }
-            description="Selecciona una etapa para explorar la ruta conceptual desde la materia prima hasta una posible aplicación alimentaria."
+            description="Explora el recorrido conceptual del recurso a una posible aplicación. Cada etapa abre una pregunta que debe validarse."
           />
-          <MaterialJourney />
+          <Reveal>
+            <MaterialJourney />
+          </Reveal>
         </section>
-        <section id="investigacion" className="section research-article">
-          <ReferenceBackdrop role="research" />
-          <div className="article-header">
-            <span className="eyebrow">BIOCRAB / CUADERNO DE INVESTIGACIÓN</span>
-            <span className="status-pill">
-              Planteamiento propuesto · No revisado por pares
-            </span>
-          </div>
-          <article>
-            <header className="paper-heading">
-              <p className="micro">
-                BIOMATERIALES · CIENCIA DE ALIMENTOS · ECONOMÍA CIRCULAR
-              </p>
-              <h2>
-                Quitosano y almidón de yuca:
+        <section id="investigacion" className="section research-section">
+          <span id="ciencia" className="anchor-alias" />
+          <SectionHeading
+            label="04 / INVESTIGACIÓN CIENTÍFICA"
+            title={
+              <>
+                Una hipótesis.
                 <br />
-                <span>una matriz por investigar.</span>
-              </h2>
-              <p>
-                Marco de trabajo para orientar preguntas, documentar métodos y
-                distinguir hipótesis de conclusiones.
-              </p>
-            </header>
-            <div className="paper-layout">
-              <aside aria-label="Índice de investigación">
-                <span className="micro">EN ESTE PLANTEAMIENTO</span>
-                <a href="#problema">El problema</a>
-                <a href="#hipotesis">La hipótesis</a>
-                <a href="#objetivos">Los objetivos</a>
-                <a href="#metodo-propuesto">La metodología</a>
-              </aside>
-              <div className="paper-content">
-                <section id="problema">
-                  <p className="micro">01 / CONTEXTO</p>
-                  <h3>Problema de investigación</h3>
-                  <p>
-                    La conservación de alimentos exige materiales con
-                    propiedades específicas y una gestión responsable de su fin
-                    de vida. BioCrab plantea estudiar el aprovechamiento de
-                    exoesqueletos y almidón de yuca, sin asumir que el origen
-                    biológico garantiza menor impacto.
-                  </p>
-                </section>
-                <section id="hipotesis">
-                  <p className="micro">02 / PREGUNTA CONTRASTABLE</p>
-                  <h3>Hipótesis de trabajo propuesta</h3>
-                  <blockquote>
-                    La combinación de quitosano y almidón de yuca podría
-                    permitir la formación de películas cuyas propiedades físicas
-                    cambien con la formulación y las condiciones de preparación.
-                  </blockquote>
-                  <p>
-                    La hipótesis requiere contrastación mediante controles y
-                    ensayos. No afirma eficacia en conservación ni superioridad
-                    ambiental.
-                  </p>
-                </section>
-                <section id="objetivos">
-                  <p className="micro">03 / PROPÓSITO</p>
-                  <h3>Objetivos propuestos</h3>
-                  <ul>
-                    <li>
-                      Documentar materias primas, preparación y trazabilidad.
-                    </li>
-                    <li>
-                      Explorar la formación de películas con mezclas de los
-                      biopolímeros.
-                    </li>
-                    <li>
-                      Caracterizar propiedades físicas y su variación entre
-                      formulaciones.
-                    </li>
-                    <li>
-                      Identificar ensayos adicionales necesarios para evaluar
-                      aplicaciones alimentarias y fin de vida.
-                    </li>
-                  </ul>
-                </section>
-                <section id="metodo-propuesto">
-                  <p className="micro">04 / DISEÑO A DOCUMENTAR</p>
-                  <h3>Metodología propuesta</h3>
-                  <p>
-                    Definir formulaciones y controles, estandarizar preparación
-                    y secado, y establecer ensayos físicos con réplicas.
-                    Registrar unidades, instrumentos, condiciones e
-                    incertidumbre antes de interpretar resultados.
-                  </p>
-                  <p>
-                    La evaluación ambiental y alimentaria requiere protocolos
-                    específicos adicionales. Los parámetros concretos permanecen
-                    pendientes de validación.
-                  </p>
-                  <a className="text-link" href="#metodologia">
-                    Explorar las etapas del proceso <ArrowUpRight size={16} />
-                  </a>
-                </section>
-                <div className="paper-note">
-                  <CircleDashed size={18} />
-                  <p>
-                    Este planteamiento organiza la investigación; no constituye
-                    una publicación de resultados. Fechas, autoría, protocolos y
-                    datos se añadirán al confirmarse.
-                  </p>
-                </div>
+                <span>Muchas preguntas útiles.</span>
+              </>
+            }
+            description="Ciencia de materiales aplicada a una posibilidad concreta: películas de quitosano y almidón de yuca."
+          />
+          <div className="research-layout">
+            <figure className="research-photo">
+              <ParallaxFrame>
+                <Photo
+                  name="biopelicula-secando.jpg"
+                  alt="Detalle de la formulación extendida sobre un soporte durante el secado"
+                />
+              </ParallaxFrame>
+              <Caption>
+                Formación del material. Sus propiedades requieren medición.
+              </Caption>
+              <div className="research-stamp">
+                <Microscope size={24} />
+                <span>
+                  PLANTEAMIENTO
+                  <br />
+                  EN INVESTIGACIÓN
+                </span>
               </div>
-            </div>
-          </article>
+            </figure>
+            <Reveal className="research-copy">
+              <p className="paper-label">BIOCRAB / CUADERNO DE INVESTIGACIÓN</p>
+              <blockquote>
+                ¿Cómo cambia una película cuando conectamos una matriz vegetal
+                con un biopolímero de origen marino?
+              </blockquote>
+              <details className="research-detail" open>
+                <summary>
+                  La hipótesis propuesta <span>+</span>
+                </summary>
+                <p>
+                  La combinación de quitosano y almidón de yuca podría permitir
+                  la formación de películas cuyas propiedades físicas varíen con
+                  la formulación y las condiciones de preparación. La hipótesis
+                  no afirma eficacia alimentaria ni superioridad ambiental.
+                </p>
+              </details>
+              <details className="research-detail">
+                <summary>
+                  El fundamento científico <span>+</span>
+                </summary>
+                <p>
+                  El quitosano es un derivado de la quitina obtenido por
+                  desacetilación. Sus grupos amino influyen en su comportamiento
+                  en medios ácidos. El almidón contiene amilosa y amilopectina;
+                  su gelatinización en agua y calor permite explorar matrices
+                  filmógenas. Las interacciones y propiedades dependen de cada
+                  formulación.
+                </p>
+              </details>
+              <details className="research-detail">
+                <summary>
+                  Los objetivos del estudio <span>+</span>
+                </summary>
+                <ul>
+                  <li>
+                    Documentar procedencia y preparación de las materias primas.
+                  </li>
+                  <li>Explorar formulaciones y condiciones de formación.</li>
+                  <li>
+                    Caracterizar espesor, flexibilidad, resistencia y respuesta
+                    a humedad con controles y réplicas.
+                  </li>
+                  <li>
+                    Definir los ensayos de seguridad y fin de vida necesarios.
+                  </li>
+                </ul>
+              </details>
+              <details className="research-detail">
+                <summary>
+                  Lo que falta por validar <span>+</span>
+                </summary>
+                <p>
+                  Propiedades físicas, biodegradación bajo condiciones
+                  definidas, inocuidad, migración y potencial alergénico. Los
+                  datos se publicarán con unidades, protocolos, controles,
+                  réplicas e incertidumbre.
+                </p>
+                <span className="validation-label">
+                  <CircleDashed size={14} /> Dato en proceso de validación
+                  experimental
+                </span>
+              </details>
+              <details className="research-detail sources">
+                <summary>
+                  Lecturas de referencia <ArrowUpRight size={17} />
+                </summary>
+                <a
+                  href="https://doi.org/10.1016/j.progpolymsci.2006.06.001"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Rinaudo (2006) · Chitin and chitosan: Properties and
+                  applications.
+                </a>
+                <a
+                  href="https://doi.org/10.1007/s11947-012-0835-4"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Jiménez et al. (2012) · Edible and biodegradable starch films:
+                  a review.
+                </a>
+                <p>
+                  Contexto científico general; no valida resultados propios de
+                  BioCrab.
+                </p>
+              </details>
+            </Reveal>
+          </div>
         </section>
         <section id="metodologia" className="section method-section">
-          <Heading
-            number="04"
-            label="METODOLOGÍA CIENTÍFICA"
+          <SectionHeading
+            label="05 / METODOLOGÍA"
             title={
               <>
                 La diferencia está
                 <br />
-                <span>en el proceso.</span>
+                <span>en cómo investigamos.</span>
               </>
             }
-            description="Una ruta de investigación para transformar materiales, observar sus propiedades y construir evidencia. Selecciona una etapa."
+            description="Selecciona una etapa para conocer el método. Las fotos acompañan el relato; no certifican la composición química ni un ensayo completado."
           />
-          <Methodology />
-        </section>
-        <section id="resultados" className="section results-section">
-          <Heading
-            number="05"
-            label="RESULTADOS EXPERIMENTALES"
-            title={
-              <>
-                La evidencia
-                <br />
-                <span>marca el siguiente paso.</span>
-              </>
-            }
-            description="Un espacio preparado para publicar resultados verificables. Las fotografías documentan el recorrido y no sustituyen las mediciones."
-          />
-          <div className="results-layout">
-            <Reveal className="glass research-panel">
-              <div className="panel-header">
-                <span className="micro">ESTADO DE INVESTIGACIÓN</span>
-                <span className="status-pill">Validación pendiente</span>
-              </div>
-              <div
-                className="empty-chart"
-                role="img"
-                aria-label="Gráfico sin datos: pendiente de validación experimental"
-              >
-                <div className="chart-grid" />
-                <div className="chart-empty">
-                  <CircleDashed size={39} strokeWidth={1} />
-                  <strong>
-                    Primero medir.
-                    <br />
-                    Después, comparar.
-                  </strong>
-                  <span>Sin series experimentales publicadas</span>
-                </div>
-                <span className="axis-label">ESPACIO PARA DATOS VALIDADOS</span>
-              </div>
-              <p className="annotation">
-                La visualización se habilitará al contar con mediciones,
-                unidades, controles, número de réplicas e incertidumbre. No se
-                muestran curvas simuladas.
-              </p>
-            </Reveal>
-            <div className="result-list">
-              {[
-                "Resistencia y flexibilidad",
-                "Espesor y uniformidad",
-                "Comportamiento frente a humedad",
-                "Biodegradabilidad en condiciones definidas",
-              ].map((t) => (
-                <article key={t}>
-                  <CircleDashed size={20} />
-                  <div>
-                    <h3>{t}</h3>
-                    <p>{pending}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-          <Indicators />
-        </section>
-        <section id="comparacion" className="section">
-          <Heading
-            number="06"
-            label="MATERIALES EN PERSPECTIVA"
-            title={
-              <>
-                Comparar con criterio.
-                <br />
-                <span>Elegir con evidencia.</span>
-              </>
-            }
-            description="Una comparación cualitativa. El desempeño depende del polímero, la formulación y las condiciones de uso; no se declara superioridad experimental."
-          />
-          <MaterialComparator />
-          <div
-            className="comparison-scroll"
-            tabIndex={0}
-            role="region"
-            aria-label="Tabla comparativa, desplazable horizontalmente"
-          >
-            <table>
-              <caption>
-                Plásticos convencionales y biopelículas BioCrab: contexto y
-                preguntas abiertas
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">Dimensión</th>
-                  <th scope="col">Plástico convencional</th>
-                  <th scope="col">
-                    <Shell size={17} /> BioCrab / en investigación
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  [
-                    "Origen",
-                    "Muchos plásticos de uso común se producen a partir de recursos fósiles; existen excepciones.",
-                    "Quitosano de exoesqueletos y almidón de yuca como materias primas propuestas.",
-                  ],
-                  [
-                    "Comportamiento mecánico",
-                    "Amplia variedad de propiedades según el polímero y el proceso.",
-                    "Resistencia y flexibilidad pendientes de caracterización.",
-                  ],
-                  [
-                    "Humedad y barrera",
-                    "Las propiedades de barrera varían entre materiales y condiciones.",
-                    "Evaluación necesaria de absorción de agua y permeabilidad.",
-                  ],
-                  [
-                    "Fin de vida",
-                    "Depende del tipo de plástico y de la infraestructura de gestión disponible.",
-                    "Biodegradabilidad pendiente de ensayo bajo condiciones definidas.",
-                  ],
-                  [
-                    "Contacto alimentario",
-                    "Requiere cumplimiento normativo para cada aplicación.",
-                    "Inocuidad, migración y potencial alergénico pendientes de evaluación.",
-                  ],
-                  [
-                    "Impacto ambiental",
-                    "Depende del ciclo de vida, el uso y la gestión de residuos.",
-                    "La ventaja ambiental requiere una evaluación de ciclo de vida; no se cuantifica aún.",
-                  ],
-                ].map(([a, b, c]) => (
-                  <tr key={a}>
-                    <th scope="row">{a}</th>
-                    <td>{b}</td>
-                    <td>{c}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-        <section id="innovacion" className="section innovation">
-          <ReferenceBackdrop role="innovation" />
-          <div className="innovation-copy">
-            <p className="eyebrow">
-              <span>07</span> INNOVACIÓN CON PROPÓSITO
-            </p>
-            <h2>
-              Lo valioso está
-              <br />
-              en cómo <span>conectamos.</span>
-            </h2>
-            <p className="lead">
-              Unir un recurso marino con una matriz vegetal y una pregunta de
-              conservación alimentaria.
-            </p>
-            <p>
-              La propuesta de BioCrab integra el aprovechamiento de
-              exoesqueletos, el estudio de mezclas de biopolímeros y el
-              aprendizaje del trabajo de laboratorio. Su identidad está en esa
-              combinación y en la voluntad de documentar el recorrido.
-            </p>
-            <p>
-              No se afirma exclusividad tecnológica, novedad patentable ni
-              superioridad frente a otras alternativas biodegradables. Estas
-              comparaciones requieren revisión de antecedentes y evidencia
-              experimental.
-            </p>
-            <a href="#resultados" className="text-link">
-              Conoce qué falta validar <ArrowUpRight size={16} />
-            </a>
-          </div>
-          <Reveal className="innovation-diagram">
-            <div className="innovation-ring" />
-            <div className="innovation-core">
-              <Shell size={35} />
-              <strong>BioCrab</strong>
-              <small>CONEXIONES CON PROPÓSITO</small>
-            </div>
-            <span className="connection c-one">
-              <Waves size={20} /> Recurso marino
-            </span>
-            <span className="connection c-two">
-              <Leaf size={20} /> Matriz vegetal
-            </span>
-            <span className="connection c-three">
-              <Microscope size={20} /> Método científico
-            </span>
-            <span className="connection c-four">
-              <Recycle size={20} /> Visión circular
-            </span>
+          <Reveal>
+            <Methodology />
           </Reveal>
         </section>
-        <section id="impacto" className="section impact-section">
-          <ReferenceBackdrop role="ocean" />
-          <Heading
-            number="08"
-            label="IMPACTO AMBIENTAL"
+        <section id="recorrido" className="section timeline-section">
+          <SectionHeading
+            label="EL RECORRIDO / DE PREGUNTAS A EVIDENCIA"
             title={
               <>
-                La naturaleza no termina
+                La ciencia avanza.
                 <br />
-                <span>donde empieza el material.</span>
+                <span>Una pregunta a la vez.</span>
               </>
             }
-            description="Buscamos explorar un ciclo más responsable. Son objetivos de investigación: el beneficio ambiental real debe medirse."
           />
-          <div className="impact-grid">
-            {[
-              [
-                Recycle,
-                "Reducción potencial de residuos plásticos",
-                "Investigar alternativas para aplicaciones específicas. El reemplazo efectivo exige comprobar funcionalidad, seguridad y condiciones de fin de vida.",
-              ],
-              [
-                Shell,
-                "Aprovechamiento de residuos biológicos",
-                "Explorar el valor de subproductos de crustáceos, con trazabilidad y gestión responsable de las etapas de transformación.",
-              ],
-              [
-                Leaf,
-                "Economía circular",
-                "Pensar desde el origen del recurso hasta su uso y disposición. Evaluar también agua, energía y reactivos necesarios.",
-              ],
-            ].map(([Icon, t, p]) => {
-              const I = Icon as typeof Leaf;
-              return (
-                <Reveal className="impact-card" key={String(t)}>
-                  <I size={30} strokeWidth={1} />
-                  <h3>{String(t)}</h3>
-                  <p>{String(p)}</p>
-                </Reveal>
-              );
-            })}
-          </div>
-          <div className="ods">
-            <div>
-              <span className="eyebrow">UN MARCO PARA CONTRIBUIR</span>
-              <h3>Objetivos de Desarrollo Sostenible</h3>
-              <p>
-                Alineación temática propuesta, sin certificación ni impacto
-                cuantificado.
-              </p>
-            </div>
-            <a
-              href="https://www.un.org/sustainabledevelopment/es/sustainable-consumption-production/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>ODS 12</span>
-              <strong>Producción y consumo responsables</strong>
-              <ArrowUpRight size={17} />
-            </a>
-            <a
-              href="https://www.un.org/sustainabledevelopment/es/oceans/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>ODS 14</span>
-              <strong>Vida submarina</strong>
-              <ArrowUpRight size={17} />
-            </a>
-          </div>
-        </section>
-        <section id="impacto-potencial" className="section potential-impact">
-          <ReferenceBackdrop role="impact" />
-          <div>
-            <p className="eyebrow">IMPACTO POTENCIAL / HORIZONTES ABIERTOS</p>
-            <h2>
-              Del material al contexto.
-              <br />
-              <span>Del potencial a la evidencia.</span>
-            </h2>
-          </div>
-          <div>
-            <p className="lead">
-              Conservación de frutas y verduras, empaques e industria
-              alimentaria: posibles destinos para una investigación que aún debe
-              validar sus condiciones de uso.
-            </p>
-            <p>
-              El aporte potencial está en explorar recursos biológicos y diseñar
-              materiales para necesidades concretas. La reducción de residuos o
-              de impactos solo podrá afirmarse al comparar función, consumo de
-              recursos y fin de vida con métodos apropiados.
-            </p>
-            <a className="text-link" href="#aplicaciones-futuras">
-              Explorar aplicaciones futuras <ArrowUpRight size={16} />
-            </a>
-          </div>
+          <Reveal>
+            <Timeline />
+          </Reveal>
         </section>
         <section id="galeria" className="section editorial-gallery">
-          <Heading
-            number="09"
-            label="ARCHIVO DEL PROYECTO"
+          <SectionHeading
+            label="06 / GALERÍA EXPERIMENTAL"
             title={
               <>
-                La ciencia también
+                Esto es real.
                 <br />
-                <span>se cuenta en imágenes.</span>
+                <span>Así empieza el trabajo.</span>
               </>
             }
-            description="Un recorrido visual por los materiales y el trabajo de laboratorio. Cada registro se presenta con contexto, sin atribuir resultados no medidos."
+            description="Seis registros originales del proyecto. Acércate a los materiales, explora cada imagen y conoce su contexto."
           />
           <Gallery />
         </section>
-        <section id="gomitas" className="section application">
-          <Photo
-            name="gomitas-fruta.jpg"
-            alt="Registro del proyecto: matriz con frutas en un recipiente"
+        <section id="comparacion" className="section compare-section">
+          <SectionHeading
+            label="07 / MATERIALES EN PERSPECTIVA"
+            title={
+              <>
+                Comparar mejor.
+                <br />
+                <span>No prometer más.</span>
+              </>
+            }
+            description="Explora BioCrab y el plástico convencional por dimensión. Una comparación cualitativa sin puntuaciones ni resultados simulados."
           />
-          <div>
-            <p className="eyebrow">
-              <span>10</span> HORIZONTES DE APLICACIÓN
-            </p>
-            <h2>
-              De la matriz
-              <br />
-              <span>al alimento.</span>
-            </h2>
-            <p>
-              La conservación de alimentos es el horizonte de BioCrab. Antes de
-              cualquier aplicación, será necesario estudiar barrera, interacción
-              con el alimento, inocuidad y condiciones de uso.
-            </p>
-            <h3>Gomitas de fruta</h3>
-            <p>
-              Las matrices de fruta permanecen como una línea conceptual para
-              explorar textura y conservación. No se presentan como un producto
-              validado, disponible para consumo o venta.
-            </p>
-            <p className="annotation">
-              Registro visual de una matriz con frutas. La fotografía no
-              demuestra inocuidad, comestibilidad ni eficacia de conservación.
-            </p>
-          </div>
+          <Reveal>
+            <MaterialComparator />
+          </Reveal>
         </section>
-        <section
-          id="aplicaciones-futuras"
-          className="section future-applications"
-        >
-          <ReferenceBackdrop role="packaging" />
-          <Heading
-            number="→"
-            label="APLICACIONES FUTURAS"
+        <section id="aplicaciones-futuras" className="section future-section">
+          <SectionHeading
+            label="08 / APLICACIONES FUTURAS"
             title={
               <>
                 El potencial abre puertas.
                 <br />
-                <span>La ciencia decide cuáles.</span>
+                <span>La evidencia decide cuáles.</span>
               </>
             }
-            description="Posibles líneas de exploración. No son usos aprobados, resultados demostrados ni productos disponibles."
+            description="Posibles líneas de trabajo, sujetas a validación específica. No son aplicaciones aprobadas ni productos disponibles."
           />
-          <div className="future-grid">
+          <Stagger className="future-grid">
             {[
-              [
-                Leaf,
-                "Conservación de frutas",
-                "Explorar recubrimientos o películas para estudiar cambios de calidad durante el almacenamiento.",
-                "Evaluar intercambio de gases, humedad, compatibilidad e inocuidad.",
-              ],
-              [
-                Leaf,
-                "Conservación de verduras",
-                "Investigar la interacción de la biopelícula con matrices vegetales y condiciones de conservación.",
-                "Caracterizar barrera, estabilidad y respuesta de cada alimento.",
-              ],
-              [
-                Recycle,
-                "Empaques biodegradables",
-                "Estudiar materiales para aplicaciones de empaque que requieran propiedades específicas.",
-                "Comprobar resistencia, vida útil y biodegradación en condiciones definidas.",
-              ],
-              [
-                FlaskConical,
-                "Industria alimentaria",
-                "Explorar la viabilidad de procesos y colaboraciones para aplicaciones alimentarias concretas.",
-                "Validar escalabilidad, migración, alérgenos y requisitos normativos.",
-              ],
-            ].map(([Icon, title, text, validation], i) => {
-              const I = Icon as typeof Leaf;
-              return (
-                <Reveal className="glass future-card" key={String(title)}>
-                  <div className="future-card-top">
-                    <I size={29} strokeWidth={1} />
-                    <span>EXPLORACIÓN / 0{i + 1}</span>
-                  </div>
-                  <h3>{String(title)}</h3>
-                  <p>{String(text)}</p>
-                  <div className="validation-note">
-                    <CircleDashed size={17} />
-                    <span>{String(validation)}</span>
-                  </div>
-                  <span className="status-pill">Potencial por investigar</span>
-                </Reveal>
-              );
-            })}
-          </div>
-          <p className="annotation">
-            Toda aplicación exige ensayos específicos. No se han establecido
-            porcentajes de mejora, tiempos de conservación ni impactos
-            cuantificados para BioCrab.
-          </p>
+              {
+                title: "Conservación de frutas",
+                image: "gomitas-fruta.jpg",
+                text: "Explorar la interacción de matrices de origen biológico con alimentos y su comportamiento durante el almacenamiento.",
+                note: "Registro de matriz con fruta; no es un ensayo de conservación.",
+              },
+              {
+                title: "Conservación de verduras",
+                image: "biopelicula-secando.jpg",
+                text: "Estudiar barrera, intercambio de humedad y compatibilidad con diferentes matrices vegetales.",
+                note: "Foto de biopelícula; aplicación en verduras por investigar.",
+              },
+              {
+                title: "Empaques biodegradables",
+                image: "peliculas-secando.jpg",
+                text: "Evaluar resistencia, estabilidad y biodegradación bajo condiciones definidas para posibles usos de empaque.",
+                note: "Películas en formación; desempeño de empaque por validar.",
+              },
+              {
+                title: "Industria alimentaria",
+                image: "exoesqueletos-separados.jpg",
+                text: "Investigar viabilidad de procesos, inocuidad y requisitos de una aplicación alimentaria concreta.",
+                note: "Materia prima del proyecto; no representa un proceso industrial.",
+              },
+            ].map((c, i) => (
+              <article className="future-card" key={c.title}>
+                <Photo name={c.image} alt={c.note} />
+                <div>
+                  <span className="micro">EXPLORACIÓN / 0{i + 1}</span>
+                  <h3>{c.title}</h3>
+                  <p>{c.text}</p>
+                  <span className="annotation">{c.note}</span>
+                  <ArrowUpRight size={19} />
+                </div>
+              </article>
+            ))}
+          </Stagger>
         </section>
-        <section id="proximos-pasos" className="section next-steps">
-          <Heading
-            number="11"
-            label="PRÓXIMOS PASOS"
+        <section id="impacto-potencial" className="section impact-section">
+          <span id="impacto" className="anchor-alias" />
+          <div className="impact-layout">
+            <Reveal className="impact-copy">
+              <p className="eyebrow">09 / IMPACTO POTENCIAL</p>
+              <h2>
+                Pensar en el material.
+                <br />
+                <span>Pensar más allá.</span>
+              </h2>
+              <p className="lead">
+                El recurso, la energía, el agua y el destino final también
+                forman parte de la misma pregunta.
+              </p>
+              <div className="impact-row">
+                <Recycle size={23} />
+                <div>
+                  <h3>Aprovechar recursos biológicos</h3>
+                  <p>
+                    Explorar una nueva función para subproductos de crustáceos,
+                    con trazabilidad y gestión responsable.
+                  </p>
+                </div>
+              </div>
+              <div className="impact-row">
+                <Leaf size={23} />
+                <div>
+                  <h3>Evaluar el ciclo completo</h3>
+                  <p>
+                    La reducción potencial de residuos o impactos debe
+                    contrastarse considerando proceso, uso y fin de vida.
+                  </p>
+                </div>
+              </div>
+              <p className="annotation">
+                Alineación temática con ODS 12 y 14. Sin certificación,
+                reducción cuantificada ni resultados ambientales atribuidos.
+              </p>
+              <a className="text-link" href="#investigacion">
+                Primero, construir evidencia <ArrowUpRight size={16} />
+              </a>
+            </Reveal>
+            <figure className="impact-photo">
+              <ParallaxFrame>
+                <Photo
+                  name="cangrejitos-secos.jpg"
+                  alt="Registro de material de cangrejo acondicionado para su procesamiento"
+                />
+              </ParallaxFrame>
+              <div className="circular-overlay">
+                <span>RECURSO</span>
+                <Recycle size={48} strokeWidth={0.8} />
+                <span>MATERIAL · USO · FIN DE VIDA</span>
+              </div>
+              <Caption>
+                Una visión circular que requiere evaluar el proceso completo.
+              </Caption>
+            </figure>
+          </div>
+        </section>
+        <section id="gomitas" className="gummy-section">
+          <div className="gummy-visual">
+            <ParallaxFrame>
+              <Photo
+                name="gomitas-fruta.jpg"
+                alt="Fotografía real de la matriz con fruta elaborada en el proyecto"
+              />
+            </ParallaxFrame>
+            <span className="gummy-label">
+              OTRA LÍNEA. LA MISMA CURIOSIDAD.
+            </span>
+          </div>
+          <Reveal className="gummy-copy">
+            <p className="eyebrow">10 / LÍNEA DE GOMITAS DE FRUTA</p>
+            <h2>
+              La ciencia también
+              <br />
+              <span>explora la textura.</span>
+            </h2>
+            <p className="lead">
+              Una matriz con fruta abre nuevas preguntas sobre formulación,
+              estructura y conservación.
+            </p>
+            <p>
+              Este registro forma parte de la exploración del proyecto. La
+              apariencia de una formulación no demuestra su composición,
+              inocuidad o eficacia.
+            </p>
+            <span className="validation-label">
+              <CircleDashed size={15} /> Aplicación en investigación
+            </span>
+            <a className="text-link" href="#contacto">
+              Compartamos una pregunta <ArrowUpRight size={17} />
+            </a>
+          </Reveal>
+        </section>
+        <section id="equipo" className="section project-section">
+          <SectionHeading
+            label="11 / EQUIPO Y PROYECTO"
             title={
               <>
-                El futuro no se promete.
+                Las ideas crecen
                 <br />
-                <span>Se investiga.</span>
+                <span>cuando se conectan.</span>
               </>
             }
-            description="Una hoja de ruta abierta para pasar del potencial a conclusiones respaldadas por evidencia."
+            description="Un punto de encuentro entre biomateriales, ciencia de alimentos y sostenibilidad."
           />
-          <div className="next-grid">
-            {[
-              [
-                "Documentar",
-                "Registrar formulaciones, procedencia de materias primas y condiciones de preparación.",
-              ],
-              [
-                "Caracterizar",
-                "Definir ensayos físicos y químicos con controles y réplicas.",
-              ],
-              [
-                "Evaluar",
-                "Estudiar inocuidad, comportamiento ambiental y viabilidad para aplicaciones concretas.",
-              ],
-              [
-                "Compartir",
-                "Publicar métodos, resultados y límites; buscar revisión y colaboraciones.",
-              ],
-            ].map(([t, p], i) => (
-              <Reveal key={t}>
-                <span className="step-index">0{i + 1}</span>
-                <h3>{t}</h3>
-                <p>{p}</p>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-        <section id="equipo" className="section team-section">
-          <div>
-            <p className="eyebrow">
-              <span>12</span> EQUIPO
-            </p>
-            <h2>
-              Las preguntas crecen
-              <br />
-              <span>cuando se comparten.</span>
-            </h2>
-          </div>
-          <div>
-            <p className="lead">
-              Un punto de encuentro entre biomateriales, alimentos y
-              sostenibilidad.
-            </p>
-            <p>
-              Los nombres, perfiles y contribuciones del equipo se incorporarán
-              cuando estén confirmados. BioCrab está abierto al diálogo con
-              estudiantes, investigadores y organizaciones interesadas en estas
-              preguntas.
-            </p>
-            <a href="#contacto" className="text-link">
-              Conversemos <ArrowUpRight size={16} />
-            </a>
-          </div>
-        </section>
-        <section id="contacto" className="section contact-section">
-          <div>
-            <p className="eyebrow">
-              <span>13</span> CONTACTO
-            </p>
-            <h2>
-              Una conversación.
-              <br />
-              <span>Nuevas posibilidades.</span>
-            </h2>
-            <p>
-              Investigación, intercambio de ideas y colaboraciones: el próximo
-              capítulo puede empezar contigo.
-            </p>
-            <div className="contact-mark">
-              <Atom size={50} strokeWidth={0.7} />
-              <span>
-                BIOCRAB
+          <div className="project-layout">
+            <figure className="project-figure">
+              <Photo
+                name="peliculas-secando.jpg"
+                alt="Registro real de las formulaciones extendidas en el espacio de trabajo del proyecto"
+              />
+              <Caption>
+                El laboratorio como espacio para observar, documentar y
+                aprender.
+              </Caption>
+            </figure>
+            <Reveal className="project-copy">
+              <Shell size={40} strokeWidth={1} />
+              <h3>
+                BioCrab.
                 <br />
-                <small>CIENCIA QUE CONECTA</small>
-              </span>
-            </div>
+                Investigación con propósito.
+              </h3>
+              <p>
+                El proyecto está abierto al diálogo con estudiantes,
+                investigadores y organizaciones interesadas en nuevas preguntas
+                sobre los materiales.
+              </p>
+              <p className="annotation">
+                Los nombres y contribuciones del equipo se incorporarán cuando
+                estén confirmados. No se atribuyen instituciones ni
+                reconocimientos.
+              </p>
+              <div className="project-tags">
+                <span>Biomateriales</span>
+                <span>Alimentos</span>
+                <span>Economía circular</span>
+              </div>
+            </Reveal>
           </div>
-          <Contact />
+          <div id="contacto" className="contact-layout">
+            <div>
+              <p className="eyebrow">LA PRÓXIMA CONVERSACIÓN</p>
+              <h2>
+                ¿Y si lo
+                <br />
+                <span>exploramos juntos?</span>
+              </h2>
+              <p>
+                Investigación, colaboración o una pregunta compartida. El
+                siguiente capítulo puede empezar aquí.
+              </p>
+            </div>
+            <Contact />
+          </div>
         </section>
       </main>
       <footer className="site-footer">
         <div className="footer-masthead">
-          <span>BIOCRAB</span>
+          <Brand hero />
           <p>
-            BIOMATERIALES & CONSERVACIÓN
+            MATERIALES PARA NUEVAS PREGUNTAS.
             <br />
-            INVESTIGACIÓN CON PROPÓSITO
+            CIENCIA PARA CONSTRUIR RESPUESTAS.
           </p>
-          <a href="#contacto" className="footer-invitation">
-            Construyamos la próxima pregunta <ArrowUpRight size={22} />
+          <a href="#inicio" aria-label="Volver al inicio">
+            <ArrowUpRight size={29} />
           </a>
         </div>
-        <div className="footer-upper">
-          <div>
-            <Brand />
-            <p>
-              Del océano. De la tierra.
-              <br />
-              Para un futuro que investigamos juntos.
-            </p>
-          </div>
-          <div className="footer-links">
-            <span>EXPLORAR</span>
-            {navigation.map(([n, id]) => (
-              <a key={id} href={`#${id}`}>
-                {n}
-              </a>
-            ))}
-          </div>
-          <div className="footer-links">
-            <span>EL SIGUIENTE CAPÍTULO</span>
-            <a href="#por-que-biocrab">¿Por qué BioCrab?</a>
-            <a href="#investigacion">Cuaderno de investigación</a>
-            <a href="#del-residuo-al-biomaterial">Del residuo al biomaterial</a>
-            <a href="#innovacion">Innovación</a>
-            <a href="#aplicaciones-futuras">Aplicaciones futuras</a>
-            <a href="#galeria">Archivo del proyecto</a>
-            <a href="#proximos-pasos">Próximos pasos</a>
-            <a href="#contacto">
-              Contacto <ArrowUpRight size={13} />
-            </a>
+        <div className="footer-grid">
+          <div className="footer-statement">
+            <span className="live-dot" />
             <p>
               Proyecto en investigación.
               <br />
-              Sin resultados atribuidos antes de validarse.
+              <span>Evidencia antes que promesas.</span>
             </p>
+            <span className="micro">QUITOSANO + ALMIDÓN DE YUCA</span>
           </div>
+          <nav aria-label="Explorar el proyecto">
+            <span className="micro">EXPLORAR</span>
+            {footerLinks.slice(0, 6).map(([n, id]) => (
+              <a href={`#${id}`} key={id}>
+                {n}
+              </a>
+            ))}
+          </nav>
+          <nav aria-label="Futuro y colaboración">
+            <span className="micro">CONECTAR</span>
+            {footerLinks.slice(6).map(([n, id]) => (
+              <a href={`#${id}`} key={id}>
+                {n}
+              </a>
+            ))}
+            <a href="#contacto">
+              Contacto <ArrowUpRight size={13} />
+            </a>
+          </nav>
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} BioCrab</span>
-          <span>Biomateriales · Ciencia de alimentos · Sostenibilidad</span>
-          <a href="#inicio">Volver al inicio ↑</a>
+          <span>
+            Fotografías originales del proyecto. Sin resultados atribuidos antes
+            de validarse.
+          </span>
+          <span>Hecho para seguir investigando.</span>
         </div>
       </footer>
     </Experience>

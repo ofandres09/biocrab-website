@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="108" viewBox="0 0 430 108" fill="none">
+  <title>BioCrab</title>
+  <desc>Marca tipográfica BioCrab con un símbolo original de exoesqueleto y hoja.</desc>
+  <rect width="430" height="108" rx="14" fill="#050505"/>
+  <g transform="translate(16 14)">
+    <path d="M9 41C9 22 22 9 40 9C59 9 72 22 72 41L49 68H32L9 41Z" fill="#0066FF" fill-opacity=".13" stroke="#00FF99" stroke-width="2.8" stroke-linejoin="round"/>
+    <path d="M41 15C56 23 63 38 58 49C54 58 47 64 40 68C30 54 26 44 29 34C31 25 36 19 41 15Z" fill="#00FF99"/>
+    <path d="M41 22V61M32 34L41 43L52 33M32 47L41 55L52 45" stroke="#050505" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13 35L24 42M67 35L59 42M19 51L29 53M61 52L54 55" stroke="#0066FF" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="109" y="65" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="53" font-weight="700" letter-spacing="-2.6">BioCrab</text>
+  <circle cx="321" cy="60" r="4.4" fill="#00FF99"/>
+  <text x="112" y="86" fill="#B6C6D2" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="500" letter-spacing="3.15">BIOMATERIALES</text>
+  <path d="M355 28V80" stroke="#FFFFFF" stroke-opacity=".14"/>
+  <path d="M375 59L390 44M379 44H390V55" stroke="#0066FF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

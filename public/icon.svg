@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#071a29"/><path d="M14 39c-5-17 7-28 18-28s23 11 18 28L35 52h-6Z" fill="none" stroke="#63e7b8" stroke-width="3"/><path d="m23 22 9 28 9-28M16 31l16 19 16-19M32 12v38" fill="none" stroke="#58bcf0" stroke-width="2"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <title>BioCrab</title>
+  <rect width="64" height="64" rx="15" fill="#050505"/>
+  <path d="M9 32C9 18 18.5 9 32 9C45.5 9 55 18 55 32L38 53H26L9 32Z" fill="#0066FF" fill-opacity=".16" stroke="#00FF99" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M32 14C43 20 48 31 44 39C41 46 36 50 32 53C25 43 22 35 24 28C26 21 29 17 32 14Z" fill="#00FF99"/>
+  <path d="M32 20V47M26 29L32 36L40 28M26 39L32 44L39 38" stroke="#050505" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13 28L20 33M51 28L46 33M18 41L24 43M46 41L42 44" stroke="#0066FF" stroke-width="2.3" stroke-linecap="round"/>
+</svg>

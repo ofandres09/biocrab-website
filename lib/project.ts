@@ -61,7 +61,7 @@ export const navigation = [
   ["Ciencia", "ciencia"],
   ["Nuestro recorrido", "recorrido"],
   ["Metodología", "metodologia"],
-  ["Resultados", "resultados"],
+  ["Investigación", "investigacion"],
   ["Impacto", "impacto"],
 ] as const;
 export const photos = [

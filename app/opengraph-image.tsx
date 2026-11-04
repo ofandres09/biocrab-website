@@ -11,12 +11,12 @@ export default function Image() {
         width: "100%",
         height: "100%",
         padding: "70px",
-        background: "linear-gradient(130deg,#071a29,#0d3e53)",
-        color: "#f0f8ff",
+        background: "linear-gradient(130deg,#050505,#001b42)",
+        color: "#ffffff",
         justifyContent: "space-between",
       }}
     >
-      <div style={{ display: "flex", fontSize: 32, color: "#61e5bc" }}>
+      <div style={{ display: "flex", fontSize: 32, color: "#00ff99" }}>
         BioCrab / BIOMATERIALES
       </div>
       <div
@@ -28,10 +28,10 @@ export default function Image() {
           lineHeight: 1.1,
         }}
       >
-        <span>Del océano. De la tierra.</span>
-        <span style={{ color: "#61e5bc" }}>Para el futuro.</span>
+        <span>Del residuo.</span>
+        <span style={{ color: "#00ff99" }}>Al futuro.</span>
       </div>
-      <div style={{ display: "flex", fontSize: 24, color: "#bad0da" }}>
+      <div style={{ display: "flex", fontSize: 24, color: "#a7acb1" }}>
         Quitosano + almidón de yuca · Un proyecto en investigación
       </div>
     </div>,
