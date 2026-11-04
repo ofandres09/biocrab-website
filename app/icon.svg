@@ -5,4 +5,5 @@
   <path d="M32 14C43 20 48 31 44 39C41 46 36 50 32 53C25 43 22 35 24 28C26 21 29 17 32 14Z" fill="#00FF99"/>
   <path d="M32 20V47M26 29L32 36L40 28M26 39L32 44L39 38" stroke="#050505" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M13 28L20 33M51 28L46 33M18 41L24 43M46 41L42 44" stroke="#0066FF" stroke-width="2.3" stroke-linecap="round"/>
+  <circle cx="52" cy="12" r="4" fill="#FF3B30"/>
 </svg>

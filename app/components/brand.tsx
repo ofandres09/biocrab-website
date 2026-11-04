@@ -12,7 +12,7 @@ export function Brand({
     <Image
       src="/biocrab-wordmark.svg"
       alt="BioCrab"
-      width={430}
+      width={340}
       height={108}
       sizes={hero ? "(max-width: 760px) 82vw, 430px" : "176px"}
       priority={hero}
@@ -23,7 +23,7 @@ export function Brand({
     display: "inline-block",
     width: hero ? "min(82vw, 430px)" : "176px",
     maxWidth: "100%",
-    flexShrink: 0,
+    flexShrink: 1,
     borderRadius: "10px",
     verticalAlign: "middle",
   } as const;

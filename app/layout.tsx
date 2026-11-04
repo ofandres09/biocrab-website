@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "BioCrab — Del océano. De la tierra. Para el futuro.",
+        alt: "BioCrab — Del residuo a biopelícula.",
       },
     ],
   },
@@ -45,7 +45,7 @@ export const viewport: Viewport = {
   colorScheme: "dark light",
 };
 const themeScript =
-  "try{document.documentElement.dataset.theme=localStorage.getItem('biocrab-theme')||'dark'}catch{document.documentElement.dataset.theme='dark'}";
+  "try{document.documentElement.dataset.theme=localStorage.getItem('biocrab-theme')||'dark';if(localStorage.getItem('biocrab-motion')==='paused')document.documentElement.dataset.motion='paused'}catch{document.documentElement.dataset.theme='dark'}";
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {

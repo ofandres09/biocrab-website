@@ -4,6 +4,7 @@ import {
   ArrowUpRight,
   ArrowRight,
   ArrowDown,
+  Waves,
   Atom,
   Leaf,
   Recycle,
@@ -98,9 +99,21 @@ export default function Home() {
             </p>
             <HeroTitle />
             <p className="hero-description">
-              De exoesqueletos de cangrejo y almidón de yuca a una nueva
-              pregunta sobre el futuro de los materiales.
+              BioCrab investiga biopelículas de quitosano de exoesqueletos de
+              cangrejo y almidón de yuca para explorar nuevas formas de
+              conservar alimentos.
             </p>
+            <div className="hero-badges">
+              <span className="marine-badge">
+                <Waves size={14} /> Origen marino
+              </span>
+              <span className="plant-badge">
+                <Leaf size={14} /> Matriz vegetal
+              </span>
+              <span className="validation-badge">
+                <CircleDashed size={14} /> En investigación
+              </span>
+            </div>
             <div className="hero-buttons">
               <a className="button primary" href="#del-residuo-al-biomaterial">
                 Explora la transformación <ArrowUpRight size={18} />
@@ -451,7 +464,7 @@ export default function Home() {
                 <span>Así empieza el trabajo.</span>
               </>
             }
-            description="Seis registros originales del proyecto. Acércate a los materiales, explora cada imagen y conoce su contexto."
+            description="Seis fotografías originales del proyecto, visibles completas. La ampliación es opcional; cada imagen incluye su contexto científico."
           />
           <Gallery />
         </section>

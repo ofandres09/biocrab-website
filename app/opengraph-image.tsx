@@ -29,7 +29,7 @@ export default function Image() {
         }}
       >
         <span>Del residuo.</span>
-        <span style={{ color: "#00ff99" }}>Al futuro.</span>
+        <span style={{ color: "#00ff99" }}>A biopelícula.</span>
       </div>
       <div style={{ display: "flex", fontSize: 24, color: "#a7acb1" }}>
         Quitosano + almidón de yuca · Un proyecto en investigación

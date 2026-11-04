@@ -25,7 +25,7 @@ El hero muestra la marca BioCrab y una fotografía original de la biopelícula. 
 
 La identidad oscura utiliza #050505, #0066FF, #00FF99, #FF3B30 y #FFFFFF. El tema claro adapta el contraste. Se inicia en modo oscuro, respeta la elección guardada y permite cambiar de tema.
 
-Las animaciones incluyen reveal de texto, entrada escalonada de tarjetas, iluminación ambiental, partículas, flotación, profundidad de cursor, parallax y progresión de lectura. El parallax se desactiva en móvil y con movimiento reducido. Todo el contenido narrativo permanece disponible sin JavaScript; las interacciones requieren JavaScript.
+Las animaciones incluyen reveal de texto después de entrar en pantalla, entrada escalonada de tarjetas, iluminación ambiental, partículas, flotación, profundidad de cursor y progresión de lectura. El parallax mueve la iluminación, mientras las fotos permanecen completas. Un control de pausa persistente detiene los efectos continuos. El parallax se desactiva en móvil y con movimiento reducido. Todo el contenido narrativo permanece disponible sin JavaScript; las interacciones requieren JavaScript.
 
 ## Archivos principales
 
@@ -45,7 +45,7 @@ Las animaciones incluyen reveal de texto, entrada escalonada de tarjetas, ilumin
 
 Se conservó la decisión del responsable de usar la marca tipográfica BioCrab. La nueva marca vectorial es una representación propia de ese nombre; el archivo del ZIP con identidad anterior no se muestra ni se altera.
 
-Las fotografías originales aparecen desde el hero, acompañan todas las secciones principales y se amplían en la galería con pies descriptivos. Los recortes priorizan el material; el visor ampliado conserva el encuadre completo. La carga es adaptable y diferida, con prioridad para la foto del hero.
+Las fotografías originales aparecen desde el hero, acompañan todas las secciones principales y se amplían en la galería con pies descriptivos. Las fotografías se muestran completas, sin recorte ni zoom sobre sus píxeles; la ampliación es opcional. La carga es adaptable y diferida, con prioridad para la foto del hero.
 
 Los archivos de referencias externas de Pinterest no están disponibles en el checkout ni en el ZIP recibido. La ambientación se construye localmente con SVG y CSS. No se afirman como imágenes integradas. Su biblioteca de nombres en `lib/media.ts` se conserva para futuras incorporaciones.
 
@@ -62,3 +62,5 @@ El comparador usa una fotografía real de BioCrab y una ilustración conceptual 
 El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal oficial de contacto y los perfiles del equipo están pendientes de confirmación.
 
 Los metadatos incluyen idioma, título, descripción, Open Graph y tarjeta social. Configurar `metadataBase`, canonical y sitemap al confirmar un dominio oficial de despliegue.
+
+La integración de referencias externas y la comprobación del despliegue siguen abiertas hasta disponer de sus fuentes: [estado y requisitos](docs/reference-assets-pending.md).

@@ -9,6 +9,7 @@ import {
 } from "react";
 import Image from "next/image";
 import { Brand } from "./brand";
+import { CinematicReveal, AnimationControl } from "./cinematic";
 import { resolvePhoto } from "@/lib/media";
 import { ParallaxFrame, ScrollScene } from "./visuals";
 import {
@@ -59,19 +60,7 @@ export function Reveal({
   children: ReactNode;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
-  return (
-    <motion.div
-      className={className}
-      initial={false}
-      whileInView={reduce ? undefined : { y: [30, 0], opacity: [0.6, 1] }}
-      viewport={{ once: true, amount: 0.15 }}
-      variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-      transition={{ duration: 0.65 }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <CinematicReveal className={className}>{children}</CinematicReveal>;
 }
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -111,6 +100,7 @@ export function Header() {
         ))}
       </nav>
       <div className="header-actions">
+        <AnimationControl />
         <button
           className="icon-button"
           onClick={theme}

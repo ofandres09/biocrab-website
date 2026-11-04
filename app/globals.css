@@ -156,11 +156,13 @@ summary:focus-visible,
   color: var(--text);
 }
 .header-actions {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 22px;
 }
-.icon-button {
+.icon-button,
+.animation-control {
   display: inline-grid;
   place-items: center;
   border: 1px solid var(--line);
@@ -169,8 +171,22 @@ summary:focus-visible,
   width: 40px;
   height: 40px;
 }
-.icon-button:hover {
+.icon-button:hover,
+.animation-control:hover {
   background: var(--surface-2);
+}
+.animation-control[aria-pressed="true"] {
+  color: var(--green);
+  border-color: var(--green);
+}
+.animation-control span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 .small-cta {
   font-size: 11px;
@@ -260,8 +276,8 @@ summary:focus-visible,
   box-shadow: 0 0 20px #00ff9990;
 }
 .hero-title {
-  font-size: clamp(68px, 7.4vw, 116px);
-  letter-spacing: -0.075em;
+  font-size: clamp(62px, 7vw, 108px);
+  letter-spacing: -0.055em;
   line-height: 1.01;
   margin-bottom: 30px;
 }
@@ -276,6 +292,7 @@ summary:focus-visible,
 }
 .text-mask:last-child {
   color: #00ff99;
+  font-size: 0.91em;
 }
 .hero-description {
   font-size: 16px;
@@ -283,6 +300,47 @@ summary:focus-visible,
   color: #b6babf;
   line-height: 1.65;
   margin-bottom: 28px;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0 0 24px;
+}
+.hero-badges > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid currentColor;
+  border-radius: 30px;
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(12px);
+}
+.hero-badges .marine-badge {
+  color: #8cb7ff;
+  background: #0066ff26;
+  border-color: #0066ff8a;
+}
+.hero-badges .plant-badge {
+  color: #00ff99;
+  background: #00ff9912;
+  border-color: #00ff9952;
+}
+.hero-badges .validation-badge {
+  color: #ffaca6;
+  background: #ff3b301a;
+  border-color: #ff3b3080;
+}
+.hero-badges > span::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
 }
 .hero-buttons {
   display: flex;
@@ -347,6 +405,9 @@ summary:focus-visible,
 .hero-art {
   position: relative;
   min-width: 0;
+  width: 100%;
+  max-width: 480px;
+  justify-self: center;
 }
 .hero-art .depth-stage {
   perspective: 1200px;
@@ -363,11 +424,15 @@ summary:focus-visible,
   border-radius: inherit;
 }
 .hero-photo {
-  height: 560px;
+  height: 620px;
   max-height: 70svh;
   min-height: 420px;
   position: relative;
-  border-radius: 150px 12px 12px 12px;
+  border-radius: 12px;
+  padding: 24px 24px 92px;
+  background:
+    radial-gradient(ellipse at 0 0, #0066ff25, transparent 65%),
+    linear-gradient(145deg, #101820, #050505 65%);
   overflow: hidden;
   box-shadow:
     0 0 120px #0066ff14,
@@ -378,40 +443,28 @@ summary:focus-visible,
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 240px;
-  background: var(--surface-2);
+  min-height: 0;
+  background:
+    radial-gradient(ellipse at 15% 0, #0066ff12, transparent 60%),
+    radial-gradient(ellipse at 100% 100%, #00ff990a, transparent 60%),
+    var(--surface);
   overflow: hidden;
 }
 .project-photo img {
-  object-fit: cover;
-  transition: scale 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-[data-photo="muestra.jpg"] img,
-[data-photo="exoesqueletos-separados.jpg"] img {
-  object-position: 50% 78%;
-}
-[data-photo="exoesqueletos.jpg"] img,
-[data-photo="cangrejitos-secos.jpg"] img {
-  object-position: 50% 74%;
-}
-[data-photo="secado.jpg"] img,
-[data-photo="peliculas-secando.jpg"] img {
-  object-position: 50% 65%;
-}
-[data-photo="gomitas-fruta.jpg"] img {
-  object-position: 50% 62%;
-}
-.lightbox .project-photo img {
+  object-fit: contain;
   object-position: center;
+  transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-photo .project-photo {
+  background: transparent;
 }
 .hero-photo .project-photo img {
-  object-position: 50% 57%;
   animation: hero-photo-in 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .image-vignette {
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #000c, transparent 40%, #0000000a);
+  background: none;
   pointer-events: none;
 }
 .viewfinder {
@@ -448,7 +501,7 @@ summary:focus-visible,
   position: absolute;
   left: 40px;
   right: 40px;
-  bottom: 40px;
+  bottom: 22px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -471,8 +524,8 @@ summary:focus-visible,
   align-items: center;
   gap: 13px;
   position: absolute;
-  top: 20px;
-  left: -35px;
+  top: -20px;
+  left: 20px;
   padding: 15px 20px;
   border: 1px solid #ffffff30;
   background: #050505d9;
@@ -654,11 +707,9 @@ summary:focus-visible,
   position: relative;
 }
 .editorial-figure > .parallax-frame {
-  height: 580px;
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 5px 5px 0 0;
-}
-.editorial-figure .project-photo img {
-  object-position: 48% 35%;
 }
 .photo-caption {
   border-top: 1px solid var(--line);
@@ -676,9 +727,9 @@ summary:focus-visible,
   margin-top: 6px;
 }
 .figure-number {
-  position: absolute;
-  top: 25px;
-  left: 25px;
+  position: relative;
+  display: inline-block;
+  margin-top: 8px;
   color: #fff;
   font-size: 8px;
   letter-spacing: 1.5px;
@@ -885,8 +936,8 @@ summary:focus-visible,
   isolation: isolate;
 }
 .parallax-inner {
-  height: calc(100% + 36px);
-  margin-top: -18px;
+  height: 100%;
+  margin: 0;
   position: relative;
 }
 .parallax-inner > .project-photo {
@@ -912,16 +963,14 @@ summary:focus-visible,
   min-width: 0;
 }
 .research-photo > .parallax-frame {
-  height: 690px;
+  height: auto;
+  aspect-ratio: 3 / 4;
   border-radius: 5px;
 }
-.research-photo .project-photo img {
-  object-position: 50% 65%;
-}
 .research-stamp {
-  position: absolute;
-  bottom: 80px;
-  left: 30px;
+  position: relative;
+  width: fit-content;
+  margin-top: 10px;
   padding: 16px 20px;
   background: #050505c9;
   backdrop-filter: blur(18px);
@@ -1225,38 +1274,41 @@ summary:focus-visible,
   min-height: 330px;
 }
 .photo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 26px;
+  columns: 2;
+  column-gap: 26px;
 }
 .gallery-card {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 26px;
   text-align: left;
   overflow: hidden;
   padding: 0;
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 8px;
   background: var(--surface);
-  transition: border-color 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s;
 }
 .gallery-card:hover {
   border-color: var(--green);
-}
-.gallery-card:hover .project-photo img {
-  scale: 1.025;
-}
-.gallery-card:first-child,
-.gallery-card:nth-child(4) {
-  grid-column: span 2;
+  box-shadow: 0 12px 42px #00ff990f;
+  transform: translateY(-4px);
 }
 .gallery-card > .parallax-frame {
-  height: 400px;
+  height: auto;
+  aspect-ratio: 1;
   flex: 0 0 auto;
 }
-.gallery-card:first-child > .parallax-frame,
-.gallery-card:nth-child(4) > .parallax-frame {
-  height: 520px;
+.gallery-card:first-child > .parallax-frame {
+  aspect-ratio: 3 / 4;
+}
+.gallery-card:last-child > .parallax-frame {
+  aspect-ratio: 9 / 16;
 }
 .gallery-card > span {
   position: relative;
@@ -1389,8 +1441,10 @@ summary:focus-visible,
 }
 .material-portrait > .project-photo {
   position: absolute;
-  inset: 0;
-  min-height: 100%;
+  inset: 16px 16px 72px;
+  width: auto;
+  height: auto;
+  min-height: 0;
 }
 .material-portrait.bio .portrait-sheet,
 .material-portrait.bio .portrait-orbit {
@@ -1400,7 +1454,7 @@ summary:focus-visible,
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, #050505aa, transparent 30%);
+  background: none;
 }
 .material-portrait > span {
   position: absolute;
@@ -1576,18 +1630,18 @@ summary:focus-visible,
   min-width: 0;
 }
 .impact-photo > .parallax-frame {
-  height: 680px;
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 5px;
 }
 .circular-overlay {
-  position: absolute;
-  top: 28px;
-  right: 28px;
+  position: relative;
+  margin: 24px auto;
   background: #050505c9;
   border: 1px solid #ffffff30;
-  border-radius: 50%;
-  width: 180px;
-  height: 180px;
+  border-radius: 8px;
+  width: 100%;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1614,10 +1668,13 @@ summary:focus-visible,
 .gummy-visual {
   position: relative;
   min-height: 650px;
+  background: linear-gradient(135deg, #0066ff12, transparent 55%), var(--bg);
 }
 .gummy-visual > .parallax-frame {
   position: absolute;
-  inset: 0;
+  inset: 24px 24px 92px;
+  height: auto;
+  width: auto;
 }
 .gummy-label {
   position: absolute;
@@ -1903,11 +1960,11 @@ summary:focus-visible,
 }
 @keyframes hero-photo-in {
   from {
-    scale: 1.09;
+    opacity: 0;
     filter: brightness(0.7);
   }
   to {
-    scale: 1;
+    opacity: 1;
     filter: brightness(1);
   }
 }
@@ -1985,9 +2042,6 @@ summary:focus-visible,
   }
   .process-rail button {
     padding: 18px;
-  }
-  .research-photo > .parallax-frame {
-    height: 650px;
   }
   .gummy-copy {
     padding: 65px 9%;
@@ -2073,9 +2127,6 @@ summary:focus-visible,
   .split-editorial {
     gap: 6%;
   }
-  .editorial-figure > .parallax-frame {
-    height: 540px;
-  }
   .editorial-copy h2 {
     font-size: 40px;
   }
@@ -2091,9 +2142,6 @@ summary:focus-visible,
   }
   .research-layout {
     gap: 5%;
-  }
-  .research-photo > .parallax-frame {
-    height: 650px;
   }
   .research-copy blockquote {
     font-size: 24px;
@@ -2125,9 +2173,6 @@ summary:focus-visible,
   .method-detail > div:last-child {
     padding: 28px;
   }
-  .impact-photo > .parallax-frame {
-    height: 650px;
-  }
   .gummy-copy h2 {
     font-size: 38px;
   }
@@ -2157,13 +2202,13 @@ summary:focus-visible,
     max-width: 143px;
   }
   .small-cta {
-    font-size: 9px;
-    gap: 12px;
+    display: none;
   }
   .header-actions {
     gap: 12px;
   }
-  .icon-button {
+  .icon-button,
+  .animation-control {
     width: 34px;
     height: 34px;
   }
@@ -2180,7 +2225,7 @@ summary:focus-visible,
     max-width: 260px;
   }
   .hero-title {
-    font-size: clamp(65px, 14vw, 90px);
+    font-size: clamp(48px, 10.9vw, 70px);
     margin-bottom: 22px;
   }
   .hero-description {
@@ -2215,13 +2260,11 @@ summary:focus-visible,
     height: 360px;
     min-height: 0;
     max-height: none;
-    border-radius: 90px 6px 6px 6px;
-  }
-  .hero-photo .project-photo img {
-    object-position: 50% 62%;
+    border-radius: 12px;
+    padding: 15px 15px 78px;
   }
   .floating-tag {
-    top: 15px;
+    top: -16px;
     left: 15px;
     font-size: 6px;
     padding: 10px 12px;
@@ -2290,9 +2333,6 @@ summary:focus-visible,
   }
   .editorial-figure {
     width: 100%;
-  }
-  .editorial-figure > .parallax-frame {
-    height: 420px;
   }
   .editorial-copy h2 {
     font-size: 40px;
@@ -2370,9 +2410,6 @@ summary:focus-visible,
   .research-layout {
     grid-template-columns: 1fr;
     gap: 30px;
-  }
-  .research-photo > .parallax-frame {
-    height: 440px;
   }
   .research-copy blockquote {
     font-size: 29px;
@@ -2458,17 +2495,10 @@ summary:focus-visible,
     font-size: 7px;
   }
   .photo-grid {
-    grid-template-columns: 1fr;
-    gap: 22px;
+    columns: 1;
   }
-  .gallery-card:first-child,
-  .gallery-card:nth-child(4) {
-    grid-column: auto;
-  }
-  .gallery-card > .parallax-frame,
-  .gallery-card:first-child > .parallax-frame,
-  .gallery-card:nth-child(4) > .parallax-frame {
-    height: 360px;
+  .gallery-card {
+    margin-bottom: 22px;
   }
   .gallery-card > span {
     padding: 22px;
@@ -2523,9 +2553,6 @@ summary:focus-visible,
   .material-portrait {
     min-height: 330px;
   }
-  .material-portrait > .project-photo {
-    height: 100%;
-  }
   .comparator-copy {
     padding: 25px;
     border-left: 0;
@@ -2577,14 +2604,9 @@ summary:focus-visible,
   .impact-copy h2 {
     font-size: 40px;
   }
-  .impact-photo > .parallax-frame {
-    height: 450px;
-  }
   .circular-overlay {
-    height: 150px;
-    width: 150px;
-    top: 22px;
-    right: 22px;
+    width: 100%;
+    margin: 20px 0;
   }
   .circular-overlay > svg {
     width: 40px;
@@ -2598,9 +2620,6 @@ summary:focus-visible,
   }
   .gummy-visual {
     min-height: 450px;
-  }
-  .gummy-visual .project-photo img {
-    object-position: 45% 50%;
   }
   .gummy-copy {
     padding: 55px 5%;
@@ -2721,7 +2740,7 @@ summary:focus-visible,
     max-width: 145px;
   }
   .hero-title {
-    font-size: 62px;
+    font-size: 48px;
   }
   .hero-brand .biocrab-brand {
     max-width: 240px;
@@ -2747,7 +2766,15 @@ summary:focus-visible,
     max-width: 235px;
   }
 }
+[data-motion="paused"] *,
+[data-motion="paused"] *::before,
+[data-motion="paused"] *::after {
+  animation-play-state: paused !important;
+}
 @media (prefers-reduced-motion: reduce) {
+  .animation-control {
+    display: none;
+  }
   html {
     scroll-behavior: auto;
   }

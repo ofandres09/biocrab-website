@@ -1,5 +1,6 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useMotionPause } from "./cinematic";
 import {
   motion,
   useReducedMotion,
@@ -7,14 +8,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import {
-  ArrowRight,
-  CircleDashed,
-  Leaf,
-  Microscope,
-  Recycle,
-  Waves,
-} from "lucide-react";
+import { CircleDashed, Microscope, Recycle, Waves } from "lucide-react";
 export function ReadingProgress() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
@@ -27,12 +21,44 @@ export function ReadingProgress() {
   );
 }
 export function OceanAtmosphere() {
+  const reduced = useReducedMotion();
+  const paused = useMotionPause();
+  const still = reduced || paused;
+  const animationPlayState = still ? "paused" : "running";
   return (
     <div className="ocean-atmosphere" aria-hidden="true">
-      <div className="ocean-caustic caustic-one" />
-      <div className="ocean-caustic caustic-two" />
-      <div className="ocean-beam" />
-      <div className="ocean-contour" />
+      <div
+        className="ocean-caustic caustic-one"
+        style={{ animationPlayState }}
+      />
+      <div
+        className="ocean-caustic caustic-two"
+        style={{ animationPlayState }}
+      />
+      <motion.div
+        className="ocean-beam"
+        initial={false}
+        animate={
+          still
+            ? { x: 0, opacity: 0.5 }
+            : { x: [-30, 40, -30], opacity: [0.3, 0.85, 0.3] }
+        }
+        transition={{
+          duration: still ? 0 : 14,
+          ease: "easeInOut",
+          repeat: still ? 0 : Infinity,
+        }}
+      />
+      <motion.div
+        className="ocean-contour"
+        initial={false}
+        animate={still ? { scale: 1 } : { scale: [0.98, 1.045, 0.98] }}
+        transition={{
+          duration: still ? 0 : 18,
+          ease: "easeInOut",
+          repeat: still ? 0 : Infinity,
+        }}
+      />
       {Array.from({ length: 22 }, (_, i) => (
         <span
           className="ocean-particle"
@@ -40,6 +66,7 @@ export function OceanAtmosphere() {
           style={{
             left: `${(i * 37 + 11) % 100}%`,
             top: `${(i * 23 + 7) % 100}%`,
+            animationPlayState,
             animationDelay: `-${i * 0.8}s`,
             animationDuration: `${12 + (i % 7)}s`,
           }}
@@ -134,16 +161,36 @@ export function ParallaxFrame({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
+  const paused = useMotionPause();
+  const [desktop, setDesktop] = useState(false);
+  useEffect(() => {
+    const query = matchMedia("(min-width: 900px) and (pointer: fine)");
+    const update = () => setDesktop(query.matches);
+    update();
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [18, -18]);
+  const lightY = useTransform(scrollYProgress, [0, 1], [28, -28]);
   return (
     <div ref={ref} className={`parallax-frame ${className}`}>
-      <motion.div className="parallax-inner" style={{ y: reduced ? 0 : y }}>
-        {children}
-      </motion.div>
+      <div className="parallax-inner">{children}</div>
+      <motion.div
+        className="parallax-light"
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: "-10% 0",
+          pointerEvents: "none",
+          y: desktop && !reduced && !paused ? lightY : 0,
+          background:
+            "radial-gradient(ellipse at 95% 0%, rgba(0,255,153,.09), transparent 45%), radial-gradient(ellipse at 0% 95%, rgba(0,102,255,.09), transparent 45%)",
+          mixBlendMode: "screen",
+        }}
+      />
     </div>
   );
 }
@@ -156,6 +203,7 @@ export function ScrollScene({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
+  const paused = useMotionPause();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start 85%", "end 35%"],
@@ -163,7 +211,9 @@ export function ScrollScene({
   return (
     <div ref={ref} className={`scroll-scene ${className}`}>
       <div className="scene-progress" aria-hidden="true">
-        <motion.span style={{ scaleY: reduced ? 1 : scrollYProgress }} />
+        <motion.span
+          style={{ scaleY: reduced || paused ? 1 : scrollYProgress }}
+        />
       </div>
       {children}
       <span className="scene-progress-note">
