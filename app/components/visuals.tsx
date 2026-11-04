@@ -1,13 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useMotionPause } from "./cinematic";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { useMotionPause, useReducedMotionPreference } from "./cinematic";
+import { DigitalNetwork } from "./digital-network";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { CircleDashed, Microscope, Recycle, Waves } from "lucide-react";
 export function ReadingProgress() {
   const { scrollYProgress } = useScroll();
@@ -21,12 +16,13 @@ export function ReadingProgress() {
   );
 }
 export function OceanAtmosphere() {
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionPreference();
   const paused = useMotionPause();
   const still = reduced || paused;
   const animationPlayState = still ? "paused" : "running";
   return (
     <div className="ocean-atmosphere" aria-hidden="true">
+      <DigitalNetwork />
       <div
         className="ocean-caustic caustic-one"
         style={{ animationPlayState }}
@@ -96,7 +92,7 @@ const comparison = [
   },
 ];
 export function VisualComparison() {
-  const reduce = useReducedMotion();
+  const reduce = useReducedMotionPreference();
   return (
     <div className="visual-comparison">
       <div className="comparison-intro">
@@ -160,7 +156,7 @@ export function ParallaxFrame({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionPreference();
   const paused = useMotionPause();
   const [desktop, setDesktop] = useState(false);
   useEffect(() => {
@@ -202,7 +198,7 @@ export function ScrollScene({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionPreference();
   const paused = useMotionPause();
   const { scrollYProgress } = useScroll({
     target: ref,

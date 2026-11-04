@@ -1,14 +1,31 @@
 "use client";
 
-import { Children, useEffect, useState, type ReactNode } from "react";
 import {
-  motion,
-  stagger,
-  useAnimate,
-  useInView,
-  useReducedMotion,
-} from "framer-motion";
+  Children,
+  useEffect,
+  useState,
+  useSyncExternalStore,
+  type ReactNode,
+} from "react";
+import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { Pause, Play } from "lucide-react";
+
+function subscribeReducedMotion(listener: () => void) {
+  const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+  preference.addEventListener("change", listener);
+  return () => preference.removeEventListener("change", listener);
+}
+function reducedMotionSnapshot() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+/** Stable server markup and live updates when the OS preference changes. */
+export function useReducedMotionPreference() {
+  return useSyncExternalStore(
+    subscribeReducedMotion,
+    reducedMotionSnapshot,
+    () => false,
+  );
+}
 
 const cinematicEase = [0.16, 1, 0.3, 1] as const;
 const motionEvent = "biocrab:motionchange";
@@ -72,7 +89,7 @@ export function AnimationControl() {
 }
 
 export function HeroTitle() {
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionPreference();
   const paused = useMotionPause();
   const [scope, animate] = useAnimate<HTMLHeadingElement>();
   const inView = useInView(scope, { once: true, amount: 0.5 });
@@ -130,7 +147,7 @@ export function CinematicReveal({
   className?: string;
   delay?: number;
 }) {
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionPreference();
   const paused = useMotionPause();
   const still = reduced || paused;
   return (
@@ -159,7 +176,7 @@ export function Stagger({
   children: ReactNode;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionPreference();
   const paused = useMotionPause();
   const still = reduced || paused;
   return (

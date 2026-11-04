@@ -64,3 +64,9 @@ El formulario valida y copia el mensaje en un contexto seguro; no envía ni alma
 Los metadatos incluyen idioma, título, descripción, Open Graph y tarjeta social. Configurar `metadataBase`, canonical y sitemap al confirmar un dominio oficial de despliegue.
 
 La integración de referencias externas y la comprobación del despliegue siguen abiertas hasta disponer de sus fuentes: [estado y requisitos](docs/reference-assets-pending.md).
+
+## Red digital y contadores
+
+El hero incorpora una red SVG determinista con trazado animado y halos; es una ilustración decorativa propia. No sustituye la incorporación pendiente de las imágenes externas exactas.
+
+Los contadores describen hechos del contenido: dos biopolímeros propuestos, `methodology.length` etapas y `photos.length` fotografías. Se animan al entrar en pantalla, respetan pausa y movimiento reducido, y ofrecen una lectura estática accesible. No representan mediciones de biodegradabilidad, eficacia ni impacto ambiental.

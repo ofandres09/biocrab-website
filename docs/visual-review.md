@@ -43,3 +43,13 @@ No se inventan porcentajes, resultados experimentales, reconocimientos ni afilia
 ## Estado abierto de las referencias
 
 La incorporación de Pinterest y la verificación de la URL pública siguen pendientes de sus fuentes. Ver [recursos externos pendientes](reference-assets-pending.md). El código subido a GitHub no acredita por sí solo un despliegue externo.
+
+## Red digital y contadores documentales
+
+Se verificó la red SVG decorativa de 38 enlaces y la animación de los valores documentados (2 biopolímeros propuestos, 5 etapas y 6 fotografías), esperando a completar la animación iniciada por el observador de pantalla. También se comprobaron pausa, valores finales accesibles, cambio en vivo de movimiento reducido y anchos 320/390/768/1440 sin desbordamiento ni errores JavaScript. Compilación y TypeScript completados.
+
+La preferencia del sistema utiliza una suscripción reactiva que mantiene estable el HTML del servidor. Los contadores presentan datos de estructura del proyecto, no resultados científicos.
+
+- [Contadores](previews/counters.png)
+
+La red SVG es un recurso gráfico propio. La integración de las imágenes exactas reenviadas dentro del chat sigue bloqueada por la ausencia de archivos descargables; el ZIP anterior contiene únicamente las fotos del proyecto y el archivo de identidad anterior.

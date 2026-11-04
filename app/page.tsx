@@ -16,6 +16,7 @@ import {
   CircleDashed,
 } from "lucide-react";
 import { Brand } from "./components/brand";
+import { EvidenceCounters } from "./components/evidence-counters";
 import {
   Contact,
   Experience,
@@ -188,6 +189,7 @@ export default function Home() {
             <FlaskConical size={17} /> Biopelícula en estudio
           </div>
         </div>
+        <EvidenceCounters />
         <section id="sobre" className="section problem-section">
           <Reveal className="split-editorial">
             <figure className="editorial-figure">

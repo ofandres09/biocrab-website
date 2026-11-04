@@ -6,9 +6,8 @@ import {
   useMotionTemplate,
   useMotionValue,
   useSpring,
-  useReducedMotion,
 } from "framer-motion";
-import { useMotionPause } from "./cinematic";
+import { useMotionPause, useReducedMotionPreference } from "./cinematic";
 
 export function DepthSurface({
   children,
@@ -17,7 +16,7 @@ export function DepthSurface({
   children: ReactNode;
   className?: string;
 }) {
-  const reduced = useReducedMotion();
+  const reduced = useReducedMotionPreference();
   const paused = useMotionPause();
   const [enabled, setEnabled] = useState(false);
   useEffect(() => {
