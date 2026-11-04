@@ -100,11 +100,13 @@ export function HeroTitle() {
       scope.current.querySelectorAll<HTMLElement>(".hero-word"),
     );
     const showFinalState = () => {
-      for (const line of lines) {
-        line.style.transform = "none";
-        line.style.opacity = "1";
-        line.style.filter = "none";
-      }
+      // Update Motion's values as well as the DOM. A direct style assignment can
+      // be overwritten by the deferred render of an interrupted native effect.
+      animate(
+        lines,
+        { y: 0, opacity: 1, filter: "blur(0px)" },
+        { duration: 0 },
+      );
     };
     if (reduced || paused) {
       showFinalState();
@@ -121,7 +123,7 @@ export function HeroTitle() {
       },
     );
     return () => {
-      controls.stop();
+      controls.cancel();
       showFinalState();
     };
   }, [animate, inView, paused, reduced, scope]);

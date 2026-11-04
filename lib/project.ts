@@ -102,3 +102,37 @@ export const photos = [
       "Formulaciones extendidas en bandejas. La composición y los resultados requieren validación.",
   },
 ];
+
+/** Supplied concept artwork is kept distinct from photographs of the project. */
+export const referencePhotos = [
+  {
+    src: "pinterest-adn.png",
+    title: "ADN · Universo biotecnológico",
+    caption:
+      "Ilustración conceptual de ADN aportada para el diseño; no representa la estructura de los biopolímeros estudiados.",
+  },
+  {
+    src: "pinterest-conexiones.png",
+    title: "Una red de nuevas conexiones",
+    caption:
+      "Arte abstracto de conexiones digitales. Elemento de identidad visual, sin datos experimentales.",
+  },
+  {
+    src: "pinterest-dashboard.png",
+    title: "Referencia de interfaz tecnológica",
+    caption:
+      "Composición A-SPACE recibida. Sus cifras y textos no son resultados de BioCrab ni implican afiliación.",
+  },
+  {
+    src: "pinterest-laboratorio.png",
+    title: "Laboratorio y globo digital",
+    caption:
+      "Imagen conceptual de laboratorio proporcionada para el diseño. No corresponde a las instalaciones del equipo.",
+  },
+  {
+    src: "pinterest-huella.png",
+    title: "Biotecnología y visión de futuro",
+    caption:
+      "Imagen conceptual de hoja y contacto digital. Ambientación de sostenibilidad, sin mediciones de impacto atribuidas.",
+  },
+];

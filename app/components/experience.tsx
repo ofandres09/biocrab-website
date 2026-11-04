@@ -47,6 +47,27 @@ export function Experience({
   children: ReactNode;
   imageNames: string[];
 }) {
+  useEffect(() => {
+    // The initial anchor can arrive before streamed page content is inserted.
+    // Align it once hydration is complete, without replaying a scroll animation.
+    const alignInitialAnchor = () => {
+      if (!window.location.hash) return;
+      let id: string;
+      try {
+        id = decodeURIComponent(window.location.hash.slice(1));
+      } catch {
+        return;
+      }
+      const target = document.getElementById(id);
+      if (!target) return;
+      if (target instanceof HTMLDetailsElement) target.open = true;
+      target.scrollIntoView({ block: "start", behavior: "instant" });
+    };
+    let frame = requestAnimationFrame(() => {
+      frame = requestAnimationFrame(alignInitialAnchor);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, []);
   return (
     <ImageAssets.Provider value={imageNames}>
       <MotionConfig reducedMotion="user">{children}</MotionConfig>
@@ -132,6 +153,8 @@ export function Header() {
             ["¿Por qué BioCrab?", "por-que-biocrab"],
             ["Del residuo al biomaterial", "del-residuo-al-biomaterial"],
             ["Investigación científica", "investigacion"],
+            ["Innovación y tecnología", "innovacion"],
+            ["Resultados e impacto", "resultados"],
             ["Metodología", "metodologia"],
             ["Recorrido", "recorrido"],
             ["Galería experimental", "galeria"],
@@ -338,17 +361,23 @@ export function Methodology() {
     </div>
   );
 }
-export function Gallery() {
+export function Gallery({
+  items = photos,
+  reference = false,
+}: {
+  items?: typeof photos;
+  reference?: boolean;
+}) {
   const [active, setActive] = useState<number | null>(null);
   useEffect(() => {
     if (active === null) return;
     function key(e: KeyboardEvent) {
       if (e.key === "Escape") setActive(null);
       if (e.key === "ArrowRight")
-        setActive((v) => (v === null ? null : (v + 1) % photos.length));
+        setActive((v) => (v === null ? null : (v + 1) % items.length));
       if (e.key === "ArrowLeft")
         setActive((v) =>
-          v === null ? null : (v - 1 + photos.length) % photos.length,
+          v === null ? null : (v - 1 + items.length) % items.length,
         );
     }
     const before = document.activeElement as HTMLElement;
@@ -361,11 +390,11 @@ export function Gallery() {
       window.removeEventListener("keydown", key);
       before?.focus();
     };
-  }, [active]);
+  }, [active, items]);
   return (
     <>
       <div className="photo-grid">
-        {photos.map((p, i) => (
+        {items.map((p, i) => (
           <button
             className="gallery-card"
             key={p.src}
@@ -376,7 +405,9 @@ export function Gallery() {
               <Photo name={p.src} alt={p.title} />
             </ParallaxFrame>
             <span>
-              <small>ARCHIVO / 0{i + 1}</small>
+              <small>
+                {reference ? "IMAGEN CONCEPTUAL" : "ARCHIVO"} / 0{i + 1}
+              </small>
               <strong>{p.title}</strong>
               <span className="gallery-caption">{p.caption}</span>
               <ArrowUpRight size={20} />
@@ -389,7 +420,7 @@ export function Gallery() {
           className="lightbox"
           role="dialog"
           aria-modal="true"
-          aria-label={photos[active].title}
+          aria-label={items[active].title}
           onClick={() => setActive(null)}
           onKeyDown={(e) => {
             if (e.key === "Tab") {
@@ -418,30 +449,30 @@ export function Gallery() {
               <X />
             </button>
             <Photo
-              key={photos[active].src}
-              name={photos[active].src}
-              alt={photos[active].title}
+              key={items[active].src}
+              name={items[active].src}
+              alt={items[active].title}
             />
-            <h3>{photos[active].title}</h3>
-            <p>{photos[active].caption}</p>
+            <h3>{items[active].title}</h3>
+            <p>{items[active].caption}</p>
             <div className="lightbox-controls">
               <button
                 id="gallery-prev"
                 className="icon-button"
                 onClick={() =>
-                  setActive((active - 1 + photos.length) % photos.length)
+                  setActive((active - 1 + items.length) % items.length)
                 }
                 aria-label="Imagen anterior"
               >
                 <ChevronLeft />
               </button>
               <span>
-                {active + 1} / {photos.length}
+                {active + 1} / {items.length}
               </span>
               <button
                 id="gallery-next"
                 className="icon-button"
-                onClick={() => setActive((active + 1) % photos.length)}
+                onClick={() => setActive((active + 1) % items.length)}
                 aria-label="Imagen siguiente"
               >
                 <ChevronRight />

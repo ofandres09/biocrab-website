@@ -1,6 +1,5 @@
 import Image from "next/image";
-
-/** Original BioCrab wordmark. Never substitutes an image carrying another identity. */
+/** Emblem supplied by the project, with its name adapted to BIOCRAB as requested. */
 export function Brand({
   hero = false,
   link = true,
@@ -8,41 +7,30 @@ export function Brand({
   hero?: boolean;
   link?: boolean;
 }) {
-  const image = (
-    <Image
-      src="/biocrab-wordmark.svg"
-      alt="BioCrab"
-      width={340}
-      height={108}
-      sizes={hero ? "(max-width: 760px) 82vw, 430px" : "176px"}
-      priority={hero}
-      style={{ display: "block", width: "100%", height: "auto" }}
-    />
+  const content = (
+    <>
+      <Image
+        src="/images/biocrab-logo-adaptado.png"
+        alt="Logo BioCrab: gota azul, hoja verde y motivo rojo"
+        width={1254}
+        height={1254}
+        className="official-brand-image"
+        sizes={hero ? "(max-width:650px) 150px, 200px" : "72px"}
+        priority={hero}
+      />
+      {!hero && (
+        <span className="brand-wordmark">
+          BioCrab<small>BIOMATERIALES</small>
+        </span>
+      )}
+    </>
   );
-  const style = {
-    display: "inline-block",
-    width: hero ? "min(82vw, 430px)" : "176px",
-    maxWidth: "100%",
-    flexShrink: 1,
-    borderRadius: "10px",
-    verticalAlign: "middle",
-  } as const;
-
+  const className = `biocrab-brand${hero ? " biocrab-brand-hero" : ""}`;
   return link ? (
-    <a
-      className={`biocrab-brand${hero ? " biocrab-brand-hero" : ""}`}
-      href="#inicio"
-      aria-label="BioCrab, inicio"
-      style={style}
-    >
-      {image}
+    <a href="#inicio" aria-label="BioCrab, inicio" className={className}>
+      {content}
     </a>
   ) : (
-    <span
-      className={`biocrab-brand${hero ? " biocrab-brand-hero" : ""}`}
-      style={style}
-    >
-      {image}
-    </span>
+    <span className={className}>{content}</span>
   );
 }

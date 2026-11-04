@@ -16,6 +16,7 @@ import {
   CircleDashed,
 } from "lucide-react";
 import { Brand } from "./components/brand";
+import { referencePhotos } from "@/lib/project";
 import { EvidenceCounters } from "./components/evidence-counters";
 import {
   Contact,
@@ -43,6 +44,8 @@ const footerLinks = [
   ["¿Por qué BioCrab?", "por-que-biocrab"],
   ["Del residuo al biomaterial", "del-residuo-al-biomaterial"],
   ["Investigación científica", "investigacion"],
+  ["Innovación y tecnología", "innovacion"],
+  ["Resultados e impacto", "resultados"],
   ["Metodología", "metodologia"],
   ["Galería experimental", "galeria"],
   ["Comparador", "comparacion"],
@@ -88,7 +91,13 @@ export default function Home() {
       <ReadingProgress />
       <Header />
       <main id="contenido">
-        <section id="inicio" className="hero">
+        <section id="inicio" className="hero image-led-hero">
+          <Photo
+            name="pinterest-adn.png"
+            alt="Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab"
+            className="hero-reference-background full-width"
+            priority
+          />
           <OceanAtmosphere />
           <div className="hero-grid" />
           <div className="hero-copy">
@@ -123,45 +132,26 @@ export default function Home() {
                 Ver el trabajo real <ArrowRight size={16} />
               </a>
             </div>
-            <div className="hero-proof">
-              <span className="proof-line" />
-              <span>
-                INVESTIGACIÓN EN DESARROLLO
-                <br />
-                <small>Evidencia antes que promesas.</small>
-              </span>
-            </div>
-          </div>
-          <div className="hero-art">
-            <DepthSurface>
-              <div className="hero-photo">
+            <DepthSurface className="hero-project-depth">
+              <div className="hero-project-preview">
                 <Photo
                   name="biopelicula-secando.jpg"
-                  alt="Fotografía real de una formulación de BioCrab extendida durante el secado"
-                  priority
+                  alt="Registro real del proyecto: biopelícula durante el secado"
                 />
-                <div className="image-vignette" />
-                <span className="viewfinder tl" />
-                <span className="viewfinder tr" />
-                <span className="viewfinder bl" />
-                <span className="viewfinder br" />
-                <div className="specimen-label">
-                  <span className="live-dot" />
-                  <span>
-                    FORMACIÓN DE BIOPELÍCULA
-                    <br />
-                    <small>Registro real del proyecto · Secado</small>
-                  </span>
-                  <MoveUpRight size={22} />
+                <div>
+                  <span className="micro">DEL CONCEPTO AL TRABAJO REAL</span>
+                  <p>Explora las formulaciones y el proceso de BioCrab.</p>
+                  <a href="#galeria">
+                    Ver las fotografías <ArrowRight size={14} />
+                  </a>
                 </div>
               </div>
             </DepthSurface>
-            <div className="floating-tag">
-              <Atom size={18} />
-              <span>
-                QUITOSANO <b>+</b> ALMIDÓN DE YUCA
-              </span>
-            </div>
+          </div>
+          <div className="hero-art">
+            <span className="hero-reference-note">
+              Imagen conceptual de ADN · Ambientación tecnológica
+            </span>
           </div>
           <div className="hero-bottom">
             <span>ORIGEN BIOLÓGICO. MÉTODO CIENTÍFICO.</span>
@@ -282,6 +272,73 @@ export default function Home() {
             ))}
           </Stagger>
         </section>
+        <section id="innovacion" className="section technology-section">
+          <SectionHeading
+            label="TECNOLOGÍA / INNOVACIÓN"
+            title={
+              <>
+                Conectar ideas.
+                <br />
+                <span>Transformar posibilidades.</span>
+              </>
+            }
+            description="Una identidad tecnológica para una investigación que une recursos biológicos, ciencia de materiales y conservación de alimentos."
+          />
+          <Reveal className="technology-layout">
+            <DepthSurface className="technology-depth">
+              <figure className="technology-visual">
+                <ParallaxFrame>
+                  <Photo
+                    name="pinterest-conexiones.png"
+                    alt="Red digital abstracta de conexiones azules aportada para el diseño"
+                  />
+                </ParallaxFrame>
+                <Caption>
+                  Red de conexiones · Imagen conceptual recibida.
+                </Caption>
+              </figure>
+            </DepthSurface>
+            <div className="technology-copy">
+              <p className="eyebrow">UNA NUEVA MANERA DE MIRAR EL MATERIAL</p>
+              <h3>
+                El valor está
+                <br />
+                en las conexiones.
+              </h3>
+              <p>
+                BioCrab conecta un recurso marino con una matriz vegetal. El
+                método científico permite explorar qué propiedades emergen de
+                esa combinación.
+              </p>
+              <ul>
+                <li>
+                  <Atom size={21} />
+                  <span>
+                    <strong>Diseñar formulaciones</strong>Investigar mezclas y
+                    condiciones de preparación.
+                  </span>
+                </li>
+                <li>
+                  <Microscope size={21} />
+                  <span>
+                    <strong>Observar y contrastar</strong>Relacionar el proceso
+                    con propiedades medibles.
+                  </span>
+                </li>
+                <li>
+                  <Leaf size={21} />
+                  <span>
+                    <strong>Pensar en aplicaciones</strong>Plantear usos que
+                    requieren validación propia.
+                  </span>
+                </li>
+              </ul>
+              <a href="#investigacion" className="text-link">
+                La ciencia detrás del proyecto <ArrowUpRight size={17} />
+              </a>
+            </div>
+          </Reveal>
+        </section>
         <section
           id="del-residuo-al-biomaterial"
           className="section transformation-section"
@@ -318,12 +375,13 @@ export default function Home() {
             <figure className="research-photo">
               <ParallaxFrame>
                 <Photo
-                  name="biopelicula-secando.jpg"
-                  alt="Detalle de la formulación extendida sobre un soporte durante el secado"
+                  name="pinterest-laboratorio.png"
+                  alt="Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio"
                 />
               </ParallaxFrame>
               <Caption>
-                Formación del material. Sus propiedades requieren medición.
+                Imagen conceptual de laboratorio; no representa las
+                instalaciones de BioCrab.
               </Caption>
               <div className="research-stamp">
                 <Microscope size={24} />
@@ -333,6 +391,19 @@ export default function Home() {
                   EN INVESTIGACIÓN
                 </span>
               </div>
+              <div className="research-evidence-strip">
+                <Photo
+                  name="biopelicula-secando.jpg"
+                  alt="Registro real de la biopelícula durante el secado"
+                />
+                <div>
+                  <span className="micro">REGISTRO REAL DE BIOCRAB</span>
+                  <p>
+                    La exploración del material se documenta con fotografías y
+                    se contrasta mediante ensayos.
+                  </p>
+                </div>
+              </div>
             </figure>
             <Reveal className="research-copy">
               <p className="paper-label">BIOCRAB / CUADERNO DE INVESTIGACIÓN</p>
@@ -340,7 +411,7 @@ export default function Home() {
                 ¿Cómo cambia una película cuando conectamos una matriz vegetal
                 con un biopolímero de origen marino?
               </blockquote>
-              <details className="research-detail" open>
+              <details id="hipotesis" className="research-detail" open>
                 <summary>
                   La hipótesis propuesta <span>+</span>
                 </summary>
@@ -437,6 +508,41 @@ export default function Home() {
             }
             description="Selecciona una etapa para conocer el método. Las fotos acompañan el relato; no certifican la composición química ni un ensayo completado."
           />
+          <Reveal className="method-reference-feature">
+            <figure>
+              <ParallaxFrame>
+                <Photo
+                  name="pinterest-laboratorio.png"
+                  alt="Imagen conceptual de laboratorio con microscopio y globo digital"
+                />
+              </ParallaxFrame>
+              <Caption>
+                Imagen conceptual recibida para el universo visual del proyecto.
+              </Caption>
+            </figure>
+            <div className="method-reference-copy">
+              <p className="eyebrow">DEL DISEÑO AL PROCEDIMIENTO</p>
+              <h3>
+                Una exploración guiada
+                <br />
+                por el método.
+              </h3>
+              <p>
+                Definir condiciones, registrar el proceso y contrastar
+                propiedades permite transformar una propuesta en conocimiento
+                verificable.
+              </p>
+              <p className="annotation">
+                La imagen ambienta esta sección. Las fotografías reales
+                acompañan las etapas como contexto del proyecto; no documentan
+                todas las operaciones específicas.
+              </p>
+              <a href="#metodo-etapas" className="text-link">
+                Explorar las cinco etapas <ArrowDown size={17} />
+              </a>
+            </div>
+          </Reveal>
+          <div id="metodo-etapas" className="method-steps-anchor" />
           <Reveal>
             <Methodology />
           </Reveal>
@@ -469,6 +575,87 @@ export default function Home() {
             description="Seis fotografías originales del proyecto, visibles completas. La ampliación es opcional; cada imagen incluye su contexto científico."
           />
           <Gallery />
+          <div className="reference-gallery">
+            <Reveal className="reference-gallery-heading">
+              <div>
+                <p className="eyebrow">
+                  UNIVERSO VISUAL / CIENCIA Y TECNOLOGÍA
+                </p>
+                <h3>
+                  Las imágenes que inspiran
+                  <br />
+                  una nueva posibilidad.
+                </h3>
+              </div>
+              <p>
+                Las cinco imágenes recibidas están integradas en las secciones
+                del sitio. Aquí puedes verlas completas y ampliarlas.
+              </p>
+            </Reveal>
+            <Gallery items={referencePhotos} reference />
+          </div>
+        </section>
+        <section id="resultados" className="section results-reference-section">
+          <SectionHeading
+            label="INVESTIGACIÓN / RESULTADOS E IMPACTO"
+            title={
+              <>
+                Hacer visible la pregunta.
+                <br />
+                <span>Construir la respuesta.</span>
+              </>
+            }
+            description="Un espacio para comunicar resultados cuando existan datos verificados, con una presentación visual inspirada en la interfaz recibida."
+          />
+          <Reveal className="results-reference-layout">
+            <figure className="dashboard-reference">
+              <div className="reference-warning">
+                <CircleDashed size={15} /> Referencia de diseño A-SPACE · Sin
+                datos de BioCrab
+              </div>
+              <ParallaxFrame>
+                <Photo
+                  name="pinterest-dashboard.png"
+                  alt="Referencia gráfica de interfaz espacial A-SPACE; sus cifras no son datos de BioCrab"
+                />
+              </ParallaxFrame>
+              <Caption>
+                Referencia gráfica aportada. Sus textos y cifras pertenecen a la
+                imagen y no son resultados de BioCrab.
+              </Caption>
+            </figure>
+            <div className="results-status-list">
+              <p className="eyebrow">ESTADO DE LA INVESTIGACIÓN</p>
+              {[
+                [
+                  "Propiedades físicas",
+                  "Resistencia, flexibilidad, espesor y respuesta a la humedad.",
+                ],
+                [
+                  "Aplicación alimentaria",
+                  "Inocuidad, migración, alérgenos y comportamiento con cada alimento.",
+                ],
+                [
+                  "Comportamiento ambiental",
+                  "Biodegradación bajo condiciones definidas y evaluación del ciclo de vida.",
+                ],
+              ].map(([title, description]) => (
+                <article key={title}>
+                  <CircleDashed size={24} />
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{description}</p>
+                    <small>Dato en proceso de validación experimental</small>
+                  </div>
+                </article>
+              ))}
+              <p className="annotation">
+                La referencia recibida corresponde al diseño de otra interfaz.
+                No implica afiliación con su autor, entidades o proyectos
+                representados. No se extraen de ella métricas para BioCrab.
+              </p>
+            </div>
+          </Reveal>
         </section>
         <section id="comparacion" className="section compare-section">
           <SectionHeading
@@ -538,6 +725,39 @@ export default function Home() {
             ))}
           </Stagger>
         </section>
+        <section id="vision-futura" className="section future-vision">
+          <figure>
+            <ParallaxFrame>
+              <Photo
+                name="pinterest-huella.png"
+                alt="Hoja verde y contacto digital: imagen conceptual de biotecnología"
+              />
+            </ParallaxFrame>
+            <Caption>
+              Una visión de futuro. El impacto real necesita evidencia.
+            </Caption>
+          </figure>
+          <Reveal>
+            <p className="eyebrow">BIOTECNOLOGÍA / FUTURO</p>
+            <h2>
+              La naturaleza inspira.
+              <br />
+              <span>La ciencia contrasta.</span>
+            </h2>
+            <p className="lead">
+              Diseñar con recursos biológicos exige mirar más allá del origen
+              del material.
+            </p>
+            <p>
+              La sostenibilidad se explora considerando agua, energía,
+              reactivos, desempeño y fin de vida. BioCrab plantea estas
+              preguntas como parte del camino hacia posibles aplicaciones.
+            </p>
+            <a href="#impacto-potencial" className="text-link">
+              Explorar el impacto potencial <ArrowUpRight size={17} />
+            </a>
+          </Reveal>
+        </section>
         <section id="impacto-potencial" className="section impact-section">
           <span id="impacto" className="anchor-alias" />
           <div className="impact-layout">
@@ -583,8 +803,8 @@ export default function Home() {
             <figure className="impact-photo">
               <ParallaxFrame>
                 <Photo
-                  name="cangrejitos-secos.jpg"
-                  alt="Registro de material de cangrejo acondicionado para su procesamiento"
+                  name="pinterest-huella.png"
+                  alt="Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad"
                 />
               </ParallaxFrame>
               <div className="circular-overlay">
@@ -593,7 +813,7 @@ export default function Home() {
                 <span>MATERIAL · USO · FIN DE VIDA</span>
               </div>
               <Caption>
-                Una visión circular que requiere evaluar el proceso completo.
+                Biotecnología y sostenibilidad · Imagen conceptual recibida.
               </Caption>
             </figure>
           </div>

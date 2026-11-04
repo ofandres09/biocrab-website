@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-También admite `npm install`. El servidor usa el puerto 3000 y no requiere secretos, base de datos ni servicios externos.
+También admite `npm install`. El servidor utiliza el puerto 3000 y no requiere secretos, base de datos ni servicios externos.
 
 ```bash
 npm run typecheck
@@ -19,54 +19,46 @@ npm run build
 npm start
 ```
 
-## Diseño y navegación
+## Identidad, imágenes y navegación
 
-El hero muestra la marca BioCrab y una fotografía original de la biopelícula. La narrativa recorre problema, propósito, transformación, investigación, metodología, trayectoria, galería, comparación, aplicaciones, impacto, fruta y equipo.
+El sitio integra tres grupos distintos de recursos: seis fotografías originales del proyecto, cinco imágenes conceptuales aportadas para la ambientación y el logo adaptado de BioCrab. El hero utiliza el ADN azul como fondo conceptual e incluye un acceso visual a la fotografía real de la biopelícula. Las referencias se identifican como tales; no son registros experimentales ni fotografías de las instalaciones del equipo.
 
-La identidad oscura utiliza #050505, #0066FF, #00FF99, #FF3B30 y #FFFFFF. El tema claro adapta el contraste. Se inicia en modo oscuro, respeta la elección guardada y permite cambiar de tema.
+El responsable autorizó conservar el emblema del logo aportado y cambiar su nombre a BIOCRAB. El archivo adaptado `public/images/biocrab-logo-adaptado.png` se utiliza en navbar, hero, carga y footer. `app/icon.tsx` genera un favicon PNG de 64 × 64 px a partir del emblema. La antigua marca SVG no es la identidad activa.
 
-Las animaciones incluyen reveal de texto después de entrar en pantalla, entrada escalonada de tarjetas, iluminación ambiental, partículas, flotación, profundidad de cursor y progresión de lectura. El parallax mueve la iluminación, mientras las fotos permanecen completas. Un control de pausa persistente detiene los efectos continuos. El parallax se desactiva en móvil y con movimiento reducido. Todo el contenido narrativo permanece disponible sin JavaScript; las interacciones requieren JavaScript.
+La narrativa recorre problema, propósito, innovación, transformación, investigación, metodología, trayectoria, galería, comparación, aplicaciones, impacto, fruta y equipo. El enlace `#hipotesis` abre la ubicación de la hipótesis dentro de investigación.
+
+La paleta oscura utiliza #050505, #0066FF, #00FF99, #FF3B30 y #FFFFFF; el tema claro adapta el contraste. Las animaciones incluyen reveal de texto, entrada escalonada, iluminación, partículas, red digital, flotación y profundidad de cursor. El parallax mueve la iluminación y mantiene completas las imágenes. Un control de pausa persistente detiene el movimiento continuo; también se respeta la preferencia de movimiento reducido y se desactiva el parallax en móvil.
 
 ## Archivos principales
 
-- `app/page.tsx`: estructura y narrativa científica.
-- `app/globals.css`: sistema visual completo, temas y estilos adaptables.
-- `app/components/brand.tsx`, `public/biocrab-wordmark.svg`: marca tipográfica vectorial BioCrab; símbolo original de exoesqueleto/hoja.
-- `app/icon.svg`, `public/icon.svg`: favicon de la misma identidad.
-- `app/components/experience.tsx`: navegación, imágenes, metodología, timeline, galería y contacto.
-- `app/components/cinematic.tsx`: reveal de título y animaciones escalonadas.
-- `app/components/premium.tsx`, `visuals.tsx`: profundidad, atmósfera y parallax.
-- `app/components/research-experience.tsx`: recorrido de cinco etapas y comparador interactivo.
-- `lib/project.ts`, `lib/media.ts`: contenido y asignaciones de imágenes.
-- `public/images/`: seis fotografías originales del ZIP, guardadas como JPEG sin alterar los bytes.
+- `app/page.tsx`: estructura, narrativa e integración contextual de fotografías y referencias.
+- `app/globals.css`: sistema visual, temas y estilos adaptables.
+- `app/components/brand.tsx`, `public/images/biocrab-logo-adaptado.png`: identidad adaptada autorizada.
+- `app/icon.tsx`: favicon PNG generado a partir del emblema.
+- `app/components/experience.tsx`: navegación, imágenes, metodología, timeline, galerías y contacto.
+- `app/components/cinematic.tsx`: reveal, entrada escalonada, pausa y movimiento reducido.
+- `app/components/premium.tsx`, `visuals.tsx`, `digital-network.tsx`: profundidad, atmósfera, parallax y red digital.
+- `app/components/research-experience.tsx`: recorrido y comparador cualitativo.
+- `app/components/evidence-counters.tsx`: contadores de estructura del contenido.
+- `lib/project.ts`: contenido, seis fotografías experimentales y cinco referencias en colecciones separadas.
+- `lib/media.ts`: asignaciones de recursos.
+- `public/images/README.md`: inventario y contexto de los originales y las referencias.
 - `app/loading.tsx`, `app/opengraph-image.tsx`: carga real e imagen social.
-
-## Imágenes e identidad
-
-Se conservó la decisión del responsable de usar la marca tipográfica BioCrab. La nueva marca vectorial es una representación propia de ese nombre; el archivo del ZIP con identidad anterior no se muestra ni se altera.
-
-Las fotografías originales aparecen desde el hero, acompañan todas las secciones principales y se amplían en la galería con pies descriptivos. Las fotografías se muestran completas, sin recorte ni zoom sobre sus píxeles; la ampliación es opcional. La carga es adaptable y diferida, con prioridad para la foto del hero.
-
-Los archivos de referencias externas de Pinterest no están disponibles en el checkout ni en el ZIP recibido. La ambientación se construye localmente con SVG y CSS. No se afirman como imágenes integradas. Su biblioteca de nombres en `lib/media.ts` se conserva para futuras incorporaciones.
 
 ## Rigor científico
 
-El planteamiento presenta hipótesis y objetivos propuestos. La literatura proporciona contexto; no acredita resultados de BioCrab. No se atribuyen porcentajes, reconocimientos, ensayos completados ni superioridad ambiental.
+Las hipótesis y los objetivos son propuestos. La literatura aporta contexto general, sin acreditar resultados propios. No se atribuyen porcentajes, reconocimientos, ensayos completados ni superioridad ambiental. Las fotos de materia prima no demuestran quitosano aislado; las formulaciones con fruta no demuestran inocuidad o eficacia.
 
-Los registros de materia prima no demuestran quitosano aislado. Las formulaciones con fruta no demuestran inocuidad ni eficacia. La biodegradación exige condiciones definidas. Las posibles aplicaciones requieren validación física, ambiental y alimentaria específica.
+Los contadores describen dos biopolímeros propuestos, `methodology.length` etapas y `photos.length` fotografías. No son mediciones de biodegradabilidad, conservación o impacto. La progresión visual representa lectura.
 
-El comparador usa una fotografía real de BioCrab y una ilustración conceptual del plástico, con texto cualitativo y sin puntuaciones. La progresión visual representa lectura. Los resultados se publicarán cuando haya protocolos, unidades, controles, réplicas e incertidumbre.
+La imagen A-SPACE se conserva como referencia de diseño: sus textos y cifras orbitales no son resultados de BioCrab ni implican afiliación con su autor o con los proyectos representados. Las imágenes de ADN y laboratorio tampoco representan estructuras químicas caracterizadas ni instalaciones del equipo.
 
-## Contacto y publicación
+El comparador utiliza una fotografía real de BioCrab y una ilustración conceptual del plástico, sin puntuaciones. Los resultados deberán publicarse con protocolos, unidades, controles, réplicas e incertidumbre.
 
-El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal oficial de contacto y los perfiles del equipo están pendientes de confirmación.
+## Contacto y despliegue
 
-Los metadatos incluyen idioma, título, descripción, Open Graph y tarjeta social. Configurar `metadataBase`, canonical y sitemap al confirmar un dominio oficial de despliegue.
+El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal de contacto y los perfiles del equipo siguen pendientes de confirmación.
 
-La integración de referencias externas y la comprobación del despliegue siguen abiertas hasta disponer de sus fuentes: [estado y requisitos](docs/reference-assets-pending.md).
+URL de producción comunicada por el responsable: <https://biocrab-website.vercel.app/>. Enlace directo solicitado: <https://biocrab-website.vercel.app/#hipotesis>. Esta documentación no afirma que la revisión actual ya esté publicada o verificada allí.
 
-## Red digital y contadores
-
-El hero incorpora una red SVG determinista con trazado animado y halos; es una ilustración decorativa propia. No sustituye la incorporación pendiente de las imágenes externas exactas.
-
-Los contadores describen hechos del contenido: dos biopolímeros propuestos, `methodology.length` etapas y `photos.length` fotografías. Se animan al entrar en pantalla, respetan pausa y movimiento reducido, y ofrecen una lectura estática accesible. No representan mediciones de biodegradabilidad, eficacia ni impacto ambiental.
+El encabezado `X-BioCrab-Design: pinterest-integrated-v4` identifica esta revisión. El commit y push deben ir seguidos de una comprobación independiente del despliegue de Vercel, del encabezado, las imágenes y el enlace profundo. Ver [integración de referencias](docs/reference-integration.md) y [estado de revisión visual](docs/visual-review.md).
