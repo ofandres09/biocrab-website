@@ -17,7 +17,7 @@ La revisión identificada por `X-BioCrab-Design: pinterest-integrated-v4` incorp
 
 ## Validación local de esta revisión
 
-La compilación actual se comprobó localmente en Chromium contra el servidor del puerto 3018:
+La compilación actual se comprobó localmente en Chromium contra los servidores de los puertos 3018 y 3019:
 
 - `npm run build` y `npm run typecheck`: completados correctamente.
 - Dieciséis secciones revisadas, con cinco referencias conceptuales en doce ubicaciones y las seis fotografías originales del proyecto.
@@ -31,27 +31,37 @@ La regresión del hero se verificó en dos corridas: pausa y movimiento reducido
 
 Estos resultados corresponden a la ejecución local de la revisión actual. No demuestran por sí solos que la misma compilación esté activa en Vercel. La integración de recursos se detalla en [integración de referencias](reference-integration.md).
 
-## Verificación de producción pendiente después del commit
+## Producción verificada
 
-URL comunicada: <https://biocrab-website.vercel.app/>. Enlace profundo solicitado: <https://biocrab-website.vercel.app/#hipotesis>.
+URL: <https://biocrab-website.vercel.app/>. Enlace profundo: <https://biocrab-website.vercel.app/#hipotesis>.
 
-No se afirma en este documento que la nueva revisión ya esté publicada ni visualmente verificada en esa URL. Tras el commit, push y despliegue debe comprobarse:
+El 4 de noviembre de 2026, después del push del commit `c02db4ab0d59ada71541f2face26a9f6b15313eb`, Vercel confirmó el despliegue. Se verificó HTTP 200 y `X-BioCrab-Design: pinterest-integrated-v4` en el dominio público.
 
-1. Respuesta HTTP y encabezado `X-BioCrab-Design: pinterest-integrated-v4`.
-2. Carga y decodificación del logo PNG, favicon PNG, seis fotos y cinco referencias.
-3. Llegada del enlace `#hipotesis` al contenido correcto.
-4. Ausencia de imágenes rotas, recortes involuntarios y desbordamiento horizontal en escritorio y móvil.
-5. Funcionamiento de controles de pausa, temas, movimiento reducido, metodología, recorrido, comparación y galerías.
-6. Lectura inequívoca de la separación entre referencia conceptual y registro experimental.
+Chromium comprobó 1440 × 1000 y 390 × 844 px:
 
-El push a GitHub no acredita por sí mismo un despliegue externo correcto.
+- 37 imágenes decodificadas por vista, con cinco referencias únicas, seis fotos originales y tres apariciones del logo.
+- Imágenes completas mediante `object-fit: contain`; sin placeholders visibles ni desbordamiento horizontal.
+- Cero errores JavaScript o recursos HTTP fallidos durante el recorrido.
+- Favicon PNG válido, HTTP 200.
+- `#hipotesis` abre el contenido y lo deja visible, en ambas dimensiones.
+- Logo, título, CTA y ADN presentes desde la primera pantalla móvil.
 
-## Evidencia histórica
+También se descargaron los cinco PNG y el logo desde sus rutas públicas: respuestas correctas y bytes idénticos al repositorio. Los cinco PNG originales coinciden con las fuentes del ZIP.
 
-Las capturas siguientes pertenecen a la revisión visual anterior a la integración actual. Se conservan como historial y no muestran la nueva integración del ZIP ni prueban el estado de producción:
+El [informe de producción](production-verification.json) conserva fecha, URL, recursos únicos y resultados por viewport. La inspección visual revisó las capturas del hero, innovación, investigación, metodología, resultados, impacto y galería. Las referencias conceptuales aparecen con su contexto y no se presentan como evidencia experimental.
 
-- [Escritorio anterior](previews/desktop.png)
-- [Móvil anterior](previews/mobile.png)
-- [Contadores anteriores](previews/counters.png)
+## Capturas de producción
 
-En aquella revisión se habían completado compilación y comprobaciones locales de navegación, imágenes, anchos adaptables, pausa y movimiento reducido. La auditoría automática de accesibilidad no sustituye una evaluación integral y debe repetirse cuando los cambios actuales afecten a sus resultados.
+Estas imágenes proceden del dominio público después del despliegue. Los heroes se capturaron con movimiento normal; las capturas largas de sección usan movimiento reducido para registrar un estado estable.
+
+- [Escritorio](previews/desktop.png)
+- [Móvil](previews/mobile.png)
+- [Galería completa de escritorio](previews/galeria-desktop.jpg)
+- [Galería completa móvil](previews/galeria-mobile.jpg)
+- [Innovación](previews/innovacion-desktop.jpg)
+- [Investigación](previews/investigacion-desktop.jpg)
+- [Metodología móvil](previews/metodologia-mobile.jpg)
+- [Resultados pendientes](previews/resultados-desktop.jpg)
+- [Impacto potencial](previews/impacto-desktop.jpg)
+
+No se inventaron porcentajes, resultados, reconocimientos ni afiliaciones. Las hipótesis y las aplicaciones propuestas siguen sujetas a validación experimental.

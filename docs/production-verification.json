@@ -1,0 +1,64 @@
+{
+  "base": "https://biocrab-website.vercel.app",
+  "checkedAt": "2026-11-04T20:00:57.937Z",
+  "viewports": [
+    {
+      "width": 1440,
+      "marker": "pinterest-integrated-v4",
+      "refs": [
+        "pinterest-adn.png",
+        "pinterest-conexiones.png",
+        "pinterest-laboratorio.png",
+        "pinterest-dashboard.png",
+        "pinterest-huella.png"
+      ],
+      "originals": [
+        "biopelicula-secando.jpg",
+        "lavando-cangrejitos.jpg",
+        "exoesqueletos-separados.jpg",
+        "peliculas-secando.jpg",
+        "gomitas-fruta.jpg",
+        "cangrejitos-secos.jpg"
+      ],
+      "images": 37,
+      "logos": 3,
+      "overflow": 0,
+      "icon": 200,
+      "hash": {
+        "open": true,
+        "top": 210.296875
+      },
+      "errors": [],
+      "failed": []
+    },
+    {
+      "width": 390,
+      "marker": "pinterest-integrated-v4",
+      "refs": [
+        "pinterest-adn.png",
+        "pinterest-conexiones.png",
+        "pinterest-laboratorio.png",
+        "pinterest-dashboard.png",
+        "pinterest-huella.png"
+      ],
+      "originals": [
+        "biopelicula-secando.jpg",
+        "lavando-cangrejitos.jpg",
+        "exoesqueletos-separados.jpg",
+        "peliculas-secando.jpg",
+        "gomitas-fruta.jpg",
+        "cangrejitos-secos.jpg"
+      ],
+      "images": 37,
+      "logos": 3,
+      "overflow": 0,
+      "icon": 200,
+      "hash": {
+        "open": true,
+        "top": 200.40625
+      },
+      "errors": [],
+      "failed": []
+    }
+  ]
+}

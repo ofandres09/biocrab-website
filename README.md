@@ -59,6 +59,6 @@ El comparador utiliza una fotografía real de BioCrab y una ilustración concept
 
 El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal de contacto y los perfiles del equipo siguen pendientes de confirmación.
 
-URL de producción comunicada por el responsable: <https://biocrab-website.vercel.app/>. Enlace directo solicitado: <https://biocrab-website.vercel.app/#hipotesis>. Esta documentación no afirma que la revisión actual ya esté publicada o verificada allí.
+URL de producción comunicada por el responsable: <https://biocrab-website.vercel.app/>. Enlace directo solicitado: <https://biocrab-website.vercel.app/#hipotesis>. La integración se publicó y verificó en esa URL el 4 de noviembre de 2026, en escritorio y móvil.
 
-El encabezado `X-BioCrab-Design: pinterest-integrated-v4` identifica esta revisión. El commit y push deben ir seguidos de una comprobación independiente del despliegue de Vercel, del encabezado, las imágenes y el enlace profundo. Ver [integración de referencias](docs/reference-integration.md) y [estado de revisión visual](docs/visual-review.md).
+El encabezado `X-BioCrab-Design: pinterest-integrated-v4` identifica esta revisión. Se comprobaron el despliegue de Vercel, el encabezado, las imágenes y el enlace profundo. Ver [integración de referencias](docs/reference-integration.md) y [estado de revisión visual](docs/visual-review.md).

@@ -39,4 +39,4 @@ La adaptación del nombre no supone modificar las fotografías experimentales. L
 
 ## Publicación y comprobaciones
 
-La integración de archivos en el repositorio no acredita su publicación externa. La URL comunicada es <https://biocrab-website.vercel.app/> y esta revisión utiliza `X-BioCrab-Design: pinterest-integrated-v4`. La comprobación pública posterior al commit y al despliegue se registra por separado en `docs/visual-review.md`.
+La publicación se verificó el 4 de noviembre de 2026 en <https://biocrab-website.vercel.app/> y utiliza `X-BioCrab-Design: pinterest-integrated-v4`. Las cinco referencias y el logo responden HTTP 200 y conservan los mismos bytes publicados en el repositorio. Las seis fotografías originales también se decodificaron correctamente en escritorio y móvil. Ver `docs/visual-review.md`.

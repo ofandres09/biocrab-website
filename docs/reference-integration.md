@@ -24,16 +24,17 @@ El responsable autorizó preservar el emblema del archivo de logo aportado y cam
 - Enlace profundo: <https://biocrab-website.vercel.app/#hipotesis>.
 - Encabezado de esta revisión: `X-BioCrab-Design: pinterest-integrated-v4`.
 
-El código contiene el destino `#hipotesis`. Su existencia local y la presencia de recursos en el repositorio no prueban que la nueva revisión esté activa en producción.
+El destino `#hipotesis` se comprobó abriendo la URL pública en escritorio y móvil. La alineación inicial contempla el contenido servido en streaming, y la hipótesis queda abierta y visible.
 
-## Verificación pendiente después del commit
+## Verificación de producción completada
 
-Tras completar el commit y push y finalizar el despliegue de Vercel:
+El 4 de noviembre de 2026 se comprobó la publicación del commit `c02db4ab0d59ada71541f2face26a9f6b15313eb`:
 
-1. Comprobar respuesta de la URL de producción y el encabezado `pinterest-integrated-v4`.
-2. Abrir el enlace `#hipotesis` y confirmar que alcanza la hipótesis de investigación.
-3. Verificar logo, favicon PNG, seis fotografías originales y cinco referencias sin errores de carga.
-4. Revisar escritorio y móvil, movimiento reducido, pausa, navegación y galerías.
-5. Registrar los resultados observados en [revisión visual](visual-review.md).
+- Vercel confirmó el despliegue de `biocrab-website`.
+- La URL pública respondió HTTP 200 con `pinterest-integrated-v4`.
+- Las cinco referencias y el logo respondieron HTTP 200; sus bytes coinciden con los del repositorio. Los cinco PNG de referencia también coinciden con las fuentes del ZIP.
+- Chromium decodificó 37 imágenes por vista en 1440 y 390 px: cinco referencias únicas, seis fotografías originales y el logo en navbar, hero y footer.
+- El favicon PNG respondió HTTP 200. Las fotografías usan `object-fit: contain`; no se encontraron placeholders visibles, errores JavaScript, recursos fallidos ni desbordamiento horizontal.
+- Se tomaron capturas directamente de producción y se revisaron visualmente.
 
-Esta lista es un procedimiento pendiente para la revisión actual, no una afirmación de que la producción ya se verificó. El commit y push confirman el código subido; la publicación y su comprobación son pasos independientes.
+Evidencia: [informe de producción](production-verification.json), [revisión visual](visual-review.md), [escritorio](previews/desktop.png) y [móvil](previews/mobile.png).
