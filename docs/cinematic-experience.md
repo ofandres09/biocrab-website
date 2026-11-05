@@ -30,4 +30,16 @@ La medición local de Chromium headless, con renderer gráfico por software ANGL
 
 El valor móvil se aproxima al intervalo de una pantalla de 60 Hz. El ensayo de escritorio durante desplazamiento no sostiene ese intervalo en este entorno. Hubo pausas de planificación también con las animaciones desactivadas. Son muestras breves de una simulación, no mediciones de dispositivos móviles físicos ni garantías de FPS. Los valores completos están en [muestra de rendimiento](performance-sample.json).
 
-El despliegue debe identificarse mediante `cinematic-biotech-v5`; las capturas públicas se actualizarán tras publicarlo.
+## Publicación comprobada
+
+La revisión `f3ec62e` se publicó en <https://biocrab-website.vercel.app/> con el encabezado `cinematic-biotech-v5`. El navegador confirmó, en escritorio y móvil:
+
+- Dieciséis escenas, treinta y seis títulos y los motores Lenis/GSAP o scroll nativo/GSAP correspondientes.
+- Treinta partículas visibles en escritorio y catorce en móvil, con doce estados de movimiento distintos en cada muestra; el zoom fotográfico también cambió doce veces.
+- Treinta y siete imágenes decodificadas, las cinco referencias, seis fotografías originales y el logo en tres ubicaciones.
+- Favicon válido y enlace `#hipotesis` abierto y visible.
+- Cero errores JavaScript, recursos fallidos o desbordamiento en la revisión final.
+
+Axe no encontró infracciones automáticas WCAG A/AA en ambos temas con movimiento reducido; quedaron dos comprobaciones incompletas por tema. Esto no sustituye una evaluación integral de accesibilidad.
+
+Evidencia: [informe de producción](production-verification.json), [movimiento](motion-verification.json), [escritorio](previews/desktop.png), [móvil](previews/mobile.png) y [galería](previews/galeria-desktop.jpg). Las capturas se tomaron directamente del dominio público después del despliegue.

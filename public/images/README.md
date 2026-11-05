@@ -39,4 +39,4 @@ La adaptación del nombre no supone modificar las fotografías experimentales. L
 
 ## Publicación y comprobaciones
 
-La publicación se verificó el 4 de noviembre de 2026 en <https://biocrab-website.vercel.app/> y utiliza `X-BioCrab-Design: pinterest-integrated-v4`. Las cinco referencias y el logo responden HTTP 200 y conservan los mismos bytes publicados en el repositorio. Las seis fotografías originales también se decodificaron correctamente en escritorio y móvil. Ver `docs/visual-review.md`.
+La publicación se verificó el 5 de noviembre de 2026 en <https://biocrab-website.vercel.app/> y utiliza `X-BioCrab-Design: cinematic-biotech-v5`. Las cinco referencias y el logo responden HTTP 200 y conservan los mismos bytes publicados en el repositorio. Las seis fotografías originales también se decodificaron correctamente en escritorio y móvil. Ver `docs/visual-review.md`.

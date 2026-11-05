@@ -27,7 +27,7 @@ El responsable autorizó conservar el emblema del logo aportado y cambiar su nom
 
 La narrativa recorre problema, propósito, innovación, transformación, investigación, metodología, trayectoria, galería, comparación, aplicaciones, impacto, fruta y equipo. El enlace `#hipotesis` abre la ubicación de la hipótesis dentro de investigación.
 
-La paleta oscura utiliza #050505, #0066FF, #00FF99, #FF3B30 y #FFFFFF; el tema claro adapta el contraste. Las animaciones incluyen máscaras por palabras, entrada escalonada, iluminación, partículas ambientales, Ken Burns y profundidad de cursor. GSAP y ScrollTrigger coordinan las escenas y el parallax de títulos y fotografías. Las imágenes conservan sus bordes: el zoom se limita a una escala inferior a la del marco. Lenis suaviza el scroll de escritorio; los dispositivos táctiles conservan el desplazamiento nativo. Un control de pausa persistente detiene el movimiento continuo; también se respeta la preferencia de movimiento reducido. Los efectos móviles usan recorridos y carga visual menores. Manrope y Space Grotesk se sirven localmente, sin consultar Google Fonts.
+La paleta oscura utiliza #050505, #2389FF, #00FFA3, #FF3B30 y #FFFFFF; el tema claro adapta el contraste. Las animaciones incluyen máscaras por palabras, entrada escalonada, iluminación, partículas ambientales, Ken Burns y profundidad de cursor. GSAP y ScrollTrigger coordinan las escenas y el parallax de títulos y fotografías. Las imágenes conservan sus bordes: el zoom se limita a una escala inferior a la del marco. Lenis suaviza el scroll de escritorio; los dispositivos táctiles conservan el desplazamiento nativo. Un control de pausa persistente detiene el movimiento continuo; también se respeta la preferencia de movimiento reducido. Los efectos móviles usan recorridos y carga visual menores. Manrope y Space Grotesk se sirven localmente, sin consultar Google Fonts.
 
 ## Archivos principales
 
@@ -62,8 +62,8 @@ El comparador utiliza una fotografía real de BioCrab y una ilustración concept
 
 El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal de contacto y los perfiles del equipo siguen pendientes de confirmación.
 
-URL de producción comunicada por el responsable: <https://biocrab-website.vercel.app/>. Enlace directo solicitado: <https://biocrab-website.vercel.app/#hipotesis>. La integración se publicó y verificó en esa URL el 4 de noviembre de 2026, en escritorio y móvil.
+URL de producción comunicada por el responsable: <https://biocrab-website.vercel.app/>. Enlace directo solicitado: <https://biocrab-website.vercel.app/#hipotesis>. La integración se publicó y verificó en esa URL el 5 de noviembre de 2026, en escritorio y móvil.
 
-El encabezado `X-BioCrab-Design: pinterest-integrated-v4` identifica esta revisión. Se comprobaron el despliegue de Vercel, el encabezado, las imágenes y el enlace profundo. Ver [integración de referencias](docs/reference-integration.md) y [estado de revisión visual](docs/visual-review.md).
+El encabezado `X-BioCrab-Design: cinematic-biotech-v5` identifica la revisión cinematográfica actual. Se comprobaron el despliegue de Vercel, el encabezado, las imágenes y el enlace profundo. Ver [integración de referencias](docs/reference-integration.md) y [estado de revisión visual](docs/visual-review.md).
 
 La ampliación cinematográfica se identifica por `X-BioCrab-Design: cinematic-biotech-v5`. Sus decisiones de rendimiento y comprobaciones se documentan en [experiencia cinematográfica](docs/cinematic-experience.md).

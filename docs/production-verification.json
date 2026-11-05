@@ -1,10 +1,18 @@
 {
   "base": "https://biocrab-website.vercel.app",
-  "checkedAt": "2026-11-04T20:00:57.937Z",
+  "checkedAt": "2026-11-05T14:37:26.375Z",
   "viewports": [
     {
       "width": 1440,
-      "marker": "pinterest-integrated-v4",
+      "marker": "cinematic-biotech-v5",
+      "motion": {
+        "engine": "lenis-gsap",
+        "sections": 16,
+        "headings": 36,
+        "particles": 30,
+        "particleStates": 12,
+        "photoStates": 12
+      },
       "refs": [
         "pinterest-adn.png",
         "pinterest-conexiones.png",
@@ -26,14 +34,22 @@
       "icon": 200,
       "hash": {
         "open": true,
-        "top": 210.296875
+        "top": 210.234375
       },
       "errors": [],
       "failed": []
     },
     {
       "width": 390,
-      "marker": "pinterest-integrated-v4",
+      "marker": "cinematic-biotech-v5",
+      "motion": {
+        "engine": "native-gsap",
+        "sections": 16,
+        "headings": 36,
+        "particles": 14,
+        "particleStates": 12,
+        "photoStates": 12
+      },
       "refs": [
         "pinterest-adn.png",
         "pinterest-conexiones.png",
@@ -55,7 +71,7 @@
       "icon": 200,
       "hash": {
         "open": true,
-        "top": 200.40625
+        "top": 199.734375
       },
       "errors": [],
       "failed": []

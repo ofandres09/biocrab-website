@@ -22,16 +22,16 @@ El responsable autorizó preservar el emblema del archivo de logo aportado y cam
 
 - Producción comunicada: <https://biocrab-website.vercel.app/>.
 - Enlace profundo: <https://biocrab-website.vercel.app/#hipotesis>.
-- Encabezado de esta revisión: `X-BioCrab-Design: pinterest-integrated-v4`.
+- Encabezado de esta revisión: `X-BioCrab-Design: cinematic-biotech-v5`.
 
 El destino `#hipotesis` se comprobó abriendo la URL pública en escritorio y móvil. La alineación inicial contempla el contenido servido en streaming, y la hipótesis queda abierta y visible.
 
 ## Verificación de producción completada
 
-El 4 de noviembre de 2026 se comprobó la publicación del commit `c02db4ab0d59ada71541f2face26a9f6b15313eb`:
+El 5 de noviembre de 2026 se comprobó la publicación del commit `f3ec62e94ee96091c927f860b70483a5f7cb085f`:
 
 - Vercel confirmó el despliegue de `biocrab-website`.
-- La URL pública respondió HTTP 200 con `pinterest-integrated-v4`.
+- La URL pública respondió HTTP 200 con `cinematic-biotech-v5`.
 - Las cinco referencias y el logo respondieron HTTP 200; sus bytes coinciden con los del repositorio. Los cinco PNG de referencia también coinciden con las fuentes del ZIP.
 - Chromium decodificó 37 imágenes por vista en 1440 y 390 px: cinco referencias únicas, seis fotografías originales y el logo en navbar, hero y footer.
 - El favicon PNG respondió HTTP 200. Las fotografías usan `object-fit: contain`; no se encontraron placeholders visibles, errores JavaScript, recursos fallidos ni desbordamiento horizontal.

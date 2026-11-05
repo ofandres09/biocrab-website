@@ -2,9 +2,9 @@
 
 ## Alcance de la revisión actual
 
-La revisión identificada por `X-BioCrab-Design: pinterest-integrated-v4` incorpora las cinco imágenes exactas del nuevo ZIP y el logo adaptado con autorización del responsable. Las seis fotografías originales del proyecto permanecen en su colección independiente y no se sustituyen por referencias conceptuales.
+La revisión identificada por `X-BioCrab-Design: cinematic-biotech-v5` incorpora las cinco imágenes exactas del nuevo ZIP y el logo adaptado con autorización del responsable. Las seis fotografías originales del proyecto permanecen en su colección independiente y no se sustituyen por referencias conceptuales.
 
-## Elementos que debe cubrir la comprobación actual
+## Elementos comprobados
 
 - Logo PNG adaptado en navbar, hero, estado de carga y footer; favicon PNG generado desde el emblema.
 - Hero con el ADN azul conceptual, sus etiquetas de ambientación y el acceso a la fotografía real de la biopelícula.
@@ -17,7 +17,7 @@ La revisión identificada por `X-BioCrab-Design: pinterest-integrated-v4` incorp
 
 ## Validación local de esta revisión
 
-La compilación actual se comprobó localmente en Chromium contra los servidores de los puertos 3018 y 3019:
+La compilación actual se comprobó localmente en Chromium contra los servidores de los puertos 3021, 3023 y 3024:
 
 - `npm run build` y `npm run typecheck`: completados correctamente.
 - Dieciséis secciones revisadas, con cinco referencias conceptuales en doce ubicaciones y las seis fotografías originales del proyecto.
@@ -27,6 +27,8 @@ La compilación actual se comprobó localmente en Chromium contra los servidores
 - Movimiento del hero, partículas, ambientación de ADN y profundidad de cursor: observado en el navegador, no solo por presencia de código.
 - Axe, reglas WCAG 2 A/AA y 2.1 AA: cero infracciones automáticas en temas oscuro y claro. Se utilizó movimiento reducido para evitar lecturas de contraste durante transiciones; quedaron dos reglas con comprobaciones incompletas. Esto no constituye una certificación integral de accesibilidad.
 
+El sistema cinematográfico incorpora GSAP/ScrollTrigger, Lenis, máscaras por palabras, zoom fotográfico sin recortes, partículas DOM y fuentes locales Manrope/Space Grotesk. Ver [movimiento y rendimiento](cinematic-experience.md).
+
 La regresión del hero se verificó en dos corridas: pausa y movimiento reducido durante la entrada dejan ambas líneas visibles, sin desplazamiento ni desenfoque; reactivar el movimiento también termina correctamente, sin errores JavaScript.
 
 Estos resultados corresponden a la ejecución local de la revisión actual. No demuestran por sí solos que la misma compilación esté activa en Vercel. La integración de recursos se detalla en [integración de referencias](reference-integration.md).
@@ -35,10 +37,11 @@ Estos resultados corresponden a la ejecución local de la revisión actual. No d
 
 URL: <https://biocrab-website.vercel.app/>. Enlace profundo: <https://biocrab-website.vercel.app/#hipotesis>.
 
-El 4 de noviembre de 2026, después del push del commit `c02db4ab0d59ada71541f2face26a9f6b15313eb`, Vercel confirmó el despliegue. Se verificó HTTP 200 y `X-BioCrab-Design: pinterest-integrated-v4` en el dominio público.
+El 5 de noviembre de 2026, después del push del commit `f3ec62e94ee96091c927f860b70483a5f7cb085f`, Vercel confirmó el despliegue. Se verificó HTTP 200 y `X-BioCrab-Design: cinematic-biotech-v5` en el dominio público.
 
 Chromium comprobó 1440 × 1000 y 390 × 844 px:
 
+- Dieciséis escenas y treinta y seis títulos; doce estados distintos observados en partículas y zoom en cada vista. Lenis/GSAP en escritorio y scroll nativo/GSAP en móvil.
 - 37 imágenes decodificadas por vista, con cinco referencias únicas, seis fotos originales y tres apariciones del logo.
 - Imágenes completas mediante `object-fit: contain`; sin placeholders visibles ni desbordamiento horizontal.
 - Cero errores JavaScript o recursos HTTP fallidos durante el recorrido.
