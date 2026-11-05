@@ -1,0 +1,132 @@
+/* These animation values belong to one scene. Do not invalidate every nested
+   heading word/image/caption through custom-property inheritance each frame. */
+@property --photo-swell {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --photo-drift {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --heading-travel {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --scene-travel {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --scene-luminance {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.3;
+}
+.cinema-heading {
+  translate: 0 var(--heading-travel, 0px);
+  perspective: 900px;
+}
+.cinema-word-mask {
+  display: inline-block;
+  overflow: clip;
+  vertical-align: top;
+  padding: 0.05em 0.025em 0.17em;
+  margin: -0.05em -0.025em -0.17em;
+  line-height: inherit;
+}
+.cinema-heading > .cinema-word-mask {
+  color: inherit !important;
+}
+.cinema-word {
+  display: inline-block;
+  transform-origin: 50% 100%;
+}
+.cinema-section {
+  position: relative;
+}
+.cinema-section::after {
+  --scene-travel: inherit;
+  --scene-luminance: inherit;
+  content: "";
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  left: 12%;
+  right: 12%;
+  top: 0;
+  height: 1px;
+  opacity: var(--scene-luminance, 0.3);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #2389ff,
+    #00ffa3 58%,
+    transparent
+  );
+  box-shadow: 0 0 22px #2389ff50;
+  transform: translate3d(var(--scene-travel, 0%), 0, 0);
+}
+.cinema-section[data-cinema-scene="1"]::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00ffa3,
+    #2389ff,
+    transparent
+  );
+}
+.cinema-section[data-cinema-scene="2"]::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #2389ff 35%,
+    #ff3b3077,
+    transparent
+  );
+}
+.cinema-section[data-cinema-scene="3"]::after {
+  left: 22%;
+  right: 22%;
+  background: linear-gradient(90deg, transparent, #00ffa3, transparent);
+}
+.cinema-photo-scene {
+  transform: translateY(var(--photo-drift, 0%)) scale(var(--photo-swell, 1));
+  transform-origin: center;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+[data-motion="paused"] .cinema-heading,
+[data-motion="paused"] .cinema-word,
+[data-motion="paused"] .cinema-photo-scene {
+  translate: none !important;
+  transform: none !important;
+  filter: none !important;
+  clip-path: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cinema-heading,
+  .cinema-word,
+  .cinema-photo-scene {
+    translate: none !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+  }
+}

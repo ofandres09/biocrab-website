@@ -16,6 +16,7 @@ import {
   CircleDashed,
 } from "lucide-react";
 import { Brand } from "./components/brand";
+import { KineticHeading } from "./components/scroll-cinema";
 import { referencePhotos } from "@/lib/project";
 import { EvidenceCounters } from "./components/evidence-counters";
 import {
@@ -67,7 +68,7 @@ function SectionHeading({
     <Reveal className="section-heading">
       <div>
         <p className="eyebrow">{label}</p>
-        <h2>{title}</h2>
+        <KineticHeading as="h2">{title}</KineticHeading>
       </div>
       {description && <p className="section-description">{description}</p>}
     </Reveal>
@@ -196,11 +197,11 @@ export default function Home() {
             </figure>
             <div className="editorial-copy">
               <p className="eyebrow">01 / EL PROBLEMA GLOBAL</p>
-              <h2>
+              <KineticHeading as="h2">
                 El alimento importa.
                 <br />
                 <span>Su protección también.</span>
-              </h2>
+              </KineticHeading>
               <p className="lead">
                 Conservar alimentos exige materiales que respondan durante su
                 uso y una gestión responsable después.
@@ -264,7 +265,7 @@ export default function Home() {
                 />
                 <div className="why-copy">
                   <span className="micro">{c.label}</span>
-                  <h3>{c.title}</h3>
+                  <KineticHeading as="h3">{c.title}</KineticHeading>
                   <p>{c.text}</p>
                   <ArrowUpRight size={20} />
                 </div>
@@ -300,11 +301,11 @@ export default function Home() {
             </DepthSurface>
             <div className="technology-copy">
               <p className="eyebrow">UNA NUEVA MANERA DE MIRAR EL MATERIAL</p>
-              <h3>
+              <KineticHeading as="h3">
                 El valor está
                 <br />
                 en las conexiones.
-              </h3>
+              </KineticHeading>
               <p>
                 BioCrab conecta un recurso marino con una matriz vegetal. El
                 método científico permite explorar qué propiedades emergen de
@@ -522,11 +523,11 @@ export default function Home() {
             </figure>
             <div className="method-reference-copy">
               <p className="eyebrow">DEL DISEÑO AL PROCEDIMIENTO</p>
-              <h3>
+              <KineticHeading as="h3">
                 Una exploración guiada
                 <br />
                 por el método.
-              </h3>
+              </KineticHeading>
               <p>
                 Definir condiciones, registrar el proceso y contrastar
                 propiedades permite transformar una propuesta en conocimiento
@@ -581,11 +582,11 @@ export default function Home() {
                 <p className="eyebrow">
                   UNIVERSO VISUAL / CIENCIA Y TECNOLOGÍA
                 </p>
-                <h3>
+                <KineticHeading as="h3">
                   Las imágenes que inspiran
                   <br />
                   una nueva posibilidad.
-                </h3>
+                </KineticHeading>
               </div>
               <p>
                 Las cinco imágenes recibidas están integradas en las secciones
@@ -643,7 +644,7 @@ export default function Home() {
                 <article key={title}>
                   <CircleDashed size={24} />
                   <div>
-                    <h3>{title}</h3>
+                    <KineticHeading as="h3">{title}</KineticHeading>
                     <p>{description}</p>
                     <small>Dato en proceso de validación experimental</small>
                   </div>
@@ -716,7 +717,7 @@ export default function Home() {
                 <Photo name={c.image} alt={c.note} />
                 <div>
                   <span className="micro">EXPLORACIÓN / 0{i + 1}</span>
-                  <h3>{c.title}</h3>
+                  <KineticHeading as="h3">{c.title}</KineticHeading>
                   <p>{c.text}</p>
                   <span className="annotation">{c.note}</span>
                   <ArrowUpRight size={19} />
@@ -739,11 +740,11 @@ export default function Home() {
           </figure>
           <Reveal>
             <p className="eyebrow">BIOTECNOLOGÍA / FUTURO</p>
-            <h2>
+            <KineticHeading as="h2">
               La naturaleza inspira.
               <br />
               <span>La ciencia contrasta.</span>
-            </h2>
+            </KineticHeading>
             <p className="lead">
               Diseñar con recursos biológicos exige mirar más allá del origen
               del material.
@@ -763,11 +764,11 @@ export default function Home() {
           <div className="impact-layout">
             <Reveal className="impact-copy">
               <p className="eyebrow">09 / IMPACTO POTENCIAL</p>
-              <h2>
+              <KineticHeading as="h2">
                 Pensar en el material.
                 <br />
                 <span>Pensar más allá.</span>
-              </h2>
+              </KineticHeading>
               <p className="lead">
                 El recurso, la energía, el agua y el destino final también
                 forman parte de la misma pregunta.
@@ -775,7 +776,9 @@ export default function Home() {
               <div className="impact-row">
                 <Recycle size={23} />
                 <div>
-                  <h3>Aprovechar recursos biológicos</h3>
+                  <KineticHeading as="h3">
+                    Aprovechar recursos biológicos
+                  </KineticHeading>
                   <p>
                     Explorar una nueva función para subproductos de crustáceos,
                     con trazabilidad y gestión responsable.
@@ -785,7 +788,9 @@ export default function Home() {
               <div className="impact-row">
                 <Leaf size={23} />
                 <div>
-                  <h3>Evaluar el ciclo completo</h3>
+                  <KineticHeading as="h3">
+                    Evaluar el ciclo completo
+                  </KineticHeading>
                   <p>
                     La reducción potencial de residuos o impactos debe
                     contrastarse considerando proceso, uso y fin de vida.
@@ -832,11 +837,11 @@ export default function Home() {
           </div>
           <Reveal className="gummy-copy">
             <p className="eyebrow">10 / LÍNEA DE GOMITAS DE FRUTA</p>
-            <h2>
+            <KineticHeading as="h2">
               La ciencia también
               <br />
               <span>explora la textura.</span>
-            </h2>
+            </KineticHeading>
             <p className="lead">
               Una matriz con fruta abre nuevas preguntas sobre formulación,
               estructura y conservación.
@@ -879,11 +884,11 @@ export default function Home() {
             </figure>
             <Reveal className="project-copy">
               <Shell size={40} strokeWidth={1} />
-              <h3>
+              <KineticHeading as="h3">
                 BioCrab.
                 <br />
                 Investigación con propósito.
-              </h3>
+              </KineticHeading>
               <p>
                 El proyecto está abierto al diálogo con estudiantes,
                 investigadores y organizaciones interesadas en nuevas preguntas
@@ -904,11 +909,11 @@ export default function Home() {
           <div id="contacto" className="contact-layout">
             <div>
               <p className="eyebrow">LA PRÓXIMA CONVERSACIÓN</p>
-              <h2>
+              <KineticHeading as="h2">
                 ¿Y si lo
                 <br />
                 <span>exploramos juntos?</span>
-              </h2>
+              </KineticHeading>
               <p>
                 Investigación, colaboración o una pregunta compartida. El
                 siguiente capítulo puede empezar aquí.

@@ -97,7 +97,7 @@ export function HeroTitle() {
   useEffect(() => {
     if (!inView || !scope.current) return;
     const lines = Array.from(
-      scope.current.querySelectorAll<HTMLElement>(".hero-word"),
+      scope.current.querySelectorAll<HTMLElement>(".hero-token"),
     );
     const showFinalState = () => {
       // Update Motion's values as well as the DOM. A direct style assignment can
@@ -118,7 +118,7 @@ export function HeroTitle() {
       { y: [76, 0], opacity: [0.18, 1], filter: ["blur(7px)", "blur(0px)"] },
       {
         duration: 1.1,
-        delay: stagger(0.18, { startDelay: 0.08 }),
+        delay: stagger(0.14, { startDelay: 0.08 }),
         ease: cinematicEase,
       },
     );
@@ -132,7 +132,14 @@ export function HeroTitle() {
     <h1 ref={scope} className="hero-title">
       {["Del residuo.", "A biopelícula."].map((line) => (
         <span className="text-mask" key={line}>
-          <span className="hero-word">{line}</span>
+          <span className="hero-word">
+            {line.split(" ").map((word, index) => (
+              <span className="hero-token-mask" key={word}>
+                {index > 0 && " "}
+                <span className="hero-token">{word}</span>
+              </span>
+            ))}
+          </span>
         </span>
       ))}
     </h1>

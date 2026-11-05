@@ -1,6 +1,6 @@
 # BioCrab
 
-Experiencia científica en español con Next.js 15, React 19, TypeScript, Tailwind CSS y Framer Motion.
+Experiencia científica en español con Next.js 15, React 19, TypeScript, Tailwind CSS, Framer Motion, GSAP/ScrollTrigger y Lenis.
 
 ## Desarrollo
 
@@ -27,7 +27,7 @@ El responsable autorizó conservar el emblema del logo aportado y cambiar su nom
 
 La narrativa recorre problema, propósito, innovación, transformación, investigación, metodología, trayectoria, galería, comparación, aplicaciones, impacto, fruta y equipo. El enlace `#hipotesis` abre la ubicación de la hipótesis dentro de investigación.
 
-La paleta oscura utiliza #050505, #0066FF, #00FF99, #FF3B30 y #FFFFFF; el tema claro adapta el contraste. Las animaciones incluyen reveal de texto, entrada escalonada, iluminación, partículas, red digital, flotación y profundidad de cursor. El parallax mueve la iluminación y mantiene completas las imágenes. Un control de pausa persistente detiene el movimiento continuo; también se respeta la preferencia de movimiento reducido y se desactiva el parallax en móvil.
+La paleta oscura utiliza #050505, #0066FF, #00FF99, #FF3B30 y #FFFFFF; el tema claro adapta el contraste. Las animaciones incluyen máscaras por palabras, entrada escalonada, iluminación, partículas ambientales, Ken Burns y profundidad de cursor. GSAP y ScrollTrigger coordinan las escenas y el parallax de títulos y fotografías. Las imágenes conservan sus bordes: el zoom se limita a una escala inferior a la del marco. Lenis suaviza el scroll de escritorio; los dispositivos táctiles conservan el desplazamiento nativo. Un control de pausa persistente detiene el movimiento continuo; también se respeta la preferencia de movimiento reducido. Los efectos móviles usan recorridos y carga visual menores. Manrope y Space Grotesk se sirven localmente, sin consultar Google Fonts.
 
 ## Archivos principales
 
@@ -36,6 +36,9 @@ La paleta oscura utiliza #050505, #0066FF, #00FF99, #FF3B30 y #FFFFFF; el tema c
 - `app/components/brand.tsx`, `public/images/biocrab-logo-adaptado.png`: identidad adaptada autorizada.
 - `app/icon.tsx`: favicon PNG generado a partir del emblema.
 - `app/components/experience.tsx`: navegación, imágenes, metodología, timeline, galerías y contacto.
+- `app/components/scroll-cinema.tsx`: GSAP, ScrollTrigger, títulos por palabras, Ken Burns y Lenis.
+- `app/components/global-atmosphere.tsx`: partículas DOM, iluminación ambiental y cursor magnético.
+- `app/components/premium-type.css`: tipografía local, contraste y personalidad de las secciones.
 - `app/components/cinematic.tsx`: reveal, entrada escalonada, pausa y movimiento reducido.
 - `app/components/premium.tsx`, `visuals.tsx`, `digital-network.tsx`: profundidad, atmósfera, parallax y red digital.
 - `app/components/research-experience.tsx`: recorrido y comparador cualitativo.
@@ -62,3 +65,5 @@ El formulario valida y copia el mensaje en un contexto seguro; no envía ni alma
 URL de producción comunicada por el responsable: <https://biocrab-website.vercel.app/>. Enlace directo solicitado: <https://biocrab-website.vercel.app/#hipotesis>. La integración se publicó y verificó en esa URL el 4 de noviembre de 2026, en escritorio y móvil.
 
 El encabezado `X-BioCrab-Design: pinterest-integrated-v4` identifica esta revisión. Se comprobaron el despliegue de Vercel, el encabezado, las imágenes y el enlace profundo. Ver [integración de referencias](docs/reference-integration.md) y [estado de revisión visual](docs/visual-review.md).
+
+La ampliación cinematográfica se identifica por `X-BioCrab-Design: cinematic-biotech-v5`. Sus decisiones de rendimiento y comprobaciones se documentan en [experiencia cinematográfica](docs/cinematic-experience.md).

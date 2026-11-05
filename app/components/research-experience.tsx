@@ -1,4 +1,5 @@
 "use client";
+import { KineticHeading } from "./scroll-cinema";
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
@@ -104,7 +105,7 @@ export function MaterialJourney() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
-              <h3>{selected.title}</h3>
+              <KineticHeading as="h3">{selected.title}</KineticHeading>
               <p>{selected.text}</p>
             </motion.div>
           </AnimatePresence>
@@ -226,11 +227,11 @@ export function MaterialComparator() {
                 <span className="micro">
                   {dimensions[dimension].name.toUpperCase()}
                 </span>
-                <h3>
+                <KineticHeading as="h3">
                   {material === "bio"
                     ? "Biopelícula BioCrab"
                     : "Plástico convencional"}
-                </h3>
+                </KineticHeading>
                 <p>{dimensions[dimension][material]}</p>
               </motion.div>
             </AnimatePresence>

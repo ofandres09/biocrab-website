@@ -1,0 +1,405 @@
+/* Typography and surface language shared by the BioCrab research experience. */
+:root {
+  --font-body: "Manrope Variable", Manrope, Arial, sans-serif;
+  --font-display: "Space Grotesk Variable", "Space Grotesk", Arial, sans-serif;
+  --bg: #050505;
+  --green: #00ffa3;
+  --blue: #2389ff;
+  --red: #ff3b30;
+  --muted: #b4bec8;
+  --accent-line: #2389ff42;
+  --surface-glint: #ffffff12;
+}
+
+:root[data-theme="light"] {
+  --green: #006f46;
+  --blue: #005fcb;
+  --red: #c72c23;
+  --muted: #4e5b66;
+  --accent-line: #005fcb35;
+  --surface-glint: #ffffffb3;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+.brand-wordmark,
+.gallery-card strong,
+.evidence-counter-value,
+.evidence-counter-label {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+:is(.section, .gummy-section) h2 {
+  font-size: clamp(40px, 4.85vw, 78px);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+h3 {
+  line-height: 1.17;
+  letter-spacing: -0.035em;
+}
+
+.hero-title {
+  font-size: clamp(58px, 6.95vw, 116px);
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+  font-weight: 500;
+}
+
+.hero-title .text-mask {
+  padding: 0.06em 0 0.15em;
+  margin: -0.06em 0 -0.15em;
+}
+
+.hero-title .text-mask > span {
+  white-space: nowrap;
+}
+
+.hero-title .text-mask:last-child {
+  color: #00ffa3;
+  font-size: 0.9em;
+}
+
+.hero-description {
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.75;
+  color: #c0ccd7;
+  max-width: 510px;
+}
+
+.hero-badges > span {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.hero .hero-project-preview p,
+.hero .hero-project-preview a {
+  font-size: 12px;
+}
+
+.hero-project-preview {
+  border-color: #2389ff56;
+  background: linear-gradient(125deg, #13263be8, #081017f2);
+  box-shadow:
+    inset 0 1px 0 #ffffff13,
+    0 15px 50px #0004;
+}
+
+.brand-wordmark small {
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  font-weight: 600;
+}
+
+:is(.hero, .section, .gummy-section) .eyebrow {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.65;
+}
+
+:is(.hero, .section, .gummy-section, .site-footer) .micro,
+.paper-label,
+.gallery-card small,
+.journey-route small,
+.process-rail small,
+.timeline-tabs small,
+.status-pill,
+.scene-progress-note {
+  font-size: 10px;
+  line-height: 1.65;
+  letter-spacing: 0.09em;
+}
+
+.hero .hero-reference-note,
+.hero-bottom,
+.material-strip > span:first-child,
+.figure-number,
+.research-stamp,
+.gummy-label,
+.circular-overlay span,
+.footer-masthead p,
+.footer-bottom {
+  font-size: 10px;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+}
+
+.photo-caption,
+.gallery-caption,
+.section .annotation,
+.gummy-section .annotation,
+.material-comparator > .annotation,
+.validation-label,
+.future-card .annotation,
+.evidence-counters-note,
+.evidence-counter-description,
+.evidence-counter-link {
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.section-description {
+  font-size: 14px;
+  line-height: 1.85;
+  max-width: 350px;
+}
+
+.why-copy p,
+.future-card p,
+.impact-row p,
+.research-detail p,
+.research-detail li,
+.method-detail p:not(.eyebrow):not(.annotation),
+.gummy-copy p:not(.eyebrow):not(.lead),
+.comparator-copy p,
+.project-copy p,
+.results-status-list p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.research-detail.sources a,
+.inline-note p,
+.timeline-caption > span:last-child,
+.comparator-toolbar button,
+.dimension-controls button,
+.results-status-list small,
+.footer-grid nav {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.results-status-list small {
+  color: var(--red);
+}
+
+.research-copy blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(25px, 2.5vw, 38px);
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+}
+
+.gallery-card strong {
+  font-size: clamp(26px, 2.1vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -0.04em;
+}
+
+.section-heading > div,
+.technology-copy,
+.research-copy,
+.method-reference-copy,
+.results-status-list,
+.impact-copy,
+.project-copy {
+  min-width: 0;
+}
+
+/* Each scene has its own light source, painted behind the complete photographs. */
+.problem-section {
+  background:
+    radial-gradient(ellipse at 0 20%, #2389ff12, transparent 62%), var(--bg);
+}
+
+.why-section {
+  background:
+    radial-gradient(ellipse at 85% 100%, #00ffa315, transparent 65%),
+    var(--surface);
+}
+
+.technology-section {
+  background:
+    radial-gradient(ellipse at 15% 45%, #2389ff2b, transparent 60%),
+    radial-gradient(ellipse at 100% 0, #00ffa314, transparent 60%), #050505;
+}
+
+.technology-section .section-description {
+  color: #b9c8d5;
+}
+
+.transformation-section {
+  background:
+    radial-gradient(ellipse at 95% 70%, #2389ff16, transparent 60%),
+    radial-gradient(ellipse at 0 100%, #00ffa30b, transparent 55%), var(--bg);
+}
+
+.research-section {
+  background:
+    radial-gradient(ellipse at 0 45%, #2389ff1b, transparent 60%),
+    var(--surface);
+}
+
+.method-section {
+  background:
+    radial-gradient(ellipse at 85% 0, #2389ff15, transparent 55%),
+    radial-gradient(ellipse at 0 100%, #00ffa312, transparent 60%), var(--bg);
+}
+
+.timeline-section {
+  background:
+    radial-gradient(ellipse at 55% 100%, #2389ff1a, transparent 65%), var(--bg);
+}
+
+.editorial-gallery {
+  background:
+    radial-gradient(ellipse at 100% 10%, #00ffa30c, transparent 60%), var(--bg);
+}
+
+.results-reference-section {
+  background:
+    radial-gradient(ellipse at 0 40%, #2389ff1a, transparent 60%),
+    radial-gradient(ellipse at 100% 100%, #ff3b3009, transparent 55%), var(--bg);
+}
+
+.compare-section {
+  background:
+    radial-gradient(ellipse at 100% 30%, #2389ff15, transparent 60%),
+    var(--surface);
+}
+
+.future-section {
+  background:
+    radial-gradient(ellipse at 60% 100%, #00ffa314, transparent 65%),
+    var(--surface);
+}
+
+.future-vision {
+  background:
+    radial-gradient(ellipse at 10% 30%, #00ffa31c, transparent 65%), var(--bg);
+}
+
+.impact-section {
+  background:
+    radial-gradient(ellipse at 100% 20%, #00ffa314, transparent 60%), var(--bg);
+}
+
+.gummy-section {
+  background:
+    radial-gradient(ellipse at 85% 60%, #ff3b300a, transparent 65%),
+    var(--surface);
+}
+
+.project-section {
+  background:
+    radial-gradient(ellipse at 0 100%, #2389ff17, transparent 65%), var(--bg);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 4.5%;
+  right: 4.5%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-line),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.why-card,
+.future-card,
+.method-detail,
+.results-status-list > article {
+  border-color: color-mix(in srgb, var(--blue) 22%, var(--line));
+  background:
+    linear-gradient(135deg, var(--surface-glint), transparent 40%),
+    var(--surface);
+  box-shadow:
+    inset 0 1px 0 var(--surface-glint),
+    0 20px 50px #00000018;
+}
+
+.why-card:hover,
+.future-card:hover {
+  border-color: var(--green);
+  box-shadow:
+    inset 0 1px 0 var(--surface-glint),
+    0 18px 50px #00ffa30d;
+}
+
+.method-detail h3,
+.journey-detail h3,
+.timeline-panel h3 {
+  text-wrap: balance;
+}
+
+.results-status-list > article > svg,
+.technology-copy li > svg {
+  filter: drop-shadow(0 0 10px #2389ff35);
+}
+
+@media (max-width: 650px) {
+  .hero-title {
+    font-size: clamp(44.8px, 11.3vw, 72px);
+    letter-spacing: -0.06em;
+  }
+
+  :is(.section, .gummy-section) h2 {
+    font-size: clamp(34px, 9.2vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+  }
+
+  :is(.hero, .section, .gummy-section) .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-description,
+  .section-description {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .hero-bottom {
+    font-size: 9px;
+    letter-spacing: 0.04em;
+  }
+
+  .section-heading {
+    gap: 24px;
+    margin-bottom: 38px;
+  }
+
+  .gallery-card strong {
+    font-size: 27px;
+  }
+
+  .photo-caption,
+  .gallery-caption {
+    font-size: 11px;
+  }
+
+  .why-copy,
+  .future-card > div:last-child,
+  .results-status-list > article {
+    padding: 24px;
+  }
+}

@@ -9,6 +9,8 @@ import {
 } from "react";
 import Image from "next/image";
 import { Brand } from "./brand";
+import { GlobalAtmosphere } from "./global-atmosphere";
+import { ScrollCinema, KineticHeading } from "./scroll-cinema";
 import { CinematicReveal, AnimationControl } from "./cinematic";
 import { resolvePhoto } from "@/lib/media";
 import { ParallaxFrame, ScrollScene } from "./visuals";
@@ -63,14 +65,41 @@ export function Experience({
       if (target instanceof HTMLDetailsElement) target.open = true;
       target.scrollIntoView({ block: "start", behavior: "instant" });
     };
-    let frame = requestAnimationFrame(() => {
-      frame = requestAnimationFrame(alignInitialAnchor);
+    let disposed = false;
+    let interacted = false;
+    let frame = 0;
+    const scheduleAnchor = () => {
+      if (disposed || !window.location.hash) return;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(alignInitialAnchor);
+      });
+    };
+    const userScroll = () => {
+      interacted = true;
+    };
+    scheduleAnchor();
+    void document.fonts.ready.then(() => {
+      if (!disposed && !interacted) scheduleAnchor();
     });
-    return () => cancelAnimationFrame(frame);
+    window.addEventListener("hashchange", scheduleAnchor);
+    window.addEventListener("wheel", userScroll, { passive: true });
+    window.addEventListener("touchstart", userScroll, { passive: true });
+    return () => {
+      disposed = true;
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", scheduleAnchor);
+      window.removeEventListener("wheel", userScroll);
+      window.removeEventListener("touchstart", userScroll);
+    };
   }, []);
   return (
     <ImageAssets.Provider value={imageNames}>
-      <MotionConfig reducedMotion="user">{children}</MotionConfig>
+      <MotionConfig reducedMotion="user">
+        <GlobalAtmosphere />
+        <ScrollCinema />
+        {children}
+      </MotionConfig>
     </ImageAssets.Provider>
   );
 }
@@ -291,7 +320,7 @@ export function Timeline() {
           >
             <div>
               <span className="status-pill">{stages[active].status}</span>
-              <h3>{stages[active].title}</h3>
+              <KineticHeading as="h3">{stages[active].title}</KineticHeading>
               <p>{stages[active].text}</p>
               <span className="micro">
                 Sin fechas atribuidas ni resultados no documentados.
@@ -347,7 +376,7 @@ export function Methodology() {
         <div>
           <span className="eyebrow">ETAPA 0{active + 1} / METODOLOGÍA</span>
           <Icon size={34} strokeWidth={1} className="method-icon" />
-          <h3>{methodology[active].title}</h3>
+          <KineticHeading as="h3">{methodology[active].title}</KineticHeading>
           <p>{methodology[active].text}</p>
           <p className="annotation">
             Fotografía contextual del proyecto; no acredita la etapa ni la
@@ -418,6 +447,7 @@ export function Gallery({
       {active !== null && (
         <div
           className="lightbox"
+          data-lenis-prevent
           role="dialog"
           aria-modal="true"
           aria-label={items[active].title}
@@ -453,7 +483,7 @@ export function Gallery({
               name={items[active].src}
               alt={items[active].title}
             />
-            <h3>{items[active].title}</h3>
+            <KineticHeading as="h3">{items[active].title}</KineticHeading>
             <p>{items[active].caption}</p>
             <div className="lightbox-controls">
               <button
@@ -525,6 +555,7 @@ export function Contact() {
       />
       <label htmlFor="message">La próxima conversación</label>
       <textarea
+        data-lenis-prevent
         required
         id="message"
         name="message"

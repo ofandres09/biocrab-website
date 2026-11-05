@@ -5,9 +5,7 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        headers: [
-          { key: "X-BioCrab-Design", value: "pinterest-integrated-v4" },
-        ],
+        headers: [{ key: "X-BioCrab-Design", value: "cinematic-biotech-v5" }],
       },
     ];
   },

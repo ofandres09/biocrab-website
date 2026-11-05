@@ -1,9 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
-import { stagger, useAnimate, useInView } from "framer-motion";
-import { useMotionPause, useReducedMotionPreference } from "./cinematic";
-
 // A deterministic decorative network. Coordinates carry no experimental data.
 const nodes = [
   [82, 134],
@@ -83,58 +79,8 @@ const activeNodes = new Set([2, 6, 11, 16, 18, 23, 25]);
 const redNodes = new Set([9, 26]);
 
 export function DigitalNetwork() {
-  const [scope, animate] = useAnimate<SVGSVGElement>();
-  const inView = useInView(scope, { amount: 0.05 });
-  const reduced = useReducedMotionPreference();
-  const paused = useMotionPause();
-
-  useEffect(() => {
-    if (!scope.current) return;
-    const paths =
-      scope.current.querySelectorAll<SVGPathElement>(".digital-link");
-    const halos =
-      scope.current.querySelectorAll<SVGCircleElement>(".digital-node-halo");
-    const showStatic = () => {
-      paths.forEach((path) => {
-        path.style.strokeDashoffset = "0";
-        path.style.opacity = "0.34";
-      });
-      halos.forEach((halo) => {
-        halo.style.opacity = "0.22";
-      });
-    };
-    if (!inView || reduced || paused) {
-      showStatic();
-      return;
-    }
-
-    // Start on viewport entry, rather than suppressing animation with initial=false.
-    // Server-rendered paths are complete and visible even before hydration.
-    const trace = animate(
-      paths,
-      { strokeDashoffset: [1, 0], opacity: [0.08, 0.48, 0.34] },
-      { duration: 1.9, delay: stagger(0.035), ease: [0.16, 1, 0.3, 1] },
-    );
-    const pulse = animate(
-      halos,
-      { opacity: [0.14, 0.7, 0.14] },
-      {
-        duration: 3.8,
-        delay: stagger(0.27),
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    );
-    return () => {
-      trace.stop();
-      pulse.stop();
-      showStatic();
-    };
-  }, [animate, inView, paused, reduced, scope]);
-
   return (
     <svg
-      ref={scope}
       className="digital-network"
       viewBox="0 0 1400 900"
       preserveAspectRatio="xMidYMid slice"

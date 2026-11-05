@@ -16,61 +16,24 @@ export function ReadingProgress() {
   );
 }
 export function OceanAtmosphere() {
-  const reduced = useReducedMotionPreference();
-  const paused = useMotionPause();
-  const still = reduced || paused;
-  const animationPlayState = still ? "paused" : "running";
+  // One global particle system supplies motion across the whole document.
+  // Keep the large SVG/gradients cached rather than repainting a viewport per node.
   return (
     <div className="ocean-atmosphere" aria-hidden="true">
       <DigitalNetwork />
       <div
         className="ocean-caustic caustic-one"
-        style={{ animationPlayState }}
+        style={{ animation: "none" }}
       />
       <div
         className="ocean-caustic caustic-two"
-        style={{ animationPlayState }}
+        style={{ animation: "none" }}
       />
-      <motion.div
-        className="ocean-beam"
-        initial={false}
-        animate={
-          still
-            ? { x: 0, opacity: 0.5 }
-            : { x: [-30, 40, -30], opacity: [0.3, 0.85, 0.3] }
-        }
-        transition={{
-          duration: still ? 0 : 14,
-          ease: "easeInOut",
-          repeat: still ? 0 : Infinity,
-        }}
-      />
-      <motion.div
-        className="ocean-contour"
-        initial={false}
-        animate={still ? { scale: 1 } : { scale: [0.98, 1.045, 0.98] }}
-        transition={{
-          duration: still ? 0 : 18,
-          ease: "easeInOut",
-          repeat: still ? 0 : Infinity,
-        }}
-      />
-      {Array.from({ length: 22 }, (_, i) => (
-        <span
-          className="ocean-particle"
-          key={i}
-          style={{
-            left: `${(i * 37 + 11) % 100}%`,
-            top: `${(i * 23 + 7) % 100}%`,
-            animationPlayState,
-            animationDelay: `-${i * 0.8}s`,
-            animationDuration: `${12 + (i % 7)}s`,
-          }}
-        />
-      ))}
+      <div className="ocean-contour" />
     </div>
   );
 }
+
 const comparison = [
   {
     label: "Origen de la materia prima",

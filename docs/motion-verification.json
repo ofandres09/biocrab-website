@@ -1,0 +1,418 @@
+{
+  "base": "http://127.0.0.1:3023",
+  "checkedAt": "2026-11-05T14:25:27.623Z",
+  "viewports": [
+    {
+      "width": 1440,
+      "engine": "lenis-gsap",
+      "initial": {
+        "engine": "lenis-gsap",
+        "sections": 16,
+        "particleCount": "30",
+        "visibleParticles": 30,
+        "canvas": 0,
+        "particleTag": "DIV",
+        "dnaAnimation": "none"
+      },
+      "cursor": {
+        "visible": "visible",
+        "magnetic": "true",
+        "transform": "translate3d(124.572px, 21.5px, 0px)"
+      },
+      "samples": [
+        {
+          "i": 0,
+          "particleTransform": "matrix(0.814979, 0, 0, 0.814979, -1.39088, -1.28389)",
+          "particleOpacity": "0.383538",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.940809",
+          "photoTransform": "matrix(0.940809, 0, 0, 0.940809, 0, 0.694855)"
+        },
+        {
+          "i": 1,
+          "particleTransform": "matrix(0.816983, 0, 0, 0.816983, -1.57701, -1.45571)",
+          "particleOpacity": "0.386688",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.941031",
+          "photoTransform": "matrix(0.941031, 0, 0, 0.941031, 0, 0.490486)"
+        },
+        {
+          "i": 2,
+          "particleTransform": "matrix(0.819117, 0, 0, 0.819117, -1.77512, -1.63857)",
+          "particleOpacity": "0.39004",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.941255",
+          "photoTransform": "matrix(0.941255, 0, 0, 0.941255, 0, 0.409735)"
+        },
+        {
+          "i": 3,
+          "particleTransform": "matrix(0.82109, 0, 0, 0.82109, -1.95835, -1.80771)",
+          "particleOpacity": "0.393141",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.941481",
+          "photoTransform": "matrix(0.941481, 0, 0, 0.941481, 0, 0.372849)"
+        },
+        {
+          "i": 4,
+          "particleTransform": "matrix(0.823165, 0, 0, 0.823165, -2.15103, -1.98557)",
+          "particleOpacity": "0.396402",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.941754",
+          "photoTransform": "matrix(0.941754, 0, 0, 0.941754, 0, 0.353907)"
+        },
+        {
+          "i": 5,
+          "particleTransform": "matrix(0.825657, 0, 0, 0.825657, -2.38248, -2.19921)",
+          "particleOpacity": "0.400319",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.942041",
+          "photoTransform": "matrix(0.942041, 0, 0, 0.942041, 0, 0.346929)"
+        },
+        {
+          "i": 6,
+          "particleTransform": "matrix(0.827613, 0, 0, 0.827613, -2.56405, -2.36682)",
+          "particleOpacity": "0.403392",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.942284",
+          "photoTransform": "matrix(0.942284, 0, 0, 0.942284, 0, 0.343938)"
+        },
+        {
+          "i": 7,
+          "particleTransform": "matrix(0.830683, 0, 0, 0.830683, -2.84912, -2.62996)",
+          "particleOpacity": "0.408216",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.942671",
+          "photoTransform": "matrix(0.942671, 0, 0, 0.942671, 0, 0.342941)"
+        },
+        {
+          "i": 8,
+          "particleTransform": "matrix(0.833184, 0, 0, 0.833184, -3.0814, -2.84437)",
+          "particleOpacity": "0.412147",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.942981",
+          "photoTransform": "matrix(0.942981, 0, 0, 0.942981, 0, 0.342941)"
+        },
+        {
+          "i": 9,
+          "particleTransform": "matrix(0.835406, 0, 0, 0.835406, -3.2877, -3.0348)",
+          "particleOpacity": "0.415638",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.943275",
+          "photoTransform": "matrix(0.943275, 0, 0, 0.943275, 0, 0.342941)"
+        },
+        {
+          "i": 10,
+          "particleTransform": "matrix(0.838873, 0, 0, 0.838873, -3.60959, -3.33193)",
+          "particleOpacity": "0.421085",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.943725",
+          "photoTransform": "matrix(0.943725, 0, 0, 0.943725, 0, 0.342941)"
+        },
+        {
+          "i": 11,
+          "particleTransform": "matrix(0.842087, 0, 0, 0.842087, -3.90805, -3.60743)",
+          "particleOpacity": "0.426136",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.944164",
+          "photoTransform": "matrix(0.944164, 0, 0, 0.944164, 0, 0.342941)"
+        },
+        {
+          "i": 12,
+          "particleTransform": "matrix(0.84628, 0, 0, 0.84628, -4.29745, -3.96688)",
+          "particleOpacity": "0.432726",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.944688",
+          "photoTransform": "matrix(0.944688, 0, 0, 0.944688, 0, 0.342941)"
+        },
+        {
+          "i": 13,
+          "particleTransform": "matrix(0.848447, 0, 0, 0.848447, -4.49866, -4.15261)",
+          "particleOpacity": "0.436131",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.944996",
+          "photoTransform": "matrix(0.944996, 0, 0, 0.944996, 0, 0.342941)"
+        },
+        {
+          "i": 14,
+          "particleTransform": "matrix(0.848447, 0, 0, 0.848447, -4.49866, -4.15261)",
+          "particleOpacity": "0.436131",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.944996",
+          "photoTransform": "matrix(0.944996, 0, 0, 0.944996, 0, 0.342941)"
+        },
+        {
+          "i": 15,
+          "particleTransform": "matrix(0.857107, 0, 0, 0.857107, -5.30275, -4.89484)",
+          "particleOpacity": "0.449739",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.946161",
+          "photoTransform": "matrix(0.946161, 0, 0, 0.946161, 0, 0.342941)"
+        }
+      ],
+      "particleDistinct": 15,
+      "photoDistinct": 15,
+      "paused": [
+        {
+          "engine": "still",
+          "global": "still",
+          "sections": 0,
+          "lenis": false,
+          "particleState": "paused",
+          "particleName": "ambient-particle-drift",
+          "particleTransform": "matrix(0.87101, 0, 0, 0.87101, -6.59376, -6.08655)",
+          "particleOpacity": "0.471587",
+          "cursor": "hidden"
+        },
+        {
+          "engine": "still",
+          "global": "still",
+          "sections": 0,
+          "lenis": false,
+          "particleState": "paused",
+          "particleName": "ambient-particle-drift",
+          "particleTransform": "matrix(0.87101, 0, 0, 0.87101, -6.59376, -6.08655)",
+          "particleOpacity": "0.471587",
+          "cursor": "hidden"
+        }
+      ],
+      "reduced": {
+        "engine": "still",
+        "global": "still",
+        "sections": 0,
+        "lenis": false,
+        "particleState": "running",
+        "particleName": "none",
+        "particleTransform": "none",
+        "particleOpacity": "0.5",
+        "cursor": "hidden"
+      },
+      "restored": {
+        "engine": "lenis-gsap",
+        "sections": 16,
+        "global": "active"
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "engine": "native-gsap",
+      "initial": {
+        "engine": "native-gsap",
+        "sections": 16,
+        "particleCount": "14",
+        "visibleParticles": 14,
+        "canvas": 0,
+        "particleTag": "DIV",
+        "dnaAnimation": "none"
+      },
+      "cursor": {
+        "display": "none"
+      },
+      "samples": [
+        {
+          "i": 0,
+          "particleTransform": "matrix(0.8069, 0, 0, 0.8069, -0.640734, -0.591447)",
+          "particleOpacity": "0.370843",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.960071",
+          "photoTransform": "matrix(0.960071, 0, 0, 0.960071, 0, 0.113665)"
+        },
+        {
+          "i": 1,
+          "particleTransform": "matrix(0.808261, 0, 0, 0.808261, -0.767055, -0.708051)",
+          "particleOpacity": "0.372981",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.960124",
+          "photoTransform": "matrix(0.960124, 0, 0, 0.960124, 0, 0.113665)"
+        },
+        {
+          "i": 2,
+          "particleTransform": "matrix(0.809554, 0, 0, 0.809554, -0.887149, -0.818907)",
+          "particleOpacity": "0.375013",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.960185",
+          "photoTransform": "matrix(0.960185, 0, 0, 0.960185, 0, 0.113665)"
+        },
+        {
+          "i": 3,
+          "particleTransform": "matrix(0.811152, 0, 0, 0.811152, -1.03558, -0.955922)",
+          "particleOpacity": "0.377525",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.96027",
+          "photoTransform": "matrix(0.96027, 0, 0, 0.96027, 0, 0.113665)"
+        },
+        {
+          "i": 4,
+          "particleTransform": "matrix(0.813105, 0, 0, 0.813105, -1.21691, -1.1233)",
+          "particleOpacity": "0.380594",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.96038",
+          "photoTransform": "matrix(0.96038, 0, 0, 0.96038, 0, 0.113665)"
+        },
+        {
+          "i": 5,
+          "particleTransform": "matrix(0.814738, 0, 0, 0.814738, -1.36851, -1.26324)",
+          "particleOpacity": "0.383159",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.960488",
+          "photoTransform": "matrix(0.960488, 0, 0, 0.960488, 0, 0.113665)"
+        },
+        {
+          "i": 6,
+          "particleTransform": "matrix(0.816984, 0, 0, 0.816984, -1.5771, -1.45578)",
+          "particleOpacity": "0.386689",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.960627",
+          "photoTransform": "matrix(0.960627, 0, 0, 0.960627, 0, 0.113665)"
+        },
+        {
+          "i": 7,
+          "particleTransform": "matrix(0.818842, 0, 0, 0.818842, -1.74957, -1.61499)",
+          "particleOpacity": "0.389608",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.960754",
+          "photoTransform": "matrix(0.960754, 0, 0, 0.960754, 0, 0.113665)"
+        },
+        {
+          "i": 8,
+          "particleTransform": "matrix(0.82138, 0, 0, 0.82138, -1.98529, -1.83257)",
+          "particleOpacity": "0.393597",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.960933",
+          "photoTransform": "matrix(0.960933, 0, 0, 0.960933, 0, 0.113665)"
+        },
+        {
+          "i": 9,
+          "particleTransform": "matrix(0.823776, 0, 0, 0.823776, -2.20782, -2.03798)",
+          "particleOpacity": "0.397363",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.961107",
+          "photoTransform": "matrix(0.961107, 0, 0, 0.961107, 0, 0.113665)"
+        },
+        {
+          "i": 10,
+          "particleTransform": "matrix(0.825659, 0, 0, 0.825659, -2.38259, -2.19931)",
+          "particleOpacity": "0.400321",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.961257",
+          "photoTransform": "matrix(0.961257, 0, 0, 0.961257, 0, 0.113665)"
+        },
+        {
+          "i": 11,
+          "particleTransform": "matrix(0.828619, 0, 0, 0.828619, -2.65749, -2.45307)",
+          "particleOpacity": "0.404973",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.961474",
+          "photoTransform": "matrix(0.961474, 0, 0, 0.961474, 0, 0.113665)"
+        },
+        {
+          "i": 12,
+          "particleTransform": "matrix(0.831388, 0, 0, 0.831388, -2.91458, -2.69038)",
+          "particleOpacity": "0.409324",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.96169",
+          "photoTransform": "matrix(0.96169, 0, 0, 0.96169, 0, 0.113665)"
+        },
+        {
+          "i": 13,
+          "particleTransform": "matrix(0.834285, 0, 0, 0.834285, -3.18363, -2.93873)",
+          "particleOpacity": "0.413877",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.961921",
+          "photoTransform": "matrix(0.961921, 0, 0, 0.961921, 0, 0.113665)"
+        },
+        {
+          "i": 14,
+          "particleTransform": "matrix(0.836927, 0, 0, 0.836927, -3.42891, -3.16515)",
+          "particleOpacity": "0.418028",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.962133",
+          "photoTransform": "matrix(0.962133, 0, 0, 0.962133, 0, 0.113665)"
+        },
+        {
+          "i": 15,
+          "particleTransform": "matrix(0.840063, 0, 0, 0.840063, -3.72009, -3.43393)",
+          "particleOpacity": "0.422955",
+          "particleName": "ambient-particle-drift",
+          "particleState": "running",
+          "swell": "0.962398",
+          "photoTransform": "matrix(0.962398, 0, 0, 0.962398, 0, 0.113665)"
+        }
+      ],
+      "particleDistinct": 16,
+      "photoDistinct": 16,
+      "paused": [
+        {
+          "engine": "still",
+          "global": "still",
+          "sections": 0,
+          "lenis": false,
+          "particleState": "paused",
+          "particleName": "ambient-particle-drift",
+          "particleTransform": "matrix(0.847142, 0, 0, 0.847142, -4.37751, -4.04078)",
+          "particleOpacity": "0.434081",
+          "cursor": "hidden"
+        },
+        {
+          "engine": "still",
+          "global": "still",
+          "sections": 0,
+          "lenis": false,
+          "particleState": "paused",
+          "particleName": "ambient-particle-drift",
+          "particleTransform": "matrix(0.847142, 0, 0, 0.847142, -4.37751, -4.04078)",
+          "particleOpacity": "0.434081",
+          "cursor": "hidden"
+        }
+      ],
+      "reduced": {
+        "engine": "still",
+        "global": "still",
+        "sections": 0,
+        "lenis": false,
+        "particleState": "running",
+        "particleName": "none",
+        "particleTransform": "none",
+        "particleOpacity": "0.5",
+        "cursor": "hidden"
+      },
+      "restored": {
+        "engine": "native-gsap",
+        "sections": 16,
+        "global": "active"
+      },
+      "errors": []
+    }
+  ]
+}
