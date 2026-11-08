@@ -1,0 +1,36 @@
+{
+  "lightboxes": 11,
+  "methods": 5,
+  "journey": 5,
+  "timelineKeyboard": true,
+  "comparisons": 8,
+  "clipboard": true,
+  "mobileMenu": true,
+  "axe": [
+    {
+      "width": 1440,
+      "theme": "dark",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "violations": [],
+      "incomplete": 2
+    }
+  ],
+  "errors": []
+}

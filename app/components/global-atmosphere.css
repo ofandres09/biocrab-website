@@ -1,3 +1,13 @@
+@property --reflection-x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --reflection-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
 .global-atmosphere {
   position: fixed;
   inset: 0;
@@ -13,35 +23,66 @@
 }
 .atmosphere-field {
   position: absolute;
-  width: min(640px, 65vmax);
-  aspect-ratio: 1;
+  width: min(760px, 74vmax);
+  aspect-ratio: 0.88;
   border-radius: 50%;
-  opacity: 0.58;
+  opacity: 0.62;
+  will-change: transform, opacity;
+}
+.atmosphere-field::before {
+  content: "";
+  position: absolute;
+  inset: 7% 26%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 50% 0,
+    #73c6ff0e,
+    #2389ff08 28%,
+    transparent 72%
+  );
+  transform: rotate(-26deg) scaleY(1.22);
 }
 .atmosphere-field-blue {
-  left: -18%;
-  top: -30%;
-  background: radial-gradient(
-    ellipse,
-    #0066ff1b,
-    #0066ff08 35%,
-    transparent 69%
-  );
-  animation: atmosphere-blue-drift 21s ease-in-out infinite alternate;
+  left: -19%;
+  top: -32%;
+  background:
+    radial-gradient(
+      ellipse at 46% 40%,
+      #2389ff20,
+      #0066ff09 36%,
+      transparent 68%
+    ),
+    radial-gradient(ellipse at 72% 68%, #00b7ff09, transparent 52%);
+  animation: atmosphere-blue-drift 28s ease-in-out infinite alternate;
 }
 .atmosphere-field-green {
-  right: -16%;
-  bottom: -26%;
+  right: -19%;
+  bottom: -34%;
+  background:
+    radial-gradient(
+      ellipse at 50% 60%,
+      #00ffa31b,
+      #00ff9907 36%,
+      transparent 68%
+    ),
+    radial-gradient(ellipse at 25% 30%, #2389ff0b, transparent 53%);
+  animation: atmosphere-green-drift 34s ease-in-out -12s infinite alternate;
+}
+.atmosphere-field-green::before {
   background: radial-gradient(
-    ellipse,
-    #00ff9915,
-    #00ff9907 36%,
-    transparent 69%
+    ellipse at 50% 100%,
+    #8effd80d,
+    #00ffa307 28%,
+    transparent 72%
   );
+  transform: rotate(-26deg) scaleY(1.22);
 }
 .atmosphere-particles {
   position: absolute;
   inset: 0;
+}
+:root[data-molecular-graphics="webgl"] .atmosphere-particles {
+  display: none;
 }
 .ambient-particle {
   position: absolute;
@@ -91,16 +132,19 @@
   left: 0;
   width: 360px;
   height: 360px;
-  background: radial-gradient(
-    ellipse,
-    #0066ff0e,
-    #00ff9906 32%,
-    transparent 66%
-  );
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 43% 42%, #76caff0b, transparent 28%),
+    radial-gradient(ellipse, #2389ff13, #00ffa308 34%, transparent 70%);
   opacity: 0;
   transition:
-    transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.3s;
+}
+.global-atmosphere[data-surface="true"] .atmosphere-cursor-light {
+  background:
+    radial-gradient(ellipse at 43% 42%, #91d7ff14, transparent 28%),
+    radial-gradient(ellipse, #2389ff20, #00ffa30b 34%, transparent 70%);
 }
 .magnetic-cursor {
   position: absolute;
@@ -144,6 +188,75 @@
 .global-atmosphere[data-cursor="visible"] .atmosphere-cursor-light {
   opacity: 1;
 }
+/* A restrained reflection belongs to the image/card itself, so its edge and
+   depth remain readable as the pointer moves. No filters or extra DOM layers. */
+:is(
+  .project-photo,
+  .cinema-heading,
+  .hero-title,
+  .gallery-card,
+  .why-card,
+  .future-card,
+  .method-detail,
+  .results-status-list article
+) {
+  position: relative;
+}
+:is(
+  .project-photo,
+  .cinema-heading,
+  .hero-title,
+  .gallery-card,
+  .why-card,
+  .future-card,
+  .method-detail,
+  .results-status-list article
+)::after {
+  --reflection-x: inherit;
+  --reflection-y: inherit;
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    280px circle at var(--reflection-x) var(--reflection-y),
+    #c5eaff1d,
+    #2389ff12 27%,
+    #00ffa306 49%,
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 0.36s ease;
+}
+:is(.cinema-heading, .hero-title)::after {
+  background: radial-gradient(
+    210px circle at var(--reflection-x) var(--reflection-y),
+    #86cfff12,
+    #2389ff09 35%,
+    transparent 72%
+  );
+}
+:is(.cinema-heading, .hero-title) {
+  text-shadow: 0 0 34px transparent;
+  transition: text-shadow 0.36s ease;
+}
+:is(
+    .project-photo,
+    .cinema-heading,
+    .hero-title,
+    .gallery-card,
+    .why-card,
+    .future-card,
+    .method-detail,
+    .results-status-list article
+  )[data-cursor-lit="true"]::after {
+  opacity: 1;
+}
+:is(.cinema-heading, .hero-title)[data-cursor-lit="true"] {
+  text-shadow: 0 0 34px #2389ff2b;
+}
 .global-atmosphere[data-state="still"] .atmosphere-field,
 .global-atmosphere[data-state="still"] .ambient-particle-light,
 .global-atmosphere[data-hidden="true"] .atmosphere-field,
@@ -157,7 +270,15 @@
   opacity: 0 !important;
 }
 :root[data-theme="light"] .global-atmosphere .atmosphere-field {
-  opacity: 0.24;
+  opacity: 0.3;
+}
+:root[data-theme="light"] [data-cursor-lit="true"]::after {
+  background: radial-gradient(
+    280px circle at var(--reflection-x) var(--reflection-y),
+    #ffffff45,
+    #2389ff0d 32%,
+    transparent 72%
+  );
 }
 :root[data-theme="light"] .global-atmosphere .ambient-particle-light::before {
   background: #0066ff;
@@ -171,11 +292,17 @@
 @keyframes atmosphere-blue-drift {
   from {
     transform: translate3d(0, 0, 0);
-    opacity: 0.4;
   }
   to {
-    transform: translate3d(5vw, 4vh, 0);
-    opacity: 0.7;
+    transform: translate3d(5vw, 4vh, 0) rotate(5deg);
+  }
+}
+@keyframes atmosphere-green-drift {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(-4vw, -5vh, 0) rotate(-7deg);
   }
 }
 @keyframes ambient-particle-drift {
@@ -193,7 +320,7 @@
     display: none;
   }
   .atmosphere-field {
-    width: min(440px, 65vmax);
+    width: min(440px, 74vmax);
   }
   .atmosphere-field-blue {
     left: -40%;
@@ -210,6 +337,13 @@
     display: none;
   }
 }
+[data-motion="paused"] [data-cursor-lit="true"]::after {
+  opacity: 0 !important;
+}
+[data-motion="paused"]
+  :is(.cinema-heading, .hero-title)[data-cursor-lit="true"] {
+  text-shadow: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .ambient-particle-light {
     animation: none;
@@ -224,5 +358,11 @@
   .magnetic-cursor,
   .atmosphere-cursor-light {
     display: none;
+  }
+  [data-cursor-lit="true"]::after {
+    opacity: 0 !important;
+  }
+  :is(.cinema-heading, .hero-title)[data-cursor-lit="true"] {
+    text-shadow: none;
   }
 }

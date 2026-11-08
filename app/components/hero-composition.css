@@ -1,0 +1,104 @@
+/* The original hero content and photograph share a compact research composition. */
+.hero.image-led-hero {
+  isolation: auto;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  grid-template-rows: auto auto;
+  gap: 16px 4%;
+  padding-top: 28px;
+  padding-bottom: 82px;
+}
+.hero.image-led-hero .hero-copy {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  align-self: center;
+  z-index: 5;
+}
+.hero.image-led-hero .hero-copy > * {
+  z-index: 5;
+}
+.hero.image-led-hero .hero-reference-background {
+  position: relative;
+  inset: auto;
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  height: clamp(310px, 28vw, 410px);
+  min-height: 0;
+  border-radius: 22px;
+  background: radial-gradient(ellipse at center, #0066ff12, transparent 70%);
+}
+.hero.image-led-hero .hero-reference-background img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0 0 46px;
+}
+.hero.image-led-hero .hero-art {
+  display: block;
+  position: relative;
+  inset: auto;
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+  max-width: 520px;
+  justify-self: center;
+  align-self: start;
+  z-index: 5;
+}
+.hero.image-led-hero .hero-reference-background .hero-reference-note {
+  position: absolute;
+  inset: auto 0 0;
+  margin: 0;
+  padding-inline: 12px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+@media (min-width: 651px) and (max-width: 1000px) {
+  .hero.image-led-hero {
+    gap: 14px 3%;
+  }
+  .hero.image-led-hero .hero-reference-background {
+    height: 320px;
+  }
+}
+@media (max-width: 650px) {
+  .hero.image-led-hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: 15px;
+    padding-top: 22px;
+    padding-bottom: 66px;
+  }
+  .hero.image-led-hero .hero-copy {
+    display: contents;
+  }
+  .hero.image-led-hero .hero-brand {
+    grid-row: 1;
+  }
+  .hero.image-led-hero .hero-copy > .eyebrow {
+    grid-row: 2;
+  }
+  .hero.image-led-hero .hero-title {
+    grid-row: 3;
+  }
+  .hero.image-led-hero .hero-buttons {
+    grid-row: 4;
+  }
+  .hero.image-led-hero .hero-art {
+    grid-column: 1;
+    grid-row: 5;
+  }
+  .hero.image-led-hero .hero-reference-background {
+    grid-column: 1;
+    grid-row: 6;
+    height: min(105vw, 440px);
+  }
+  .hero.image-led-hero .hero-description {
+    grid-row: 7;
+  }
+  .hero.image-led-hero .hero-badges {
+    grid-row: 8;
+  }
+  .hero.image-led-hero .hero-project-depth {
+    grid-row: 9;
+  }
+}

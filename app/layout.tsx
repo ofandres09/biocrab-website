@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/manrope";
-import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/inter-tight";
+import "@fontsource-variable/geist";
 import "./globals.css";
 import "./components/premium-type.css";
+import "./components/hero-composition.css";
 const title = "BioCrab | Quitosano, almidón de yuca y biomateriales";
 const description =
   "BioCrab: investigación de biopelículas de quitosano y almidón de yuca, metodología científica y economía circular.";

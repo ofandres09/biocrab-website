@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import { Brand } from "./brand";
 import { GlobalAtmosphere } from "./global-atmosphere";
+import { MolecularBackdrop } from "./molecular-scene";
 import { ScrollCinema, KineticHeading } from "./scroll-cinema";
 import { CinematicReveal, AnimationControl } from "./cinematic";
 import { resolvePhoto } from "@/lib/media";
@@ -96,6 +97,7 @@ export function Experience({
   return (
     <ImageAssets.Provider value={imageNames}>
       <MotionConfig reducedMotion="user">
+        <MolecularBackdrop />
         <GlobalAtmosphere />
         <ScrollCinema />
         {children}
@@ -207,11 +209,13 @@ export function Header() {
 export function Photo({
   name,
   alt,
+  caption,
   className = "",
   priority = false,
 }: {
   name: string;
   alt: string;
+  caption?: string;
   className?: string;
   priority?: boolean;
 }) {
@@ -247,6 +251,7 @@ export function Photo({
         <strong>{alt}</strong>
         <small>Fotografía pendiente de incorporación</small>
       </div>
+      {caption && <span className="hero-reference-note">{caption}</span>}
     </div>
   );
 }

@@ -16,6 +16,7 @@ import {
   CircleDashed,
 } from "lucide-react";
 import { Brand } from "./components/brand";
+import { MolecularExplorer } from "./components/molecular-scene";
 import { KineticHeading } from "./components/scroll-cinema";
 import { referencePhotos } from "@/lib/project";
 import { EvidenceCounters } from "./components/evidence-counters";
@@ -96,6 +97,7 @@ export default function Home() {
           <Photo
             name="pinterest-adn.png"
             alt="Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab"
+            caption="Imagen conceptual de ADN · Ambientación tecnológica"
             className="hero-reference-background full-width"
             priority
           />
@@ -150,9 +152,7 @@ export default function Home() {
             </DepthSurface>
           </div>
           <div className="hero-art">
-            <span className="hero-reference-note">
-              Imagen conceptual de ADN · Ambientación tecnológica
-            </span>
+            <MolecularExplorer />
           </div>
           <div className="hero-bottom">
             <span>ORIGEN BIOLÓGICO. MÉTODO CIENTÍFICO.</span>

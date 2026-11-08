@@ -104,7 +104,7 @@ export function HeroTitle() {
       // be overwritten by the deferred render of an interrupted native effect.
       animate(
         lines,
-        { y: 0, opacity: 1, filter: "blur(0px)" },
+        { y: 0, rotateX: 0, scale: 1, opacity: 1, filter: "blur(0px)" },
         { duration: 0 },
       );
     };
@@ -115,7 +115,15 @@ export function HeroTitle() {
     // Start after the viewport observer fires: server and no-JS HTML stay visible.
     const controls = animate(
       lines,
-      { y: [76, 0], opacity: [0.18, 1], filter: ["blur(7px)", "blur(0px)"] },
+      {
+        y: [76, 0],
+        rotateX: [-18, 0],
+        scale: [0.94, 1],
+        filter: [
+          window.innerWidth >= 900 ? "blur(4px)" : "blur(1px)",
+          "blur(0px)",
+        ],
+      },
       {
         duration: 1.1,
         delay: stagger(0.14, { startDelay: 0.08 }),
@@ -164,7 +172,7 @@ export function CinematicReveal({
       className={className}
       initial={false}
       whileInView={
-        still ? { opacity: 1, y: 0 } : { opacity: [0.25, 1], y: [48, 0] }
+        still ? { y: 0, scale: 1 } : { y: [24, 0], scale: [0.99, 1] }
       }
       viewport={{ once: true, amount: 0.12, margin: "0px 0px -30px 0px" }}
       transition={{
@@ -203,10 +211,11 @@ export function Stagger({
           className="stagger-item"
           variants={{
             visible: still
-              ? { y: 0, opacity: 1 }
+              ? { y: 0, scale: 1, rotateY: 0 }
               : {
                   y: [42, 0],
-                  opacity: [0.2, 1],
+                  scale: [0.98, 1],
+                  rotateY: [3, 0],
                   transition: { duration: 0.85, ease: cinematicEase },
                 },
           }}

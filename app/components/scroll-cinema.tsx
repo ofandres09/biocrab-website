@@ -15,6 +15,229 @@ import {
 import { useMotionPause, useReducedMotionPreference } from "./cinematic";
 import "./scroll-cinema.css";
 
+type LayerMotion = {
+  selector: string;
+  x: number;
+  y: number;
+  turn?: number;
+  depth?: number;
+  scale?: number;
+  reveal?: boolean;
+};
+
+type ChapterMotion = {
+  name: string;
+  aperture: [string, string];
+  words: [number, number, number];
+  pan: number;
+  layers: LayerMotion[];
+};
+
+const openFrame = "inset(0% 0% 0% 0% round 0px)";
+const openPolygon = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
+
+/** Each chapter has its own camera, opening gesture and reading direction. */
+const chapters: Record<string, ChapterMotion> = {
+  inicio: {
+    name: "origin",
+    aperture: ["inset(0% 34% 0% 0% round 30px)", openFrame],
+    words: [-14, 104, -2],
+    pan: 1,
+    layers: [
+      { selector: ".hero-copy", x: 0, y: 26, depth: -20 },
+      { selector: ".hero-art", x: 32, y: -12, depth: -42 },
+      { selector: ".hero-bottom", x: -16, y: 8 },
+    ],
+  },
+  sobre: {
+    name: "observation",
+    aperture: ["inset(0% 96% 0% 0% round 0px)", openFrame],
+    words: [26, 70, 0],
+    pan: -1,
+    layers: [
+      { selector: ".editorial-figure", x: -38, y: 12, turn: -0.7 },
+      { selector: ".editorial-copy", x: 28, y: -12, depth: -25 },
+    ],
+  },
+  "por-que-biocrab": {
+    name: "three-origins",
+    aperture: ["polygon(0% 0%, 4% 0%, 26% 100%, 0% 100%)", openPolygon],
+    words: [-20, 86, 2],
+    pan: 0.8,
+    layers: [
+      { selector: ".section-heading", x: -20, y: 18 },
+      { selector: ".why-card", x: 22, y: 34, turn: 0.7, depth: -30 },
+    ],
+  },
+  innovacion: {
+    name: "connections",
+    aperture: ["polygon(0% 0%, 100% 0%, 8% 8%, 0% 0%)", openPolygon],
+    words: [34, 54, -2],
+    pan: -0.8,
+    layers: [
+      { selector: ".section-heading", x: 24, y: 8 },
+      { selector: ".technology-depth", x: -24, y: 28, depth: -55, scale: 0.97 },
+      { selector: ".technology-copy", x: 26, y: -22 },
+    ],
+  },
+  "del-residuo-al-biomaterial": {
+    name: "transformation",
+    aperture: ["circle(8% at 12% 50%)", "circle(145% at 12% 50%)"],
+    words: [-32, 76, 0],
+    pan: 1,
+    layers: [
+      { selector: ".section-heading", x: -26, y: 10 },
+      { selector: ".journey-route", x: 38, y: 0, reveal: true },
+      { selector: ".journey-detail", x: 0, y: 28, depth: -35 },
+    ],
+  },
+  investigacion: {
+    name: "hypothesis",
+    aperture: ["inset(47% 0% 47% 0% round 2px)", openFrame],
+    words: [0, 116, -1],
+    pan: -1,
+    layers: [
+      { selector: ".section-heading", x: 0, y: 28 },
+      { selector: ".research-photo", x: -14, y: 24, scale: 0.965, depth: -45 },
+      { selector: ".research-copy", x: 18, y: -26 },
+      { selector: ".research-evidence-strip", x: 14, y: 12 },
+    ],
+  },
+  metodologia: {
+    name: "procedure",
+    aperture: ["inset(0% 0% 94% 0% round 0px)", openFrame],
+    words: [0, -92, 0],
+    pan: 0.7,
+    layers: [
+      { selector: ".section-heading", x: 0, y: -18 },
+      {
+        selector: ".method-reference-feature figure",
+        x: 12,
+        y: 30,
+        depth: -30,
+      },
+      { selector: ".method-reference-copy", x: -18, y: 8 },
+      { selector: ".method-detail", x: 0, y: 24, scale: 0.98 },
+    ],
+  },
+  recorrido: {
+    name: "research-route",
+    aperture: ["inset(0% 86% 0% 0% round 48px)", openFrame],
+    words: [-38, 42, 0],
+    pan: 1,
+    layers: [
+      { selector: ".section-heading", x: -28, y: 0 },
+      { selector: ".timeline-tabs", x: 38, y: 8 },
+      { selector: ".timeline-panel", x: 24, y: 18, turn: -0.45, depth: -28 },
+    ],
+  },
+  galeria: {
+    name: "documentary",
+    aperture: ["inset(12% 6% 86% 6% round 16px)", openFrame],
+    words: [18, 98, 1],
+    pan: -0.8,
+    layers: [
+      { selector: ".section-heading", x: 0, y: 20 },
+      { selector: ".gallery-card", x: 20, y: 26, turn: 0.35, depth: -24 },
+      { selector: ".reference-gallery-heading", x: -22, y: 12 },
+    ],
+  },
+  resultados: {
+    name: "evidence-window",
+    aperture: ["polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", openPolygon],
+    words: [0, 84, 3],
+    pan: 0.65,
+    layers: [
+      { selector: ".section-heading", x: 18, y: 18 },
+      {
+        selector: ".dashboard-reference",
+        x: -20,
+        y: 10,
+        scale: 0.955,
+        depth: -50,
+      },
+      { selector: ".results-status-list > article", x: 32, y: 12 },
+    ],
+  },
+  comparacion: {
+    name: "perspectives",
+    aperture: ["inset(0% 49% 0% 49% round 8px)", openFrame],
+    words: [38, 38, -1],
+    pan: -0.65,
+    layers: [
+      { selector: ".section-heading", x: -22, y: 16 },
+      {
+        selector: ".material-comparator",
+        x: 0,
+        y: 20,
+        depth: -32,
+        reveal: true,
+      },
+    ],
+  },
+  "aplicaciones-futuras": {
+    name: "possibilities",
+    aperture: [
+      "ellipse(12% 18% at 50% 100%)",
+      "ellipse(125% 150% at 50% 100%)",
+    ],
+    words: [-12, 108, 2],
+    pan: 0.9,
+    layers: [
+      { selector: ".section-heading", x: 0, y: 26 },
+      { selector: ".future-card", x: -16, y: 38, turn: -0.65, depth: -38 },
+    ],
+  },
+  "vision-futura": {
+    name: "future-horizon",
+    aperture: ["circle(10% at 85% 25%)", "circle(145% at 85% 25%)"],
+    words: [30, 92, -2],
+    pan: -1,
+    layers: [
+      { selector: ":scope > figure", x: 24, y: 14, depth: -48, scale: 0.97 },
+      { selector: ":scope > div", x: -30, y: -18 },
+    ],
+  },
+  "impacto-potencial": {
+    name: "complete-cycle",
+    aperture: ["ellipse(10% 14% at 50% 50%)", "ellipse(85% 90% at 50% 50%)"],
+    words: [-24, 68, 1],
+    pan: 0.8,
+    layers: [
+      { selector: ".impact-copy", x: -28, y: 16 },
+      { selector: ".impact-photo", x: 24, y: -20, turn: 0.7, depth: -36 },
+      { selector: ".circular-overlay", x: -10, y: 18 },
+    ],
+  },
+  gomitas: {
+    name: "texture",
+    aperture: ["inset(94% 0% 0% 0% round 42px)", openFrame],
+    words: [0, 112, -3],
+    pan: -0.9,
+    layers: [
+      { selector: ".gummy-visual", x: 0, y: 36, scale: 0.97, depth: -25 },
+      { selector: ".gummy-copy", x: -26, y: -12 },
+      { selector: ".gummy-label", x: 22, y: 8 },
+    ],
+  },
+  equipo: {
+    name: "next-chapter",
+    aperture: ["polygon(0% 100%, 100% 100%, 88% 100%, 12% 100%)", openPolygon],
+    words: [-18, 90, 0],
+    pan: 0.6,
+    layers: [
+      { selector: ".section-heading", x: -14, y: 20 },
+      { selector: ".project-figure", x: -26, y: 10, turn: -0.5, depth: -32 },
+      { selector: ".project-copy", x: 24, y: -14 },
+      { selector: ".contact-layout", x: 0, y: 28, scale: 0.985 },
+    ],
+  },
+};
+
+function chapterFor(element: Element) {
+  return chapters[element.closest("section")?.id || ""] || chapters.inicio;
+}
+
 function headingText(children: ReactNode): string {
   return Children.toArray(children)
     .map((child) => {
@@ -86,23 +309,36 @@ export function KineticHeading({
         gsap.registerPlugin(ScrollTrigger);
         const heading = ref.current;
         const desktop = window.matchMedia("(min-width: 900px)").matches;
+        const [wordX, wordY, wordTurn] = chapterFor(heading).words;
         const context = gsap.context(() => {
           const words = heading.querySelectorAll<HTMLElement>(".cinema-word");
           gsap.fromTo(
             words,
             {
-              yPercent: 112,
-              rotateX: desktop ? -28 : 0,
+              xPercent: wordX * (desktop ? 1 : 0.45),
+              yPercent: wordY,
+              rotation: desktop ? wordTurn : 0,
+              rotateX: desktop ? -18 : 0,
               scale: 0.94,
+              filter: `blur(${desktop ? 2 : 1}px)`,
             },
             {
+              xPercent: 0,
               yPercent: 0,
+              rotation: 0,
               rotateX: 0,
               scale: 1,
+              filter: "blur(0px)",
               duration: 1.05,
               stagger: { each: desktop ? 0.055 : 0.04, amount: 0.4 },
               ease: "power3.out",
               immediateRender: false,
+              onStart: () => {
+                words.forEach((word) => {
+                  word.style.willChange = "transform, filter";
+                });
+              },
+              clearProps: "filter,willChange",
               scrollTrigger: {
                 trigger: heading,
                 start: "top 91%",
@@ -131,7 +367,7 @@ export function KineticHeading({
 export function ScrollCinema() {
   const reduced = useReducedMotionPreference();
   const paused = useMotionPause();
-  const [desktop, setDesktop] = useState(false);
+  const [desktop, setDesktop] = useState<boolean | null>(null);
 
   useEffect(() => {
     const query = window.matchMedia(
@@ -144,6 +380,7 @@ export function ScrollCinema() {
   }, []);
 
   useEffect(() => {
+    if (desktop === null) return;
     if (reduced || paused) {
       document.documentElement.dataset.scrollEngine = "still";
       return () => {
@@ -152,6 +389,7 @@ export function ScrollCinema() {
     }
     let disposed = false;
     let dispose = () => {};
+    const isDesktop = desktop;
 
     async function start() {
       const [{ gsap }, { ScrollTrigger }] = await Promise.all([
@@ -160,7 +398,7 @@ export function ScrollCinema() {
       ]);
       if (disposed) return;
       gsap.registerPlugin(ScrollTrigger);
-      const lenis = desktop
+      const lenis = isDesktop
         ? new (await import("lenis")).default({
             lerp: 0.085,
             smoothWheel: true,
@@ -177,36 +415,134 @@ export function ScrollCinema() {
       const seen = new WeakSet<Element>();
       const sections: HTMLElement[] = [];
       const scenes: HTMLElement[] = [];
-      const loops: { tween: gsap.core.Tween; visible: boolean }[] = [];
+      const layers: HTMLElement[] = [];
+      const loops: {
+        photo: HTMLElement;
+        tween: gsap.core.Tween;
+        visible: boolean;
+        release: () => void;
+      }[] = [];
       const context = gsap.context(() => {});
       let scanFrame = 0;
 
       function scan() {
         context.add(() => {
-          document
-            .querySelectorAll<HTMLElement>("main > section")
-            .forEach((section, index) => {
-              if (seen.has(section)) return;
+          const chapterSections = Array.from(
+            document.querySelectorAll<HTMLElement>("main > section"),
+          );
+          chapterSections.forEach((section, index) => {
+            const chapter = chapterFor(section);
+            if (!seen.has(section)) {
               seen.add(section);
               sections.push(section);
               section.classList.add("cinema-section");
-              section.dataset.cinemaScene = String(index % 4);
+              section.dataset.cinemaScene = chapter.name;
               gsap.fromTo(
                 section,
-                { "--scene-travel": "-12%", "--scene-luminance": 0.12 },
+                { "--scene-travel": isDesktop ? "28px" : "10px" },
                 {
-                  "--scene-travel": "12%",
-                  "--scene-luminance": 0.55,
+                  "--scene-travel": isDesktop ? "-28px" : "-10px",
                   ease: "none",
                   scrollTrigger: {
                     trigger: section,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: desktop ? 1.2 : 0.6,
+                    scrub: isDesktop ? 1.2 : 0.6,
                   },
                 },
               );
+              const next = chapterSections[index + 1];
+              if (next) {
+                // The following chapter controls the previous chapter's light.
+                // Reversing the scroll naturally brings its light back.
+                gsap.fromTo(
+                  section,
+                  { "--scene-shade": 0 },
+                  {
+                    "--scene-shade": isDesktop ? 0.26 : 0.19,
+                    ease: "none",
+                    scrollTrigger: {
+                      trigger: next,
+                      start: "top 96%",
+                      end: "top 22%",
+                      scrub: isDesktop ? 0.7 : 0.35,
+                    },
+                  },
+                );
+              }
+            }
+
+            chapter.layers.forEach((motion, layerIndex) => {
+              section
+                .querySelectorAll<HTMLElement>(motion.selector)
+                .forEach((layer, itemIndex) => {
+                  if (seen.has(layer)) return;
+                  seen.add(layer);
+                  layers.push(layer);
+                  layer.classList.add("cinema-layer");
+                  const amount = isDesktop ? 1 : 0.32;
+                  const direction = itemIndex % 2 === 0 ? 1 : -1;
+                  gsap.fromTo(
+                    layer,
+                    {
+                      "--layer-enter-x": `${motion.x * amount * direction}px`,
+                      "--layer-enter-y": `${motion.y * amount}px`,
+                      "--layer-scale": isDesktop
+                        ? motion.scale || (motion.depth ? 0.985 : 1)
+                        : 1,
+                      "--layer-turn": `${isDesktop ? (motion.turn || 0) * direction : 0}deg`,
+                      "--layer-depth": `${isDesktop ? motion.depth || 0 : 0}px`,
+                      ...(motion.reveal
+                        ? { clipPath: chapter.aperture[0] }
+                        : {}),
+                    },
+                    {
+                      "--layer-enter-x": "0px",
+                      "--layer-enter-y": "0px",
+                      "--layer-scale": 1,
+                      "--layer-turn": "0deg",
+                      "--layer-depth": "0px",
+                      ...(motion.reveal
+                        ? {
+                            clipPath: chapter.aperture[1],
+                            clearProps: "clipPath",
+                          }
+                        : {}),
+                      duration: isDesktop ? 1.35 : 1,
+                      delay: Math.min(
+                        itemIndex * 0.085 + layerIndex * 0.035,
+                        0.3,
+                      ),
+                      ease: "power3.out",
+                      immediateRender: false,
+                      scrollTrigger: {
+                        trigger: layer,
+                        start: "top 95%",
+                        once: true,
+                      },
+                    },
+                  );
+                  gsap.fromTo(
+                    layer,
+                    {
+                      "--layer-x": `${motion.x * amount * direction * 0.35}px`,
+                      "--layer-y": `${motion.y * amount * 0.45}px`,
+                    },
+                    {
+                      "--layer-x": `${motion.x * amount * direction * -0.35}px`,
+                      "--layer-y": `${motion.y * amount * -0.45}px`,
+                      ease: "none",
+                      scrollTrigger: {
+                        trigger: section,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: isDesktop ? 1.15 : 0.45,
+                      },
+                    },
+                  );
+                });
             });
+          });
 
           document
             .querySelectorAll<HTMLElement>("main .cinema-heading")
@@ -215,15 +551,15 @@ export function ScrollCinema() {
               seen.add(heading);
               gsap.fromTo(
                 heading,
-                { "--heading-travel": desktop ? "16px" : "7px" },
+                { "--heading-travel": isDesktop ? "12px" : "4px" },
                 {
-                  "--heading-travel": desktop ? "-16px" : "-7px",
+                  "--heading-travel": isDesktop ? "-12px" : "-4px",
                   ease: "none",
                   scrollTrigger: {
                     trigger: heading,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: desktop ? 0.9 : 0.4,
+                    scrub: isDesktop ? 0.9 : 0.4,
                   },
                 },
               );
@@ -236,13 +572,15 @@ export function ScrollCinema() {
               seen.add(photo);
               scenes.push(photo);
               photo.classList.add("cinema-photo-scene");
-              const duration = (desktop ? 11 : 13) + (index % 4);
+              const chapter = chapterFor(photo);
+              const duration = (isDesktop ? 13 : 15) + (index % 5);
               const loop = {
+                photo,
                 tween: gsap.fromTo(
                   photo,
-                  { "--photo-swell": desktop ? 0.94 : 0.96 },
+                  { "--photo-swell": isDesktop ? 0.94 : 0.96 },
                   {
-                    "--photo-swell": desktop ? 0.975 : 0.99,
+                    "--photo-swell": isDesktop ? 0.975 : 0.98,
                     duration,
                     repeat: -1,
                     yoyo: true,
@@ -251,11 +589,12 @@ export function ScrollCinema() {
                   },
                 ),
                 visible: false,
+                release: () => {},
               };
               loops.push(loop);
               const setVisible = (value: boolean) => {
-                loop.visible = value;
-                if (value && !document.hidden) {
+                loop.visible = value && photo.isConnected;
+                if (loop.visible && !document.hidden) {
                   photo.style.willChange = "transform";
                   loop.tween.play();
                 } else {
@@ -263,7 +602,7 @@ export function ScrollCinema() {
                   photo.style.removeProperty("will-change");
                 }
               };
-              ScrollTrigger.create({
+              const view = ScrollTrigger.create({
                 trigger: photo,
                 start: "top bottom",
                 end: "bottom top",
@@ -272,43 +611,41 @@ export function ScrollCinema() {
                 onLeave: () => setVisible(false),
                 onLeaveBack: () => setVisible(false),
               });
-              gsap.fromTo(
+              setVisible(view.isActive);
+              const pan = (isDesktop ? 0.6 : 0.3) * chapter.pan;
+              const drift = gsap.fromTo(
                 photo,
-                { "--photo-drift": desktop ? "0.6%" : "0.3%" },
                 {
-                  "--photo-drift": desktop ? "-0.6%" : "-0.3%",
+                  "--photo-pan": `${-pan}%`,
+                  "--photo-drift": isDesktop ? "0.3%" : "0.15%",
+                },
+                {
+                  "--photo-pan": `${pan}%`,
+                  "--photo-drift": isDesktop ? "-0.3%" : "-0.15%",
                   ease: "none",
                   scrollTrigger: {
                     trigger: photo,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: desktop ? 1.1 : 0.5,
+                    scrub: isDesktop ? 1.1 : 0.5,
                   },
                 },
               );
 
               // The photographic scene expands inside a reserved gutter: the
               // original never grows beyond its frame or loses its edges.
-              const section = photo.closest("section")?.id;
-              const aperture =
-                section === "inicio"
-                  ? "inset(0% 10% 0% 10% round 18px)"
-                  : section === "impacto-potencial" ||
-                      section === "vision-futura"
-                    ? "inset(10% 5% 10% 5% round 30px)"
-                    : section === "galeria"
-                      ? "inset(0% 0% 10% 0% round 18px)"
-                      : "inset(7% 0% 7% 0% round 14px)";
-              gsap.fromTo(
+              const reveal = gsap.fromTo(
                 photo,
                 {
-                  clipPath: aperture,
+                  clipPath: chapter.aperture[0],
                 },
                 {
-                  clipPath: "inset(0% 0% 0% 0% round 0px)",
-                  duration: desktop ? 1.4 : 1.1,
+                  clipPath: chapter.aperture[1],
+                  duration: isDesktop ? 1.5 : 1.1,
+                  delay: Math.min((index % 3) * 0.065, 0.13),
                   ease: "power3.inOut",
                   immediateRender: false,
+                  clearProps: "clipPath",
                   scrollTrigger: {
                     trigger: photo,
                     start: "top 94%",
@@ -316,12 +653,39 @@ export function ScrollCinema() {
                   },
                 },
               );
+              loop.release = () => {
+                loop.tween.kill();
+                view.kill();
+                drift.scrollTrigger?.kill();
+                drift.kill();
+                reveal.scrollTrigger?.kill();
+                reveal.kill();
+                photo.style.removeProperty("will-change");
+              };
             });
         });
       }
 
       scan();
       const observer = new MutationObserver((records) => {
+        // Interactive tabs can replace a photograph. A detached scene must
+        // stop its camera immediately, even before the next viewport update.
+        const sceneRemoved = records.some((record) =>
+          Array.from(record.removedNodes).some(
+            (node) =>
+              node instanceof Element &&
+              (node.matches(".project-photo") ||
+                node.querySelector(".project-photo")),
+          ),
+        );
+        if (sceneRemoved) {
+          for (let index = loops.length - 1; index >= 0; index -= 1) {
+            const loop = loops[index];
+            if (loop.photo.isConnected) continue;
+            loop.release();
+            loops.splice(index, 1);
+          }
+        }
         // Counters change text nodes each frame. Rebuild measurements only for
         // genuinely new React scenes, not text, masks or animated values.
         const sceneAdded = records.some((record) =>
@@ -356,10 +720,9 @@ export function ScrollCinema() {
           scenes.forEach((photo) => photo.style.removeProperty("will-change"));
         } else {
           lenis?.start();
-          loops.forEach(({ tween, visible }) => {
-            if (visible) {
-              const photo = tween.targets()[0] as HTMLElement | undefined;
-              if (photo) photo.style.willChange = "transform";
+          loops.forEach(({ photo, tween, visible }) => {
+            if (visible && photo.isConnected) {
+              photo.style.willChange = "transform";
               tween.play();
             }
           });
@@ -390,6 +753,7 @@ export function ScrollCinema() {
           photo.classList.remove("cinema-photo-scene");
           photo.style.removeProperty("will-change");
         });
+        layers.forEach((layer) => layer.classList.remove("cinema-layer"));
         delete document.documentElement.dataset.scrollEngine;
       };
     }

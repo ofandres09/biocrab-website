@@ -1,9 +1,14 @@
-/* These animation values belong to one scene. Do not invalidate every nested
-   heading word/image/caption through custom-property inheritance each frame. */
+/* A camera value belongs to its own layer. Animated custom properties never
+   invalidate all the nested image, caption and word styles through inheritance. */
 @property --photo-swell {
   syntax: "<number>";
   inherits: false;
   initial-value: 1;
+}
+@property --photo-pan {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 0%;
 }
 @property --photo-drift {
   syntax: "<length-percentage>";
@@ -16,15 +21,51 @@
   initial-value: 0px;
 }
 @property --scene-travel {
-  syntax: "<length-percentage>";
+  syntax: "<length>";
   inherits: false;
-  initial-value: 0%;
+  initial-value: 0px;
 }
-@property --scene-luminance {
+@property --scene-shade {
   syntax: "<number>";
   inherits: false;
-  initial-value: 0.3;
+  initial-value: 0;
 }
+@property --layer-x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --layer-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --layer-enter-x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --layer-enter-y {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --layer-depth {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --layer-turn {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@property --layer-scale {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
 .cinema-heading {
   translate: 0 var(--heading-travel, 0px);
   perspective: 900px;
@@ -47,55 +88,102 @@
 .cinema-section {
   position: relative;
 }
-.cinema-section::after {
+.cinema-layer {
+  translate: calc(var(--layer-x, 0px) + var(--layer-enter-x, 0px))
+    calc(var(--layer-y, 0px) + var(--layer-enter-y, 0px))
+    var(--layer-depth, 0px);
+  rotate: var(--layer-turn, 0deg);
+  scale: var(--layer-scale, 1);
+  transform-origin: 50% 50%;
+}
+
+/* Two existing pseudo elements form the chapter lighting. No decorative DOM,
+   extra canvas or filters on large photographic surfaces are needed. */
+.cinema-section[data-cinema-scene]::before {
   --scene-travel: inherit;
-  --scene-luminance: inherit;
   content: "";
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
-  left: 12%;
-  right: 12%;
-  top: 0;
-  height: 1px;
-  opacity: var(--scene-luminance, 0.3);
+  inset: 0 0 auto;
+  width: 100%;
+  height: min(58vh, 540px);
+  max-height: 65%;
+  opacity: 0.18;
+  background: radial-gradient(ellipse at 14% 0%, #2389ff30, transparent 65%);
+  transform: translate3d(0, var(--scene-travel, 0px), 0);
+  box-shadow: none;
+  border: 0;
+}
+.cinema-section[data-cinema-scene]::after {
+  --scene-shade: inherit;
+  content: "";
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  inset: 0;
+  opacity: var(--scene-shade, 0);
+  background: linear-gradient(180deg, #020508da, #020508 72%);
+}
+.cinema-section[data-cinema-scene="origin"]::before {
+  background: radial-gradient(ellipse at 75% 10%, #2389ff38, transparent 64%);
+}
+.cinema-section[data-cinema-scene="observation"]::before {
+  background: radial-gradient(ellipse at 0% 35%, #00ffa328, transparent 66%);
+}
+.cinema-section[data-cinema-scene="three-origins"]::before {
+  background: linear-gradient(115deg, #2389ff20, transparent 42%, #00ffa318);
+}
+.cinema-section[data-cinema-scene="connections"]::before {
+  background: radial-gradient(ellipse at 92% 0%, #2389ff38, transparent 70%);
+}
+.cinema-section[data-cinema-scene="transformation"]::before {
+  background: radial-gradient(ellipse at 12% 48%, #00ffa326, transparent 65%);
+}
+.cinema-section[data-cinema-scene="hypothesis"]::before {
   background: linear-gradient(
-    90deg,
-    transparent,
-    #2389ff,
-    #00ffa3 58%,
+    180deg,
+    transparent 25%,
+    #2389ff16 55%,
     transparent
   );
-  box-shadow: 0 0 22px #2389ff50;
-  transform: translate3d(var(--scene-travel, 0%), 0, 0);
 }
-.cinema-section[data-cinema-scene="1"]::after {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #00ffa3,
-    #2389ff,
-    transparent
-  );
+.cinema-section[data-cinema-scene="procedure"]::before {
+  background: linear-gradient(165deg, #2389ff28, transparent 58%);
 }
-.cinema-section[data-cinema-scene="2"]::after {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #2389ff 35%,
-    #ff3b3077,
-    transparent
-  );
+.cinema-section[data-cinema-scene="research-route"]::before {
+  background: linear-gradient(90deg, #00ffa320, transparent 68%);
 }
-.cinema-section[data-cinema-scene="3"]::after {
-  left: 22%;
-  right: 22%;
-  background: linear-gradient(90deg, transparent, #00ffa3, transparent);
+.cinema-section[data-cinema-scene="documentary"]::before {
+  background: radial-gradient(ellipse at 48% 0%, #e8f5ff20, transparent 68%);
+}
+.cinema-section[data-cinema-scene="evidence-window"]::before {
+  background: radial-gradient(ellipse at 50% 24%, #2389ff30, transparent 64%);
+}
+.cinema-section[data-cinema-scene="perspectives"]::before {
+  background: linear-gradient(90deg, #2389ff16, transparent 48%, #00ffa316);
+}
+.cinema-section[data-cinema-scene="possibilities"]::before {
+  background: radial-gradient(ellipse at 52% 96%, #00ffa324, transparent 70%);
+}
+.cinema-section[data-cinema-scene="future-horizon"]::before {
+  background: radial-gradient(ellipse at 84% 26%, #00ffa330, transparent 68%);
+}
+.cinema-section[data-cinema-scene="complete-cycle"]::before {
+  background: radial-gradient(ellipse at 50% 50%, #00ffa328, transparent 62%);
+}
+.cinema-section[data-cinema-scene="texture"]::before {
+  background: linear-gradient(0deg, #00ffa31c, transparent 72%);
+}
+.cinema-section[data-cinema-scene="next-chapter"]::before {
+  background: linear-gradient(155deg, #2389ff24, transparent 45%, #00ffa316);
 }
 .cinema-photo-scene {
-  transform: translateY(var(--photo-drift, 0%)) scale(var(--photo-swell, 1));
+  transform: translate3d(var(--photo-pan, 0%), var(--photo-drift, 0%), 0)
+    scale(var(--photo-swell, 1));
   transform-origin: center;
 }
+
 html.lenis,
 html.lenis body {
   height: auto;
@@ -114,19 +202,35 @@ html.lenis body {
 }
 [data-motion="paused"] .cinema-heading,
 [data-motion="paused"] .cinema-word,
-[data-motion="paused"] .cinema-photo-scene {
+[data-motion="paused"] .cinema-photo-scene,
+[data-motion="paused"] .cinema-layer {
   translate: none !important;
   transform: none !important;
+  rotate: none !important;
+  scale: none !important;
   filter: none !important;
   clip-path: none !important;
+  will-change: auto !important;
+}
+[data-motion="paused"] .cinema-section[data-cinema-scene]::before,
+[data-motion="paused"] .cinema-section[data-cinema-scene]::after {
+  opacity: 0 !important;
 }
 @media (prefers-reduced-motion: reduce) {
   .cinema-heading,
   .cinema-word,
-  .cinema-photo-scene {
+  .cinema-photo-scene,
+  .cinema-layer {
     translate: none !important;
     transform: none !important;
+    rotate: none !important;
+    scale: none !important;
     filter: none !important;
     clip-path: none !important;
+    will-change: auto !important;
+  }
+  .cinema-section[data-cinema-scene]::before,
+  .cinema-section[data-cinema-scene]::after {
+    opacity: 0 !important;
   }
 }

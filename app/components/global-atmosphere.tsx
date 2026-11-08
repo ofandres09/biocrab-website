@@ -4,7 +4,7 @@ import { useEffect, useRef, type CSSProperties } from "react";
 import { useMotionPause, useReducedMotionPreference } from "./cinematic";
 import "./global-atmosphere.css";
 
-// Small cached DOM surfaces move on the compositor; there is no viewport canvas.
+// Cached light surfaces also provide a quiet fallback when WebGL is unavailable.
 const particles = Array.from({ length: 30 }, (_, index) => ({
   x: ((index * 137.508 + 32) % 1000) / 1000,
   y: ((index * 271.13 + 87) % 1000) / 1000,
@@ -13,6 +13,11 @@ const particles = Array.from({ length: 30 }, (_, index) => ({
   duration: 13 + (index % 7) * 1.8,
   delay: -index * 1.73,
 }));
+
+const reflectionSelector =
+  ".project-photo,.cinema-heading,.hero-title,.gallery-card,.why-card,.future-card,.method-detail,.results-status-list article";
+const cardSelector =
+  ".gallery-card,.why-card,.future-card,.method-detail,.results-status-list article";
 
 /** Decorative light, with no scientific labels, measurements or data. */
 export function GlobalAtmosphere() {
@@ -37,6 +42,7 @@ export function GlobalAtmosphere() {
     let count = width < 768 ? 14 : 30;
     let frame = 0;
     let attracted: HTMLElement[] = [];
+    let illuminated: HTMLElement[] = [];
     let target: Element | null = null;
     const pointer = { x: 0, y: 0 };
 
@@ -47,12 +53,22 @@ export function GlobalAtmosphere() {
       }
       attracted = [];
     };
+    const resetReflections = () => {
+      for (const surface of illuminated) {
+        delete surface.dataset.cursorLit;
+        surface.style.removeProperty("--reflection-x");
+        surface.style.removeProperty("--reflection-y");
+      }
+      illuminated = [];
+      delete atmosphere.dataset.surface;
+    };
     const leave = () => {
       cancelAnimationFrame(frame);
       frame = 0;
       atmosphere.dataset.cursor = "hidden";
       if (cursor.current) cursor.current.dataset.magnetic = "false";
       resetAttraction();
+      resetReflections();
     };
     const resize = () => {
       width = window.innerWidth;
@@ -60,6 +76,7 @@ export function GlobalAtmosphere() {
       count = width < 768 ? 14 : 30;
       field.dataset.particleCount = String(count);
       resetAttraction();
+      resetReflections();
     };
     const updatePointer = () => {
       frame = 0;
@@ -83,8 +100,34 @@ export function GlobalAtmosphere() {
         cursorLight.current.style.transform = `translate3d(${pointer.x - 180}px,${pointer.y - 180}px,0)`;
       }
 
+      // Only the surface beneath the pointer and its containing card receive
+      // local coordinates; no viewport property invalidates the document tree.
+      const surface = target?.closest<HTMLElement>(reflectionSelector);
+      const card = surface?.parentElement?.closest<HTMLElement>(cardSelector);
+      const surfaces = [surface, card].filter(
+        (node, index, items): node is HTMLElement =>
+          !!node && node.isConnected && items.indexOf(node) === index,
+      );
+      for (const previous of illuminated) {
+        if (!surfaces.includes(previous)) {
+          delete previous.dataset.cursorLit;
+          previous.style.removeProperty("--reflection-x");
+          previous.style.removeProperty("--reflection-y");
+        }
+      }
+      for (const node of surfaces) {
+        const box = node.getBoundingClientRect();
+        node.style.setProperty("--reflection-x", `${pointer.x - box.left}px`);
+        node.style.setProperty("--reflection-y", `${pointer.y - box.top}px`);
+        node.dataset.cursorLit = "true";
+      }
+      illuminated = surfaces;
+      atmosphere.dataset.surface = surfaces.length ? "true" : "false";
+
       // React only to actual pointer movement, and move at most four tiny nodes.
       resetAttraction();
+      if (document.documentElement.dataset.molecularGraphics === "webgl")
+        return;
       const nearby = particles
         .slice(0, count)
         .map((particle, index) => {
@@ -116,6 +159,11 @@ export function GlobalAtmosphere() {
       // A single event batch, never a permanent animation-frame loop.
       if (!frame) frame = requestAnimationFrame(updatePointer);
     };
+    const scroll = () => {
+      if (atmosphere.dataset.cursor !== "visible") return;
+      target = document.elementFromPoint(pointer.x, pointer.y);
+      if (!frame) frame = requestAnimationFrame(updatePointer);
+    };
     const visibility = () => {
       atmosphere.dataset.hidden = document.hidden ? "true" : "false";
       if (document.hidden) leave();
@@ -125,12 +173,18 @@ export function GlobalAtmosphere() {
     resize();
     window.addEventListener("resize", resize, { passive: true });
     window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("scroll", scroll, { passive: true });
+    window.addEventListener("blur", leave);
+    finePointer.addEventListener("change", leave);
     document.documentElement.addEventListener("pointerleave", leave);
     document.addEventListener("visibilitychange", visibility);
     return () => {
       leave();
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", move);
+      window.removeEventListener("scroll", scroll);
+      window.removeEventListener("blur", leave);
+      finePointer.removeEventListener("change", leave);
       document.documentElement.removeEventListener("pointerleave", leave);
       document.removeEventListener("visibilitychange", visibility);
     };
