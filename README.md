@@ -66,10 +66,10 @@ El comparador utiliza una fotografía real de BioCrab y una ilustración concept
 
 El formulario valida y copia el mensaje en un contexto seguro; no envía ni almacena datos. El canal de contacto y los perfiles del equipo siguen pendientes de confirmación.
 
-URL de producción comunicada por el responsable: <https://biocrab-website.vercel.app/>. Enlace directo solicitado: <https://biocrab-website.vercel.app/#hipotesis>. La integración se publicó y verificó en esa URL el 5 de noviembre de 2026, en escritorio y móvil.
+URL de producción comunicada por el responsable: <https://biocrab-website.vercel.app/>. Enlace directo solicitado: <https://biocrab-website.vercel.app/#hipotesis>. La integración se publicó y verificó en esa URL el 8 de noviembre de 2026, en escritorio y móvil.
 
 El encabezado `X-BioCrab-Design: molecular-research-v6` identifica la nueva revisión molecular. Se comprobaron el despliegue de Vercel, el encabezado, las imágenes y el enlace profundo. Ver [integración de referencias](docs/reference-integration.md) y [estado de revisión visual](docs/visual-review.md).
 
-La ampliación molecular se identifica por `X-BioCrab-Design: molecular-research-v6`. Sus decisiones de rendimiento y comprobaciones se documentan en [experiencia cinematográfica](docs/cinematic-experience.md).
+Las mediciones de la revisión anterior se conservan como historial en [experiencia cinematográfica](docs/cinematic-experience.md).
 
-La integración molecular y la conservación de contenido se documentan en [experiencia molecular](docs/molecular-experience.md). La verificación pública se actualiza después del despliegue.
+La integración molecular y la conservación de contenido se documentan en [experiencia molecular](docs/molecular-experience.md). La verificación pública y las capturas están enlazadas en ese documento.

@@ -29,4 +29,14 @@ Antes de crear WebGL se comprueba su disponibilidad. La pérdida de contexto usa
 - 11 ampliaciones, 5 etapas metodológicas, 5 pasos del recorrido, timeline con teclado, 8 estados del comparador, menú móvil y copia del formulario: verificados.
 - Axe WCAG A/AA y 2.1 AA: cero infracciones automáticas en oscuro/claro y escritorio/móvil con movimiento reducido. Dos comprobaciones incompletas por caso; no es certificación integral.
 
-El informe de controles está en [molecular-functional.json](molecular-functional.json). El despliegue y las capturas públicas de `molecular-research-v6` se registrarán después del push.
+El informe de controles está en [molecular-functional.json](molecular-functional.json).
+
+## Producción verificada
+
+La revisión `5b39e42` se publicó en <https://biocrab-website.vercel.app/> y responde con `X-BioCrab-Design: molecular-research-v6`.
+
+Chromium confirmó WebGL real para el fondo y el explorador, modos y giro, en 1440 y 390 px. Ambas vistas mantienen dieciséis secciones, treinta y siete imágenes, el enlace `#hipotesis` visible, cero desbordamiento horizontal y ningún error JavaScript o recurso HTTP fallido.
+
+Las capturas se tomaron directamente del dominio público: [escritorio](previews/desktop.png), [móvil](previews/mobile.png), [explorador 3D](previews/molecular-desktop.png) y [galería](previews/galeria-desktop.jpg). El [informe de producción](production-verification.json) registra fuente, recursos, modos y anclas.
+
+El servidor de pruebas utiliza ANGLE/SwiftShader por software. Las pruebas confirman renderizado y controles; no certifican el rendimiento de todos los teléfonos físicos.

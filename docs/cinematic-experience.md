@@ -1,5 +1,7 @@
 # Experiencia cinematográfica BioCrab
 
+Este documento conserva las mediciones de la revisión `cinematic-biotech-v5`. No describe el rendimiento de la nueva escena WebGL. La implementación actual se documenta en [experiencia molecular](molecular-experience.md); las capturas de `previews/` se actualizan a la revisión publicada más reciente.
+
 ## Sistema de movimiento
 
 - GSAP y ScrollTrigger: títulos por palabras con máscaras, giro y escala; parallax independiente de la entrada de Framer Motion; transiciones luminosas de cada sección.

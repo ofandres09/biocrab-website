@@ -1,70 +1,37 @@
 # Revisión visual de BioCrab
 
-## Alcance de la revisión actual
+La revisión molecular `molecular-research-v6` preserva las dieciséis secciones y su orden, el contenido científico y los archivos originales de fotografías y referencias. Solo se añadió una figura conceptual interactiva dentro del hero.
 
-La revisión identificada por `X-BioCrab-Design: cinematic-biotech-v5` incorpora las cinco imágenes exactas del nuevo ZIP y el logo adaptado con autorización del responsable. Las seis fotografías originales del proyecto permanecen en su colección independiente y no se sustituyen por referencias conceptuales.
+## Resultado visual
 
-## Elementos comprobados
+- Inter Tight y Geist locales, titulares grandes y espaciado más compacto.
+- Fondo molecular Three.js/React Three Fiber y explorador con modos, giro y teclado.
+- Dieciséis perfiles de animación, capas con profundidad, máscaras de fotografía y transiciones entre capítulos.
+- Fotografías completas, luz radial y marca BioCrab preservada. La etiqueta de ADN permanece asociada a su imagen y separada del esquema de polímeros.
+- Modelos explícitamente conceptuales: sin resultados ni datos experimentales inventados.
 
-- Logo PNG adaptado en navbar, hero, estado de carga y footer; favicon PNG generado desde el emblema.
-- Hero con el ADN azul conceptual, sus etiquetas de ambientación y el acceso a la fotografía real de la biopelícula.
-- Conexiones digitales en innovación; laboratorio conceptual en investigación/metodología; hoja y contacto digital en visión futura e impacto.
-- Imagen completa A-SPACE identificada como referencia de diseño. Sus cifras no son resultados de BioCrab ni implican afiliación.
-- Galería de seis fotografías originales y galería separada de cinco referencias, con imágenes completas, pies y ampliación opcional.
-- Hipótesis y validaciones pendientes sin porcentajes, ensayos completados, resultados ni afiliaciones inventadas.
-- Contadores de estructura (dos biopolímeros propuestos, cinco etapas y seis fotos), sin presentarlos como métricas de desempeño.
-- Movimiento, pausa persistente, cambios de preferencia de movimiento reducido y navegación por teclado.
+## Verificación
 
-## Validación local de esta revisión
+Compilación, TypeScript y diff-check completados. Chromium decodificó las treinta y siete apariciones de imágenes por vista. Anchos 320, 390, 768, 1024 y 1440 px sin desbordamiento.
 
-La compilación actual se comprobó localmente en Chromium contra los servidores de los puertos 3021, 3023 y 3024:
+Once ampliaciones de galería, cinco etapas metodológicas, cinco pasos del recorrido, timeline con teclado, ocho estados del comparador, menú móvil y copia del formulario comprobados. Se conservan pausa persistente, movimiento reducido y respaldo sin WebGL.
 
-- `npm run build` y `npm run typecheck`: completados correctamente.
-- Dieciséis secciones revisadas, con cinco referencias conceptuales en doce ubicaciones y las seis fotografías originales del proyecto.
-- Once ampliaciones interactivas verificadas: seis fotos del proyecto y cinco referencias.
-- Anchos 320, 390, 768, 1024 y 1440 px: sin desbordamiento horizontal.
-- Navegación, metodología, timeline, comparador y cambio de tema: comprobados.
-- Movimiento del hero, partículas, ambientación de ADN y profundidad de cursor: observado en el navegador, no solo por presencia de código.
-- Axe, reglas WCAG 2 A/AA y 2.1 AA: cero infracciones automáticas en temas oscuro y claro. Se utilizó movimiento reducido para evitar lecturas de contraste durante transiciones; quedaron dos reglas con comprobaciones incompletas. Esto no constituye una certificación integral de accesibilidad.
+El 3D se probó con WebGL real, WebGL deshabilitado y pérdida deliberada de contexto. El fallo del explorador queda aislado y no rompe la página. La carga del renderer es dinámica, con DPR limitado y bucles detenidos fuera de pantalla.
 
-El sistema cinematográfico incorpora GSAP/ScrollTrigger, Lenis, máscaras por palabras, zoom fotográfico sin recortes, partículas DOM y fuentes locales Manrope/Space Grotesk. Ver [movimiento y rendimiento](cinematic-experience.md).
+Axe WCAG A/AA y 2.1 AA en oscuro/claro y escritorio/móvil: cero infracciones automáticas con movimiento reducido. Dos comprobaciones incompletas por caso; esto no constituye certificación integral.
 
-La regresión del hero se verificó en dos corridas: pausa y movimiento reducido durante la entrada dejan ambas líneas visibles, sin desplazamiento ni desenfoque; reactivar el movimiento también termina correctamente, sin errores JavaScript.
+## Producción
 
-Estos resultados corresponden a la ejecución local de la revisión actual. No demuestran por sí solos que la misma compilación esté activa en Vercel. La integración de recursos se detalla en [integración de referencias](reference-integration.md).
-
-## Producción verificada
-
-URL: <https://biocrab-website.vercel.app/>. Enlace profundo: <https://biocrab-website.vercel.app/#hipotesis>.
-
-El 5 de noviembre de 2026, después del push del commit `f3ec62e94ee96091c927f860b70483a5f7cb085f`, Vercel confirmó el despliegue. Se verificó HTTP 200 y `X-BioCrab-Design: cinematic-biotech-v5` en el dominio público.
-
-Chromium comprobó 1440 × 1000 y 390 × 844 px:
-
-- Dieciséis escenas y treinta y seis títulos; doce estados distintos observados en partículas y zoom en cada vista. Lenis/GSAP en escritorio y scroll nativo/GSAP en móvil.
-- 37 imágenes decodificadas por vista, con cinco referencias únicas, seis fotos originales y tres apariciones del logo.
-- Imágenes completas mediante `object-fit: contain`; sin placeholders visibles ni desbordamiento horizontal.
-- Cero errores JavaScript o recursos HTTP fallidos durante el recorrido.
-- Favicon PNG válido, HTTP 200.
-- `#hipotesis` abre el contenido y lo deja visible, en ambas dimensiones.
-- Logo, título, CTA y ADN presentes desde la primera pantalla móvil.
-
-También se descargaron los cinco PNG y el logo desde sus rutas públicas: respuestas correctas y bytes idénticos al repositorio. Los cinco PNG originales coinciden con las fuentes del ZIP.
-
-El [informe de producción](production-verification.json) conserva fecha, URL, recursos únicos y resultados por viewport. La inspección visual revisó las capturas del hero, innovación, investigación, metodología, resultados, impacto y galería. Las referencias conceptuales aparecen con su contexto y no se presentan como evidencia experimental.
-
-## Capturas de producción
-
-Estas imágenes proceden del dominio público después del despliegue. Los heroes se capturaron con movimiento normal; las capturas largas de sección usan movimiento reducido para registrar un estado estable.
+<https://biocrab-website.vercel.app/> — revisión `5b39e42`, encabezado `molecular-research-v6`, verificada el 8 de noviembre de 2026. El dominio público renderizó ambos canvas WebGL y sus controles en escritorio y vista móvil, con 16 secciones, 37 imágenes y el enlace `#hipotesis` correcto. No hubo errores JavaScript, recursos fallidos ni desbordamiento.
 
 - [Escritorio](previews/desktop.png)
 - [Móvil](previews/mobile.png)
-- [Galería completa de escritorio](previews/galeria-desktop.jpg)
-- [Galería completa móvil](previews/galeria-mobile.jpg)
-- [Innovación](previews/innovacion-desktop.jpg)
-- [Investigación](previews/investigacion-desktop.jpg)
+- [Explorador de escritorio](previews/molecular-desktop.png)
+- [Explorador móvil](previews/molecular-mobile.png)
+- [Galería de escritorio](previews/galeria-desktop.jpg)
+- [Galería móvil](previews/galeria-mobile.jpg)
 - [Metodología móvil](previews/metodologia-mobile.jpg)
-- [Resultados pendientes](previews/resultados-desktop.jpg)
-- [Impacto potencial](previews/impacto-desktop.jpg)
+- [Investigación](previews/investigacion-desktop.jpg)
+- [Impacto](previews/impacto-desktop.jpg)
 
-No se inventaron porcentajes, resultados, reconocimientos ni afiliaciones. Las hipótesis y las aplicaciones propuestas siguen sujetas a validación experimental.
+Evidencia: [producción](production-verification.json), [controles](molecular-functional.json), [detalle técnico](molecular-experience.md). Las capturas restantes de la revisión anterior se conservan como historial y no acreditan esta entrega.

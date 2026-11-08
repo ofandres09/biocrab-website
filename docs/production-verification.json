@@ -1,77 +1,104 @@
 {
   "base": "https://biocrab-website.vercel.app",
-  "checkedAt": "2026-11-05T14:37:26.375Z",
-  "viewports": [
+  "sourceCommit": "5b39e423d162b36b7db225c4b955f76a9d731dbd",
+  "checkedAt": "2026-11-08T18:04:54.856Z",
+  "views": [
     {
       "width": 1440,
-      "marker": "cinematic-biotech-v5",
-      "motion": {
-        "engine": "lenis-gsap",
-        "sections": 16,
-        "headings": 36,
-        "particles": 30,
-        "particleStates": 12,
-        "photoStates": 12
-      },
-      "refs": [
-        "pinterest-adn.png",
-        "pinterest-conexiones.png",
-        "pinterest-laboratorio.png",
-        "pinterest-dashboard.png",
-        "pinterest-huella.png"
+      "marker": "molecular-research-v6",
+      "renderers": [
+        "webgl",
+        "webgl"
       ],
-      "originals": [
+      "modes": true,
+      "orbit": true,
+      "images": 37,
+      "sources": [
+        "biocrab-logo-adaptado.png",
+        "pinterest-adn.png",
         "biopelicula-secando.jpg",
         "lavando-cangrejitos.jpg",
         "exoesqueletos-separados.jpg",
         "peliculas-secando.jpg",
+        "pinterest-conexiones.png",
+        "pinterest-laboratorio.png",
         "gomitas-fruta.jpg",
-        "cangrejitos-secos.jpg"
+        "cangrejitos-secos.jpg",
+        "pinterest-dashboard.png",
+        "pinterest-huella.png"
       ],
-      "images": 37,
-      "logos": 3,
+      "ids": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "del-residuo-al-biomaterial",
+        "investigacion",
+        "metodologia",
+        "recorrido",
+        "galeria",
+        "resultados",
+        "comparacion",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "impacto-potencial",
+        "gomitas",
+        "equipo"
+      ],
       "overflow": 0,
-      "icon": 200,
       "hash": {
         "open": true,
-        "top": 210.234375
+        "top": 210.4375
       },
       "errors": [],
       "failed": []
     },
     {
       "width": 390,
-      "marker": "cinematic-biotech-v5",
-      "motion": {
-        "engine": "native-gsap",
-        "sections": 16,
-        "headings": 36,
-        "particles": 14,
-        "particleStates": 12,
-        "photoStates": 12
-      },
-      "refs": [
-        "pinterest-adn.png",
-        "pinterest-conexiones.png",
-        "pinterest-laboratorio.png",
-        "pinterest-dashboard.png",
-        "pinterest-huella.png"
+      "marker": "molecular-research-v6",
+      "renderers": [
+        "webgl",
+        "webgl"
       ],
-      "originals": [
+      "modes": true,
+      "orbit": true,
+      "images": 37,
+      "sources": [
+        "biocrab-logo-adaptado.png",
+        "pinterest-adn.png",
         "biopelicula-secando.jpg",
         "lavando-cangrejitos.jpg",
         "exoesqueletos-separados.jpg",
         "peliculas-secando.jpg",
+        "pinterest-conexiones.png",
+        "pinterest-laboratorio.png",
         "gomitas-fruta.jpg",
-        "cangrejitos-secos.jpg"
+        "cangrejitos-secos.jpg",
+        "pinterest-dashboard.png",
+        "pinterest-huella.png"
       ],
-      "images": 37,
-      "logos": 3,
+      "ids": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "del-residuo-al-biomaterial",
+        "investigacion",
+        "metodologia",
+        "recorrido",
+        "galeria",
+        "resultados",
+        "comparacion",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "impacto-potencial",
+        "gomitas",
+        "equipo"
+      ],
       "overflow": 0,
-      "icon": 200,
       "hash": {
         "open": true,
-        "top": 199.734375
+        "top": 200.203125
       },
       "errors": [],
       "failed": []
