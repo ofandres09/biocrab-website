@@ -1,36 +1,312 @@
 {
-  "lightboxes": 11,
-  "methods": 5,
-  "journey": 5,
-  "timelineKeyboard": true,
-  "comparisons": 8,
-  "clipboard": true,
-  "mobileMenu": true,
-  "axe": [
-    {
-      "width": 1440,
-      "theme": "dark",
-      "violations": [],
-      "incomplete": 2
+  "design": "biomaterial-laboratory-v8",
+  "functionalRun": {
+    "url": "http://localhost:3042",
+    "startedAt": "2026-11-11T18:20:19.923Z",
+    "checks": [
+      {
+        "name": "removed sections, preserved science, and internal anchors",
+        "passed": true,
+        "durationMs": 38,
+        "details": {
+          "deletedSections": 0,
+          "danglingHashLinks": 0,
+          "duplicateIds": 0,
+          "scientificContentPreserved": true
+        }
+      },
+      {
+        "name": "methodology: all five manual stages and scientific context",
+        "passed": true,
+        "durationMs": 1874,
+        "details": [
+          {
+            "index": 1,
+            "title": "Recolección y limpieza",
+            "body": "Recolección y limpieza de exoesqueletos de cangrejo. Registrar procedencia, acondicionamiento y trazabilidad de las muestras."
+          },
+          {
+            "index": 2,
+            "title": "Obtención de quitosano",
+            "body": "La quitina se separa de otros componentes del exoesqueleto y se transforma por desacetilación. La identidad y características del material deben verificarse analíticamente."
+          },
+          {
+            "index": 3,
+            "title": "Soluciones filmógenas",
+            "body": "Preparar y documentar las formulaciones de almidón de yuca y quitosano. La composición, el medio y las condiciones de preparación influyen en la formación de la matriz."
+          },
+          {
+            "index": 4,
+            "title": "Secado y formación",
+            "body": "Distribuir la solución sobre un soporte y controlar las condiciones de secado para obtener películas. Registrar espesor, uniformidad y defectos observables."
+          },
+          {
+            "index": 5,
+            "title": "Evaluación física",
+            "body": "Evaluar espesor, resistencia, flexibilidad y comportamiento frente a humedad mediante protocolos definidos, controles y réplicas. Publicar resultados con sus condiciones de ensayo."
+          }
+        ]
+      },
+      {
+        "name": "methodology: Arrow/Home/End keyboard navigation",
+        "passed": true,
+        "durationMs": 423
+      },
+      {
+        "name": "methodology: reduced motion holds selection during scrolling",
+        "passed": true,
+        "durationMs": 410
+      },
+      {
+        "name": "material journey: five steps and previous/next controls",
+        "passed": true,
+        "durationMs": 2628,
+        "details": [
+          "Exoesqueleto de cangrejo",
+          "Obtención de quitosano",
+          "Mezcla con almidón de yuca",
+          "Formación de biopelícula",
+          "Aplicación en alimentos"
+        ]
+      },
+      {
+        "name": "timeline: all three tabs and Arrow/Home/End navigation",
+        "passed": true,
+        "durationMs": 1117,
+        "details": [
+          "El punto de partida",
+          "BioCrab",
+          "Validar con evidencia"
+        ]
+      },
+      {
+        "name": "material comparator: all eight material/dimension states",
+        "passed": true,
+        "durationMs": 2470,
+        "details": [
+          {
+            "material": "BioCrab",
+            "dimension": "Origen"
+          },
+          {
+            "material": "BioCrab",
+            "dimension": "Propiedades"
+          },
+          {
+            "material": "BioCrab",
+            "dimension": "Fin de vida"
+          },
+          {
+            "material": "BioCrab",
+            "dimension": "Uso alimentario"
+          },
+          {
+            "material": "Plástico convencional",
+            "dimension": "Origen"
+          },
+          {
+            "material": "Plástico convencional",
+            "dimension": "Propiedades"
+          },
+          {
+            "material": "Plástico convencional",
+            "dimension": "Fin de vida"
+          },
+          {
+            "material": "Plástico convencional",
+            "dimension": "Uso alimentario"
+          }
+        ]
+      },
+      {
+        "name": "contact form copies exact message to granted clipboard",
+        "passed": true,
+        "durationMs": 835,
+        "details": {
+          "exactMessageCopied": true
+        }
+      },
+      {
+        "name": "responsive layout and images at 320px",
+        "passed": true,
+        "durationMs": 993,
+        "details": {
+          "viewport": 320,
+          "scrollWidth": 320,
+          "bodyWidth": 320,
+          "offenders": [],
+          "imageCount": 24
+        }
+      },
+      {
+        "name": "responsive layout and images at 390px",
+        "passed": true,
+        "durationMs": 669,
+        "details": {
+          "viewport": 390,
+          "scrollWidth": 390,
+          "bodyWidth": 390,
+          "offenders": [],
+          "imageCount": 24
+        }
+      },
+      {
+        "name": "responsive layout and images at 768px",
+        "passed": true,
+        "durationMs": 715,
+        "details": {
+          "viewport": 768,
+          "scrollWidth": 768,
+          "bodyWidth": 768,
+          "offenders": [],
+          "imageCount": 24
+        }
+      },
+      {
+        "name": "responsive layout and images at 1024px",
+        "passed": true,
+        "durationMs": 988,
+        "details": {
+          "viewport": 1024,
+          "scrollWidth": 1024,
+          "bodyWidth": 1024,
+          "offenders": [],
+          "imageCount": 24
+        }
+      },
+      {
+        "name": "responsive layout and images at 1440px",
+        "passed": true,
+        "durationMs": 1569,
+        "details": {
+          "viewport": 1440,
+          "scrollWidth": 1440,
+          "bodyWidth": 1440,
+          "offenders": [],
+          "imageCount": 24
+        }
+      },
+      {
+        "name": "mobile menu opens, follows a valid anchor, and closes with Escape",
+        "passed": true,
+        "durationMs": 838
+      },
+      {
+        "name": "no uncaught browser exceptions or failed local assets",
+        "passed": true,
+        "durationMs": 1,
+        "details": {
+          "pageErrors": [],
+          "consoleErrors": [],
+          "failedResponses": []
+        }
+      }
+    ],
+    "note": "Las cuatro comprobaciones de accesibilidad iniciales se repitieron tras corregir la etiqueta de marca; ver accessibilityRun."
+  },
+  "accessibilityRun": {
+    "url": "http://localhost:3044",
+    "startedAt": "2026-11-11T18:35:18.077Z",
+    "reducedMotion": "reduce",
+    "browser": "/usr/bin/chromium",
+    "args": [
+      "--no-sandbox",
+      "--disable-webgl",
+      "--disable-webgl2"
+    ],
+    "scans": [
+      {
+        "device": "desktop",
+        "theme": "dark",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "testedAt": "2026-11-11T18:35:26.178Z",
+        "violations": [],
+        "violationCount": 0,
+        "passCount": 49,
+        "incompleteCount": 2
+      },
+      {
+        "device": "desktop",
+        "theme": "light",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "testedAt": "2026-11-11T18:35:30.616Z",
+        "violations": [],
+        "violationCount": 0,
+        "passCount": 49,
+        "incompleteCount": 2
+      },
+      {
+        "device": "mobile",
+        "theme": "dark",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "testedAt": "2026-11-11T18:35:34.954Z",
+        "violations": [],
+        "violationCount": 0,
+        "passCount": 50,
+        "incompleteCount": 2
+      },
+      {
+        "device": "mobile",
+        "theme": "light",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "testedAt": "2026-11-11T18:35:38.953Z",
+        "violations": [],
+        "violationCount": 0,
+        "passCount": 50,
+        "incompleteCount": 2
+      }
+    ],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "responseStatus": 200,
+    "designHeader": "biomaterial-laboratory-v8",
+    "brand": {
+      "label": "BioCrab Biomateriales, inicio",
+      "visibleText": "BioCrab\nBIOMATERIALES",
+      "href": "#inicio",
+      "accessibleNameMatch": true
     },
-    {
-      "width": 1440,
-      "theme": "light",
-      "violations": [],
-      "incomplete": 2
+    "anchors": {
+      "deletedElements": [],
+      "deletedHeadings": [],
+      "danglingHashLinks": []
     },
-    {
-      "width": 390,
-      "theme": "dark",
-      "violations": [],
-      "incomplete": 2
+    "priorFunctionalAudit": {
+      "url": "http://localhost:3042",
+      "finishedAt": "2026-11-11T18:20:57.534Z",
+      "passed": [
+        "removed sections, preserved science, and internal anchors",
+        "methodology: all five manual stages and scientific context",
+        "methodology: Arrow/Home/End keyboard navigation",
+        "methodology: reduced motion holds selection during scrolling",
+        "material journey: five steps and previous/next controls",
+        "timeline: all three tabs and Arrow/Home/End navigation",
+        "material comparator: all eight material/dimension states",
+        "contact form copies exact message to granted clipboard",
+        "responsive layout and images at 320px",
+        "responsive layout and images at 390px",
+        "responsive layout and images at 768px",
+        "responsive layout and images at 1024px",
+        "responsive layout and images at 1440px",
+        "mobile menu opens, follows a valid anchor, and closes with Escape",
+        "no uncaught browser exceptions or failed local assets"
+      ],
+      "sourceReport": "/tmp/biocrab-controls/report.json",
+      "note": "Unchanged controls and responsive behavior were tested in the prior audit; this final run checks brand, removed anchors, and four axe states only."
     },
-    {
-      "width": 390,
-      "theme": "light",
-      "violations": [],
-      "incomplete": 2
-    }
-  ],
-  "errors": []
+    "passed": true,
+    "finishedAt": "2026-11-11T18:35:38.967Z"
+  }
 }

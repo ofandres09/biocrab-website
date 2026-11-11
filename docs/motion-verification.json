@@ -1,418 +1,642 @@
 {
-  "base": "http://127.0.0.1:3023",
-  "checkedAt": "2026-11-05T14:25:27.623Z",
-  "viewports": [
+  "url": "http://127.0.0.1:3043",
+  "checkedAt": "2026-11-11T18:29:24.393Z",
+  "renderer": "Chromium ANGLE/SwiftShader",
+  "views": [
     {
       "width": 1440,
-      "engine": "lenis-gsap",
-      "initial": {
-        "engine": "lenis-gsap",
-        "sections": 16,
-        "particleCount": "30",
-        "visibleParticles": 30,
-        "canvas": 0,
-        "particleTag": "DIV",
-        "dnaAnimation": "none"
-      },
-      "cursor": {
-        "visible": "visible",
-        "magnetic": "true",
-        "transform": "translate3d(124.572px, 21.5px, 0px)"
-      },
-      "samples": [
+      "marker": "biomaterial-laboratory-v8",
+      "chapters": [
         {
-          "i": 0,
-          "particleTransform": "matrix(0.814979, 0, 0, 0.814979, -1.39088, -1.28389)",
-          "particleOpacity": "0.383538",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.940809",
-          "photoTransform": "matrix(0.940809, 0, 0, 0.940809, 0, 0.694855)"
+          "id": "inicio",
+          "scene": "origin",
+          "phase": "0",
+          "nebula": "inicio",
+          "progress": "0.404",
+          "overflow": 0,
+          "canvasDraws": 90,
+          "gpu": {
+            "uTime": 0.8399999737739563,
+            "uFrom": 0,
+            "uTo": 0,
+            "uBlend": 1,
+            "uProgress": 0.35840970277786255
+          }
         },
         {
-          "i": 1,
-          "particleTransform": "matrix(0.816983, 0, 0, 0.816983, -1.57701, -1.45571)",
-          "particleOpacity": "0.386688",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.941031",
-          "photoTransform": "matrix(0.941031, 0, 0, 0.941031, 0, 0.490486)"
+          "id": "sobre",
+          "scene": "observation",
+          "phase": "0.480309",
+          "nebula": "sobre",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 114,
+          "gpu": {
+            "uTime": 1.0800000429153442,
+            "uFrom": 0,
+            "uTo": 1,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.37902456521987915
+          }
         },
         {
-          "i": 2,
-          "particleTransform": "matrix(0.819117, 0, 0, 0.819117, -1.77512, -1.63857)",
-          "particleOpacity": "0.39004",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.941255",
-          "photoTransform": "matrix(0.941255, 0, 0, 0.941255, 0, 0.409735)"
+          "id": "por-que-biocrab",
+          "scene": "three-origins",
+          "phase": "0.463403",
+          "nebula": "por-que-biocrab",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 132,
+          "gpu": {
+            "uTime": 1.2599999904632568,
+            "uFrom": 0,
+            "uTo": 2,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.38690900802612305
+          }
         },
         {
-          "i": 3,
-          "particleTransform": "matrix(0.82109, 0, 0, 0.82109, -1.95835, -1.80771)",
-          "particleOpacity": "0.393141",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.941481",
-          "photoTransform": "matrix(0.941481, 0, 0, 0.941481, 0, 0.372849)"
+          "id": "innovacion",
+          "scene": "connections",
+          "phase": "0.448523",
+          "nebula": "innovacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 150,
+          "gpu": {
+            "uTime": 1.440000057220459,
+            "uFrom": 0,
+            "uTo": 3,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.39175111055374146
+          }
         },
         {
-          "i": 4,
-          "particleTransform": "matrix(0.823165, 0, 0, 0.823165, -2.15103, -1.98557)",
-          "particleOpacity": "0.396402",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.941754",
-          "photoTransform": "matrix(0.941754, 0, 0, 0.941754, 0, 0.353907)"
+          "id": "del-residuo-al-biomaterial",
+          "scene": "transformation",
+          "phase": "0.448916",
+          "nebula": "del-residuo-al-biomaterial",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 174,
+          "gpu": {
+            "uTime": 1.6799999475479126,
+            "uFrom": 0,
+            "uTo": 4,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.39572596549987793
+          }
         },
         {
-          "i": 5,
-          "particleTransform": "matrix(0.825657, 0, 0, 0.825657, -2.38248, -2.19921)",
-          "particleOpacity": "0.400319",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.942041",
-          "photoTransform": "matrix(0.942041, 0, 0, 0.942041, 0, 0.346929)"
+          "id": "investigacion",
+          "scene": "hypothesis",
+          "phase": "0.423311",
+          "nebula": "investigacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 192,
+          "gpu": {
+            "uTime": 1.8600000143051147,
+            "uFrom": 0,
+            "uTo": 5,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.3973570168018341
+          }
         },
         {
-          "i": 6,
-          "particleTransform": "matrix(0.827613, 0, 0, 0.827613, -2.56405, -2.36682)",
-          "particleOpacity": "0.403392",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.942284",
-          "photoTransform": "matrix(0.942284, 0, 0, 0.942284, 0, 0.343938)"
+          "id": "metodologia",
+          "scene": "procedure",
+          "phase": "0.415606",
+          "nebula": "metodologia",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 222,
+          "gpu": {
+            "uTime": 2.1600000858306885,
+            "uFrom": 0,
+            "uTo": 6,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.3986823260784149
+          }
         },
         {
-          "i": 7,
-          "particleTransform": "matrix(0.830683, 0, 0, 0.830683, -2.84912, -2.62996)",
-          "particleOpacity": "0.408216",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.942671",
-          "photoTransform": "matrix(0.942671, 0, 0, 0.942671, 0, 0.342941)"
+          "id": "recorrido",
+          "scene": "research-route",
+          "phase": "0.444547",
+          "nebula": "recorrido",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 240,
+          "gpu": {
+            "uTime": 2.3399999141693115,
+            "uFrom": 0,
+            "uTo": 7,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.39920517802238464
+          }
         },
         {
-          "i": 8,
-          "particleTransform": "matrix(0.833184, 0, 0, 0.833184, -3.0814, -2.84437)",
-          "particleOpacity": "0.412147",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.942981",
-          "photoTransform": "matrix(0.942981, 0, 0, 0.942981, 0, 0.342941)"
+          "id": "comparacion",
+          "scene": "perspectives",
+          "phase": "0.456397",
+          "nebula": "comparacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 258,
+          "gpu": {
+            "uTime": 2.5199999809265137,
+            "uFrom": 0,
+            "uTo": 8,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.3995811939239502
+          }
         },
         {
-          "i": 9,
-          "particleTransform": "matrix(0.835406, 0, 0, 0.835406, -3.2877, -3.0348)",
-          "particleOpacity": "0.415638",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.943275",
-          "photoTransform": "matrix(0.943275, 0, 0, 0.943275, 0, 0.342941)"
+          "id": "aplicaciones-futuras",
+          "scene": "possibilities",
+          "phase": "0.420513",
+          "nebula": "aplicaciones-futuras",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 276,
+          "gpu": {
+            "uTime": 2.700000047683716,
+            "uFrom": 0,
+            "uTo": 9,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.3996850550174713
+          }
         },
         {
-          "i": 10,
-          "particleTransform": "matrix(0.838873, 0, 0, 0.838873, -3.60959, -3.33193)",
-          "particleOpacity": "0.421085",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.943725",
-          "photoTransform": "matrix(0.943725, 0, 0, 0.943725, 0, 0.342941)"
+          "id": "vision-futura",
+          "scene": "future-horizon",
+          "phase": "0.431645",
+          "nebula": "vision-futura",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 294,
+          "gpu": {
+            "uTime": 2.880000114440918,
+            "uFrom": 0,
+            "uTo": 10,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.399713397026062
+          }
         },
         {
-          "i": 11,
-          "particleTransform": "matrix(0.842087, 0, 0, 0.842087, -3.90805, -3.60743)",
-          "particleOpacity": "0.426136",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.944164",
-          "photoTransform": "matrix(0.944164, 0, 0, 0.944164, 0, 0.342941)"
+          "id": "impacto-potencial",
+          "scene": "complete-cycle",
+          "phase": "0.410606",
+          "nebula": "impacto-potencial",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 318,
+          "gpu": {
+            "uTime": 3.119999885559082,
+            "uFrom": 0,
+            "uTo": 11,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.3998855948448181
+          }
         },
         {
-          "i": 12,
-          "particleTransform": "matrix(0.84628, 0, 0, 0.84628, -4.29745, -3.96688)",
-          "particleOpacity": "0.432726",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.944688",
-          "photoTransform": "matrix(0.944688, 0, 0, 0.944688, 0, 0.342941)"
+          "id": "gomitas",
+          "scene": "texture",
+          "phase": "0.483971",
+          "nebula": "gomitas",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 342,
+          "gpu": {
+            "uTime": 3.359999895095825,
+            "uFrom": 0,
+            "uTo": 12,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.40009987354278564
+          }
         },
         {
-          "i": 13,
-          "particleTransform": "matrix(0.848447, 0, 0, 0.848447, -4.49866, -4.15261)",
-          "particleOpacity": "0.436131",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.944996",
-          "photoTransform": "matrix(0.944996, 0, 0, 0.944996, 0, 0.342941)"
-        },
-        {
-          "i": 14,
-          "particleTransform": "matrix(0.848447, 0, 0, 0.848447, -4.49866, -4.15261)",
-          "particleOpacity": "0.436131",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.944996",
-          "photoTransform": "matrix(0.944996, 0, 0, 0.944996, 0, 0.342941)"
-        },
-        {
-          "i": 15,
-          "particleTransform": "matrix(0.857107, 0, 0, 0.857107, -5.30275, -4.89484)",
-          "particleOpacity": "0.449739",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.946161",
-          "photoTransform": "matrix(0.946161, 0, 0, 0.946161, 0, 0.342941)"
+          "id": "equipo",
+          "scene": "next-chapter",
+          "phase": "0.390097",
+          "nebula": "equipo",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 366,
+          "gpu": {
+            "uTime": 3.5399999618530273,
+            "uFrom": 0,
+            "uTo": 13,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.40015047788619995
+          }
         }
       ],
-      "particleDistinct": 15,
-      "photoDistinct": 15,
-      "paused": [
+      "captures": [
+        "hero-1440.jpg",
+        "problema-1440.jpg",
+        "transformacion-1440.jpg",
+        "metodologia-1440.jpg",
+        "investigacion-1440.jpg",
+        "impacto-1440.jpg",
+        "contacto-1440.jpg"
+      ],
+      "errors": [],
+      "structure": {
+        "sections": [
+          "inicio",
+          "sobre",
+          "por-que-biocrab",
+          "innovacion",
+          "del-residuo-al-biomaterial",
+          "investigacion",
+          "metodologia",
+          "recorrido",
+          "comparacion",
+          "aplicaciones-futuras",
+          "vision-futura",
+          "impacto-potencial",
+          "gomitas",
+          "equipo"
+        ],
+        "images": 25,
+        "broken": [],
+        "removedNodes": 0,
+        "dangling": [],
+        "videos": 0
+      },
+      "heroGpu": {
+        "uTime": 0.47999998927116394,
+        "uFrom": 0,
+        "uTo": 0,
+        "uBlend": 1,
+        "uProgress": 0.2879369258880615
+      },
+      "methodScroll": [
         {
-          "engine": "still",
-          "global": "still",
-          "sections": 0,
-          "lenis": false,
-          "particleState": "paused",
-          "particleName": "ambient-particle-drift",
-          "particleTransform": "matrix(0.87101, 0, 0, 0.87101, -6.59376, -6.08655)",
-          "particleOpacity": "0.471587",
-          "cursor": "hidden"
+          "active": 0,
+          "title": "Recolección y limpieza",
+          "titleTop": 853.34912109375,
+          "titleBottom": 906.2058715820312
         },
         {
-          "engine": "still",
-          "global": "still",
-          "sections": 0,
-          "lenis": false,
-          "particleState": "paused",
-          "particleName": "ambient-particle-drift",
-          "particleTransform": "matrix(0.87101, 0, 0, 0.87101, -6.59376, -6.08655)",
-          "particleOpacity": "0.471587",
-          "cursor": "hidden"
+          "active": 1,
+          "title": "Obtención de quitosano",
+          "titleTop": 678.6278686523438,
+          "titleBottom": 732.0184936523438
+        },
+        {
+          "active": 2,
+          "title": "Soluciones filmógenas",
+          "titleTop": 538.06396484375,
+          "titleBottom": 591.45458984375
+        },
+        {
+          "active": 3,
+          "title": "Secado y formación",
+          "titleTop": 407.9447937011719,
+          "titleBottom": 461.3354187011719
+        },
+        {
+          "active": 4,
+          "title": "Evaluación física",
+          "titleTop": 252.1622772216797,
+          "titleBottom": 305.55291748046875
         }
       ],
+      "pausedGpu": {
+        "uTime": 4.320000171661377,
+        "uFrom": 0,
+        "uTo": 6,
+        "uBlend": 0.3986288607120514,
+        "uProgress": 0.7533648014068604
+      },
+      "pauseStable": true,
+      "modes": true,
+      "orbit": true,
+      "contactNebula": true,
       "reduced": {
         "engine": "still",
-        "global": "still",
-        "sections": 0,
-        "lenis": false,
-        "particleState": "running",
-        "particleName": "none",
-        "particleTransform": "none",
-        "particleOpacity": "0.5",
-        "cursor": "hidden"
-      },
-      "restored": {
-        "engine": "lenis-gsap",
-        "sections": 16,
-        "global": "active"
-      },
-      "errors": []
+        "methods": "still"
+      }
     },
     {
       "width": 390,
-      "engine": "native-gsap",
-      "initial": {
-        "engine": "native-gsap",
-        "sections": 16,
-        "particleCount": "14",
-        "visibleParticles": 14,
-        "canvas": 0,
-        "particleTag": "DIV",
-        "dnaAnimation": "none"
-      },
-      "cursor": {
-        "display": "none"
-      },
-      "samples": [
+      "marker": "biomaterial-laboratory-v8",
+      "chapters": [
         {
-          "i": 0,
-          "particleTransform": "matrix(0.8069, 0, 0, 0.8069, -0.640734, -0.591447)",
-          "particleOpacity": "0.370843",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.960071",
-          "photoTransform": "matrix(0.960071, 0, 0, 0.960071, 0, 0.113665)"
+          "id": "inicio",
+          "scene": "origin",
+          "phase": "0.084943",
+          "nebula": "inicio",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 174,
+          "gpu": {
+            "uTime": 1.558500051498413,
+            "uFrom": 0,
+            "uTo": 0,
+            "uBlend": 1,
+            "uProgress": 0.20778222382068634
+          }
         },
         {
-          "i": 1,
-          "particleTransform": "matrix(0.808261, 0, 0, 0.808261, -0.767055, -0.708051)",
-          "particleOpacity": "0.372981",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.960124",
-          "photoTransform": "matrix(0.960124, 0, 0, 0.960124, 0, 0.113665)"
+          "id": "sobre",
+          "scene": "observation",
+          "phase": "0.459742",
+          "nebula": "sobre",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 198,
+          "gpu": {
+            "uTime": 1.7984999418258667,
+            "uFrom": 0,
+            "uTo": 1,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.2969517707824707
+          }
         },
         {
-          "i": 2,
-          "particleTransform": "matrix(0.809554, 0, 0, 0.809554, -0.887149, -0.818907)",
-          "particleOpacity": "0.375013",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.960185",
-          "photoTransform": "matrix(0.960185, 0, 0, 0.960185, 0, 0.113665)"
+          "id": "por-que-biocrab",
+          "scene": "three-origins",
+          "phase": "0.44",
+          "nebula": "por-que-biocrab",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 222,
+          "gpu": {
+            "uTime": 2.0325000286102295,
+            "uFrom": 0,
+            "uTo": 2,
+            "uBlend": 0.01910541206598282,
+            "uProgress": 0.3438433110713959
+          }
         },
         {
-          "i": 3,
-          "particleTransform": "matrix(0.811152, 0, 0, 0.811152, -1.03558, -0.955922)",
-          "particleOpacity": "0.377525",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.96027",
-          "photoTransform": "matrix(0.96027, 0, 0, 0.96027, 0, 0.113665)"
+          "id": "innovacion",
+          "scene": "connections",
+          "phase": "0.445857",
+          "nebula": "innovacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 252,
+          "gpu": {
+            "uTime": 2.3187999725341797,
+            "uFrom": 0,
+            "uTo": 3,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.37326499819755554
+          }
         },
         {
-          "i": 4,
-          "particleTransform": "matrix(0.813105, 0, 0, 0.813105, -1.21691, -1.1233)",
-          "particleOpacity": "0.380594",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.96038",
-          "photoTransform": "matrix(0.96038, 0, 0, 0.96038, 0, 0.113665)"
+          "id": "del-residuo-al-biomaterial",
+          "scene": "transformation",
+          "phase": "0.45321",
+          "nebula": "del-residuo-al-biomaterial",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 282,
+          "gpu": {
+            "uTime": 2.618799924850464,
+            "uFrom": 0,
+            "uTo": 4,
+            "uBlend": 0.04603491351008415,
+            "uProgress": 0.38778823614120483
+          }
         },
         {
-          "i": 5,
-          "particleTransform": "matrix(0.814738, 0, 0, 0.814738, -1.36851, -1.26324)",
-          "particleOpacity": "0.383159",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.960488",
-          "photoTransform": "matrix(0.960488, 0, 0, 0.960488, 0, 0.113665)"
+          "id": "investigacion",
+          "scene": "hypothesis",
+          "phase": "0.440833",
+          "nebula": "investigacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 306,
+          "gpu": {
+            "uTime": 2.8492000102996826,
+            "uFrom": 0,
+            "uTo": 5,
+            "uBlend": 0.01795056089758873,
+            "uProgress": 0.39334049820899963
+          }
         },
         {
-          "i": 6,
-          "particleTransform": "matrix(0.816984, 0, 0, 0.816984, -1.5771, -1.45578)",
-          "particleOpacity": "0.386689",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.960627",
-          "photoTransform": "matrix(0.960627, 0, 0, 0.960627, 0, 0.113665)"
+          "id": "metodologia",
+          "scene": "procedure",
+          "phase": "0.433164",
+          "nebula": "metodologia",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 354,
+          "gpu": {
+            "uTime": 3.2774999141693115,
+            "uFrom": 0,
+            "uTo": 6,
+            "uBlend": 0.0615047924220562,
+            "uProgress": 0.39776960015296936
+          }
         },
         {
-          "i": 7,
-          "particleTransform": "matrix(0.818842, 0, 0, 0.818842, -1.74957, -1.61499)",
-          "particleOpacity": "0.389608",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.960754",
-          "photoTransform": "matrix(0.960754, 0, 0, 0.960754, 0, 0.113665)"
+          "id": "recorrido",
+          "scene": "research-route",
+          "phase": "0.453693",
+          "nebula": "recorrido",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 384,
+          "gpu": {
+            "uTime": 3.5450000762939453,
+            "uFrom": 0,
+            "uTo": 7,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.39882054924964905
+          }
         },
         {
-          "i": 8,
-          "particleTransform": "matrix(0.82138, 0, 0, 0.82138, -1.98529, -1.83257)",
-          "particleOpacity": "0.393597",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.960933",
-          "photoTransform": "matrix(0.960933, 0, 0, 0.960933, 0, 0.113665)"
+          "id": "comparacion",
+          "scene": "perspectives",
+          "phase": "0.453117",
+          "nebula": "comparacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 414,
+          "gpu": {
+            "uTime": 3.7850000858306885,
+            "uFrom": 0,
+            "uTo": 8,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.39932334423065186
+          }
         },
         {
-          "i": 9,
-          "particleTransform": "matrix(0.823776, 0, 0, 0.823776, -2.20782, -2.03798)",
-          "particleOpacity": "0.397363",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.961107",
-          "photoTransform": "matrix(0.961107, 0, 0, 0.961107, 0, 0.113665)"
+          "id": "aplicaciones-futuras",
+          "scene": "possibilities",
+          "phase": "0.436051",
+          "nebula": "aplicaciones-futuras",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 438,
+          "gpu": {
+            "uTime": 4.122300148010254,
+            "uFrom": 0,
+            "uTo": 9,
+            "uBlend": 0.04603491351008415,
+            "uProgress": 0.39966607093811035
+          }
         },
         {
-          "i": 10,
-          "particleTransform": "matrix(0.825659, 0, 0, 0.825659, -2.38259, -2.19931)",
-          "particleOpacity": "0.400321",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.961257",
-          "photoTransform": "matrix(0.961257, 0, 0, 0.961257, 0, 0.113665)"
+          "id": "vision-futura",
+          "scene": "future-horizon",
+          "phase": "0.457788",
+          "nebula": "vision-futura",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 468,
+          "gpu": {
+            "uTime": 4.393199920654297,
+            "uFrom": 0,
+            "uTo": 10,
+            "uBlend": 0.04603491351008415,
+            "uProgress": 0.39968687295913696
+          }
         },
         {
-          "i": 11,
-          "particleTransform": "matrix(0.828619, 0, 0, 0.828619, -2.65749, -2.45307)",
-          "particleOpacity": "0.404973",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.961474",
-          "photoTransform": "matrix(0.961474, 0, 0, 0.961474, 0, 0.113665)"
+          "id": "impacto-potencial",
+          "scene": "complete-cycle",
+          "phase": "0.44188",
+          "nebula": "impacto-potencial",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 504,
+          "gpu": {
+            "uTime": 4.69320011138916,
+            "uFrom": 0,
+            "uTo": 11,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.3997330963611603
+          }
         },
         {
-          "i": 12,
-          "particleTransform": "matrix(0.831388, 0, 0, 0.831388, -2.91458, -2.69038)",
-          "particleOpacity": "0.409324",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.96169",
-          "photoTransform": "matrix(0.96169, 0, 0, 0.96169, 0, 0.113665)"
+          "id": "gomitas",
+          "scene": "texture",
+          "phase": "0.465772",
+          "nebula": "gomitas",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 534,
+          "gpu": {
+            "uTime": 4.993199825286865,
+            "uFrom": 0,
+            "uTo": 12,
+            "uBlend": 0.04603491351008415,
+            "uProgress": 0.3999482989311218
+          }
         },
         {
-          "i": 13,
-          "particleTransform": "matrix(0.834285, 0, 0, 0.834285, -3.18363, -2.93873)",
-          "particleOpacity": "0.413877",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.961921",
-          "photoTransform": "matrix(0.961921, 0, 0, 0.961921, 0, 0.113665)"
-        },
-        {
-          "i": 14,
-          "particleTransform": "matrix(0.836927, 0, 0, 0.836927, -3.42891, -3.16515)",
-          "particleOpacity": "0.418028",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.962133",
-          "photoTransform": "matrix(0.962133, 0, 0, 0.962133, 0, 0.113665)"
-        },
-        {
-          "i": 15,
-          "particleTransform": "matrix(0.840063, 0, 0, 0.840063, -3.72009, -3.43393)",
-          "particleOpacity": "0.422955",
-          "particleName": "ambient-particle-drift",
-          "particleState": "running",
-          "swell": "0.962398",
-          "photoTransform": "matrix(0.962398, 0, 0, 0.962398, 0, 0.113665)"
+          "id": "equipo",
+          "scene": "next-chapter",
+          "phase": "0.438947",
+          "nebula": "equipo",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 564,
+          "gpu": {
+            "uTime": 5.264599800109863,
+            "uFrom": 0,
+            "uTo": 13,
+            "uBlend": 0.03305760398507118,
+            "uProgress": 0.3999575078487396
+          }
         }
       ],
-      "particleDistinct": 16,
-      "photoDistinct": 16,
-      "paused": [
+      "captures": [
+        "hero-390.jpg",
+        "problema-390.jpg",
+        "transformacion-390.jpg",
+        "metodologia-390.jpg",
+        "investigacion-390.jpg",
+        "impacto-390.jpg",
+        "contacto-390.jpg"
+      ],
+      "errors": [],
+      "structure": {
+        "sections": [
+          "inicio",
+          "sobre",
+          "por-que-biocrab",
+          "innovacion",
+          "del-residuo-al-biomaterial",
+          "investigacion",
+          "metodologia",
+          "recorrido",
+          "comparacion",
+          "aplicaciones-futuras",
+          "vision-futura",
+          "impacto-potencial",
+          "gomitas",
+          "equipo"
+        ],
+        "images": 25,
+        "broken": [],
+        "removedNodes": 0,
+        "dangling": [],
+        "videos": 0
+      },
+      "heroGpu": {
+        "uTime": 1.2750999927520752,
+        "uFrom": 0,
+        "uTo": 0,
+        "uBlend": 1,
+        "uProgress": 0.2037774622440338
+      },
+      "methodScroll": [
         {
-          "engine": "still",
-          "global": "still",
-          "sections": 0,
-          "lenis": false,
-          "particleState": "paused",
-          "particleName": "ambient-particle-drift",
-          "particleTransform": "matrix(0.847142, 0, 0, 0.847142, -4.37751, -4.04078)",
-          "particleOpacity": "0.434081",
-          "cursor": "hidden"
+          "active": 0,
+          "title": "Recolección y limpieza",
+          "titleTop": 704.80859375,
+          "titleBottom": 784.286376953125
         },
         {
-          "engine": "still",
-          "global": "still",
-          "sections": 0,
-          "lenis": false,
-          "particleState": "paused",
-          "particleName": "ambient-particle-drift",
-          "particleTransform": "matrix(0.847142, 0, 0, 0.847142, -4.37751, -4.04078)",
-          "particleOpacity": "0.434081",
-          "cursor": "hidden"
+          "active": 1,
+          "title": "Obtención de quitosano",
+          "titleTop": 541.8585205078125,
+          "titleBottom": 622.1710205078125
+        },
+        {
+          "active": 2,
+          "title": "Soluciones filmógenas",
+          "titleTop": 403.67681884765625,
+          "titleBottom": 483.98931884765625
+        },
+        {
+          "active": 3,
+          "title": "Secado y formación",
+          "titleTop": 265.48883056640625,
+          "titleBottom": 345.80133056640625
+        },
+        {
+          "active": 4,
+          "title": "Evaluación física",
+          "titleTop": 127.30392456054688,
+          "titleBottom": 167.46017456054688
         }
       ],
+      "pausedGpu": {
+        "uTime": 6.036399841308594,
+        "uFrom": 0,
+        "uTo": 6,
+        "uBlend": 0.45400190353393555,
+        "uProgress": 0.7983431816101074
+      },
+      "pauseStable": true,
+      "modes": true,
+      "orbit": true,
+      "contactNebula": true,
       "reduced": {
         "engine": "still",
-        "global": "still",
-        "sections": 0,
-        "lenis": false,
-        "particleState": "running",
-        "particleName": "none",
-        "particleTransform": "none",
-        "particleOpacity": "0.5",
-        "cursor": "hidden"
-      },
-      "restored": {
-        "engine": "native-gsap",
-        "sections": 16,
-        "global": "active"
-      },
-      "errors": []
+        "methods": "still"
+      }
     }
-  ]
+  ],
+  "errors": []
 }

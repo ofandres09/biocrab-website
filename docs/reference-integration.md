@@ -1,5 +1,7 @@
 # Integración de referencias e identidad
 
+Documento histórico de `molecular-research-v6` (8 de noviembre de 2026). En la revisión actual se retiraron por solicitud la galería y el bloque de resultados; el archivo A-SPACE permanece en el inventario, sin bloque propio en la página. Ver [revisión vigente y capturas](visual-review.md).
+
 ## Recursos recibidos e integrados
 
 Las fuentes exactas del nuevo ZIP están presentes en `public/images`:

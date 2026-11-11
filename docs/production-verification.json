@@ -1,107 +1,697 @@
 {
-  "base": "https://biocrab-website.vercel.app",
-  "sourceCommit": "5b39e423d162b36b7db225c4b955f76a9d731dbd",
-  "checkedAt": "2026-11-08T18:04:54.856Z",
+  "url": "https://biocrab-website.vercel.app",
+  "checkedAt": "2026-11-11T18:46:06.828Z",
+  "renderer": "Chromium ANGLE/SwiftShader",
   "views": [
     {
       "width": 1440,
-      "marker": "molecular-research-v6",
-      "renderers": [
-        "webgl",
-        "webgl"
+      "marker": "biomaterial-laboratory-v8",
+      "chapters": [
+        {
+          "id": "inicio",
+          "scene": "origin",
+          "phase": "0",
+          "nebula": "inicio",
+          "progress": "0.404",
+          "overflow": 0,
+          "canvasDraws": 90,
+          "gpu": {
+            "uTime": 0.8399999737739563,
+            "uFrom": 0,
+            "uTo": 0,
+            "uBlend": 1,
+            "uProgress": 0.35840970277786255
+          }
+        },
+        {
+          "id": "sobre",
+          "scene": "observation",
+          "phase": "0.47116",
+          "nebula": "sobre",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 114,
+          "gpu": {
+            "uTime": 1.0800000429153442,
+            "uFrom": 0,
+            "uTo": 1,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.37902456521987915
+          }
+        },
+        {
+          "id": "por-que-biocrab",
+          "scene": "three-origins",
+          "phase": "0.450687",
+          "nebula": "por-que-biocrab",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 138,
+          "gpu": {
+            "uTime": 1.3200000524520874,
+            "uFrom": 0,
+            "uTo": 2,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.3888482451438904
+          }
+        },
+        {
+          "id": "innovacion",
+          "scene": "connections",
+          "phase": "0.46149",
+          "nebula": "innovacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 156,
+          "gpu": {
+            "uTime": 1.5,
+            "uFrom": 0,
+            "uTo": 3,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.3929655849933624
+          }
+        },
+        {
+          "id": "del-residuo-al-biomaterial",
+          "scene": "transformation",
+          "phase": "0.470936",
+          "nebula": "del-residuo-al-biomaterial",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 174,
+          "gpu": {
+            "uTime": 1.6799999475479126,
+            "uFrom": 0,
+            "uTo": 4,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.39571303129196167
+          }
+        },
+        {
+          "id": "investigacion",
+          "scene": "hypothesis",
+          "phase": "0.426957",
+          "nebula": "investigacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 198,
+          "gpu": {
+            "uTime": 1.9020999670028687,
+            "uFrom": 0,
+            "uTo": 5,
+            "uBlend": 0.015417522750794888,
+            "uProgress": 0.3975972831249237
+          }
+        },
+        {
+          "id": "metodologia",
+          "scene": "procedure",
+          "phase": "0.399338",
+          "nebula": "metodologia",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 216,
+          "gpu": {
+            "uTime": 2.0820999145507812,
+            "uFrom": 0,
+            "uTo": 6,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.398417204618454
+          }
+        },
+        {
+          "id": "recorrido",
+          "scene": "research-route",
+          "phase": "0.473952",
+          "nebula": "recorrido",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 240,
+          "gpu": {
+            "uTime": 2.3220999240875244,
+            "uFrom": 0,
+            "uTo": 7,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.39923933148384094
+          }
+        },
+        {
+          "id": "comparacion",
+          "scene": "perspectives",
+          "phase": "0.425383",
+          "nebula": "comparacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 270,
+          "gpu": {
+            "uTime": 2.6221001148223877,
+            "uFrom": 0,
+            "uTo": 8,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.3997332453727722
+          }
+        },
+        {
+          "id": "aplicaciones-futuras",
+          "scene": "possibilities",
+          "phase": "0.440456",
+          "nebula": "aplicaciones-futuras",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 294,
+          "gpu": {
+            "uTime": 2.8620998859405518,
+            "uFrom": 0,
+            "uTo": 9,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.3997928202152252
+          }
+        },
+        {
+          "id": "vision-futura",
+          "scene": "future-horizon",
+          "phase": "0.487359",
+          "nebula": "vision-futura",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 318,
+          "gpu": {
+            "uTime": 3.102099895477295,
+            "uFrom": 0,
+            "uTo": 10,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.3997601866722107
+          }
+        },
+        {
+          "id": "impacto-potencial",
+          "scene": "complete-cycle",
+          "phase": "0.454683",
+          "nebula": "impacto-potencial",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 336,
+          "gpu": {
+            "uTime": 3.282099962234497,
+            "uFrom": 0,
+            "uTo": 11,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.39982613921165466
+          }
+        },
+        {
+          "id": "gomitas",
+          "scene": "texture",
+          "phase": "0.488252",
+          "nebula": "gomitas",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 360,
+          "gpu": {
+            "uTime": 3.521399974822998,
+            "uFrom": 0,
+            "uTo": 12,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.40008118748664856
+          }
+        },
+        {
+          "id": "equipo",
+          "scene": "next-chapter",
+          "phase": "0.40261",
+          "nebula": "equipo",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 378,
+          "gpu": {
+            "uTime": 3.7014000415802,
+            "uFrom": 0,
+            "uTo": 13,
+            "uBlend": 0.005437477026134729,
+            "uProgress": 0.4001387655735016
+          }
+        }
       ],
+      "captures": [
+        "hero-1440.jpg",
+        "problema-1440.jpg",
+        "transformacion-1440.jpg",
+        "metodologia-1440.jpg",
+        "investigacion-1440.jpg",
+        "impacto-1440.jpg",
+        "contacto-1440.jpg"
+      ],
+      "errors": [],
+      "structure": {
+        "sections": [
+          "inicio",
+          "sobre",
+          "por-que-biocrab",
+          "innovacion",
+          "del-residuo-al-biomaterial",
+          "investigacion",
+          "metodologia",
+          "recorrido",
+          "comparacion",
+          "aplicaciones-futuras",
+          "vision-futura",
+          "impacto-potencial",
+          "gomitas",
+          "equipo"
+        ],
+        "images": 25,
+        "broken": [],
+        "removedNodes": 0,
+        "dangling": [],
+        "videos": 0
+      },
+      "heroGpu": {
+        "uTime": 0.47999998927116394,
+        "uFrom": 0,
+        "uTo": 0,
+        "uBlend": 1,
+        "uProgress": 0.2879369258880615
+      },
+      "methodScroll": [
+        {
+          "active": 0,
+          "title": "Recolección y limpieza",
+          "titleTop": 838.871337890625,
+          "titleBottom": 892.261962890625
+        },
+        {
+          "active": 1,
+          "title": "Obtención de quitosano",
+          "titleTop": 686.802978515625,
+          "titleBottom": 740.193603515625
+        },
+        {
+          "active": 2,
+          "title": "Soluciones filmógenas",
+          "titleTop": 545.0263671875,
+          "titleBottom": 598.4169921875
+        },
+        {
+          "active": 3,
+          "title": "Secado y formación",
+          "titleTop": 413.1658935546875,
+          "titleBottom": 466.5565185546875
+        },
+        {
+          "active": 4,
+          "title": "Evaluación física",
+          "titleTop": 257.9446716308594,
+          "titleBottom": 311.3352966308594
+        }
+      ],
+      "pausedGpu": {
+        "uTime": 4.601399898529053,
+        "uFrom": 0,
+        "uTo": 6,
+        "uBlend": 0.5275875329971313,
+        "uProgress": 0.7611953616142273
+      },
+      "pauseStable": true,
       "modes": true,
       "orbit": true,
-      "images": 37,
-      "sources": [
-        "biocrab-logo-adaptado.png",
-        "pinterest-adn.png",
-        "biopelicula-secando.jpg",
-        "lavando-cangrejitos.jpg",
-        "exoesqueletos-separados.jpg",
-        "peliculas-secando.jpg",
-        "pinterest-conexiones.png",
-        "pinterest-laboratorio.png",
-        "gomitas-fruta.jpg",
-        "cangrejitos-secos.jpg",
-        "pinterest-dashboard.png",
-        "pinterest-huella.png"
-      ],
-      "ids": [
-        "inicio",
-        "sobre",
-        "por-que-biocrab",
-        "innovacion",
-        "del-residuo-al-biomaterial",
-        "investigacion",
-        "metodologia",
-        "recorrido",
-        "galeria",
-        "resultados",
-        "comparacion",
-        "aplicaciones-futuras",
-        "vision-futura",
-        "impacto-potencial",
-        "gomitas",
-        "equipo"
-      ],
-      "overflow": 0,
-      "hash": {
-        "open": true,
-        "top": 210.4375
-      },
-      "errors": [],
-      "failed": []
+      "contactNebula": true,
+      "reduced": {
+        "engine": "still",
+        "methods": "still"
+      }
     },
     {
       "width": 390,
-      "marker": "molecular-research-v6",
-      "renderers": [
-        "webgl",
-        "webgl"
+      "marker": "biomaterial-laboratory-v8",
+      "chapters": [
+        {
+          "id": "inicio",
+          "scene": "origin",
+          "phase": "0.165929",
+          "nebula": "inicio",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 180,
+          "gpu": {
+            "uTime": 1.6579999923706055,
+            "uFrom": 0,
+            "uTo": 0,
+            "uBlend": 1,
+            "uProgress": 0.2358517050743103
+          }
+        },
+        {
+          "id": "sobre",
+          "scene": "observation",
+          "phase": "0.459742",
+          "nebula": "sobre",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 210,
+          "gpu": {
+            "uTime": 1.951200008392334,
+            "uFrom": 0,
+            "uTo": 1,
+            "uBlend": 0.01884585991501808,
+            "uProgress": 0.32331109046936035
+          }
+        },
+        {
+          "id": "por-que-biocrab",
+          "scene": "three-origins",
+          "phase": "0.44",
+          "nebula": "por-que-biocrab",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 240,
+          "gpu": {
+            "uTime": 2.2395999431610107,
+            "uFrom": 0,
+            "uTo": 2,
+            "uBlend": 0.040538281202316284,
+            "uProgress": 0.36370331048965454
+          }
+        },
+        {
+          "id": "innovacion",
+          "scene": "connections",
+          "phase": "0.445857",
+          "nebula": "innovacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 270,
+          "gpu": {
+            "uTime": 2.4639999866485596,
+            "uFrom": 0,
+            "uTo": 3,
+            "uBlend": 0.016101252287626266,
+            "uProgress": 0.37969502806663513
+          }
+        },
+        {
+          "id": "del-residuo-al-biomaterial",
+          "scene": "transformation",
+          "phase": "0.45321",
+          "nebula": "del-residuo-al-biomaterial",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 306,
+          "gpu": {
+            "uTime": 2.818700075149536,
+            "uFrom": 0,
+            "uTo": 4,
+            "uBlend": 0.04603491351008415,
+            "uProgress": 0.3919563591480255
+          }
+        },
+        {
+          "id": "investigacion",
+          "scene": "hypothesis",
+          "phase": "0.440833",
+          "nebula": "investigacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 336,
+          "gpu": {
+            "uTime": 3.1477999687194824,
+            "uFrom": 0,
+            "uTo": 5,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.39665356278419495
+          }
+        },
+        {
+          "id": "metodologia",
+          "scene": "procedure",
+          "phase": "0.433164",
+          "nebula": "metodologia",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 372,
+          "gpu": {
+            "uTime": 3.4860999584198,
+            "uFrom": 0,
+            "uTo": 6,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.39858701825141907
+          }
+        },
+        {
+          "id": "recorrido",
+          "scene": "research-route",
+          "phase": "0.452974",
+          "nebula": "recorrido",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 396,
+          "gpu": {
+            "uTime": 3.7251999378204346,
+            "uFrom": 0,
+            "uTo": 7,
+            "uBlend": 0.020799078047275543,
+            "uProgress": 0.39917877316474915
+          }
+        },
+        {
+          "id": "comparacion",
+          "scene": "perspectives",
+          "phase": "0.453117",
+          "nebula": "comparacion",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 426,
+          "gpu": {
+            "uTime": 4.025199890136719,
+            "uFrom": 0,
+            "uTo": 8,
+            "uBlend": 0.04603491351008415,
+            "uProgress": 0.39957690238952637
+          }
+        },
+        {
+          "id": "aplicaciones-futuras",
+          "scene": "possibilities",
+          "phase": "0.436051",
+          "nebula": "aplicaciones-futuras",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 456,
+          "gpu": {
+            "uTime": 4.301499843597412,
+            "uFrom": 0,
+            "uTo": 9,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.39975064992904663
+          }
+        },
+        {
+          "id": "vision-futura",
+          "scene": "future-horizon",
+          "phase": "0.457631",
+          "nebula": "vision-futura",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 480,
+          "gpu": {
+            "uTime": 4.525000095367432,
+            "uFrom": 0,
+            "uTo": 10,
+            "uBlend": 0.01583203859627247,
+            "uProgress": 0.39975404739379883
+          }
+        },
+        {
+          "id": "impacto-potencial",
+          "scene": "complete-cycle",
+          "phase": "0.44188",
+          "nebula": "impacto-potencial",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 510,
+          "gpu": {
+            "uTime": 4.824999809265137,
+            "uFrom": 0,
+            "uTo": 11,
+            "uBlend": 0.04603491351008415,
+            "uProgress": 0.39979174733161926
+          }
+        },
+        {
+          "id": "gomitas",
+          "scene": "texture",
+          "phase": "0.465772",
+          "nebula": "gomitas",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 540,
+          "gpu": {
+            "uTime": 5.091400146484375,
+            "uFrom": 0,
+            "uTo": 12,
+            "uBlend": 0.011128036305308342,
+            "uProgress": 0.3999141454696655
+          }
+        },
+        {
+          "id": "equipo",
+          "scene": "next-chapter",
+          "phase": "0.438581",
+          "nebula": "equipo",
+          "progress": "0.400",
+          "overflow": 0,
+          "canvasDraws": 564,
+          "gpu": {
+            "uTime": 5.331399917602539,
+            "uFrom": 0,
+            "uTo": 13,
+            "uBlend": 0.021104935556650162,
+            "uProgress": 0.3999509811401367
+          }
+        }
       ],
+      "captures": [
+        "hero-390.jpg",
+        "problema-390.jpg",
+        "transformacion-390.jpg",
+        "metodologia-390.jpg",
+        "investigacion-390.jpg",
+        "impacto-390.jpg",
+        "contacto-390.jpg"
+      ],
+      "errors": [],
+      "structure": {
+        "sections": [
+          "inicio",
+          "sobre",
+          "por-que-biocrab",
+          "innovacion",
+          "del-residuo-al-biomaterial",
+          "investigacion",
+          "metodologia",
+          "recorrido",
+          "comparacion",
+          "aplicaciones-futuras",
+          "vision-futura",
+          "impacto-potencial",
+          "gomitas",
+          "equipo"
+        ],
+        "images": 25,
+        "broken": [],
+        "removedNodes": 0,
+        "dangling": [],
+        "videos": 0
+      },
+      "heroGpu": {
+        "uTime": 1.264299988746643,
+        "uFrom": 0,
+        "uTo": 0,
+        "uBlend": 1,
+        "uProgress": 0.20355871319770813
+      },
+      "methodScroll": [
+        {
+          "active": 0,
+          "title": "Recolección y limpieza",
+          "titleTop": 687.183837890625,
+          "titleBottom": 767.35791015625
+        },
+        {
+          "active": 1,
+          "title": "Obtención de quitosano",
+          "titleTop": 546.480712890625,
+          "titleBottom": 626.722412109375
+        },
+        {
+          "active": 2,
+          "title": "Soluciones filmógenas",
+          "titleTop": 405.69091796875,
+          "titleBottom": 486.00341796875
+        },
+        {
+          "active": 3,
+          "title": "Secado y formación",
+          "titleTop": 267.5061340332031,
+          "titleBottom": 347.8186340332031
+        },
+        {
+          "active": 4,
+          "title": "Evaluación física",
+          "titleTop": 129.321533203125,
+          "titleBottom": 169.477783203125
+        }
+      ],
+      "pausedGpu": {
+        "uTime": 6.111400127410889,
+        "uFrom": 0,
+        "uTo": 6,
+        "uBlend": 0.462830513715744,
+        "uProgress": 0.797473132610321
+      },
+      "pauseStable": true,
       "modes": true,
       "orbit": true,
-      "images": 37,
-      "sources": [
-        "biocrab-logo-adaptado.png",
-        "pinterest-adn.png",
-        "biopelicula-secando.jpg",
-        "lavando-cangrejitos.jpg",
-        "exoesqueletos-separados.jpg",
-        "peliculas-secando.jpg",
-        "pinterest-conexiones.png",
-        "pinterest-laboratorio.png",
-        "gomitas-fruta.jpg",
-        "cangrejitos-secos.jpg",
-        "pinterest-dashboard.png",
-        "pinterest-huella.png"
-      ],
-      "ids": [
-        "inicio",
-        "sobre",
-        "por-que-biocrab",
-        "innovacion",
-        "del-residuo-al-biomaterial",
-        "investigacion",
-        "metodologia",
-        "recorrido",
-        "galeria",
-        "resultados",
-        "comparacion",
-        "aplicaciones-futuras",
-        "vision-futura",
-        "impacto-potencial",
-        "gomitas",
-        "equipo"
-      ],
-      "overflow": 0,
-      "hash": {
-        "open": true,
-        "top": 200.203125
-      },
-      "errors": [],
-      "failed": []
+      "contactNebula": true,
+      "reduced": {
+        "engine": "still",
+        "methods": "still"
+      }
     }
-  ]
+  ],
+  "errors": [],
+  "sourceCommit": "fdfe6f6fb95adaac1dd5dc37d131d8b92bfad946",
+  "deployment": {
+    "context": "Vercel – biocrab-website",
+    "state": "success",
+    "targetUrl": "https://vercel.com/andres-pacheco/biocrab-website/EpaJGbL9Tf5zAqwZqHdaEXy69Rhp"
+  },
+  "anchorsAndIdentity": {
+    "url": "https://biocrab-website.vercel.app/#hipotesis",
+    "startedAt": "2026-11-11T18:41:54.374Z",
+    "reducedMotion": "reduce",
+    "webglDisabled": true,
+    "proxyConfigured": true,
+    "pageErrors": [],
+    "assets": [
+      {
+        "route": "/icon",
+        "status": 200,
+        "contentType": "image/png",
+        "byteLength": 7635,
+        "designHeader": "biomaterial-laboratory-v8"
+      },
+      {
+        "route": "/opengraph-image",
+        "status": 200,
+        "contentType": "image/png",
+        "byteLength": 124177,
+        "designHeader": "biomaterial-laboratory-v8"
+      }
+    ],
+    "responseStatus": 200,
+    "designHeader": "biomaterial-laboratory-v8",
+    "geometryAfterDOMContentLoaded": {
+      "top": 210.4375,
+      "bottom": 364.828125,
+      "open": true,
+      "scrollY": 6093
+    },
+    "finalGeometry": {
+      "top": 210.4375,
+      "bottom": 364.828125,
+      "height": 154.390625,
+      "open": true,
+      "scrollY": 6093,
+      "viewportHeight": 1000,
+      "fontsStatus": "loaded"
+    },
+    "brand": {
+      "label": "BioCrab Biomateriales, inicio",
+      "textContent": "BioCrab BIOMATERIALES",
+      "accessibleNameMatch": true
+    },
+    "passed": true,
+    "finishedAt": "2026-11-11T18:42:00.908Z"
+  },
+  "captureDirectory": "docs/previews/laboratorio-v8"
 }

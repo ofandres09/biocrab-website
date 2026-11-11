@@ -1,6 +1,6 @@
 # Experiencia cinematográfica BioCrab
 
-Este documento conserva las mediciones de la revisión `cinematic-biotech-v5`. No describe el rendimiento de la nueva escena WebGL. La implementación actual se documenta en [experiencia molecular](molecular-experience.md); las capturas de `previews/` se actualizan a la revisión publicada más reciente.
+Este documento conserva las mediciones de la revisión `cinematic-biotech-v5`. No describe el rendimiento de la nueva escena WebGL. La implementación actual se documenta en [experiencia molecular](molecular-experience.md); las capturas vigentes se enlazan desde [revisión visual](visual-review.md), mientras los archivos anteriores se conservan como historial.
 
 ## Sistema de movimiento
 
