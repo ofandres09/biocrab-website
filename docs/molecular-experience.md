@@ -1,42 +1,49 @@
-# BioCrab: investigación y atmósfera molecular
+# BioCrab: laboratorio molecular por capítulos
 
-## Cambios
+Revisión `biomaterial-laboratory-v8`.
 
-La página conserva las dieciséis secciones, su orden, el contenido científico, las seis fotografías originales y las cinco referencias. La única ampliación de contenido en el hero es un explorador conceptual dentro de una figura; no añade una sección al recorrido.
+Se retiraron completamente los bloques «Esto es real. Así empieza el trabajo.» (`#galeria`) y «Hacer visible la pregunta. Construir la respuesta.» (`#resultados`), junto con la galería de referencias que estaba dentro del primero. El componente Gallery y sus enlaces desaparecen. No hay bloques sustitutos ni espacio reservado. Las catorce secciones restantes mantienen sus textos científicos, fotografías contextuales y controles.
 
-- Inter Tight y Geist locales, titulares grandes y menor espacio entre bloques.
-- Fondo Three.js/React Three Fiber con polímeros esquemáticos, polvo y respuesta al puntero.
-- Explorador con modos Quitosano/Almidón/Ambos, giro por arrastre, teclado, botones y restablecimiento.
-- Dieciséis perfiles GSAP por capítulo: máscaras direccionales, ventanas, aperturas radiales, profundidad y capas a distintas velocidades.
-- Oscurecimiento leve del capítulo anterior, barridos y paneo fotográfico. Las fotografías conservan `object-fit: contain` y los bordes dentro del marco.
-- Luz radial local, atmósfera tenue y control compartido de pausa/movimiento reducido.
+## Coreografía diferenciada
 
-## Rigor y compatibilidad
+| Capítulo | Movimiento propio |
+| --- | --- |
+| Hero | Planos tipográficos a distinta distancia, cámara orbital y corrientes moleculares emergentes. |
+| Problema | Anillos dispersos y enlaces fragmentados que se reconectan con el scroll. |
+| ¿Por qué BioCrab? | Tres montajes de muestras convergen; dos corrientes poliméricas forman una lámina conceptual. |
+| Innovación | Bucles entrelazados y marcos de registro cruzados. |
+| Del residuo al biomaterial | Ruta continua de cinco nodos, ensamblaje y giro de un plano de película. |
+| Investigación | Anillos azules flotantes, construcción de cadenas verdes ramificadas, encuadre de observación y apertura de cuaderno. |
+| Metodología | Cinco nodos, enlaces que se trazan y anillos de etapa sincronizados con la lectura del detalle. |
+| Recorrido | Viaje longitudinal por la red y un índice luminoso que enlaza las pestañas. |
+| Comparación | Dos cintas moleculares y planos de material que se abren como un muestrario. |
+| Aplicaciones | Ramas que se despliegan y ventanas visuales con aperturas desde distintas esquinas. |
+| Visión futura | Abanico molecular y horizonte elíptico que se abre en profundidad. |
+| Impacto | Red circular en crecimiento, órbitas incompletas que se conectan y ODS con iluminación secuencial. |
+| Gomitas | Lazos orgánicos y contornos móviles alrededor de la fotografía completa. |
+| Equipo y contacto | Planos que cierran el archivo, línea de cierre y corrientes moleculares más calmadas en contacto. |
 
-Los polímeros son una representación conceptual, sin asignación química atómica ni caracterización experimental. El texto de la interfaz lo indica. La imagen de ADN conserva su etiqueta independiente; no se utiliza para afirmar la estructura de los materiales.
+La nebulosa es un único canvas global de Three.js/React Three Fiber. Permanece activo también cuando el explorador del hero está en pantalla. Cada átomo, enlace y halo comparte la misma deformación de GPU: los extremos permanecen unidos durante las transiciones. No hay estrellas, campo estelar ni video de fondo.
 
-El renderer se carga en un chunk dinámico, fuera del render del servidor. Usa instancias geométricas, DPR limitado y render a demanda con objetivo de 30 actualizaciones por segundo. Solo una escena mantiene animación automática cuando el explorador está visible. No se garantiza una frecuencia concreta en todo hardware.
+Los halos aditivos y tres capas de neblina procedural aportan luminosidad y profundidad atmosférica. La respuesta al puntero está suavizada. Los colores azul/turquesa/verde identifican motivos visuales de biomateriales, no mediciones. La representación es conceptual, sin asignación química atómica validada.
 
-Antes de crear WebGL se comprueba su disponibilidad. La pérdida de contexto usa un respaldo SVG que conserva los modos del material; los controles de órbita se deshabilitan si falta 3D. La página y sus fotografías no dependen de WebGL.
+GSAP/ScrollTrigger coordina los capítulos, el oscurecimiento leve de la escena anterior, la profundidad y el movimiento fotográfico. Framer Motion conserva las microinteracciones y la construcción de los ODS. El contador de ODS cuenta exclusivamente los dos vínculos temáticos existentes (12 y 14); no representa impacto medido.
 
-## Comprobaciones locales
+La metodología sigue el área de lectura del detalle, evitando que la fotografía anterior consuma las primeras etapas en móvil. Una selección manual o por teclado tiene prioridad hasta salir del componente. La rail se centra horizontalmente sin desplazar la página.
 
-- `npm run build`, TypeScript y `git diff --check`: completados.
-- Chromium con WebGL real habilitado: fondo y explorador renderizados, controles de material, giro, reset y teclado comprobados.
-- Chromium con WebGL deshabilitado: SVG de respaldo, cero canvas y ningún error JavaScript.
-- Pérdida deliberada de contexto del explorador: respaldo aislado, fondo conservado.
-- 37 imágenes decodificadas por vista y 16 secciones; 320/390/768/1024/1440 px sin desbordamiento horizontal.
-- 11 ampliaciones, 5 etapas metodológicas, 5 pasos del recorrido, timeline con teclado, 8 estados del comparador, menú móvil y copia del formulario: verificados.
-- Axe WCAG A/AA y 2.1 AA: cero infracciones automáticas en oscuro/claro y escritorio/móvil con movimiento reducido. Dos comprobaciones incompletas por caso; no es certificación integral.
+## Rendimiento y accesibilidad
 
-El informe de controles está en [molecular-functional.json](molecular-functional.json).
+- Geometría instanciada, atributos estáticos y morphing en shaders; no se reconstruyen matrices por átomo en cada frame.
+- Menos nodos en pantallas estrechas; DPR del fondo limitado a 1 y objetivo de 30 actualizaciones de WebGL por segundo.
+- Neblina de tres octavas con descarte de píxeles sin contribución antes del ruido procedural.
+- Lectura de capítulo limitada a un muestreo cada 120 ms, sin estado React por frame.
+- El explorador se libera fuera de pantalla; las fotografías animan solo dentro de la vista.
+- Pausa persistente, movimiento reducido, pestaña oculta y respaldo SVG si WebGL falla.
+- Fotografías con `object-fit: contain` y zoom dentro de sus márgenes. Las órbitas decorativas no crean scroll horizontal.
+- Lenis solo en escritorio con puntero preciso; scroll nativo en táctil.
 
-## Producción verificada
+La comprobación de integración lee los uniforms reales de WebGL (`uTime`, `uTo`, `uBlend` y progreso), además de los estados de interfaz. El script reproducible está en `scripts/verify-molecular.cjs`: evita confundir un canvas que se repinta con una estructura que se transforma.
 
-La revisión `5b39e42` se publicó en <https://biocrab-website.vercel.app/> y responde con `X-BioCrab-Design: molecular-research-v6`.
+No se garantiza una frecuencia concreta en todos los dispositivos. Las comprobaciones de Chromium usan ANGLE/SwiftShader por software y emulación de viewport; no equivalen a pruebas en teléfonos físicos.
 
-Chromium confirmó WebGL real para el fondo y el explorador, modos y giro, en 1440 y 390 px. Ambas vistas mantienen dieciséis secciones, treinta y siete imágenes, el enlace `#hipotesis` visible, cero desbordamiento horizontal y ningún error JavaScript o recurso HTTP fallido.
-
-Las capturas se tomaron directamente del dominio público: [escritorio](previews/desktop.png), [móvil](previews/mobile.png), [explorador 3D](previews/molecular-desktop.png) y [galería](previews/galeria-desktop.jpg). El [informe de producción](production-verification.json) registra fuente, recursos, modos y anclas.
-
-El servidor de pruebas utiliza ANGLE/SwiftShader por software. Las pruebas confirman renderizado y controles; no certifican el rendimiento de todos los teléfonos físicos.
+La evidencia vigente se registra en [revisión visual](visual-review.md), [movimiento](motion-verification.json), [controles](molecular-functional.json) y [producción](production-verification.json).

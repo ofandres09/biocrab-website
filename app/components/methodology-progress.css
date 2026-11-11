@@ -1,0 +1,187 @@
+.methodology-progress {
+  position: relative;
+}
+
+.methodology-progress .method-progress-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.method-progress-caption > span:last-child {
+  color: var(--green);
+  font-variant-numeric: tabular-nums;
+}
+
+.methodology-progress .process-rail {
+  gap: 14px;
+  padding-top: 5px;
+}
+
+.methodology-progress .process-rail button {
+  isolation: isolate;
+  min-height: 194px;
+  padding: 22px;
+  background:
+    linear-gradient(150deg, #00ff9903, transparent 70%), var(--surface);
+  transition:
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms ease;
+}
+
+/* Each stage draws its outgoing link into the next stage. */
+.methodology-progress .process-rail button:not(:last-child)::before,
+.methodology-progress .process-rail button:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: 45px;
+  left: 70px;
+  width: calc(100% - 44px);
+  height: 1px;
+  transform-origin: left center;
+}
+
+.methodology-progress .process-rail button:not(:last-child)::before {
+  background: var(--line);
+}
+
+.methodology-progress .process-rail button:not(:last-child)::after {
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), #00c8ff);
+  box-shadow: 0 0 10px #00ff9938;
+  transform: scaleX(var(--method-stage-build, 0));
+  transition: transform 240ms linear;
+}
+
+.methodology-progress .process-rail button > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 19px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  transition:
+    color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.methodology-progress .process-rail button > span::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: -5px;
+  padding: 1px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from -90deg,
+    var(--green) 0%,
+    #00c8ff var(--method-stage-fill, 0%),
+    transparent var(--method-stage-fill, 0%) 100%
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.methodology-progress .process-rail button[data-stage-state="complete"] {
+  border-color: #00cc9960;
+  background:
+    linear-gradient(145deg, #00ff9908, transparent 75%), var(--surface);
+}
+
+.methodology-progress .process-rail button[data-stage-state="complete"] > span {
+  border-color: #00cc9980;
+  color: var(--green);
+}
+
+.methodology-progress .process-rail button[aria-pressed="true"] {
+  transform: translateY(-3px);
+  border-color: var(--green);
+  background: linear-gradient(145deg, #00ff9911, #00c8ff05 70%), var(--surface);
+  box-shadow: 0 8px 30px #00ff990b;
+}
+
+.methodology-progress .process-rail button[aria-pressed="true"] > span {
+  color: var(--green);
+  border-color: #00ff9970;
+  box-shadow: 0 0 24px #00ff9918;
+}
+
+.methodology-progress .process-rail button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+
+.methodology-progress .process-rail button small,
+.methodology-progress .process-rail button strong {
+  position: relative;
+}
+
+.methodology-progress .method-detail {
+  position: relative;
+}
+
+.methodology-progress .method-detail::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  inset: 0 0 auto;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), #00c8ff);
+  transform: scaleX(var(--method-progress, 0));
+  transform-origin: left;
+  transition: transform 240ms linear;
+}
+
+@media (max-width: 800px) {
+  .methodology-progress .process-rail {
+    padding-top: 8px;
+    padding-bottom: 16px;
+    scroll-padding-inline: 5px;
+  }
+
+  .methodology-progress .process-rail button {
+    flex-basis: 154px;
+    min-height: 190px;
+    padding: 22px;
+  }
+
+  .methodology-progress .method-progress-caption {
+    font-size: 8px;
+    letter-spacing: 0.09em;
+  }
+}
+
+.methodology-progress[data-method-motion="still"] .process-rail button,
+.methodology-progress[data-method-motion="still"] .process-rail button::after,
+.methodology-progress[data-method-motion="still"] .process-rail button > span,
+.methodology-progress[data-method-motion="still"] .method-detail::after {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .methodology-progress *,
+  .methodology-progress *::before,
+  .methodology-progress *::after {
+    transition: none !important;
+  }
+}

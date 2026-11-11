@@ -117,7 +117,6 @@ const chapters: Record<string, ChapterMotion> = {
         depth: -30,
       },
       { selector: ".method-reference-copy", x: -18, y: 8 },
-      { selector: ".method-detail", x: 0, y: 24, scale: 0.98 },
     ],
   },
   recorrido: {
@@ -129,34 +128,6 @@ const chapters: Record<string, ChapterMotion> = {
       { selector: ".section-heading", x: -28, y: 0 },
       { selector: ".timeline-tabs", x: 38, y: 8 },
       { selector: ".timeline-panel", x: 24, y: 18, turn: -0.45, depth: -28 },
-    ],
-  },
-  galeria: {
-    name: "documentary",
-    aperture: ["inset(12% 6% 86% 6% round 16px)", openFrame],
-    words: [18, 98, 1],
-    pan: -0.8,
-    layers: [
-      { selector: ".section-heading", x: 0, y: 20 },
-      { selector: ".gallery-card", x: 20, y: 26, turn: 0.35, depth: -24 },
-      { selector: ".reference-gallery-heading", x: -22, y: 12 },
-    ],
-  },
-  resultados: {
-    name: "evidence-window",
-    aperture: ["polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)", openPolygon],
-    words: [0, 84, 3],
-    pan: 0.65,
-    layers: [
-      { selector: ".section-heading", x: 18, y: 18 },
-      {
-        selector: ".dashboard-reference",
-        x: -20,
-        y: 10,
-        scale: 0.955,
-        depth: -50,
-      },
-      { selector: ".results-status-list > article", x: 32, y: 12 },
     ],
   },
   comparacion: {
@@ -416,6 +387,8 @@ export function ScrollCinema() {
       const sections: HTMLElement[] = [];
       const scenes: HTMLElement[] = [];
       const layers: HTMLElement[] = [];
+      const assemblies: HTMLElement[] = [];
+      const chapterListeners: (() => void)[] = [];
       const loops: {
         photo: HTMLElement;
         tween: gsap.core.Tween;
@@ -424,6 +397,432 @@ export function ScrollCinema() {
       }[] = [];
       const context = gsap.context(() => {});
       let scanFrame = 0;
+
+      /** These are assembled scenes, not a common reveal with new coordinates.
+       * Each timeline connects the existing objects that explain its chapter.
+       * Only local custom properties move; React and Motion retain their values.
+       */
+      function choreograph(section: HTMLElement) {
+        const camera = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: section.id === "inicio" ? "top top" : "top 82%",
+            end: "bottom 26%",
+            scrub: isDesktop ? 1.15 : 0.45,
+          },
+        });
+        camera.fromTo(
+          section,
+          { "--chapter-phase": 0 },
+          { "--chapter-phase": 1, duration: 1, ease: "none" },
+          0,
+        );
+        type CameraValues = Record<string, string | number>;
+        function object(
+          selector: string,
+          from: CameraValues,
+          to: CameraValues,
+          at = 0,
+          duration = 0.75,
+        ) {
+          const targets = section.querySelectorAll<HTMLElement>(selector);
+          targets.forEach((target, index) => {
+            target.classList.add("cinema-assembly");
+            assemblies.push(target);
+            const mobile = (values: CameraValues) =>
+              Object.fromEntries(
+                Object.entries(values).map(([key, value]) => {
+                  if (isDesktop || typeof value !== "string")
+                    return [key, value];
+                  // A touch camera keeps its depth cues within the small frame.
+                  const numeric = Number.parseFloat(value);
+                  return /(?:deg|px)$/.test(value)
+                    ? [
+                        key,
+                        `${numeric * 0.3}${value.endsWith("deg") ? "deg" : "px"}`,
+                      ]
+                    : [key, value];
+                }),
+              );
+            camera.fromTo(
+              target,
+              mobile(from),
+              { ...mobile(to), duration, ease: "none" },
+              Math.min(at + index * 0.045, 0.65),
+            );
+          });
+        }
+        function draw(selector: string, at = 0.05, duration = 0.6) {
+          object(
+            selector,
+            { "--assembly-progress": 0 },
+            { "--assembly-progress": 1 },
+            at,
+            duration,
+          );
+        }
+
+        switch (section.id) {
+          case "inicio":
+            // Title lines and molecule occupy separate camera distances. The
+            // token entrance remains owned by HeroTitle's masked word motion.
+            object(
+              ".hero-title .text-mask:first-child",
+              {
+                "--assembly-pitch": "9deg",
+                "--assembly-depth": "42px",
+                "--assembly-rise": "10px",
+              },
+              {
+                "--assembly-pitch": "-3deg",
+                "--assembly-depth": "0px",
+                "--assembly-rise": "-14px",
+              },
+              0,
+              1,
+            );
+            object(
+              ".hero-title .text-mask:last-child",
+              {
+                "--assembly-yaw": "-5deg",
+                "--assembly-depth": "86px",
+                "--assembly-rise": "28px",
+              },
+              {
+                "--assembly-yaw": "2deg",
+                "--assembly-depth": "8px",
+                "--assembly-rise": "-16px",
+              },
+              0,
+              1,
+            );
+            object(
+              ".hero-art",
+              {
+                "--assembly-yaw": "-8deg",
+                "--assembly-pitch": "5deg",
+                "--assembly-depth": "-65px",
+              },
+              {
+                "--assembly-yaw": "5deg",
+                "--assembly-pitch": "-3deg",
+                "--assembly-depth": "22px",
+              },
+              0,
+              1,
+            );
+            draw(".hero-grid", 0, 1);
+            break;
+          case "sobre":
+            // Fragmented links resolve into one connected material map.
+            draw(".editorial-figure", 0.08, 0.68);
+            object(
+              ".editorial-figure > .parallax-frame",
+              {
+                "--assembly-yaw": "-12deg",
+                "--assembly-depth": "-75px",
+              },
+              { "--assembly-yaw": "2deg", "--assembly-depth": "0px" },
+              0,
+              0.85,
+            );
+            object(
+              ".inline-note",
+              { "--assembly-pitch": "-7deg" },
+              {
+                "--assembly-pitch": "0deg",
+              },
+              0.28,
+              0.6,
+            );
+            break;
+          case "por-que-biocrab":
+            // Three specimen mounts converge on a shared baseline.
+            draw(".why-card", 0.04, 0.52);
+            object(
+              ".why-card:nth-child(1) .why-copy",
+              {
+                "--assembly-yaw": "12deg",
+                "--assembly-depth": "-55px",
+              },
+              { "--assembly-yaw": "0deg", "--assembly-depth": "0px" },
+            );
+            object(
+              ".why-card:nth-child(2) .why-copy",
+              {
+                "--assembly-pitch": "-9deg",
+                "--assembly-depth": "-80px",
+              },
+              { "--assembly-pitch": "0deg", "--assembly-depth": "0px" },
+              0.12,
+            );
+            object(
+              ".why-card:nth-child(3) .why-copy",
+              {
+                "--assembly-yaw": "-12deg",
+                "--assembly-depth": "-55px",
+              },
+              { "--assembly-yaw": "0deg", "--assembly-depth": "0px" },
+              0.2,
+            );
+            break;
+          case "innovacion":
+            // Crossed registration planes settle around the material portrait.
+            draw(".technology-visual", 0.08, 0.75);
+            object(
+              ".technology-visual",
+              {
+                "--assembly-pitch": "8deg",
+                "--assembly-yaw": "-10deg",
+              },
+              { "--assembly-pitch": "-2deg", "--assembly-yaw": "3deg" },
+              0,
+              1,
+            );
+            draw(".technology-copy > p", 0.18, 0.6);
+            break;
+          case "del-residuo-al-biomaterial":
+            // A single continuous stitch reaches each of the five icons.
+            draw(".journey-route", 0.02, 0.62);
+            object(
+              ".journey-icon",
+              {
+                "--assembly-yaw": "-55deg",
+                "--assembly-depth": "-22px",
+                "--assembly-progress": 0,
+              },
+              {
+                "--assembly-yaw": "0deg",
+                "--assembly-depth": "0px",
+                "--assembly-progress": 1,
+              },
+              0.07,
+              0.45,
+            );
+            draw(".journey-detail", 0.25, 0.6);
+            object(
+              ".journey-detail > .parallax-frame",
+              {
+                "--assembly-yaw": "14deg",
+                "--assembly-pitch": "-4deg",
+                "--assembly-depth": "-65px",
+              },
+              {
+                "--assembly-yaw": "0deg",
+                "--assembly-pitch": "1deg",
+                "--assembly-depth": "0px",
+              },
+              0.18,
+              0.8,
+            );
+            break;
+          case "investigacion":
+            // A moving specimen bracket and a ruled paper plane give the
+            // photograph and the research question separate focal distances.
+            draw(".research-photo", 0.1, 0.74);
+            object(
+              ".research-stamp",
+              {
+                "--assembly-yaw": "22deg",
+                "--assembly-depth": "75px",
+              },
+              { "--assembly-yaw": "0deg", "--assembly-depth": "0px" },
+              0.2,
+              0.5,
+            );
+            draw(".research-detail", 0.16, 0.52);
+            section
+              .querySelectorAll<HTMLDetailsElement>(".research-detail")
+              .forEach((detail) => {
+                const openPaper = () => {
+                  if (!detail.open || document.hidden) return;
+                  context.add(() => {
+                    gsap.fromTo(
+                      detail.querySelectorAll(":scope > :not(summary)"),
+                      {
+                        clipPath: "inset(0% 0% 100% 0%)",
+                        y: 10,
+                      },
+                      {
+                        clipPath: "inset(0% 0% 0% 0%)",
+                        y: 0,
+                        duration: 0.65,
+                        stagger: 0.045,
+                        ease: "power3.out",
+                        clearProps: "clipPath,transform",
+                        overwrite: "auto",
+                      },
+                    );
+                  });
+                };
+                detail.addEventListener("toggle", openPaper);
+                chapterListeners.push(() =>
+                  detail.removeEventListener("toggle", openPaper),
+                );
+              });
+            break;
+          case "metodologia":
+            // The reference sheet pivots onto the drafting surface. The five
+            // stage rail has its own scroll state in MethodologyProgress.
+            draw(".method-reference-feature", 0.06, 0.72);
+            object(
+              ".method-reference-feature figure",
+              {
+                "--assembly-yaw": "-16deg",
+                "--assembly-pitch": "4deg",
+                "--assembly-depth": "-70px",
+              },
+              {
+                "--assembly-yaw": "0deg",
+                "--assembly-pitch": "0deg",
+                "--assembly-depth": "0px",
+              },
+              0,
+              0.75,
+            );
+            break;
+          case "recorrido":
+            // An index line travels across the chapter tabs; the panel stays
+            // under React's control when the reader changes the active tab.
+            draw(".timeline-tabs", 0.02, 0.7);
+            object(
+              ".timeline-tabs button > span",
+              {
+                "--assembly-pitch": "-34deg",
+                "--assembly-depth": "-20px",
+              },
+              { "--assembly-pitch": "0deg", "--assembly-depth": "0px" },
+              0.1,
+              0.5,
+            );
+            break;
+          case "comparacion":
+            // The two translucent film planes open like a material folio.
+            object(
+              ".portrait-sheet:not(.secondary-sheet)",
+              {
+                "--assembly-yaw": "-26deg",
+                "--assembly-depth": "-40px",
+              },
+              { "--assembly-yaw": "8deg", "--assembly-depth": "20px" },
+              0,
+              1,
+            );
+            object(
+              ".secondary-sheet",
+              {
+                "--assembly-yaw": "25deg",
+                "--assembly-depth": "-60px",
+              },
+              { "--assembly-yaw": "-8deg", "--assembly-depth": "-5px" },
+              0,
+              1,
+            );
+            draw(".material-portrait", 0.05, 0.85);
+            break;
+          case "aplicaciones-futuras":
+            // Four apertures expand from their own corners, like a study wall.
+            draw(".future-card", 0.04, 0.65);
+            object(
+              ".future-card:nth-child(odd) > div:last-child",
+              {
+                "--assembly-yaw": "7deg",
+                "--assembly-depth": "-38px",
+              },
+              { "--assembly-yaw": "0deg", "--assembly-depth": "0px" },
+              0.08,
+              0.8,
+            );
+            object(
+              ".future-card:nth-child(even) > div:last-child",
+              {
+                "--assembly-yaw": "-7deg",
+                "--assembly-depth": "-38px",
+              },
+              { "--assembly-yaw": "0deg", "--assembly-depth": "0px" },
+              0.18,
+              0.8,
+            );
+            break;
+          case "vision-futura":
+            // A horizon opens behind the existing image, then the photo plane
+            // turns toward the reader without scaling past its safe gutter.
+            draw(":scope > figure", 0.05, 0.8);
+            object(
+              ":scope > figure > .parallax-frame",
+              {
+                "--assembly-pitch": "12deg",
+                "--assembly-depth": "-90px",
+              },
+              { "--assembly-pitch": "-2deg", "--assembly-depth": "0px" },
+              0,
+              1,
+            );
+            break;
+          case "impacto-potencial":
+            // Incomplete orbital arcs become a circular system; the ODS card
+            // component retains ownership of its own connections and hinges.
+            draw(".impact-photo", 0.08, 0.75);
+            draw(".circular-overlay", 0.1, 0.8);
+            object(
+              ".circular-overlay > svg",
+              {
+                "--assembly-turn": "-75deg",
+              },
+              { "--assembly-turn": "35deg" },
+              0,
+              1,
+            );
+            camera.fromTo(
+              section.querySelectorAll(".ods-network"),
+              {
+                "--ods-lumen": 0.15,
+              },
+              { "--ods-lumen": 1, duration: 0.65, ease: "none" },
+              0.2,
+            );
+            break;
+          case "gomitas":
+            // A textured contour passes behind the full-frame fruit specimen.
+            draw(".gummy-visual", 0, 1);
+            object(
+              ".gummy-label",
+              {
+                "--assembly-pitch": "-16deg",
+                "--assembly-depth": "55px",
+              },
+              { "--assembly-pitch": "0deg", "--assembly-depth": "0px" },
+              0.1,
+              0.8,
+            );
+            break;
+          case "equipo":
+            // The archive closes as a stack; the final contact line is drawn
+            // across the existing project tags rather than adding new copy.
+            object(
+              ".project-figure > .parallax-frame",
+              {
+                "--assembly-yaw": "-10deg",
+                "--assembly-depth": "-65px",
+              },
+              { "--assembly-yaw": "0deg", "--assembly-depth": "0px" },
+              0,
+              0.85,
+            );
+            draw(".project-tags", 0.1, 0.6);
+            draw(".contact-layout", 0.4, 0.6);
+            break;
+        }
+        const active = ScrollTrigger.create({
+          trigger: section,
+          start: "top 55%",
+          end: "bottom 55%",
+          onToggle: ({ isActive }) => {
+            section.dataset.cinemaActive = String(isActive);
+          },
+        });
+        section.dataset.cinemaActive = String(active.isActive);
+      }
 
       function scan() {
         context.add(() => {
@@ -437,6 +836,7 @@ export function ScrollCinema() {
               sections.push(section);
               section.classList.add("cinema-section");
               section.dataset.cinemaScene = chapter.name;
+              choreograph(section);
               gsap.fromTo(
                 section,
                 { "--scene-travel": isDesktop ? "28px" : "10px" },
@@ -741,6 +1141,7 @@ export function ScrollCinema() {
       dispose = () => {
         observer.disconnect();
         cancelAnimationFrame(scanFrame);
+        chapterListeners.forEach((remove) => remove());
         document.removeEventListener("visibilitychange", visibility);
         gsap.ticker.remove(tick);
         lenis?.destroy();
@@ -748,12 +1149,16 @@ export function ScrollCinema() {
         sections.forEach((section) => {
           section.classList.remove("cinema-section");
           delete section.dataset.cinemaScene;
+          delete section.dataset.cinemaActive;
         });
         scenes.forEach((photo) => {
           photo.classList.remove("cinema-photo-scene");
           photo.style.removeProperty("will-change");
         });
         layers.forEach((layer) => layer.classList.remove("cinema-layer"));
+        assemblies.forEach((assembly) =>
+          assembly.classList.remove("cinema-assembly"),
+        );
         delete document.documentElement.dataset.scrollEngine;
       };
     }

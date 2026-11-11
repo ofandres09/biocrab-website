@@ -3,6 +3,7 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
+import BiomaterialNebula from "./biomaterial-nebula";
 import type { MolecularCanvasProps, MolecularMode } from "./molecular-scene";
 
 type Atom = { position: THREE.Vector3; radius: number; color: string };
@@ -241,6 +242,10 @@ function Scene({
       Math.sin(time * 0.32) * (backdrop ? 0.13 : 0.055);
   });
 
+  if (backdrop) {
+    return <BiomaterialNebula active={active} interaction={interaction} />;
+  }
+
   return (
     <>
       <ambientLight intensity={backdrop ? 1.5 : 1.1} />
@@ -263,48 +268,22 @@ function Scene({
         ref={group}
         scale={backdrop ? 1 : Math.min(1.12, viewport.width / 7.1)}
       >
-        {backdrop ? (
-          <>
+        <>
+          {(mode === "both" || mode === "chitosan") && (
             <PolymerMesh
               material="chitosan"
-              position={[-viewport.width * 0.42, viewport.height * 0.25, -1]}
-              rotation={[0.3, 0.5, 0.75]}
-              scale={1.2}
-              backdrop
+              position={[0, mode === "both" ? 0.63 : -0.08, 0.15]}
+              rotation={[0.05, 0.12, 0.03]}
             />
+          )}
+          {(mode === "both" || mode === "starch") && (
             <PolymerMesh
               material="starch"
-              position={[viewport.width * 0.43, -viewport.height * 0.23, -1]}
-              rotation={[-0.3, -0.4, -0.72]}
-              scale={1.3}
-              backdrop
+              position={[0, mode === "both" ? -0.89 : -0.08, -0.3]}
+              rotation={[-0.12, -0.06, -0.06]}
             />
-            <PolymerMesh
-              material="chitosan"
-              position={[viewport.width * 0.35, viewport.height * 0.46, -3]}
-              rotation={[0.7, 0.4, -0.22]}
-              scale={0.85}
-              backdrop
-            />
-          </>
-        ) : (
-          <>
-            {(mode === "both" || mode === "chitosan") && (
-              <PolymerMesh
-                material="chitosan"
-                position={[0, mode === "both" ? 0.63 : -0.08, 0.15]}
-                rotation={[0.05, 0.12, 0.03]}
-              />
-            )}
-            {(mode === "both" || mode === "starch") && (
-              <PolymerMesh
-                material="starch"
-                position={[0, mode === "both" ? -0.89 : -0.08, -0.3]}
-                rotation={[-0.12, -0.06, -0.06]}
-              />
-            )}
-          </>
-        )}
+          )}
+        </>
       </group>
       <Dust backdrop={backdrop} />
     </>
@@ -395,7 +374,7 @@ export default function MolecularCanvas(props: MolecularCanvasProps) {
             near: 0.1,
             far: 40,
           }}
-          dpr={[1, mobile ? 1 : 1.25]}
+          dpr={props.kind === "backdrop" ? 1 : [1, mobile ? 1 : 1.25]}
           frameloop="demand"
           gl={{
             alpha: true,

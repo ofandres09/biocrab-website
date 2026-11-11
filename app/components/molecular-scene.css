@@ -5,20 +5,35 @@
   overflow: hidden;
   pointer-events: none !important;
   user-select: none;
-  opacity: 0.55;
+  opacity: 0.62;
   mask-image: linear-gradient(
     90deg,
     #000 0%,
-    #0009 18%,
-    #0000 36%,
-    #0000 64%,
-    #0009 82%,
+    #000c 22%,
+    #0008 50%,
+    #000c 78%,
     #000 100%
   );
 }
 .molecular-backdrop *,
 .molecular-backdrop canvas {
   pointer-events: none !important;
+}
+/* Section surfaces stay below the shared atmosphere; their readable content
+   stays above it. Fixed gallery dialogs and absolute anchor aliases keep their
+   original positioning and stacking. */
+:is(main > .section, main > .gummy-section, .site-footer, .evidence-counters)
+  > :not(.lightbox):not(.anchor-alias) {
+  position: relative;
+  z-index: 5;
+}
+.material-strip > *,
+.hero.image-led-hero .hero-reference-background,
+.hero.image-led-hero .hero-bottom {
+  z-index: 5;
+}
+.material-strip > * {
+  position: relative;
 }
 .molecular-canvas {
   position: absolute;
@@ -307,7 +322,7 @@
 }
 @media (max-width: 650px) {
   .molecular-backdrop {
-    opacity: 0.38;
+    opacity: 0.5;
   }
   .molecular-explorer {
     border-radius: 13px;

@@ -18,12 +18,11 @@ import {
 import { Brand } from "./components/brand";
 import { MolecularExplorer } from "./components/molecular-scene";
 import { KineticHeading } from "./components/scroll-cinema";
-import { referencePhotos } from "@/lib/project";
 import { EvidenceCounters } from "./components/evidence-counters";
+import { SustainabilityLinks } from "./components/sustainability-links";
 import {
   Contact,
   Experience,
-  Gallery,
   Header,
   Methodology,
   Photo,
@@ -47,9 +46,7 @@ const footerLinks = [
   ["Del residuo al biomaterial", "del-residuo-al-biomaterial"],
   ["Investigación científica", "investigacion"],
   ["Innovación y tecnología", "innovacion"],
-  ["Resultados e impacto", "resultados"],
   ["Metodología", "metodologia"],
-  ["Galería experimental", "galeria"],
   ["Comparador", "comparacion"],
   ["Aplicaciones futuras", "aplicaciones-futuras"],
   ["Impacto potencial", "impacto-potencial"],
@@ -131,7 +128,7 @@ export default function Home() {
               <a className="button primary" href="#del-residuo-al-biomaterial">
                 Explora la transformación <ArrowUpRight size={18} />
               </a>
-              <a className="hero-secondary" href="#galeria">
+              <a className="hero-secondary" href="#del-residuo-al-biomaterial">
                 Ver el trabajo real <ArrowRight size={16} />
               </a>
             </div>
@@ -144,7 +141,7 @@ export default function Home() {
                 <div>
                   <span className="micro">DEL CONCEPTO AL TRABAJO REAL</span>
                   <p>Explora las formulaciones y el proceso de BioCrab.</p>
-                  <a href="#galeria">
+                  <a href="#del-residuo-al-biomaterial">
                     Ver las fotografías <ArrowRight size={14} />
                   </a>
                 </div>
@@ -563,101 +560,6 @@ export default function Home() {
             <Timeline />
           </Reveal>
         </section>
-        <section id="galeria" className="section editorial-gallery">
-          <SectionHeading
-            label="06 / GALERÍA EXPERIMENTAL"
-            title={
-              <>
-                Esto es real.
-                <br />
-                <span>Así empieza el trabajo.</span>
-              </>
-            }
-            description="Seis fotografías originales del proyecto, visibles completas. La ampliación es opcional; cada imagen incluye su contexto científico."
-          />
-          <Gallery />
-          <div className="reference-gallery">
-            <Reveal className="reference-gallery-heading">
-              <div>
-                <p className="eyebrow">
-                  UNIVERSO VISUAL / CIENCIA Y TECNOLOGÍA
-                </p>
-                <KineticHeading as="h3">
-                  Las imágenes que inspiran
-                  <br />
-                  una nueva posibilidad.
-                </KineticHeading>
-              </div>
-              <p>
-                Las cinco imágenes recibidas están integradas en las secciones
-                del sitio. Aquí puedes verlas completas y ampliarlas.
-              </p>
-            </Reveal>
-            <Gallery items={referencePhotos} reference />
-          </div>
-        </section>
-        <section id="resultados" className="section results-reference-section">
-          <SectionHeading
-            label="INVESTIGACIÓN / RESULTADOS E IMPACTO"
-            title={
-              <>
-                Hacer visible la pregunta.
-                <br />
-                <span>Construir la respuesta.</span>
-              </>
-            }
-            description="Un espacio para comunicar resultados cuando existan datos verificados, con una presentación visual inspirada en la interfaz recibida."
-          />
-          <Reveal className="results-reference-layout">
-            <figure className="dashboard-reference">
-              <div className="reference-warning">
-                <CircleDashed size={15} /> Referencia de diseño A-SPACE · Sin
-                datos de BioCrab
-              </div>
-              <ParallaxFrame>
-                <Photo
-                  name="pinterest-dashboard.png"
-                  alt="Referencia gráfica de interfaz espacial A-SPACE; sus cifras no son datos de BioCrab"
-                />
-              </ParallaxFrame>
-              <Caption>
-                Referencia gráfica aportada. Sus textos y cifras pertenecen a la
-                imagen y no son resultados de BioCrab.
-              </Caption>
-            </figure>
-            <div className="results-status-list">
-              <p className="eyebrow">ESTADO DE LA INVESTIGACIÓN</p>
-              {[
-                [
-                  "Propiedades físicas",
-                  "Resistencia, flexibilidad, espesor y respuesta a la humedad.",
-                ],
-                [
-                  "Aplicación alimentaria",
-                  "Inocuidad, migración, alérgenos y comportamiento con cada alimento.",
-                ],
-                [
-                  "Comportamiento ambiental",
-                  "Biodegradación bajo condiciones definidas y evaluación del ciclo de vida.",
-                ],
-              ].map(([title, description]) => (
-                <article key={title}>
-                  <CircleDashed size={24} />
-                  <div>
-                    <KineticHeading as="h3">{title}</KineticHeading>
-                    <p>{description}</p>
-                    <small>Dato en proceso de validación experimental</small>
-                  </div>
-                </article>
-              ))}
-              <p className="annotation">
-                La referencia recibida corresponde al diseño de otra interfaz.
-                No implica afiliación con su autor, entidades o proyectos
-                representados. No se extraen de ella métricas para BioCrab.
-              </p>
-            </div>
-          </Reveal>
-        </section>
         <section id="comparacion" className="section compare-section">
           <SectionHeading
             label="07 / MATERIALES EN PERSPECTIVA"
@@ -797,6 +699,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+              <SustainabilityLinks />
               <p className="annotation">
                 Alineación temática con ODS 12 y 14. Sin certificación,
                 reducción cuantificada ni resultados ambientales atribuidos.

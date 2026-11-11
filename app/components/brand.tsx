@@ -20,14 +20,18 @@ export function Brand({
       />
       {!hero && (
         <span className="brand-wordmark">
-          BioCrab<small>BIOMATERIALES</small>
+          BioCrab <small>BIOMATERIALES</small>
         </span>
       )}
     </>
   );
   const className = `biocrab-brand${hero ? " biocrab-brand-hero" : ""}`;
   return link ? (
-    <a href="#inicio" aria-label="BioCrab, inicio" className={className}>
+    <a
+      href="#inicio"
+      aria-label={hero ? "BioCrab, inicio" : "BioCrab Biomateriales, inicio"}
+      className={className}
+    >
       {content}
     </a>
   ) : (

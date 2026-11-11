@@ -5,7 +5,9 @@ const nextConfig = {
     return [
       {
         source: "/:path*",
-        headers: [{ key: "X-BioCrab-Design", value: "molecular-research-v6" }],
+        headers: [
+          { key: "X-BioCrab-Design", value: "biomaterial-laboratory-v8" },
+        ],
       },
     ];
   },

@@ -40,8 +40,6 @@ const MolecularCanvas = dynamic<MolecularCanvasProps>(
   { ssr: false, loading: () => null },
 );
 
-const explorerVisibilityEvent = "biocrab:molecular-explorer";
-
 class GraphicsBoundary extends Component<
   { children: ReactNode; onFailure: () => void },
   { failed: boolean }
@@ -173,7 +171,6 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
   const paused = useMotionPause();
   const reduced = useReducedMotionPreference();
   const visible = usePageVisibility();
-  const [explorerVisible, setExplorerVisible] = useState(false);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
   const interaction = useRef<MolecularInteraction>({ x: 0, y: 0 });
@@ -201,7 +198,6 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
           -0.12,
           Math.min(0.12, pointerX * 0.12),
         );
-        interaction.current.invalidate?.();
       });
     };
     window.addEventListener("pointermove", onPointerMove, { passive: true });
@@ -211,21 +207,12 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
     };
   }, [ready, paused, reduced, visible]);
 
-  useEffect(() => {
-    const update = (event: Event) => {
-      setExplorerVisible(Boolean((event as CustomEvent<boolean>).detail));
-    };
-    setExplorerVisible(
-      Boolean(
-        document.querySelector('.molecular-explorer[data-in-view="true"]'),
-      ),
-    );
-    window.addEventListener(explorerVisibilityEvent, update);
-    return () => {
-      window.removeEventListener(explorerVisibilityEvent, update);
+  useEffect(
+    () => () => {
       delete document.documentElement.dataset.molecularGraphics;
-    };
-  }, []);
+    },
+    [],
+  );
 
   const onReady = useCallback(() => {
     setReady(true);
@@ -241,6 +228,7 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
     <div
       className={`molecular-backdrop ${ready ? "is-rendered" : ""} ${className}`}
       aria-hidden="true"
+      data-atmosphere="biomaterial-nebula"
       data-renderer={ready ? "webgl" : failed ? "fallback" : "loading"}
     >
       <StaticMolecules backdrop />
@@ -248,7 +236,7 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
         <GraphicsBoundary onFailure={onFailure}>
           <MolecularCanvas
             kind="backdrop"
-            active={visible && !paused && !reduced && !explorerVisible}
+            active={visible && !paused && !reduced}
             interaction={interaction}
             onReady={onReady}
             onFailure={onFailure}
@@ -285,17 +273,10 @@ export function MolecularExplorer({ className = "" }: { className?: string }) {
   }, []);
 
   useEffect(() => {
-    window.dispatchEvent(
-      new CustomEvent(explorerVisibilityEvent, { detail: inView && !failed }),
-    );
-    // Out-of-view canvases are disposed, keeping one animated WebGL scene at a time.
+    // The bounded viewer releases its GPU scene off screen; the global nebula
+    // continues independently across all chapters.
     if (!inView) setReady(false);
-    return () => {
-      window.dispatchEvent(
-        new CustomEvent(explorerVisibilityEvent, { detail: false }),
-      );
-    };
-  }, [inView, failed]);
+  }, [inView]);
 
   const rotate = useCallback((x: number, y: number) => {
     interaction.current.x = Math.max(

@@ -13,8 +13,9 @@ import { GlobalAtmosphere } from "./global-atmosphere";
 import { MolecularBackdrop } from "./molecular-scene";
 import { ScrollCinema, KineticHeading } from "./scroll-cinema";
 import { CinematicReveal, AnimationControl } from "./cinematic";
+import { useMethodologyProgress } from "./methodology-progress";
 import { resolvePhoto } from "@/lib/media";
-import { ParallaxFrame, ScrollScene } from "./visuals";
+import { ScrollScene } from "./visuals";
 import {
   motion,
   AnimatePresence,
@@ -36,12 +37,10 @@ import {
   Leaf,
   Recycle,
   Waves,
-  ChevronLeft,
-  ChevronRight,
   Check,
   Copy,
 } from "lucide-react";
-import { methodology, pending, photos, stages } from "@/lib/project";
+import { methodology, stages } from "@/lib/project";
 const ImageAssets = createContext<string[]>([]);
 export function Experience({
   children,
@@ -143,7 +142,6 @@ export function Header() {
         {[
           ["El proyecto", "sobre"],
           ["La ciencia", "investigacion"],
-          ["Galería", "galeria"],
           ["Aplicaciones", "aplicaciones-futuras"],
         ].map(([n, id]) => (
           <a href={`#${id}`} key={id}>
@@ -185,10 +183,8 @@ export function Header() {
             ["Del residuo al biomaterial", "del-residuo-al-biomaterial"],
             ["Investigación científica", "investigacion"],
             ["Innovación y tecnología", "innovacion"],
-            ["Resultados e impacto", "resultados"],
             ["Metodología", "metodologia"],
             ["Recorrido", "recorrido"],
-            ["Galería experimental", "galeria"],
             ["Comparador", "comparacion"],
             ["Aplicaciones futuras", "aplicaciones-futuras"],
             ["Impacto potencial", "impacto-potencial"],
@@ -353,20 +349,67 @@ export function Timeline() {
 }
 const icons = [Shell, Atom, FlaskConical, Layers, Microscope];
 export function Methodology() {
-  const [active, setActive] = useState(0);
+  const {
+    rootRef,
+    railRef,
+    active,
+    selectStage,
+    stageStyles,
+    rootStyle,
+    still,
+  } = useMethodologyProgress(methodology.length);
   const Icon = icons[active];
   return (
-    <div className="methodology">
-      <div className="process-rail" aria-label="Etapas de la metodología">
+    <div
+      ref={rootRef}
+      className="methodology methodology-progress"
+      data-method-motion={still ? "still" : "active"}
+      style={rootStyle}
+    >
+      <div className="method-progress-caption" aria-hidden="true">
+        <span>Etapas de metodología</span>
+        <span>
+          0{active + 1} / 0{methodology.length}
+        </span>
+      </div>
+      <div
+        ref={railRef}
+        className="process-rail"
+        role="group"
+        aria-label="Etapas de metodología"
+        onKeyDown={(event) => {
+          const buttons = Array.from(
+            event.currentTarget.querySelectorAll("button"),
+          );
+          const focused = buttons.indexOf(event.target as HTMLButtonElement);
+          if (focused < 0) return;
+          let next: number;
+          if (event.key === "ArrowRight") next = (focused + 1) % buttons.length;
+          else if (event.key === "ArrowLeft")
+            next = (focused - 1 + buttons.length) % buttons.length;
+          else if (event.key === "Home") next = 0;
+          else if (event.key === "End") next = buttons.length - 1;
+          else return;
+          event.preventDefault();
+          selectStage(next);
+          buttons[next].focus({ preventScroll: true });
+        }}
+      >
         {methodology.map((s, i) => {
           const I = icons[i];
           return (
             <button
               key={s.title}
+              type="button"
               aria-pressed={active === i}
-              onClick={() => setActive(i)}
+              aria-controls="methodology-stage-detail"
+              data-stage-state={
+                i < active ? "complete" : i === active ? "current" : "upcoming"
+              }
+              style={stageStyles[i]}
+              onClick={() => selectStage(i)}
             >
-              <span>
+              <span aria-hidden="true">
                 <I size={22} strokeWidth={1.3} />
               </span>
               <small>0{i + 1}</small>
@@ -378,7 +421,7 @@ export function Methodology() {
       </div>
       <Reveal className="method-detail">
         <Photo name={methodology[active].image} alt={methodology[active].alt} />
-        <div>
+        <div id="methodology-stage-detail">
           <span className="eyebrow">ETAPA 0{active + 1} / METODOLOGÍA</span>
           <Icon size={34} strokeWidth={1} className="method-icon" />
           <KineticHeading as="h3">{methodology[active].title}</KineticHeading>
@@ -393,130 +436,6 @@ export function Methodology() {
         </div>
       </Reveal>
     </div>
-  );
-}
-export function Gallery({
-  items = photos,
-  reference = false,
-}: {
-  items?: typeof photos;
-  reference?: boolean;
-}) {
-  const [active, setActive] = useState<number | null>(null);
-  useEffect(() => {
-    if (active === null) return;
-    function key(e: KeyboardEvent) {
-      if (e.key === "Escape") setActive(null);
-      if (e.key === "ArrowRight")
-        setActive((v) => (v === null ? null : (v + 1) % items.length));
-      if (e.key === "ArrowLeft")
-        setActive((v) =>
-          v === null ? null : (v - 1 + items.length) % items.length,
-        );
-    }
-    const before = document.activeElement as HTMLElement;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", key);
-    const close = document.getElementById("gallery-close");
-    close?.focus();
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", key);
-      before?.focus();
-    };
-  }, [active, items]);
-  return (
-    <>
-      <div className="photo-grid">
-        {items.map((p, i) => (
-          <button
-            className="gallery-card"
-            key={p.src}
-            onClick={() => setActive(i)}
-            aria-label={`Ampliar: ${p.title}`}
-          >
-            <ParallaxFrame>
-              <Photo name={p.src} alt={p.title} />
-            </ParallaxFrame>
-            <span>
-              <small>
-                {reference ? "IMAGEN CONCEPTUAL" : "ARCHIVO"} / 0{i + 1}
-              </small>
-              <strong>{p.title}</strong>
-              <span className="gallery-caption">{p.caption}</span>
-              <ArrowUpRight size={20} />
-            </span>
-          </button>
-        ))}
-      </div>
-      {active !== null && (
-        <div
-          className="lightbox"
-          data-lenis-prevent
-          role="dialog"
-          aria-modal="true"
-          aria-label={items[active].title}
-          onClick={() => setActive(null)}
-          onKeyDown={(e) => {
-            if (e.key === "Tab") {
-              e.preventDefault();
-              const ids = ["gallery-close", "gallery-prev", "gallery-next"];
-              const index = ids.indexOf(
-                (document.activeElement as HTMLElement).id,
-              );
-              document
-                .getElementById(
-                  ids[
-                    (index + (e.shiftKey ? -1 : 1) + ids.length) % ids.length
-                  ],
-                )
-                ?.focus();
-            }
-          }}
-        >
-          <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
-            <button
-              id="gallery-close"
-              className="icon-button"
-              onClick={() => setActive(null)}
-              aria-label="Cerrar imagen"
-            >
-              <X />
-            </button>
-            <Photo
-              key={items[active].src}
-              name={items[active].src}
-              alt={items[active].title}
-            />
-            <KineticHeading as="h3">{items[active].title}</KineticHeading>
-            <p>{items[active].caption}</p>
-            <div className="lightbox-controls">
-              <button
-                id="gallery-prev"
-                className="icon-button"
-                onClick={() =>
-                  setActive((active - 1 + items.length) % items.length)
-                }
-                aria-label="Imagen anterior"
-              >
-                <ChevronLeft />
-              </button>
-              <span>
-                {active + 1} / {items.length}
-              </span>
-              <button
-                id="gallery-next"
-                className="icon-button"
-                onClick={() => setActive((active + 1) % items.length)}
-                aria-label="Imagen siguiente"
-              >
-                <ChevronRight />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
   );
 }
 export function Contact() {

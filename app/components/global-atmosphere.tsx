@@ -15,9 +15,8 @@ const particles = Array.from({ length: 30 }, (_, index) => ({
 }));
 
 const reflectionSelector =
-  ".project-photo,.cinema-heading,.hero-title,.gallery-card,.why-card,.future-card,.method-detail,.results-status-list article";
-const cardSelector =
-  ".gallery-card,.why-card,.future-card,.method-detail,.results-status-list article";
+  ".project-photo,.cinema-heading,.hero-title,.why-card,.future-card,.method-detail";
+const cardSelector = ".why-card,.future-card,.method-detail";
 
 /** Decorative light, with no scientific labels, measurements or data. */
 export function GlobalAtmosphere() {

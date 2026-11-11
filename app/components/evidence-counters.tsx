@@ -24,7 +24,7 @@ const documentedFacts = [
     value: photos.length,
     label: "fotografías originales",
     description: "Un registro visual del proceso y de las líneas del proyecto.",
-    href: "#galeria",
+    href: "#del-residuo-al-biomaterial",
   },
 ] as const;
 
