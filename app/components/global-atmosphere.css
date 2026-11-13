@@ -26,8 +26,10 @@
   width: min(760px, 74vmax);
   aspect-ratio: 0.88;
   border-radius: 50%;
-  opacity: 0.62;
-  will-change: transform, opacity;
+  opacity: 0.34;
+}
+.global-atmosphere[data-state="active"][data-hidden="false"] .atmosphere-field {
+  will-change: transform;
 }
 .atmosphere-field::before {
   content: "";
@@ -36,8 +38,8 @@
   border-radius: 50%;
   background: radial-gradient(
     ellipse at 50% 0,
-    #73c6ff0e,
-    #2389ff08 28%,
+    #73c6ff0a,
+    #2389ff05 28%,
     transparent 72%
   );
   transform: rotate(-26deg) scaleY(1.22);
@@ -48,12 +50,13 @@
   background:
     radial-gradient(
       ellipse at 46% 40%,
-      #2389ff20,
-      #0066ff09 36%,
+      #2389ff1a,
+      #0066ff07 36%,
       transparent 68%
     ),
-    radial-gradient(ellipse at 72% 68%, #00b7ff09, transparent 52%);
-  animation: atmosphere-blue-drift 28s ease-in-out infinite alternate;
+    radial-gradient(ellipse at 72% 68%, #00b7ff07, transparent 52%);
+  animation: atmosphere-blue-drift calc(var(--motion-duration-narrative) * 10)
+    var(--motion-ease-editorial) infinite alternate;
 }
 .atmosphere-field-green {
   right: -19%;
@@ -61,70 +64,23 @@
   background:
     radial-gradient(
       ellipse at 50% 60%,
-      #00ffa31b,
-      #00ff9907 36%,
+      #00dfa317,
+      #00ff9905 36%,
       transparent 68%
     ),
-    radial-gradient(ellipse at 25% 30%, #2389ff0b, transparent 53%);
-  animation: atmosphere-green-drift 34s ease-in-out -12s infinite alternate;
+    radial-gradient(ellipse at 25% 30%, #2389ff08, transparent 53%);
+  animation: atmosphere-green-drift calc(var(--motion-duration-narrative) * 12)
+    var(--motion-ease-editorial) calc(var(--motion-duration-narrative) * -4)
+    infinite alternate;
 }
 .atmosphere-field-green::before {
   background: radial-gradient(
     ellipse at 50% 100%,
-    #8effd80d,
-    #00ffa307 28%,
+    #8effd809,
+    #00ffa305 28%,
     transparent 72%
   );
   transform: rotate(-26deg) scaleY(1.22);
-}
-.atmosphere-particles {
-  position: absolute;
-  inset: 0;
-}
-:root[data-molecular-graphics="webgl"] .atmosphere-particles {
-  display: none;
-}
-.ambient-particle {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  transform: translate3d(var(--attract-x, 0px), var(--attract-y, 0px), 0);
-  transition: transform 0.35s ease-out;
-}
-.ambient-particle-light {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    #65b7ffbd,
-    #2889ff28 24%,
-    transparent 68%
-  );
-  animation: ambient-particle-drift var(--drift-duration) ease-in-out
-    var(--drift-delay) infinite alternate;
-  will-change: transform, opacity;
-}
-.ambient-particle:nth-child(3n) .ambient-particle-light {
-  background: radial-gradient(
-    circle,
-    #70ffcabd,
-    #00ff9928 24%,
-    transparent 68%
-  );
-}
-.ambient-particle-light::before {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  left: 8px;
-  top: 8px;
-  border-radius: 50%;
-  background: #a5d8ff;
-}
-.ambient-particle:nth-child(3n) .ambient-particle-light::before {
-  background: #a2ffdf;
 }
 .atmosphere-cursor-light {
   position: absolute;
@@ -133,18 +89,16 @@
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background:
-    radial-gradient(ellipse at 43% 42%, #76caff0b, transparent 28%),
-    radial-gradient(ellipse, #2389ff13, #00ffa308 34%, transparent 70%);
+  background: radial-gradient(
+    ellipse,
+    #2389ff0c,
+    #00d9a305 34%,
+    transparent 70%
+  );
   opacity: 0;
   transition:
-    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.3s;
-}
-.global-atmosphere[data-surface="true"] .atmosphere-cursor-light {
-  background:
-    radial-gradient(ellipse at 43% 42%, #91d7ff14, transparent 28%),
-    radial-gradient(ellipse, #2389ff20, #00ffa30b 34%, transparent 70%);
+    transform var(--motion-duration-hover) var(--motion-ease-hover),
+    opacity var(--motion-duration-button) var(--motion-ease-micro);
 }
 .magnetic-cursor {
   position: absolute;
@@ -154,64 +108,43 @@
   height: 44px;
   opacity: 0;
   transition:
-    transform 0.14s cubic-bezier(0.2, 0.65, 0.2, 1),
-    opacity 0.2s;
+    transform var(--motion-duration-micro) var(--motion-ease-micro),
+    opacity var(--motion-duration-button) var(--motion-ease-micro);
 }
 .magnetic-cursor-ring {
   position: absolute;
-  inset: 8px;
-  border: 1px solid #4aabff8a;
+  inset: 9px;
+  border: 1px solid #59a7f05c;
   border-radius: 50%;
-  background: radial-gradient(ellipse, #0066ff07, #00ff9910);
-  box-shadow:
-    0 0 15px #0066ff32,
-    inset 0 0 12px #00ff9917;
+  background: transparent;
+  box-shadow: 0 0 10px #0066ff12;
   transition:
-    transform 0.25s,
-    border-color 0.25s;
-}
-.magnetic-cursor-point {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  left: 20.5px;
-  top: 20.5px;
-  border-radius: 50%;
-  background: #6abaff;
-  box-shadow: 0 0 9px #00ff99a6;
+    transform var(--motion-duration-hover) var(--motion-ease-hover),
+    border-color var(--motion-duration-button) var(--motion-ease-micro);
 }
 .magnetic-cursor[data-magnetic="true"] .magnetic-cursor-ring {
-  transform: scale(1.45);
-  border-color: #00ff99b8;
+  transform: scale(1.14);
+  border-color: #00cf9a91;
 }
-.global-atmosphere[data-cursor="visible"] .magnetic-cursor,
-.global-atmosphere[data-cursor="visible"] .atmosphere-cursor-light {
+.global-atmosphere[data-cursor="visible"] .magnetic-cursor {
   opacity: 1;
 }
-/* A restrained reflection belongs to the image/card itself, so its edge and
-   depth remain readable as the pointer moves. No filters or extra DOM layers. */
+.global-atmosphere[data-cursor="visible"][data-surface="true"]
+  .atmosphere-cursor-light {
+  opacity: 0.4;
+}
+/* Retain the existing positioned text layers, without illuminating the text. */
 :is(
   .project-photo,
   .cinema-heading,
   .hero-title,
-  .gallery-card,
   .why-card,
   .future-card,
-  .method-detail,
-  .results-status-list article
+  .method-detail
 ) {
   position: relative;
 }
-:is(
-  .project-photo,
-  .cinema-heading,
-  .hero-title,
-  .gallery-card,
-  .why-card,
-  .future-card,
-  .method-detail,
-  .results-status-list article
-)::after {
+:is(.project-photo, .why-card, .future-card)::after {
   --reflection-x: inherit;
   --reflection-y: inherit;
   content: "";
@@ -221,46 +154,33 @@
   border-radius: inherit;
   pointer-events: none;
   background: radial-gradient(
-    280px circle at var(--reflection-x) var(--reflection-y),
-    #c5eaff1d,
-    #2389ff12 27%,
-    #00ffa306 49%,
+    240px circle at var(--reflection-x) var(--reflection-y),
+    #91caff0b,
+    #2389ff08 30%,
     transparent 72%
   );
   opacity: 0;
-  transition: opacity 0.36s ease;
+  transition: opacity var(--motion-duration-hover) var(--motion-ease-hover);
 }
-:is(.cinema-heading, .hero-title)::after {
+/* Cards reflect at their edge, preserving the contrast of their scientific copy. */
+:is(.why-card, .future-card)::after {
+  padding: 1px;
   background: radial-gradient(
-    210px circle at var(--reflection-x) var(--reflection-y),
-    #86cfff12,
-    #2389ff09 35%,
-    transparent 72%
+    220px circle at var(--reflection-x) var(--reflection-y),
+    #6bbcff85,
+    #00d9a344 42%,
+    transparent 74%
   );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
 }
-:is(.cinema-heading, .hero-title) {
-  text-shadow: 0 0 34px transparent;
-  transition: text-shadow 0.36s ease;
-}
-:is(
-    .project-photo,
-    .cinema-heading,
-    .hero-title,
-    .gallery-card,
-    .why-card,
-    .future-card,
-    .method-detail,
-    .results-status-list article
-  )[data-cursor-lit="true"]::after {
+:is(.project-photo, .why-card, .future-card)[data-cursor-lit="true"]::after {
   opacity: 1;
 }
-:is(.cinema-heading, .hero-title)[data-cursor-lit="true"] {
-  text-shadow: 0 0 34px #2389ff2b;
-}
 .global-atmosphere[data-state="still"] .atmosphere-field,
-.global-atmosphere[data-state="still"] .ambient-particle-light,
-.global-atmosphere[data-hidden="true"] .atmosphere-field,
-.global-atmosphere[data-hidden="true"] .ambient-particle-light {
+.global-atmosphere[data-hidden="true"] .atmosphere-field {
   animation-play-state: paused;
 }
 .global-atmosphere[data-state="still"] .magnetic-cursor,
@@ -270,57 +190,49 @@
   opacity: 0 !important;
 }
 :root[data-theme="light"] .global-atmosphere .atmosphere-field {
-  opacity: 0.3;
+  opacity: 0.18;
 }
-:root[data-theme="light"] [data-cursor-lit="true"]::after {
+:root[data-theme="light"] .project-photo[data-cursor-lit="true"]::after {
   background: radial-gradient(
-    280px circle at var(--reflection-x) var(--reflection-y),
-    #ffffff45,
-    #2389ff0d 32%,
+    240px circle at var(--reflection-x) var(--reflection-y),
+    #ffffff0b,
+    #2389ff07 32%,
     transparent 72%
   );
 }
-:root[data-theme="light"] .global-atmosphere .ambient-particle-light::before {
-  background: #0066ff;
-}
-:root[data-theme="light"]
-  .global-atmosphere
-  .ambient-particle:nth-child(3n)
-  .ambient-particle-light::before {
-  background: #008956;
-}
+/* Mirror the shared editorial curve in the first half, then use it directly.
+   This is organicCameraEase's construction: zero endpoint velocity, including
+   each alternate turn. The field never jumps at a loop boundary. */
 @keyframes atmosphere-blue-drift {
-  from {
-    transform: translate3d(0, 0, 0);
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
   }
-  to {
-    transform: translate3d(5vw, 4vh, 0) rotate(5deg);
+  50% {
+    transform: translate3d(1.8vw, 1.2vh, 0) rotate(1.5deg);
+    animation-timing-function: var(--motion-ease-editorial);
+  }
+  100% {
+    transform: translate3d(3.6vw, 2.4vh, 0) rotate(3deg);
   }
 }
 @keyframes atmosphere-green-drift {
-  from {
+  0% {
     transform: translate3d(0, 0, 0) rotate(0deg);
+    animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
   }
-  to {
-    transform: translate3d(-4vw, -5vh, 0) rotate(-7deg);
+  50% {
+    transform: translate3d(-1.4vw, -1.8vh, 0) rotate(-2deg);
+    animation-timing-function: var(--motion-ease-editorial);
   }
-}
-@keyframes ambient-particle-drift {
-  from {
-    transform: translate3d(0, 0, 0) scale(0.8);
-    opacity: 0.36;
-  }
-  to {
-    transform: translate3d(var(--drift-x), var(--drift-y), 0) scale(1.08);
-    opacity: 0.8;
+  100% {
+    transform: translate3d(-2.8vw, -3.6vh, 0) rotate(-4deg);
   }
 }
 @media (max-width: 767px) {
-  .ambient-particle:nth-child(n + 15) {
-    display: none;
-  }
   .atmosphere-field {
     width: min(440px, 74vmax);
+    opacity: 0.26;
   }
   .atmosphere-field-blue {
     left: -40%;
@@ -337,32 +249,19 @@
     display: none;
   }
 }
-[data-motion="paused"] [data-cursor-lit="true"]::after {
+[data-motion="paused"]
+  :is(.project-photo, .why-card, .future-card)[data-cursor-lit="true"]::after {
   opacity: 0 !important;
 }
-[data-motion="paused"]
-  :is(.cinema-heading, .hero-title)[data-cursor-lit="true"] {
-  text-shadow: none;
-}
 @media (prefers-reduced-motion: reduce) {
-  .ambient-particle-light {
-    animation: none;
-    opacity: 0.5;
-  }
   .atmosphere-field {
     animation: none;
-  }
-  .ambient-particle {
-    transition: none;
   }
   .magnetic-cursor,
   .atmosphere-cursor-light {
     display: none;
   }
-  [data-cursor-lit="true"]::after {
+  :is(.project-photo, .why-card, .future-card)[data-cursor-lit="true"]::after {
     opacity: 0 !important;
-  }
-  :is(.cinema-heading, .hero-title)[data-cursor-lit="true"] {
-    text-shadow: none;
   }
 }

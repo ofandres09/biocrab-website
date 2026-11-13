@@ -1,3 +1,5 @@
+> Registro histórico de v8. La revisión vigente y sus límites están en [revisión editorial v9](visual-review.md).
+
 # BioCrab: laboratorio molecular por capítulos
 
 Revisión `biomaterial-laboratory-v8`.

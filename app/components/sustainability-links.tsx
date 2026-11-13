@@ -1,4 +1,5 @@
 "use client";
+import { motionDuration, motionEase } from "./motion-system";
 
 import { useEffect, useRef } from "react";
 import { animate, motion, useInView } from "framer-motion";
@@ -26,8 +27,8 @@ export function SustainabilityLinks() {
     }
     let cancelled = false;
     const controls = animate(0, goals.length, {
-      duration: 1.2,
-      ease: "easeInOut",
+      duration: motionDuration.component,
+      ease: motionEase.editorial,
       onUpdate: (value) => {
         if (!cancelled && count.current)
           count.current.textContent = String(Math.round(value));
@@ -62,15 +63,15 @@ export function SustainabilityLinks() {
               still
                 ? { rotateY: 0, scale: 1, clipPath: "inset(0% 0% 0% 0%)" }
                 : {
-                    rotateY: [-24, 0],
-                    scale: [0.86, 1],
+                    rotateY: [-8, 0],
+                    scale: [0.98, 1],
                     clipPath: ["inset(0% 100% 0% 0%)", "inset(0% 0% 0% 0%)"],
                   }
             }
             transition={{
-              duration: still ? 0 : 1.2,
-              delay: still ? 0 : index * 0.2,
-              ease: [0.16, 1, 0.3, 1],
+              duration: still ? 0 : motionDuration.component,
+              delay: still ? 0 : index * motionDuration.micro,
+              ease: motionEase.content,
             }}
             viewport={{ once: true, amount: 0.5 }}
           >

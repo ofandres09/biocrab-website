@@ -1,0 +1,283 @@
+/* Quiet reading zones remain separate from the moving scientific atmosphere. */
+:root {
+  --reading-ink: #edf3f6;
+  --reading-muted: #afc0cb;
+  --reading-shield: #040a0fef;
+  --reading-shield-edge: #040a0fc9;
+}
+:root[data-theme="light"] {
+  --reading-ink: #172a35;
+  --reading-muted: #405866;
+  --reading-shield: #f6fafcf2;
+  --reading-shield-edge: #f6fafce0;
+}
+.section
+  :is(
+    .section-heading,
+    .editorial-copy,
+    .technology-copy,
+    .research-copy,
+    .impact-copy,
+    .project-copy
+  ),
+.section.future-vision > div,
+.gummy-section .gummy-copy,
+.contact-layout > div:first-child {
+  position: relative;
+  isolation: isolate;
+}
+.section
+  :is(
+    .section-heading,
+    .editorial-copy,
+    .technology-copy,
+    .research-copy,
+    .impact-copy,
+    .project-copy
+  )::before,
+.section.future-vision > div::before,
+.gummy-section .gummy-copy::before,
+.contact-layout > div:first-child::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -34px -30px;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    var(--reading-shield),
+    var(--reading-shield-edge)
+  );
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      #000 28px,
+      #000 calc(100% - 28px),
+      transparent
+    ),
+    linear-gradient(
+      180deg,
+      transparent,
+      #000 32px,
+      #000 calc(100% - 32px),
+      transparent
+    );
+  mask-composite: intersect;
+  border: 0;
+  box-shadow: none;
+}
+.section .section-description,
+.section
+  :is(
+    .editorial-copy,
+    .technology-copy,
+    .research-copy,
+    .impact-copy,
+    .project-copy
+  )
+  > p:not(.eyebrow):not(.lead),
+.section .research-detail :is(p, li),
+.section .impact-row p,
+.section .contact-layout > div:first-child > p:not(.eyebrow),
+.gummy-section .gummy-copy > p:not(.eyebrow):not(.lead) {
+  color: var(--reading-muted);
+}
+.section .section-heading h2,
+.section :is(.editorial-copy, .impact-copy, .project-copy) :is(h2, h3),
+.section.future-vision h2,
+.gummy-section h2,
+.contact-layout h2 {
+  color: var(--reading-ink);
+  text-wrap: balance;
+}
+.section .section-heading h2 .cinema-emphasis {
+  color: color-mix(in srgb, var(--reading-ink) 82%, var(--reading-muted));
+}
+.section p,
+.gummy-section p {
+  text-wrap: pretty;
+}
+.section .photo-caption,
+.gummy-section .photo-caption {
+  color: var(--reading-muted);
+  background: linear-gradient(
+    90deg,
+    var(--reading-shield),
+    var(--reading-shield-edge)
+  );
+  font-size: 12px;
+  line-height: 1.7;
+}
+.section .research-stamp,
+.section .figure-number {
+  background: var(--surface);
+  color: var(--text);
+  font-size: 11px;
+}
+/* Model annotations are scientific copy, so they have their own quiet ground. */
+.hero.hero-immersive .molecular-explorer-heading {
+  background: linear-gradient(110deg, #03090ded, #03090dde);
+  padding: 8px 12px;
+}
+.hero.hero-immersive .molecular-kicker {
+  color: #b5cbd7;
+  font-size: 8px;
+  line-height: 1.6;
+}
+.hero.hero-immersive .molecular-material-key span {
+  font-size: 8px;
+  color: #b5cbd7;
+}
+.hero.hero-immersive .molecular-explorer-footer {
+  background: linear-gradient(110deg, #03090ded, #03090dcb);
+  padding: 10px 12px;
+  border-radius: 6px;
+}
+.hero.hero-immersive .molecular-explorer-footer p {
+  font-size: 10px;
+  color: #bdd0db;
+  line-height: 1.65;
+}
+.hero.hero-immersive .molecular-explorer-footer > span {
+  color: #b2cbd8;
+  font-size: 8px;
+}
+.hero.hero-immersive .hero-reference-note {
+  color: #b4c8d3;
+  font-size: 11px;
+}
+.hero.hero-immersive .hero-bottom {
+  color: #a6bfcc;
+}
+:where(a, button, summary, input, textarea):focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 5px;
+}
+@media (max-width: 800px) {
+  .section
+    :is(
+      .section-heading,
+      .editorial-copy,
+      .technology-copy,
+      .research-copy,
+      .impact-copy,
+      .project-copy
+    )::before,
+  .section.future-vision > div::before,
+  .gummy-section .gummy-copy::before,
+  .contact-layout > div:first-child::before {
+    inset: -24px -18px;
+    mask-size: 100% 100%;
+    mask-image:
+      linear-gradient(
+        90deg,
+        transparent,
+        #000 16px,
+        #000 calc(100% - 16px),
+        transparent
+      ),
+      linear-gradient(
+        180deg,
+        transparent,
+        #000 22px,
+        #000 calc(100% - 22px),
+        transparent
+      );
+  }
+  .section .section-description {
+    max-width: 38ch;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .section .annotation,
+  .gummy-section .annotation {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+  .hero.hero-immersive .molecular-explorer-heading {
+    padding: 4px 8px;
+  }
+  .hero.hero-immersive .molecular-kicker {
+    font-size: 7px;
+  }
+  .hero.hero-immersive .molecular-explorer-footer p {
+    font-size: 10px;
+  }
+}
+/* Fine print remains readable at the actual mobile viewport, not only zoomed. */
+.hero.hero-immersive .hero-copy > .eyebrow {
+  font-size: 10px;
+  line-height: 1.6;
+}
+.hero.hero-immersive .hero-badges > span {
+  font-size: 10px;
+}
+.hero.hero-immersive .molecular-kicker,
+.hero.hero-immersive .molecular-material-key span,
+.hero.hero-immersive .molecular-viewport-note {
+  font-size: 10px;
+  line-height: 1.5;
+}
+.hero.hero-immersive .molecular-modes button {
+  font-size: 11px;
+}
+.hero.hero-immersive .hero-bottom {
+  font-size: 9px;
+  line-height: 1.6;
+}
+.hero.hero-immersive
+  :is(.hero-title, .hero-description, .hero-copy > .eyebrow) {
+  position: relative;
+  isolation: isolate;
+}
+.hero.hero-immersive
+  :is(.hero-title, .hero-description, .hero-copy > .eyebrow)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -10px -12px;
+  background: linear-gradient(90deg, #03090df2, #03090de0);
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      #000 10px,
+      #000 calc(100% - 10px),
+      transparent
+    ),
+    linear-gradient(
+      180deg,
+      transparent,
+      #000 8px,
+      #000 calc(100% - 8px),
+      transparent
+    );
+  mask-composite: intersect;
+  pointer-events: none;
+}
+/* Extend the falloff beyond the letters so a reading veil has no hard edge. */
+.hero.hero-immersive .hero-title {
+  width: fit-content;
+  max-width: 100%;
+}
+.hero.hero-immersive
+  :is(.hero-title, .hero-description, .hero-copy > .eyebrow)::before {
+  inset: -36px -42px;
+  background: linear-gradient(90deg, #03090de0, #03090dc2);
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      #000 40px,
+      #000 calc(100% - 40px),
+      transparent
+    ),
+    linear-gradient(
+      180deg,
+      transparent,
+      #000 34px,
+      #000 calc(100% - 34px),
+      transparent
+    );
+}

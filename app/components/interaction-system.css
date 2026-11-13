@@ -1,0 +1,168 @@
+/* Shared feedback for the controls and surfaces already present in BioCrab.
+   Structural/scroll transforms stay owned by Motion and ScrollTrigger. */
+:is(
+  .button,
+  .icon-button,
+  .animation-control,
+  .small-cta,
+  .journey-controls button,
+  .dimension-controls button,
+  .comparator-toolbar button,
+  .molecular-modes button,
+  .molecular-orbit-controls button,
+  .process-rail button,
+  .timeline-tabs button
+) {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: var(--motion-duration-button);
+  transition-timing-function: var(--motion-ease-micro);
+}
+.button {
+  transition:
+    transform var(--motion-duration-button) var(--motion-ease-hover),
+    background-color var(--motion-duration-button) var(--motion-ease-micro),
+    border-color var(--motion-duration-button) var(--motion-ease-micro),
+    box-shadow var(--motion-duration-hover) var(--motion-ease-hover);
+}
+:is(.text-link, .hero-secondary, .desktop-nav a, .footer-grid a, .small-cta) {
+  transition:
+    color var(--motion-duration-button) var(--motion-ease-micro),
+    border-color var(--motion-duration-button) var(--motion-ease-micro),
+    background-size var(--motion-duration-hover) var(--motion-ease-hover);
+}
+:is(
+  .section .text-link svg,
+  .gummy-section .text-link svg,
+  .hero-secondary svg,
+  .why-copy > svg,
+  .future-card > div:last-child > svg
+) {
+  transition:
+    translate var(--motion-duration-hover) var(--motion-ease-hover),
+    color var(--motion-duration-button) var(--motion-ease-micro);
+}
+.section :is(.why-card, .future-card) {
+  transition:
+    border-color var(--motion-duration-button) var(--motion-ease-micro),
+    box-shadow var(--motion-duration-card) var(--motion-ease-hover);
+}
+.section :is(.why-card, .future-card):not(.cinema-assembly) {
+  transition:
+    transform var(--motion-duration-card) var(--motion-ease-hover),
+    border-color var(--motion-duration-button) var(--motion-ease-micro),
+    box-shadow var(--motion-duration-card) var(--motion-ease-hover);
+}
+:is(
+  .button,
+  .icon-button,
+  .animation-control,
+  .small-cta,
+  .journey-controls button,
+  .dimension-controls button,
+  .comparator-toolbar button,
+  .molecular-modes button,
+  .molecular-orbit-controls button,
+  .process-rail button,
+  .timeline-tabs button,
+  .text-link,
+  .hero-secondary,
+  .desktop-nav a,
+  .footer-grid a
+):focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 22px #00ff9915;
+  }
+  .section :is(.why-card, .future-card):hover {
+    border-color: color-mix(in srgb, var(--green) 45%, var(--line));
+    box-shadow:
+      inset 0 1px 0 #ffffff08,
+      0 10px 26px #00000018;
+  }
+  .section :is(.why-card, .future-card):not(.cinema-assembly):hover {
+    transform: translateY(-2px);
+  }
+  /* Preserve the current camera plane instead of letting legacy card:hover
+     translateY declarations replace its matrix. No hover transform is added. */
+  .section :is(.why-card, .future-card).cinema-assembly:hover {
+    transform: perspective(1500px)
+      translate3d(0, var(--assembly-rise), var(--assembly-depth))
+      rotateX(var(--assembly-pitch)) rotateY(var(--assembly-yaw))
+      rotateZ(var(--assembly-turn));
+  }
+  :is(
+    .section .text-link,
+    .gummy-section .text-link,
+    .desktop-nav a,
+    .footer-grid a
+  ):hover {
+    color: var(--green);
+  }
+  :is(.section .text-link, .gummy-section .text-link, .desktop-nav a):hover {
+    background-size:
+      100% 1px,
+      100% 1px;
+  }
+  :is(
+    .section .text-link:hover svg,
+    .gummy-section .text-link:hover svg,
+    .hero-secondary:hover svg,
+    .section .why-card:hover .why-copy > svg,
+    .section .future-card:hover > div:last-child > svg
+  ) {
+    translate: 2px -2px;
+  }
+}
+[data-motion="paused"]
+  :is(
+    .button,
+    .icon-button,
+    .animation-control,
+    .small-cta,
+    .journey-controls button,
+    .dimension-controls button,
+    .comparator-toolbar button,
+    .molecular-modes button,
+    .molecular-orbit-controls button,
+    .process-rail button,
+    .timeline-tabs button,
+    .text-link,
+    .hero-secondary,
+    .desktop-nav a,
+    .footer-grid a,
+    .why-card,
+    .future-card
+  ) {
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    .button,
+    .icon-button,
+    .animation-control,
+    .small-cta,
+    .journey-controls button,
+    .dimension-controls button,
+    .comparator-toolbar button,
+    .molecular-modes button,
+    .molecular-orbit-controls button,
+    .process-rail button,
+    .timeline-tabs button,
+    .text-link,
+    .hero-secondary,
+    .desktop-nav a,
+    .footer-grid a,
+    .why-card,
+    .future-card
+  ) {
+    transition: none;
+  }
+  .section :is(.why-card, .future-card):not(.cinema-assembly):hover,
+  .primary:hover {
+    transform: none;
+  }
+}

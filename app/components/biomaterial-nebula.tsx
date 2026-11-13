@@ -4,6 +4,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useLayoutEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import type { MolecularCanvasProps } from "./molecular-scene";
+import { motionDuration, gsapEase } from "./motion-system";
 
 type Atom = {
   position: THREE.Vector3;
@@ -51,8 +52,8 @@ function makeNetwork(width: number, height: number): Network {
   const atoms: Atom[] = [];
   const links: Link[] = [];
   const mobile = width < height;
-  const strands = mobile ? 6 : 9;
-  const units = mobile ? 10 : 13;
+  const strands = mobile ? 3 : 4;
+  const units = 8;
   const chains: number[][] = [];
   for (let side = 0; side < 2; side++) {
     const direction = side === 0 ? -1 : 1;
@@ -65,7 +66,7 @@ function makeNetwork(width: number, height: number): Network {
       const extent = 0.67 + random() * 0.25;
       const lane = (strand / (strands - 1) - 0.5) * 0.2;
       const radius =
-        (0.19 + random() * 0.075) * (strand === strands - 1 ? 1.24 : 1);
+        (0.25 + random() * 0.065) * (strand === strands - 1 ? 1.24 : 1);
       const path = (t: number) => {
         const progress = start + t * extent;
         return new THREE.Vector3(
@@ -118,7 +119,7 @@ function makeNetwork(width: number, height: number): Network {
           ring.push(
             add(
               position,
-              (vertex === 2 ? 0.059 : 0.039) * (depth > 0 ? 1.1 : 0.9),
+              (vertex === 2 ? 0.075 : 0.052) * (depth > 0 ? 1.1 : 0.9),
               vertex === 2 ? tint : pale.clone().lerp(tint, random() * 0.45),
             ),
           );
@@ -204,12 +205,16 @@ function useChapterSample(active: boolean) {
       );
       let chapter = Math.max(0, declared);
       let preceding = chapter;
+      let precedingTop = -Infinity;
       let containsReadingLine = false;
       // contacto is nested in equipo and deliberately takes precedence.
       sections.forEach((section, index) => {
         if (!section) return;
         const bounds = section.getBoundingClientRect();
-        if (bounds.top <= readingLine) preceding = index;
+        if (bounds.top <= readingLine && bounds.top > precedingTop) {
+          preceding = index;
+          precedingTop = bounds.top;
+        }
         if (bounds.top <= readingLine && bounds.bottom > readingLine) {
           chapter = index;
           containsReadingLine = true;
@@ -253,6 +258,7 @@ const morphShader = /* glsl */ `
   uniform float uPreviousProgress;
   uniform float uWidth;
   uniform float uHeight;
+  uniform vec3 uPointer;
   const float TAU = 6.28318530718;
   vec3 chapterPosition(vec3 center, vec3 local, vec4 m, float chapter, float q) {
     float side = m.x, lane = m.y, t = m.z;
@@ -360,7 +366,20 @@ const morphShader = /* glsl */ `
       c.x += (lane - 0.5) * uWidth * 0.075;
       detail *= 0.83;
     }
-    return c + detail;
+    vec3 result = c + detail;
+    // The local field bends actual linked structures near the pointer. Atoms
+    // and both bond endpoints share it, so this is not a camera-only effect.
+    vec2 offset = result.xy - uPointer.xy;
+    float radius = max(1.35, min(uWidth, uHeight) * 0.26);
+    float field = exp(-dot(offset, offset) / (radius * radius)) * uPointer.z;
+    float radial = -0.12 + sin(uTime * 0.7 + lane * 4.0) * 0.18;
+    vec2 orbit = vec2(-offset.y, offset.x) * (0.1 * side);
+    result.xy += (offset * radial + orbit) * field;
+    result.z += sin(t * 5.0 + clock + lane * 3.0) * field * 0.48;
+    // Small traveling torsion keeps every chain alive between scroll events.
+    result += vec3(sin(t * 8.0 + clock + phase),
+      cos(t * 6.0 - clock * 0.8 + phase), sin(t * 7.0 + clock * 0.6)) * 0.035;
+    return result;
   }
   float chapterVisibility(vec4 m, float chapter, float q) {
     if (chapter > 4.5 && chapter < 5.5 && m.x < 0.0)
@@ -410,7 +429,8 @@ const atomVertex = /* glsl */ `
   void main() {
     vec3 center = materialPosition(aCenter, aOffset, aMeta);
     vec4 viewPosition = modelViewMatrix * vec4(center + position * aRadius, 1.0);
-    vColor = aColor;
+    float localLight = max(0.0, 1.0 - length(center.xy - uPointer.xy) / max(1.35, min(uWidth, uHeight) * 0.26)) * uPointer.z;
+    vColor = aColor * (1.0 + localLight * 0.38);
     vNormal = normalize(normalMatrix * normal);
     vVisibility = materialVisibility(aMeta);
     vDepth = 1.0 - smoothstep(8.0, 34.0, -viewPosition.z);
@@ -423,8 +443,11 @@ const atomFragment = /* glsl */ `
   varying float vVisibility;
   varying float vDepth;
   void main() {
+    // Zero-alpha geometry contributes neither color nor depth (depthWrite=false).
+    if (vVisibility <= 0.0 || vDepth <= 0.0) discard;
     float light = 0.4 + max(dot(vNormal, normalize(vec3(-0.4, 0.7, 1.0))), 0.0) * 0.6;
-    float rim = pow(1.0 - abs(vNormal.z), 2.0) * 0.3;
+    float edge = max(0.0, 1.0 - abs(vNormal.z));
+    float rim = edge * edge * 0.3;
     gl_FragColor = vec4(vColor * light + vColor * rim, 0.86 * vVisibility * vDepth);
     #include <colorspace_fragment>
   }
@@ -448,13 +471,14 @@ const bondVertex = /* glsl */ `
     vec3 direction = normalize(b - a + vec3(0.00001));
     vec3 across = normalize(cross(direction, abs(direction.y) > 0.96 ? vec3(1.0, 0.0, 0.0) : vec3(0.0, 1.0, 0.0)));
     vec3 forward = cross(direction, across);
-    float thickness = aKind > 1.5 ? 0.006 : 0.01;
+    float pulse = 0.88 + sin(uTime * 0.6 - aToMeta.z * 9.0 + aToMeta.y * TAU) * 0.12;
+    float thickness = (aKind > 1.5 ? 0.005 : 0.009) * pulse;
     vec3 transformed = mix(a, b, position.y + 0.5) + (across * position.x + forward * position.z) * thickness;
     vec4 viewPosition = modelViewMatrix * vec4(transformed, 1.0);
     float presence = mix(linkPresence(uFrom, uPreviousProgress, aKind, aToMeta),
       linkPresence(uTo, uProgress, aKind, aToMeta), uBlend);
     vColor = aColor;
-    vVisibility = min(materialVisibility(aFromMeta), materialVisibility(aToMeta)) * presence;
+    vVisibility = min(materialVisibility(aFromMeta), materialVisibility(aToMeta)) * presence * pulse;
     vDepth = 1.0 - smoothstep(8.0, 34.0, -viewPosition.z);
     gl_Position = projectionMatrix * viewPosition;
   }
@@ -464,10 +488,126 @@ const bondFragment = /* glsl */ `
   varying float vVisibility;
   varying float vDepth;
   void main() {
+    // Zero-alpha geometry contributes neither color nor depth (depthWrite=false).
+    if (vVisibility <= 0.0 || vDepth <= 0.0) discard;
     gl_FragColor = vec4(vColor, 0.46 * vVisibility * vDepth);
     #include <colorspace_fragment>
   }
 `;
+// Geometry is evaluated only when a chapter changes. The economy GPU path
+// blends four prepared layouts instead of compiling/evaluating all 15 shapes.
+const economyMorphShader = /* glsl */ `
+  attribute vec3 aFrom0;
+  attribute vec3 aFrom1;
+  attribute vec3 aTo0;
+  attribute vec3 aTo1;
+  uniform float uTime, uFrom, uTo, uBlend, uProgress, uPreviousProgress;
+  uniform float uWidth, uHeight;
+  uniform vec3 uPointer;
+  vec3 economyPosition(vec4 meta) {
+    vec3 before = mix(aFrom0, aFrom1, clamp(uPreviousProgress, 0.0, 1.0));
+    vec3 after = mix(aTo0, aTo1, clamp(uProgress, 0.0, 1.0));
+    vec3 p = mix(before, after, uBlend);
+    float phase = meta.y * 6.2831853 + meta.x * 0.8;
+    p += vec3(sin(meta.z * 7.0 + uTime * 0.12 + phase),
+      cos(meta.z * 5.0 - uTime * 0.1 + phase),
+      sin(meta.z * 6.0 + uTime * 0.09)) * 0.065;
+    vec2 offset = p.xy - uPointer.xy;
+    float radius = max(1.35, min(uWidth, uHeight) * 0.26);
+    float field = max(0.0, 1.0 - dot(offset, offset) / (radius * radius)) * uPointer.z;
+    float radial = -0.12 + sin(uTime * 0.7 + meta.y * 4.0) * 0.18;
+    p.xy += (offset * radial + vec2(-offset.y, offset.x) * 0.1 * meta.x) * field;
+    p.z += field * 0.24;
+    return p;
+  }
+  float economyPresence(vec4 meta, float chapter, float progress) {
+    if (chapter > 4.5 && chapter < 5.5 && meta.x < 0.0)
+      return smoothstep(meta.z - 0.09, meta.z + 0.06, max(0.0, progress * 2.0 - 0.65));
+    if (chapter > 5.5 && chapter < 6.5)
+      return smoothstep(min(4.0, floor(meta.z * 4.999)) / 5.0 - 0.08,
+        min(4.0, floor(meta.z * 4.999)) / 5.0 + 0.04, progress);
+    if (chapter > 10.5 && chapter < 11.5)
+      return smoothstep(meta.z - 0.15, meta.z + 0.03, 0.22 + progress * 0.9);
+    return 1.0;
+  }
+  float economyVisibility(vec4 meta) {
+    return mix(economyPresence(meta, uFrom, uPreviousProgress),
+      economyPresence(meta, uTo, uProgress), uBlend);
+  }
+`;
+
+/** Economy atoms retain spherical lighting, perspective and soft halos, while
+ * evaluating the chapter field once per atom rather than per sphere vertex. */
+const pointAtomVertex = /* glsl */ `
+  attribute vec3 aCenter;
+  attribute vec3 aOffset;
+  attribute vec4 aMeta;
+  attribute vec3 aColor;
+  attribute float aRadius;
+  uniform float uProjectionScale;
+  varying vec3 vColor;
+  varying float vVisibility;
+  varying float vDepth;
+  ${economyMorphShader}
+  void main() {
+    vec3 center = economyPosition(aMeta);
+    vec4 viewPosition = modelViewMatrix * vec4(center, 1.0);
+    float localLight = max(0.0, 1.0 - length(center.xy - uPointer.xy) / max(1.35, min(uWidth, uHeight) * 0.26)) * uPointer.z;
+    vColor = aColor * (1.0 + localLight * 0.38);
+    vVisibility = economyVisibility(aMeta);
+    vDepth = 1.0 - smoothstep(8.0, 34.0, -viewPosition.z);
+    gl_PointSize = clamp(aRadius * 4.0 * uProjectionScale / max(0.1, -viewPosition.z), 2.0, 26.0);
+    gl_Position = projectionMatrix * viewPosition;
+  }
+`;
+const pointAtomFragment = /* glsl */ `
+  varying vec3 vColor;
+  varying float vVisibility;
+  varying float vDepth;
+  void main() {
+    // Zero-alpha geometry contributes neither color nor depth (depthWrite=false).
+    if (vVisibility <= 0.0 || vDepth <= 0.0) discard;
+    vec2 p = gl_PointCoord * 2.0 - 1.0;
+    float radius = dot(p, p);
+    if (radius > 1.0) discard;
+    vec2 surface = p * 2.0;
+    float core = 1.0 - smoothstep(0.24, 0.29, radius);
+    vec3 normal = vec3(surface, sqrt(max(0.0, 1.0 - radius * 4.0)));
+    float diffuse = max(dot(normal, vec3(-0.35, 0.55, 0.76)), 0.0);
+    float specular = pow(max(dot(normal, vec3(-0.18, 0.3, 0.937)), 0.0), 18.0);
+    float halo = exp(-radius * 7.0) * 0.19;
+    vec3 color = vColor * (0.36 + diffuse * 0.7) + vec3(0.6, 0.83, 1.0) * specular * 0.45 * core;
+    gl_FragColor = vec4(color, (core * 0.86 + halo) * vVisibility * vDepth);
+    #include <colorspace_fragment>
+  }
+`;
+const lineBondVertex = /* glsl */ `
+  attribute vec4 aMeta;
+  attribute vec3 aColor;
+  varying vec3 vColor;
+  varying float vVisibility;
+  varying float vDepth;
+  ${economyMorphShader}
+  void main() {
+    vec4 viewPosition = modelViewMatrix * vec4(economyPosition(aMeta), 1.0);
+    vColor = aColor;
+    vVisibility = economyVisibility(aMeta);
+    vDepth = 1.0 - smoothstep(8.0, 34.0, -viewPosition.z);
+    gl_Position = projectionMatrix * viewPosition;
+  }
+`;
+const lineBondFragment = /* glsl */ `
+  varying vec3 vColor;
+  varying float vVisibility;
+  varying float vDepth;
+  void main() {
+    // Zero-alpha geometry contributes neither color nor depth (depthWrite=false).
+    if (vVisibility <= 0.0 || vDepth <= 0.0) discard;
+    gl_FragColor = vec4(vColor, 0.32 * vVisibility * vDepth);
+    #include <colorspace_fragment>
+  }
+`;
+
 const haloVertex = /* glsl */ `
   attribute vec3 aCenter;
   attribute vec3 aOffset;
@@ -493,6 +633,8 @@ const haloFragment = /* glsl */ `
   varying float vVisibility;
   varying float vDepth;
   void main() {
+    // Zero-alpha geometry contributes neither color nor depth (depthWrite=false).
+    if (vVisibility <= 0.0 || vDepth <= 0.0) discard;
     vec2 p = gl_PointCoord * 2.0 - 1.0;
     float radius = dot(p, p);
     if (radius > 1.0) discard;
@@ -502,9 +644,14 @@ const haloFragment = /* glsl */ `
   }
 `;
 const mistVertex = /* glsl */ `
-  varying vec2 vUv;
+  uniform vec4 uShape;
+  varying vec2 vField;
   void main() {
-    vUv = uv;
+    // Affine UV rotation belongs to four plane vertices, not every pixel.
+    // Perspective-correct interpolation preserves the same fragment field.
+    vec2 p = (uv - 0.5) * 2.0;
+    float c = cos(uShape.x), s = sin(uShape.x);
+    vField = mat2(c, -s, s, c) * p;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
 `;
@@ -514,43 +661,179 @@ const mistFragment = /* glsl */ `
   uniform float uOpacity;
   uniform vec3 uColor;
   uniform vec4 uShape;
-  varying vec2 vUv;
-  float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+  varying vec2 vField;
+  float hash(vec2 p) {
+    vec3 p3 = fract(vec3(p.xyx) * 0.1031);
+    p3 += dot(p3, p3.yzx + 33.33);
+    return fract((p3.x + p3.y) * p3.z);
+  }
   float noise(vec2 p) {
     vec2 i = floor(p), f = fract(p);
     f = f * f * (3.0 - 2.0 * f);
     return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), f.x),
       mix(hash(i + vec2(0.0, 1.0)), hash(i + 1.0), f.x), f.y);
   }
-  float cloud(vec2 p) {
-    float value = 0.0, amplitude = 0.52;
-    mat2 turn = mat2(0.8, -0.6, 0.6, 0.8);
-    for (int i = 0; i < 3; i++) {
-      value += noise(p) * amplitude;
-      p = turn * p * 2.03 + vec2(4.7, 9.2);
-      amplitude *= 0.49;
-    }
-    // Preserve the four-octave amplitude while avoiding its finest noise pass.
-    return value * 1.068;
-  }
   void main() {
-    vec2 p = (vUv - 0.5) * 2.0;
-    float angle = uShape.x;
-    p = mat2(cos(angle), -sin(angle), sin(angle), cos(angle)) * p;
-    float edge = pow(max(0.0, 1.0 - dot(p * vec2(0.78, 0.86), p * vec2(0.78, 0.86))), 1.8);
+    vec2 p = vField;
+    float edge = max(0.0, 1.0 - dot(p * vec2(0.78, 0.86), p * vec2(0.78, 0.86)));
     if (edge <= 0.0) discard;
-    vec2 drift = vec2(uTime * 0.009, -uTime * 0.014);
-    vec2 warp = vec2(cloud(p * 1.8 + uSeed + drift), cloud(p * 1.9 - uSeed - drift)) - 0.5;
-    float detail = cloud(p * vec2(3.5, 4.5) + warp * uShape.z + drift + uSeed);
-    float spine = p.x + sin(p.y * 3.4 + uSeed + uTime * 0.025) * 0.25 + warp.x * 0.46;
+    edge *= edge;
+    vec2 drift = vec2(uTime * 0.012, -uTime * 0.009);
+    // Two low-frequency noise passes replace nine nested octaves. The haze is
+    // deliberately soft; detailed geometry supplies the sharp molecular layer.
+    float low = noise(p * vec2(2.4, 3.2) + drift + uSeed);
+    float high = noise(p * vec2(5.1, 6.2) - drift * 0.7 + low * 0.65 + uSeed);
+    float detail = low * 0.72 + high * 0.28;
+    float spine = p.x + sin(p.y * 2.8 + uSeed + uTime * 0.035) * 0.22 + (low - 0.5) * (0.15 + uShape.z * 0.08);
     float envelope = exp(-spine * spine * uShape.y);
-    float density = smoothstep(0.23, 0.79, detail) * envelope * edge;
-    float folds = smoothstep(0.42, 0.78, detail) * 0.45;
-    vec3 color = mix(uColor * 0.38, uColor, detail + folds);
-    gl_FragColor = vec4(color, density * uOpacity * uShape.w);
+    float density = smoothstep(0.19, 0.88, detail) * envelope * edge;
+    float beamAxis = p.x * 0.74 - p.y * 0.22;
+    float beam = exp(-beamAxis * beamAxis * 13.0) * edge;
+    vec3 color = uColor * (0.42 + detail * 0.58);
+    gl_FragColor = vec4(color, (density + beam * 0.13) * uOpacity * uShape.w);
+    #include <colorspace_fragment>
+  }
+
+`;
+
+const economyMistVertex = /* glsl */ `
+  uniform vec4 uShape;
+  varying vec2 vField;
+  void main() {
+    vec2 p = (uv - 0.5) * 2.0;
+    float angle = uShape.x;
+    vField = mat2(cos(angle), -sin(angle), sin(angle), cos(angle)) * p;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  }
+`;
+const economyMistFragment = /* glsl */ `
+  uniform vec4 uShape;
+  uniform vec4 uFlow;
+  varying vec2 vField;
+  void main() {
+    vec2 p = vField;
+    float edge = max(0.0, 1.0 - dot(p * vec2(0.74, 0.86), p * vec2(0.74, 0.86)));
+    if (edge <= 0.0) discard;
+    float curve = p.x + (p.y * p.y - 0.25) * uFlow.x + uFlow.y;
+    float ridge = 1.0 / (1.0 + curve * curve * (7.0 + uShape.y));
+    vec2 lobe = p - vec2(uFlow.z, 0.1);
+    float veil = 1.0 / (1.0 + dot(lobe, lobe) * 3.5);
+    float density = (ridge * 0.65 + veil * 0.35) * edge * edge;
+    vec3 color = mix(vec3(0.022, 0.19, 0.13), vec3(0.025, 0.12, 0.32), smoothstep(-0.65, 0.65, p.x));
+    gl_FragColor = vec4(color, density * 0.32 * uShape.w);
     #include <colorspace_fragment>
   }
 `;
+
+/** A conceptual chapter pose; evaluated at two progress endpoints, not per frame. */
+function economyLayout(
+  network: Network,
+  width: number,
+  height: number,
+  chapter: number,
+  q: number,
+) {
+  const values = new Float32Array(network.atoms.length * 3);
+  for (let index = 0; index < network.atoms.length; index++) {
+    const atom = network.atoms[index];
+    const [side, lane, t] = atom.meta;
+    const phase = lane * TAU + side * 0.8;
+    let x = atom.center.x,
+      y = atom.center.y,
+      z = atom.center.z;
+    let dx = atom.position.x - x,
+      dy = atom.position.y - y,
+      dz = atom.position.z - z;
+    if (chapter === 0) {
+      x += Math.sin(t * TAU + phase) * width * 0.045;
+      y += Math.cos(t * 7 + phase) * height * 0.045;
+      z += Math.sin(t * 5 + phase) * 1.15 + q * 1.4;
+    } else if (chapter === 1) {
+      const scatter = 1 - q;
+      x += Math.sin(t * 37 + phase) * width * 0.19 * scatter;
+      y += Math.cos(t * 29 + phase) * height * 0.22 * scatter;
+      z += Math.sin(t * 19 - phase) * 3.3 * scatter;
+    } else if (chapter === 2 || chapter === 4) {
+      x =
+        (1 - q) * side * width * (0.34 + lane * 0.08) +
+        q * (t - 0.5) * width * 0.94;
+      y =
+        (1 - q) * (t - 0.5) * height * 1.18 +
+        q * ((lane - 0.5) * height * 0.57 + side * 0.045);
+      z =
+        (1 - q) * (lane - 0.5) * 5.5 +
+        q * (side * 0.13 + Math.sin(t * 8 + lane * 3) * 0.12);
+      dz *= 1 - q * 0.86;
+      dx *= 1 - q * 0.19;
+      dy *= 1 - q * 0.19;
+    } else if (chapter === 3) {
+      const angle = t * TAU * 0.88 + side * 0.5;
+      x = Math.cos(angle) * width * (0.18 + lane * 0.25);
+      y = Math.sin(angle) * height * (0.19 + lane * 0.25);
+      z = Math.sin(lane * TAU + t * 8) * 1.5 + side * 0.4;
+    } else if (chapter === 5) {
+      const angle = t * TAU * 0.65 + phase * 0.16;
+      x = side * width * (0.22 + lane * 0.13) + Math.cos(angle) * width * 0.06;
+      y = (t - 0.5) * height * 1.06;
+      z = Math.sin(angle) * 2.2 + (lane - 0.5) * 2.6;
+    } else if (chapter === 6) {
+      const stage = Math.min(4, Math.floor(t * 4.999));
+      const angle = lane * TAU + side * 0.6;
+      x = (stage / 4 - 0.5) * width * 0.87 + Math.cos(angle) * width * 0.042;
+      y =
+        Math.sin(stage * 1.55) * height * 0.21 +
+        Math.sin(angle) * height * 0.055 +
+        side * 0.06;
+      z = (((t * 4.999) % 1) - 0.5) * 1.1 + Math.cos(angle) * 0.75;
+    } else if (chapter === 7) {
+      const angle = t * TAU * 1.7 + lane * 0.8 + side * Math.PI;
+      x = Math.cos(angle) * width * (0.18 + lane * 0.12);
+      y = Math.sin(angle) * height * (0.2 + lane * 0.12);
+      z = (t - 0.5) * 17 + q * 4.5 - 2;
+    } else if (chapter === 8) {
+      x =
+        side * width * 0.28 +
+        Math.sin(t * TAU) * width * 0.09 +
+        side * Math.sin(lane * Math.PI) * width * 0.07;
+      y = (t - 0.5) * height * 1.08;
+      z = Math.cos(t * TAU) * 1.65 + (lane - 0.5) * 2.5;
+    } else if (chapter === 9) {
+      const growth = 0.3 + q * 0.7;
+      x = side * width * (0.07 + t * (0.17 + lane * 0.25) * growth);
+      y = (t - 0.5) * height * 1.08;
+      z = Math.sin(t * 5 + lane * 5) * (0.4 + t * 1.9);
+    } else if (chapter === 10) {
+      const angle = (t - 0.5) * TAU * (0.32 + q * 0.68) + (side * Math.PI) / 2;
+      x = Math.cos(angle) * width * (0.15 + lane * 0.31);
+      y = Math.sin(angle) * height * (0.15 + lane * 0.31) * 1.3;
+      z = Math.sin(t * TAU + phase) * 1.6 + (lane - 0.5) * 1.7;
+    } else if (chapter === 11) {
+      const angle = lane * TAU + side * 0.19 + Math.sin(t * 4) * 0.17;
+      const reach = t * (0.35 + q * 0.65);
+      x = Math.cos(angle) * width * 0.48 * reach;
+      y = Math.sin(angle) * height * 0.57 * reach;
+      z = Math.sin(angle * 2 + t * 5) * t * 1.55;
+    } else if (chapter === 12) {
+      const angle = t * TAU + phase * 0.14;
+      x = side * width * 0.23 + Math.cos(angle) * width * (0.1 + lane * 0.07);
+      y = Math.sin(angle) * height * (0.24 + lane * 0.09);
+      z = Math.sin(angle * 2 + phase) * 1.25;
+    } else {
+      const contact = chapter === 14 ? 1 : 0;
+      x =
+        side *
+          width *
+          (0.31 + Math.sin(t * Math.PI) * (0.1 - contact * 0.035)) +
+        (lane - 0.5) * width * 0.075;
+      y = (0.5 - t) * height * 1.12;
+      z = (lane - 0.5) * 3.4 + Math.sin(t * 6) * 0.35;
+    }
+    values[index * 3] = x + dx;
+    values[index * 3 + 1] = y + dy;
+    values[index * 3 + 2] = z + dz;
+  }
+  return values;
+}
 
 function atomAttributes(network: Network, instanced: boolean) {
   const count = network.atoms.length;
@@ -582,19 +865,63 @@ function atomAttributes(network: Network, instanced: boolean) {
   };
 }
 
-function makeGeometries(network: Network) {
+function makeGeometries(
+  network: Network,
+  economy: boolean,
+  width: number,
+  height: number,
+) {
+  if (economy) {
+    const atoms = new THREE.BufferGeometry();
+    Object.entries(atomAttributes(network, false)).forEach(([name, value]) =>
+      atoms.setAttribute(name, value),
+    );
+    atoms.setAttribute(
+      "position",
+      new THREE.BufferAttribute(new Float32Array(network.atoms.length * 3), 3),
+    );
+    const start = economyLayout(network, width, height, 0, 0);
+    const end = economyLayout(network, width, height, 0, 1);
+    for (const [name, array] of [
+      ["aFrom0", start],
+      ["aFrom1", end],
+      ["aTo0", start.slice()],
+      ["aTo1", end.slice()],
+    ] as const)
+      atoms.setAttribute(
+        name,
+        new THREE.BufferAttribute(array, 3).setUsage(THREE.DynamicDrawUsage),
+      );
+    const bonds = new THREE.BufferGeometry();
+    for (const [name, attribute] of Object.entries(atoms.attributes))
+      bonds.setAttribute(name, attribute);
+    const indices = new Uint16Array(network.links.length * 2);
+    network.links.forEach((link, index) => {
+      indices[index * 2] = link.from;
+      indices[index * 2 + 1] = link.to;
+    });
+    bonds.setIndex(new THREE.BufferAttribute(indices, 1));
+    return { atoms, bonds, halos: new THREE.BufferGeometry() };
+  }
   // Low-poly instances keep the shared, full-screen backdrop affordable.
   const atoms = new THREE.SphereGeometry(1, 6, 4);
   Object.entries(atomAttributes(network, true)).forEach(([name, value]) =>
     atoms.setAttribute(name, value),
   );
   const halos = new THREE.BufferGeometry();
-  Object.entries(atomAttributes(network, false)).forEach(([name, value]) =>
+  const haloNetwork = {
+    atoms: network.atoms.filter((_, index) => index % 3 === 0),
+    links: [],
+  };
+  Object.entries(atomAttributes(haloNetwork, false)).forEach(([name, value]) =>
     halos.setAttribute(name, value),
   );
   halos.setAttribute(
     "position",
-    new THREE.BufferAttribute(new Float32Array(network.atoms.length * 3), 3),
+    new THREE.BufferAttribute(
+      new Float32Array(haloNetwork.atoms.length * 3),
+      3,
+    ),
   );
   const bonds = new THREE.CylinderGeometry(1, 1, 1, 4, 1, true);
   const data: Record<string, { values: Float32Array; size: number }> = {};
@@ -658,15 +985,66 @@ const CLOUD_SHAPES: [number, number, number, number][] = [
 export default function BiomaterialNebula({
   active,
   interaction,
-}: Pick<MolecularCanvasProps, "active" | "interaction">) {
+  economy = false,
+}: Pick<MolecularCanvasProps, "active" | "interaction"> & {
+  economy?: boolean;
+}) {
   const viewport = useThree((state) => state.viewport);
   const camera = useThree((state) => state.camera);
   const size = useThree((state) => state.size);
   const pixelRatio = useThree((state) => state.viewport.dpr);
+  const gl = useThree((state) => state.gl);
   const width = viewport.width,
     height = viewport.height;
   const network = useMemo(() => makeNetwork(width, height), [width, height]);
-  const geometries = useMemo(() => makeGeometries(network), [network]);
+  const geometries = useMemo(
+    () => makeGeometries(network, economy, width, height),
+    [network, economy],
+  );
+  const economyCache = useMemo(
+    () => new Map<number, [Float32Array, Float32Array]>(),
+    [network, width, height],
+  );
+  const prepared = useRef({
+    geometry: null as THREE.BufferGeometry | null,
+    from: -1,
+    to: -1,
+  });
+  const prepareEconomy = (from: number, to: number) => {
+    if (
+      !economy ||
+      (prepared.current.geometry === geometries.atoms &&
+        prepared.current.from === from &&
+        prepared.current.to === to)
+    )
+      return;
+    const get = (chapter: number) => {
+      let data = economyCache.get(chapter);
+      if (!data) {
+        data = [
+          economyLayout(network, width, height, chapter, 0),
+          economyLayout(network, width, height, chapter, 1),
+        ];
+        economyCache.set(chapter, data);
+      }
+      return data;
+    };
+    const before = get(from),
+      after = get(to);
+    for (const [name, data] of [
+      ["aFrom0", before[0]],
+      ["aFrom1", before[1]],
+      ["aTo0", after[0]],
+      ["aTo1", after[1]],
+    ] as const) {
+      const attribute = geometries.atoms.getAttribute(
+        name,
+      ) as THREE.BufferAttribute;
+      (attribute.array as Float32Array).set(data);
+      attribute.needsUpdate = true;
+    }
+    prepared.current = { geometry: geometries.atoms, from, to };
+  };
   const sample = useChapterSample(active);
   const matter = useRef<THREE.Group>(null),
     atmosphere = useRef<THREE.Group>(null);
@@ -680,7 +1058,7 @@ export default function BiomaterialNebula({
   const mistMaterials = useRef<(THREE.ShaderMaterial | null)[]>([]);
   const projectionScale = useRef(1);
   const elapsed = useRef(0),
-    pointer = useRef({ x: 0, y: 0 });
+    pointer = useRef({ x: 0, y: 0, fieldX: 0, fieldY: 0, strength: 0 });
   const transition = useRef({
     from: 0,
     to: 0,
@@ -699,9 +1077,11 @@ export default function BiomaterialNebula({
       uWidth: { value: width },
       uHeight: { value: height },
       uProjectionScale: { value: 1 },
+      uPointer: { value: new THREE.Vector3() },
     }),
     [],
   );
+  const flow = useMemo(() => new THREE.Vector4(), []);
   const cloudShape = useMemo(() => new THREE.Vector4(...CLOUD_SHAPES[0]), []);
   const mistUniforms = useMemo(
     () => [
@@ -711,6 +1091,7 @@ export default function BiomaterialNebula({
         uOpacity: { value: 0.42 },
         uColor: { value: new THREE.Color("#23b99c") },
         uShape: { value: cloudShape },
+        uFlow: { value: flow },
       },
       {
         uTime: { value: 0 },
@@ -718,6 +1099,7 @@ export default function BiomaterialNebula({
         uOpacity: { value: 0.5 },
         uColor: { value: new THREE.Color("#267ee9") },
         uShape: { value: cloudShape },
+        uFlow: { value: flow },
       },
       {
         uTime: { value: 0 },
@@ -725,9 +1107,10 @@ export default function BiomaterialNebula({
         uOpacity: { value: 0.13 },
         uColor: { value: new THREE.Color("#43c9bd") },
         uShape: { value: cloudShape },
+        uFlow: { value: flow },
       },
     ],
-    [cloudShape],
+    [cloudShape, flow],
   );
   const mist = useMemo(
     () => [
@@ -750,6 +1133,7 @@ export default function BiomaterialNebula({
     [width, height, mistUniforms],
   );
   useLayoutEffect(() => {
+    prepareEconomy(transition.current.from, transition.current.to);
     const fov = camera instanceof THREE.PerspectiveCamera ? camera.fov : 48;
     projectionScale.current =
       (size.height * pixelRatio) /
@@ -760,9 +1144,36 @@ export default function BiomaterialNebula({
           projectionScale.current;
         material.current.uniforms.uWidth.value = width;
         material.current.uniforms.uHeight.value = height;
+        material.current.uniforms.uTime.value = elapsed.current;
+        material.current.uniforms.uFrom.value = transition.current.from;
+        material.current.uniforms.uTo.value = transition.current.to;
+        material.current.uniforms.uBlend.value = gsapEase.editorial(
+          transition.current.mix,
+        );
+        material.current.uniforms.uProgress.value = transition.current.progress;
+        material.current.uniforms.uPreviousProgress.value =
+          transition.current.previousProgress;
+        material.current.uniforms.uPointer.value.set(
+          pointer.current.fieldX,
+          pointer.current.fieldY,
+          pointer.current.strength,
+        );
       }
     }
-  }, [camera, pixelRatio, size.height, width, height, networkMaterials]);
+    gl.domElement.dataset.graphicsPrimitives = economy
+      ? "points-lines"
+      : "volumetric-meshes";
+  }, [
+    camera,
+    pixelRatio,
+    size.height,
+    width,
+    height,
+    networkMaterials,
+    economy,
+    gl,
+    geometries,
+  ]);
   useEffect(
     () => () => {
       geometries.atoms.dispose();
@@ -776,7 +1187,7 @@ export default function BiomaterialNebula({
     // Pausing freezes every uniform and transform, including chapter morphs,
     // pointer smoothing and longitudinal travel. The parent owns the clock.
     if (!active || !matter.current || !atmosphere.current) return;
-    const step = Math.min(delta, 0.06),
+    const step = Math.min(delta, 0.1),
       manual = interaction?.current;
     if (manual?.reset) {
       elapsed.current = 0;
@@ -784,18 +1195,34 @@ export default function BiomaterialNebula({
     }
     elapsed.current += step;
     const time = elapsed.current,
-      smoothing = 1 - Math.exp(-step * 2.6);
+      smoothing = 1 - Math.exp(-Math.min(delta, 0.25) * 2.6);
     const current = transition.current,
       target = sample.current;
-    if (current.to !== target.chapter) {
-      current.from = current.mix > 0.5 ? current.to : current.from;
+    // Finish the current geometric blend before accepting the latest chapter.
+    // Fast scrolling queues only the newest destination instead of snapping
+    // an intermediate structure back to an earlier, discrete shape.
+    if (current.to !== target.chapter && current.mix >= 1) {
+      current.from = current.to;
       current.previousProgress = current.progress;
       current.to = target.chapter;
       current.mix = 0;
     }
-    current.mix = Math.min(1, current.mix + step * 0.72);
-    current.progress += (target.progress - current.progress) * smoothing;
-    const blend = current.mix * current.mix * (3 - 2 * current.mix);
+    prepareEconomy(current.from, current.to);
+    current.mix = Math.min(
+      1,
+      current.mix + Math.min(delta, 0.22) / motionDuration.chapter,
+    );
+    if (current.to === target.chapter)
+      current.progress += (target.progress - current.progress) * smoothing;
+    const blend = gsapEase.editorial(current.mix);
+    pointer.current.fieldX +=
+      ((manual?.pointerX || 0) * width * 0.5 - pointer.current.fieldX) *
+      smoothing;
+    pointer.current.fieldY +=
+      ((manual?.pointerY || 0) * height * 0.5 - pointer.current.fieldY) *
+      smoothing;
+    pointer.current.strength +=
+      ((manual?.pointerStrength || 0) - pointer.current.strength) * smoothing;
     // Fiber preserves its own uniform wrappers, so write to the mounted
     // ShaderMaterials rather than mutating the declarative source wrappers.
     for (const material of networkMaterials) {
@@ -810,6 +1237,11 @@ export default function BiomaterialNebula({
       actual.uWidth.value = width;
       actual.uHeight.value = height;
       actual.uProjectionScale.value = projectionScale.current;
+      actual.uPointer.value.set(
+        pointer.current.fieldX,
+        pointer.current.fieldY,
+        pointer.current.strength,
+      );
     }
     pointer.current.x +=
       (THREE.MathUtils.clamp(manual?.x || 0, -0.12, 0.12) - pointer.current.x) *
@@ -844,21 +1276,28 @@ export default function BiomaterialNebula({
       THREE.MathUtils.lerp(fromShape[2], toShape[2], blend),
       THREE.MathUtils.lerp(fromShape[3], toShape[3], blend),
     );
+    flow.set(
+      Math.sin(time * 0.018) * 0.3,
+      Math.cos(time * 0.014) * 0.12,
+      Math.sin(time * 0.02) * 0.26,
+      0,
+    );
     for (const material of mistMaterials.current) {
       if (!material) continue;
       material.uniforms.uTime.value = time;
       material.uniforms.uShape.value.copy(cloudShape);
+      material.uniforms.uFlow.value.copy(flow);
     }
   });
 
   return (
     <>
       <group ref={atmosphere}>
-        {mist.map((layer, index) => (
+        {(economy ? mist.slice(0, 1) : mist).map((layer, index) => (
           <mesh
             key={index}
-            position={layer.position}
-            scale={layer.scale}
+            position={economy ? [0, 0, -4.8] : layer.position}
+            scale={economy ? [width * 1.8, height * 1.8, 1] : layer.scale}
             renderOrder={-3}
           >
             <planeGeometry args={[1, 1]} />
@@ -867,8 +1306,8 @@ export default function BiomaterialNebula({
                 mistMaterials.current[index] = material;
               }}
               uniforms={layer.uniforms}
-              vertexShader={mistVertex}
-              fragmentShader={mistFragment}
+              vertexShader={economy ? economyMistVertex : mistVertex}
+              fragmentShader={economy ? economyMistFragment : mistFragment}
               transparent
               depthWrite={false}
               depthTest={false}
@@ -879,51 +1318,84 @@ export default function BiomaterialNebula({
         ))}
       </group>
       <group ref={matter}>
-        <instancedMesh
-          args={[geometries.bonds, undefined, network.links.length]}
-          frustumCulled={false}
-        >
-          <shaderMaterial
-            ref={bondsMaterial}
-            uniforms={uniforms}
-            vertexShader={bondVertex}
-            fragmentShader={bondFragment}
-            transparent
-            depthWrite={false}
-            toneMapped={false}
-          />
-        </instancedMesh>
-        <points
-          geometry={geometries.halos}
-          frustumCulled={false}
-          renderOrder={1}
-        >
-          <shaderMaterial
-            ref={haloMaterial}
-            uniforms={uniforms}
-            vertexShader={haloVertex}
-            fragmentShader={haloFragment}
-            transparent
-            depthWrite={false}
-            blending={THREE.AdditiveBlending}
-            toneMapped={false}
-          />
-        </points>
-        <instancedMesh
-          args={[geometries.atoms, undefined, network.atoms.length]}
-          frustumCulled={false}
-          renderOrder={2}
-        >
-          <shaderMaterial
-            ref={atomsMaterial}
-            uniforms={uniforms}
-            vertexShader={atomVertex}
-            fragmentShader={atomFragment}
-            transparent
-            depthWrite={false}
-            toneMapped={false}
-          />
-        </instancedMesh>
+        {economy ? (
+          <>
+            <lineSegments geometry={geometries.bonds} frustumCulled={false}>
+              <shaderMaterial
+                ref={bondsMaterial}
+                uniforms={uniforms}
+                vertexShader={lineBondVertex}
+                fragmentShader={lineBondFragment}
+                transparent
+                depthWrite={false}
+                toneMapped={false}
+              />
+            </lineSegments>
+            <points
+              geometry={geometries.atoms}
+              frustumCulled={false}
+              renderOrder={2}
+            >
+              <shaderMaterial
+                ref={atomsMaterial}
+                uniforms={uniforms}
+                vertexShader={pointAtomVertex}
+                fragmentShader={pointAtomFragment}
+                transparent
+                depthWrite={false}
+                toneMapped={false}
+              />
+            </points>
+          </>
+        ) : (
+          <>
+            <instancedMesh
+              args={[geometries.bonds, undefined, network.links.length]}
+              frustumCulled={false}
+            >
+              <shaderMaterial
+                ref={bondsMaterial}
+                uniforms={uniforms}
+                vertexShader={bondVertex}
+                fragmentShader={bondFragment}
+                transparent
+                depthWrite={false}
+                toneMapped={false}
+              />
+            </instancedMesh>
+            <points
+              geometry={geometries.halos}
+              frustumCulled={false}
+              renderOrder={1}
+            >
+              <shaderMaterial
+                ref={haloMaterial}
+                uniforms={uniforms}
+                vertexShader={haloVertex}
+                fragmentShader={haloFragment}
+                transparent
+                depthWrite={false}
+                blending={THREE.AdditiveBlending}
+                toneMapped={false}
+              />
+            </points>
+            <instancedMesh
+              args={[geometries.atoms, undefined, network.atoms.length]}
+              frustumCulled={false}
+              renderOrder={2}
+            >
+              <shaderMaterial
+                ref={atomsMaterial}
+                uniforms={uniforms}
+                vertexShader={atomVertex}
+                fragmentShader={atomFragment}
+                transparent
+                depthWrite={false}
+                toneMapped={false}
+              />
+            </instancedMesh>
+          </>
+        )}
       </group>
     </>
   );

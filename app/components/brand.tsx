@@ -15,7 +15,7 @@ export function Brand({
         width={1254}
         height={1254}
         className="official-brand-image"
-        sizes={hero ? "(max-width:650px) 150px, 200px" : "72px"}
+        sizes={hero ? "(max-width:650px) 56px, 66px" : "72px"}
         priority={hero}
       />
       {!hero && (

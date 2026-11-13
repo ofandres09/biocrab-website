@@ -1,4 +1,5 @@
 "use client";
+import { motionDuration, motionEase } from "./motion-system";
 
 import { useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
@@ -51,9 +52,9 @@ export function EvidenceCounters() {
     let cancelled = false;
     const controls = documentedFacts.map((fact, index) =>
       animate(0, fact.value, {
-        duration: 1.05,
-        delay: index * 0.1,
-        ease: "easeInOut",
+        duration: motionDuration.component,
+        delay: index * motionDuration.micro,
+        ease: motionEase.editorial,
         onUpdate: (value) => {
           if (!cancelled && values[index]) {
             values[index].textContent = String(Math.floor(value));

@@ -1,0 +1,1647 @@
+{
+  "release": "immersive-biomaterials-v9",
+  "buildId": "9BbkHSBRrtxGaKzplfom2",
+  "baselineCommit": "d7aa84bb4f369178a65142f7df578330bd9374fe",
+  "conditions": {
+    "renderer": "Chromium 154 / ANGLE SwiftShader (software), no physical GPU",
+    "lighthouse": "13.6.0 desktop preset, provided throttling, active WebGL, separate sequential browser sessions",
+    "sampling": "6-second requested idle and cold-scroll windows; slow frames can extend the actual window. Same absolute scroll formula; editorial layouts differ.",
+    "hardwareGpuUtilization": null,
+    "hardwareGpuUtilizationReason": "Not exposed by the software-rendered environment. CDP GPU-process CPU time is CPU, not hardware GPU utilization.",
+    "limitations": [
+      "Single local measurements, with short software-renderer samples and host variability; no universal 60 FPS or physical-phone certification.",
+      "Cold desktop scroll did not improve consistently; its full measurements remain in this evidence.",
+      "Per-program timer queries sample different geometry, resolutions and rendering paths. They are not an isolated same-shader A/B and must not be summed into frame time."
+    ]
+  },
+  "lighthouse": {
+    "before": {
+      "fetchTime": "2026-11-13T13:49:10.494Z",
+      "lighthouseVersion": "13.6.0",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "configSettings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 5250,
+        "pauseAfterLoadMs": 5250,
+        "networkQuietThresholdMs": 5250,
+        "cpuQuietThresholdMs": 5250,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "provided",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "scores": {
+        "performance": 35,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 738.518,
+          "unit": "millisecond"
+        },
+        "largest-contentful-paint": {
+          "value": 6379.048,
+          "unit": "millisecond"
+        },
+        "total-blocking-time": {
+          "value": 20667.703,
+          "unit": "millisecond"
+        },
+        "interactive": {
+          "value": 22487.627,
+          "unit": "millisecond"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.0005182695164543007,
+          "unit": "unitless"
+        },
+        "speed-index": {
+          "value": 8245,
+          "unit": "millisecond"
+        }
+      },
+      "mainThread": [
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 19425.07700000007
+        },
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 1672.951000000003
+        },
+        {
+          "group": "other",
+          "groupLabel": "Other",
+          "duration": 871.2329999999604
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 239.2530000000032
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 100.45200000000001
+        },
+        {
+          "group": "garbageCollection",
+          "groupLabel": "Garbage Collection",
+          "duration": 59.492999999999995
+        },
+        {
+          "group": "parseHTML",
+          "groupLabel": "Parse HTML & CSS",
+          "duration": 34.454
+        }
+      ],
+      "warnings": [],
+      "runtimeError": null
+    },
+    "after": {
+      "fetchTime": "2026-11-13T13:56:14.917Z",
+      "lighthouseVersion": "13.6.0",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "configSettings": {
+        "output": [
+          "json",
+          "html"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 5250,
+        "pauseAfterLoadMs": 5250,
+        "networkQuietThresholdMs": 5250,
+        "cpuQuietThresholdMs": 5250,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "provided",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "scores": {
+        "performance": 43,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 474.129,
+          "unit": "millisecond"
+        },
+        "largest-contentful-paint": {
+          "value": 3120.349,
+          "unit": "millisecond"
+        },
+        "total-blocking-time": {
+          "value": 13878.474999999997,
+          "unit": "millisecond"
+        },
+        "interactive": {
+          "value": 17349.567,
+          "unit": "millisecond"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.0007900669823729183,
+          "unit": "unitless"
+        },
+        "speed-index": {
+          "value": 4886,
+          "unit": "millisecond"
+        }
+      },
+      "mainThread": [
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 11637.457000000139
+        },
+        {
+          "group": "other",
+          "groupLabel": "Other",
+          "duration": 2852.4140000000234
+        },
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 1152.9600000000025
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 112.79000000001746
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 68.313
+        },
+        {
+          "group": "garbageCollection",
+          "groupLabel": "Garbage Collection",
+          "duration": 43.48299999999999
+        },
+        {
+          "group": "parseHTML",
+          "groupLabel": "Parse HTML & CSS",
+          "duration": 17.782
+        }
+      ],
+      "warnings": [],
+      "runtimeError": null
+    }
+  },
+  "rendering": {
+    "desktopBefore": {
+      "url": "http://127.0.0.1:3058",
+      "checkedAt": "2026-11-13T13:42:09.339Z",
+      "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 1440x1000; not physical-device certification",
+      "gpuHardwareLoad": null,
+      "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
+      "idle": {
+        "durationMs": 6293.399999976158,
+        "rafFps": 1.747862840442634,
+        "p95FrameMs": 683.3999999999978,
+        "renderers": [
+          {
+            "role": "backdrop",
+            "drawCalls": 60,
+            "submittedVertexOrIndexCount": 2844420,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 1.5889662185842126,
+            "diagnostics": {
+              "engine": "three.js r187"
+            },
+            "resolution": [
+              1440,
+              1000
+            ],
+            "css": [
+              1440,
+              1000
+            ]
+          },
+          {
+            "role": "explorer",
+            "drawCalls": 50,
+            "submittedVertexOrIndexCount": 828590,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 1.5889662185842126,
+            "diagnostics": {
+              "engine": "three.js r187"
+            },
+            "resolution": [
+              494,
+              249
+            ],
+            "css": [
+              495,
+              250
+            ]
+          }
+        ],
+        "cpu": {
+          "mainThreadTaskMs": 309.793,
+          "scriptMs": 29.186,
+          "layoutMs": 0,
+          "jsHeapUsedBytes": 13149112,
+          "processes": [
+            {
+              "type": "browser",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 340.0000000000003
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "GPU",
+              "cpuMs": 24710
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "cpuMs": 10.000000000000009
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "cpuMs": 0
+            }
+          ]
+        }
+      },
+      "scroll": {
+        "durationMs": 7451.5999999940395,
+        "rafFps": 0.8051961994745825,
+        "p95FrameMs": 2016.5999999999985,
+        "renderers": [
+          {
+            "role": "backdrop",
+            "drawCalls": 30,
+            "submittedVertexOrIndexCount": 1422210,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 0.6709968328954855,
+            "diagnostics": {
+              "engine": "three.js r187"
+            },
+            "resolution": [
+              1440,
+              1000
+            ],
+            "css": [
+              1440,
+              1000
+            ]
+          },
+          {
+            "role": "explorer",
+            "drawCalls": 5,
+            "submittedVertexOrIndexCount": 82859,
+            "gpuTimerQueryAvailable": false,
+            "renderFps": 0.1341993665790971,
+            "diagnostics": {
+              "engine": "three.js r187"
+            },
+            "resolution": [
+              494,
+              249
+            ],
+            "css": [
+              0,
+              0
+            ]
+          }
+        ],
+        "cpu": {
+          "mainThreadTaskMs": 3484.563,
+          "scriptMs": 2929.5159999999996,
+          "layoutMs": 22.137,
+          "jsHeapUsedBytes": 13828192,
+          "processes": [
+            {
+              "type": "browser",
+              "cpuMs": 60.00000000000006
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 879.9999999999999
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 89.99999999999986
+            },
+            {
+              "type": "GPU",
+              "cpuMs": 26810.000000000004
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "cpuMs": 10.000000000000009
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "cpuMs": 0
+            }
+          ]
+        }
+      }
+    },
+    "desktopAfter": {
+      "url": "http://127.0.0.1:3057",
+      "checkedAt": "2026-11-13T13:57:34.597Z",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 1440x1000; not physical-device certification",
+      "gpuHardwareLoad": null,
+      "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
+      "idle": {
+        "durationMs": 6096.0999999940395,
+        "rafFps": 5.0852184183380045,
+        "p95FrameMs": 283.3000000000029,
+        "renderers": [
+          {
+            "role": "backdrop",
+            "drawCalls": 90,
+            "submittedVertexOrIndexCount": 55740,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 4.921179114520649,
+            "diagnostics": {
+              "engine": "three.js r187",
+              "graphicsPrimitives": "points-lines",
+              "graphicsDpr": "0.85",
+              "graphicsQuality": "balanced",
+              "graphicsRenderer": "software",
+              "graphicsTargetDpr": "0.85",
+              "graphicsFrameMs": "193.1"
+            },
+            "resolution": [
+              1224,
+              850
+            ],
+            "css": [
+              1440,
+              1000
+            ]
+          },
+          {
+            "role": "explorer",
+            "drawCalls": 120,
+            "submittedVertexOrIndexCount": 1026000,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 4.921179114520649,
+            "diagnostics": {
+              "engine": "three.js r187",
+              "graphicsDpr": "0.85",
+              "graphicsQuality": "balanced",
+              "graphicsRenderer": "software",
+              "graphicsTargetDpr": "0.85",
+              "graphicsFrameMs": "213.5"
+            },
+            "resolution": [
+              790,
+              508
+            ],
+            "css": [
+              930,
+              598
+            ]
+          }
+        ],
+        "cpu": {
+          "mainThreadTaskMs": 836.011,
+          "scriptMs": 89.37,
+          "layoutMs": 0,
+          "jsHeapUsedBytes": 12397120,
+          "processes": [
+            {
+              "type": "browser",
+              "cpuMs": 20.000000000000018
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 710
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "GPU",
+              "cpuMs": 23439.999999999996
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "cpuMs": 0
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "cpuMs": 0
+            }
+          ]
+        }
+      },
+      "scroll": {
+        "durationMs": 10294.40000000596,
+        "rafFps": 0.5828411563565168,
+        "p95FrameMs": 3216.5,
+        "renderers": [
+          {
+            "role": "backdrop",
+            "drawCalls": 15,
+            "submittedVertexOrIndexCount": 9290,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 0.48570096363043064,
+            "diagnostics": {
+              "engine": "three.js r187",
+              "graphicsPrimitives": "points-lines",
+              "graphicsDpr": "0.85",
+              "graphicsQuality": "balanced",
+              "graphicsRenderer": "software",
+              "graphicsTargetDpr": "0.85",
+              "graphicsFrameMs": "988.0"
+            },
+            "resolution": [
+              1224,
+              850
+            ],
+            "css": [
+              1440,
+              1000
+            ]
+          },
+          {
+            "role": "explorer",
+            "drawCalls": 20,
+            "submittedVertexOrIndexCount": 171000,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 0.48570096363043064,
+            "diagnostics": {
+              "engine": "three.js r187",
+              "graphicsDpr": "1.00",
+              "graphicsQuality": "full",
+              "graphicsRenderer": "software",
+              "graphicsTargetDpr": "0.85",
+              "graphicsFrameMs": "349.5"
+            },
+            "resolution": [
+              954,
+              600
+            ],
+            "css": [
+              955,
+              600
+            ]
+          }
+        ],
+        "cpu": {
+          "mainThreadTaskMs": 10041.649,
+          "scriptMs": 9404.886,
+          "layoutMs": 22.446,
+          "jsHeapUsedBytes": 13569124,
+          "processes": [
+            {
+              "type": "browser",
+              "cpuMs": 40.000000000000036
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 949.9999999999993
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 89.99999999999986
+            },
+            {
+              "type": "GPU",
+              "cpuMs": 36910.00000000001
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "cpuMs": 9.99999999999998
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "cpuMs": 0
+            }
+          ]
+        }
+      }
+    },
+    "mobileBefore": {
+      "url": "http://127.0.0.1:3058",
+      "checkedAt": "2026-11-13T13:58:05.544Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 390x844; not physical-device certification",
+      "gpuHardwareLoad": null,
+      "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
+      "idle": {
+        "durationMs": 6194.5999999940395,
+        "rafFps": 5.488651406068627,
+        "p95FrameMs": 433.2999999999993,
+        "renderers": [
+          {
+            "role": "backdrop",
+            "drawCalls": 198,
+            "submittedVertexOrIndexCount": 4797342,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 5.327220482360726,
+            "diagnostics": {
+              "engine": "three.js r187"
+            },
+            "resolution": [
+              390,
+              844
+            ],
+            "css": [
+              390,
+              844
+            ]
+          },
+          {
+            "role": "explorer",
+            "drawCalls": 165,
+            "submittedVertexOrIndexCount": 2734347,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 5.327220482360726,
+            "diagnostics": {
+              "engine": "three.js r187"
+            },
+            "resolution": [
+              344,
+              222
+            ],
+            "css": [
+              345,
+              223
+            ]
+          }
+        ],
+        "cpu": {
+          "mainThreadTaskMs": 319.88100000000003,
+          "scriptMs": 71.627,
+          "layoutMs": 0,
+          "jsHeapUsedBytes": 15122964,
+          "processes": [
+            {
+              "type": "browser",
+              "cpuMs": 10.000000000000009
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 339.9999999999999
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "GPU",
+              "cpuMs": 23900
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "cpuMs": 0
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "cpuMs": 0
+            }
+          ]
+        }
+      },
+      "scroll": {
+        "durationMs": 6187.399999976158,
+        "rafFps": 2.1010440572857894,
+        "p95FrameMs": 1316.6000000000022,
+        "renderers": [
+          {
+            "role": "backdrop",
+            "drawCalls": 72,
+            "submittedVertexOrIndexCount": 1744488,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 1.939425283648421,
+            "diagnostics": {
+              "engine": "three.js r187"
+            },
+            "resolution": [
+              390,
+              844
+            ],
+            "css": [
+              390,
+              844
+            ]
+          },
+          {
+            "role": "explorer",
+            "drawCalls": 20,
+            "submittedVertexOrIndexCount": 331436,
+            "gpuTimerQueryAvailable": false,
+            "renderFps": 0.6464750945494736,
+            "diagnostics": {
+              "engine": "three.js r187"
+            },
+            "resolution": [
+              345,
+              223
+            ],
+            "css": [
+              0,
+              0
+            ]
+          }
+        ],
+        "cpu": {
+          "mainThreadTaskMs": 2392.278,
+          "scriptMs": 1768.334,
+          "layoutMs": 12.366,
+          "jsHeapUsedBytes": 12834724,
+          "processes": [
+            {
+              "type": "browser",
+              "cpuMs": 30.00000000000003
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 1000
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "GPU",
+              "cpuMs": 18830.000000000004
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "cpuMs": 9.99999999999998
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "cpuMs": 0
+            }
+          ]
+        }
+      }
+    },
+    "mobileAfter": {
+      "url": "http://127.0.0.1:3057",
+      "checkedAt": "2026-11-13T13:58:31.463Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 390x844; not physical-device certification",
+      "gpuHardwareLoad": null,
+      "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
+      "idle": {
+        "durationMs": 6058.300000011921,
+        "rafFps": 21.623227638073754,
+        "p95FrameMs": 83.29999999999927,
+        "renderers": [
+          {
+            "role": "backdrop",
+            "drawCalls": 381,
+            "submittedVertexOrIndexCount": 176784,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 20.962976412483716,
+            "diagnostics": {
+              "engine": "three.js r187",
+              "graphicsPrimitives": "points-lines",
+              "graphicsDpr": "0.85",
+              "graphicsQuality": "balanced",
+              "graphicsRenderer": "software",
+              "graphicsTargetDpr": "0.85",
+              "graphicsFrameMs": "42.3"
+            },
+            "resolution": [
+              331,
+              717
+            ],
+            "css": [
+              390,
+              844
+            ]
+          },
+          {
+            "role": "explorer",
+            "drawCalls": 496,
+            "submittedVertexOrIndexCount": 4240800,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 20.46778799329119,
+            "diagnostics": {
+              "engine": "three.js r187",
+              "graphicsDpr": "0.85",
+              "graphicsQuality": "balanced",
+              "graphicsRenderer": "software",
+              "graphicsTargetDpr": "0.85",
+              "graphicsFrameMs": "44.3"
+            },
+            "resolution": [
+              327,
+              275
+            ],
+            "css": [
+              385,
+              324
+            ]
+          }
+        ],
+        "cpu": {
+          "mainThreadTaskMs": 543.5530000000001,
+          "scriptMs": 93.175,
+          "layoutMs": 0,
+          "jsHeapUsedBytes": 12641408,
+          "processes": [
+            {
+              "type": "browser",
+              "cpuMs": 30.00000000000003
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 939.9999999999995
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "GPU",
+              "cpuMs": 22580
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "cpuMs": 0
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "cpuMs": 0
+            }
+          ]
+        }
+      },
+      "scroll": {
+        "durationMs": 6274.700000017881,
+        "rafFps": 2.5499227054607236,
+        "p95FrameMs": 883.2999999999993,
+        "renderers": [
+          {
+            "role": "backdrop",
+            "drawCalls": 45,
+            "submittedVertexOrIndexCount": 20880,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 2.3905525363694284,
+            "diagnostics": {
+              "engine": "three.js r187",
+              "graphicsPrimitives": "points-lines",
+              "graphicsDpr": "0.85",
+              "graphicsQuality": "balanced",
+              "graphicsRenderer": "software",
+              "graphicsTargetDpr": "0.85",
+              "graphicsFrameMs": "412.3"
+            },
+            "resolution": [
+              331,
+              717
+            ],
+            "css": [
+              390,
+              844
+            ]
+          },
+          {
+            "role": "explorer",
+            "drawCalls": 60,
+            "submittedVertexOrIndexCount": 513000,
+            "gpuTimerQueryAvailable": true,
+            "renderFps": 2.3905525363694284,
+            "diagnostics": {
+              "engine": "three.js r187",
+              "graphicsDpr": "1.00",
+              "graphicsQuality": "full",
+              "graphicsRenderer": "software",
+              "graphicsTargetDpr": "0.85",
+              "graphicsFrameMs": "44.3"
+            },
+            "resolution": [
+              392,
+              330
+            ],
+            "css": [
+              393,
+              331
+            ]
+          }
+        ],
+        "cpu": {
+          "mainThreadTaskMs": 3339.036,
+          "scriptMs": 2698.4370000000004,
+          "layoutMs": 24.979000000000003,
+          "jsHeapUsedBytes": 14091156,
+          "processes": [
+            {
+              "type": "browser",
+              "cpuMs": 30.00000000000003
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 1160.0000000000002
+            },
+            {
+              "type": "renderer",
+              "cpuMs": 0
+            },
+            {
+              "type": "GPU",
+              "cpuMs": 18009.999999999996
+            },
+            {
+              "type": "network.mojom.NetworkService",
+              "cpuMs": 19.99999999999999
+            },
+            {
+              "type": "storage.mojom.StorageService",
+              "cpuMs": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "shaderTimers": {
+    "before": {
+      "url": "http://127.0.0.1:3058",
+      "startedAt": "2026-11-13T14:02:33.035Z",
+      "scope": "TIME_ELAPSED_EXT around one WebGL draw; not a whole-frame timer",
+      "samplesPerProgram": 5,
+      "gpuHardwareLoad": null,
+      "limits": [
+        "SwiftShader is a software renderer. Its timer values do not certify physical GPU performance or utilization.",
+        "Program discovery and timer queries add instrumentation overhead; this run must stay separate from FPS/Lighthouse measurements.",
+        "One program can draw different geometries. Samples describe the observed draw calls, not isolated fragment-shader instruction cost.",
+        "Only programs active at the hero and its current quality tier are sampled. Unobserved inventory entries are not reported as zero cost.",
+        "Zero, disjoint, unavailable and timed-out query results are not treated as reliable zero-cost measurements."
+      ],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "design": "biomaterial-laboratory-v8",
+      "contexts": [
+        {
+          "role": "backdrop",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "software": true,
+          "timerQueryAvailable": true,
+          "disjoint": false,
+          "pendingAtTimeout": 0,
+          "skippedExternalQuery": 0,
+          "diagnostics": {
+            "engine": "three.js r187"
+          },
+          "errors": [],
+          "programs": [
+            {
+              "name": "mistVertex/mistFragment",
+              "sourceFingerprint": "71f3d0a3",
+              "vertexSourceLength": 1667,
+              "fragmentSourceLength": 3702,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 75995126
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 50211290
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 35760630
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 67913489
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 48672231
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 50.21129,
+              "maxDrawMs": 75.995126,
+              "timingStatus": "observed-timer-query"
+            },
+            {
+              "name": "bondVertex/bondFragment",
+              "sourceFingerprint": "df10e338",
+              "vertexSourceLength": 10165,
+              "fragmentSourceLength": 2166,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 24,
+                  "instances": 2368,
+                  "elapsedNs": 95436413
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 24,
+                  "instances": 2368,
+                  "elapsedNs": 93654522
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 24,
+                  "instances": 2368,
+                  "elapsedNs": 164840739
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 24,
+                  "instances": 2368,
+                  "elapsedNs": 94216164
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 24,
+                  "instances": 2368,
+                  "elapsedNs": 99542219
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 95.436413,
+              "maxDrawMs": 164.840739,
+              "timingStatus": "observed-timer-query"
+            },
+            {
+              "name": "haloVertex/haloFragment",
+              "sourceFingerprint": "1907ad79",
+              "vertexSourceLength": 9496,
+              "fragmentSourceLength": 2340,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 2088,
+                  "instances": 1,
+                  "elapsedNs": 34602474
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 2088,
+                  "instances": 1,
+                  "elapsedNs": 31764131
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 2088,
+                  "instances": 1,
+                  "elapsedNs": 39843056
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 2088,
+                  "instances": 1,
+                  "elapsedNs": 47023073
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 2088,
+                  "instances": 1,
+                  "elapsedNs": 47250751
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 39.843056,
+              "maxDrawMs": 47.250751,
+              "timingStatus": "observed-timer-query"
+            },
+            {
+              "name": "atomVertex/atomFragment",
+              "sourceFingerprint": "d11fe233",
+              "vertexSourceLength": 9524,
+              "fragmentSourceLength": 2354,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 108,
+                  "instances": 2088,
+                  "elapsedNs": 137005720
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 108,
+                  "instances": 2088,
+                  "elapsedNs": 166359714
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 108,
+                  "instances": 2088,
+                  "elapsedNs": 239983722
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 108,
+                  "instances": 2088,
+                  "elapsedNs": 160291856
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 108,
+                  "instances": 2088,
+                  "elapsedNs": 609243455
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 166.359714,
+              "maxDrawMs": 609.243455,
+              "timingStatus": "observed-timer-query"
+            }
+          ]
+        },
+        {
+          "role": "explorer",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "software": true,
+          "timerQueryAvailable": true,
+          "disjoint": false,
+          "pendingAtTimeout": 0,
+          "skippedExternalQuery": 0,
+          "diagnostics": {
+            "engine": "three.js r187"
+          },
+          "errors": [],
+          "programs": [
+            {
+              "name": "legacy:PointsMaterial",
+              "sourceFingerprint": "c5104b89",
+              "vertexSourceLength": 8028,
+              "fragmentSourceLength": 12231,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 35,
+                  "instances": 1,
+                  "elapsedNs": 2354424
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 35,
+                  "instances": 1,
+                  "elapsedNs": 840327
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 35,
+                  "instances": 1,
+                  "elapsedNs": 847920
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 35,
+                  "instances": 1,
+                  "elapsedNs": 956943
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 35,
+                  "instances": 1,
+                  "elapsedNs": 1717631
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 0.956943,
+              "maxDrawMs": 2.354424,
+              "timingStatus": "observed-timer-query"
+            },
+            {
+              "name": "legacy:MeshStandardMaterial",
+              "sourceFingerprint": "20c0adc2",
+              "vertexSourceLength": 19755,
+              "fragmentSourceLength": 83779,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 84,
+                  "instances": 61,
+                  "elapsedNs": 1983975
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 648,
+                  "instances": 56,
+                  "elapsedNs": 7801784
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 648,
+                  "instances": 56,
+                  "elapsedNs": 38807510
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 84,
+                  "instances": 61,
+                  "elapsedNs": 3450319
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 84,
+                  "instances": 61,
+                  "elapsedNs": 2087360
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 3.450319,
+              "maxDrawMs": 38.80751,
+              "timingStatus": "observed-timer-query"
+            }
+          ]
+        }
+      ],
+      "unobservedInventory": [
+        "pointAtomVertex/pointAtomFragment",
+        "lineBondVertex/lineBondFragment",
+        "economyMistVertex/economyMistFragment",
+        "explorerVertex/explorerFragment"
+      ],
+      "finishedAt": "2026-11-13T14:03:01.866Z"
+    },
+    "after": {
+      "url": "http://127.0.0.1:3057",
+      "startedAt": "2026-11-13T14:00:03.838Z",
+      "scope": "TIME_ELAPSED_EXT around one WebGL draw; not a whole-frame timer",
+      "samplesPerProgram": 5,
+      "gpuHardwareLoad": null,
+      "limits": [
+        "SwiftShader is a software renderer. Its timer values do not certify physical GPU performance or utilization.",
+        "Program discovery and timer queries add instrumentation overhead; this run must stay separate from FPS/Lighthouse measurements.",
+        "One program can draw different geometries. Samples describe the observed draw calls, not isolated fragment-shader instruction cost.",
+        "Only programs active at the hero and its current quality tier are sampled. Unobserved inventory entries are not reported as zero cost.",
+        "Zero, disjoint, unavailable and timed-out query results are not treated as reliable zero-cost measurements."
+      ],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "design": "immersive-biomaterials-v9",
+      "contexts": [
+        {
+          "role": "backdrop",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "software": true,
+          "timerQueryAvailable": true,
+          "disjoint": false,
+          "pendingAtTimeout": 0,
+          "skippedExternalQuery": 0,
+          "diagnostics": {
+            "engine": "three.js r187",
+            "graphicsPrimitives": "points-lines",
+            "graphicsDpr": "0.85",
+            "graphicsQuality": "balanced",
+            "graphicsRenderer": "software",
+            "graphicsTargetDpr": "0.85",
+            "graphicsFrameMs": "274.3"
+          },
+          "errors": [],
+          "programs": [
+            {
+              "name": "economyMistVertex/economyMistFragment",
+              "sourceFingerprint": "1c0974c0",
+              "vertexSourceLength": 1810,
+              "fragmentSourceLength": 2678,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 18394560
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 14271788
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 24397080
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 17198351
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 6,
+                  "instances": 1,
+                  "elapsedNs": 14521752
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 17.198351,
+              "maxDrawMs": 24.39708,
+              "timingStatus": "observed-timer-query"
+            },
+            {
+              "name": "lineBondVertex/lineBondFragment",
+              "sourceFingerprint": "030974db",
+              "vertexSourceLength": 3630,
+              "fragmentSourceLength": 2303,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawElements",
+                  "primitive": 1,
+                  "vertexOrIndexCount": 1284,
+                  "instances": 1,
+                  "elapsedNs": 3885008
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 1,
+                  "vertexOrIndexCount": 1284,
+                  "instances": 1,
+                  "elapsedNs": 971491
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 1,
+                  "vertexOrIndexCount": 1284,
+                  "instances": 1,
+                  "elapsedNs": 7009822
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 1,
+                  "vertexOrIndexCount": 1284,
+                  "instances": 1,
+                  "elapsedNs": 4151749
+                },
+                {
+                  "method": "drawElements",
+                  "primitive": 1,
+                  "vertexOrIndexCount": 1284,
+                  "instances": 1,
+                  "elapsedNs": 1062883
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 3.885008,
+              "maxDrawMs": 7.009822,
+              "timingStatus": "observed-timer-query"
+            },
+            {
+              "name": "pointAtomVertex/pointAtomFragment",
+              "sourceFingerprint": "31c00c60",
+              "vertexSourceLength": 4022,
+              "fragmentSourceLength": 2861,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 568,
+                  "instances": 1,
+                  "elapsedNs": 3932457
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 568,
+                  "instances": 1,
+                  "elapsedNs": 1754967
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 568,
+                  "instances": 1,
+                  "elapsedNs": 2322317
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 568,
+                  "instances": 1,
+                  "elapsedNs": 7763369
+                },
+                {
+                  "method": "drawArrays",
+                  "primitive": 0,
+                  "vertexOrIndexCount": 568,
+                  "instances": 1,
+                  "elapsedNs": 1579130
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 2.322317,
+              "maxDrawMs": 7.763369,
+              "timingStatus": "observed-timer-query"
+            }
+          ]
+        },
+        {
+          "role": "explorer",
+          "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+          "software": true,
+          "timerQueryAvailable": true,
+          "disjoint": false,
+          "pendingAtTimeout": 0,
+          "skippedExternalQuery": 0,
+          "diagnostics": {
+            "engine": "three.js r187",
+            "graphicsDpr": "0.85",
+            "graphicsQuality": "balanced",
+            "graphicsRenderer": "software",
+            "graphicsTargetDpr": "0.85",
+            "graphicsFrameMs": "245.9"
+          },
+          "errors": [],
+          "programs": [
+            {
+              "name": "explorerVertex/explorerFragment",
+              "sourceFingerprint": "9f3d3fe7",
+              "vertexSourceLength": 2256,
+              "fragmentSourceLength": 2701,
+              "issued": 5,
+              "samples": [
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 60,
+                  "instances": 61,
+                  "elapsedNs": 4650966
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 240,
+                  "instances": 56,
+                  "elapsedNs": 3126861
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 240,
+                  "instances": 56,
+                  "elapsedNs": 3002774
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 60,
+                  "instances": 61,
+                  "elapsedNs": 2094470
+                },
+                {
+                  "method": "drawElementsInstanced",
+                  "primitive": 4,
+                  "vertexOrIndexCount": 60,
+                  "instances": 61,
+                  "elapsedNs": 23887886
+                }
+              ],
+              "positiveSamples": 5,
+              "zeroSamples": 0,
+              "medianDrawMs": 3.126861,
+              "maxDrawMs": 23.887886,
+              "timingStatus": "observed-timer-query"
+            }
+          ]
+        }
+      ],
+      "unobservedInventory": [
+        "atomVertex/atomFragment",
+        "bondVertex/bondFragment",
+        "haloVertex/haloFragment",
+        "mistVertex/mistFragment"
+      ],
+      "finishedAt": "2026-11-13T14:00:27.144Z"
+    }
+  },
+  "compositorExperiment": {
+    "url": "http://127.0.0.1:3057/",
+    "checkedAt": "2026-11-13T14:04:29.704Z",
+    "limits": "Sequential warm idle rAF samples on SwiftShader; short samples, not an isolated GPU hardware utilization measurement.",
+    "states": [
+      {
+        "name": "current",
+        "frames": 34,
+        "durationMs": 6164.9000000059605,
+        "fps": 5.515093513271444
+      },
+      {
+        "name": "remove redundant preview and opaque badge blur",
+        "frames": 32,
+        "durationMs": 6219.799999982119,
+        "fps": 5.144859963357664
+      },
+      {
+        "name": "also remove header blur",
+        "frames": 16,
+        "durationMs": 6044.9000000059605,
+        "fps": 2.646859335966554
+      }
+    ]
+  },
+  "compositorDecision": "Global removal of CSS blur was rejected: the short A/B did not show a performance improvement. No corresponding CSS overrides were shipped."
+}

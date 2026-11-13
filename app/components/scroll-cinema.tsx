@@ -13,6 +13,7 @@ import {
   type ReactNode,
 } from "react";
 import { useMotionPause, useReducedMotionPreference } from "./cinematic";
+import { motionDuration, gsapEase, organicCameraEase } from "./motion-system";
 import "./scroll-cinema.css";
 
 type LayerMotion = {
@@ -291,7 +292,6 @@ export function KineticHeading({
               rotation: desktop ? wordTurn : 0,
               rotateX: desktop ? -18 : 0,
               scale: 0.94,
-              filter: `blur(${desktop ? 2 : 1}px)`,
             },
             {
               xPercent: 0,
@@ -299,14 +299,13 @@ export function KineticHeading({
               rotation: 0,
               rotateX: 0,
               scale: 1,
-              filter: "blur(0px)",
-              duration: 1.05,
-              stagger: { each: desktop ? 0.055 : 0.04, amount: 0.4 },
-              ease: "power3.out",
+              duration: motionDuration.component,
+              stagger: { amount: motionDuration.reveal },
+              ease: gsapEase.content,
               immediateRender: false,
               onStart: () => {
                 words.forEach((word) => {
-                  word.style.willChange = "transform, filter";
+                  word.style.willChange = "transform";
                 });
               },
               clearProps: "filter,willChange",
@@ -371,7 +370,8 @@ export function ScrollCinema() {
       gsap.registerPlugin(ScrollTrigger);
       const lenis = isDesktop
         ? new (await import("lenis")).default({
-            lerp: 0.085,
+            duration: motionDuration.chapter,
+            easing: gsapEase.editorial,
             smoothWheel: true,
             syncTouch: false,
             autoRaf: false,
@@ -401,6 +401,9 @@ export function ScrollCinema() {
       /** These are assembled scenes, not a common reveal with new coordinates.
        * Each timeline connects the existing objects that explain its chapter.
        * Only local custom properties move; React and Motion retain their values.
+       * This is a normalized 0..1 spatial timeline: span/at numbers describe
+       * fractions of a chapter's scroll distance, not wall-clock durations.
+       * Its temporal settling uses the shared scrub duration above.
        */
       function choreograph(section: HTMLElement) {
         const camera = gsap.timeline({
@@ -408,7 +411,7 @@ export function ScrollCinema() {
             trigger: section,
             start: section.id === "inicio" ? "top top" : "top 82%",
             end: "bottom 26%",
-            scrub: isDesktop ? 1.15 : 0.45,
+            scrub: isDesktop ? motionDuration.chapter : motionDuration.reveal,
           },
         });
         camera.fromTo(
@@ -423,7 +426,7 @@ export function ScrollCinema() {
           from: CameraValues,
           to: CameraValues,
           at = 0,
-          duration = 0.75,
+          span = 0.75,
         ) {
           const targets = section.querySelectorAll<HTMLElement>(selector);
           targets.forEach((target, index) => {
@@ -447,18 +450,18 @@ export function ScrollCinema() {
             camera.fromTo(
               target,
               mobile(from),
-              { ...mobile(to), duration, ease: "none" },
+              { ...mobile(to), duration: span, ease: "none" },
               Math.min(at + index * 0.045, 0.65),
             );
           });
         }
-        function draw(selector: string, at = 0.05, duration = 0.6) {
+        function draw(selector: string, at = 0.05, span = 0.6) {
           object(
             selector,
             { "--assembly-progress": 0 },
             { "--assembly-progress": 1 },
             at,
-            duration,
+            span,
           );
         }
 
@@ -646,9 +649,9 @@ export function ScrollCinema() {
                       {
                         clipPath: "inset(0% 0% 0% 0%)",
                         y: 0,
-                        duration: 0.65,
-                        stagger: 0.045,
-                        ease: "power3.out",
+                        duration: motionDuration.component,
+                        stagger: motionDuration.micro,
+                        ease: gsapEase.content,
                         clearProps: "clipPath,transform",
                         overwrite: "auto",
                       },
@@ -847,10 +850,57 @@ export function ScrollCinema() {
                     trigger: section,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: isDesktop ? 1.2 : 0.6,
+                    scrub: isDesktop
+                      ? motionDuration.chapter
+                      : motionDuration.component,
                   },
                 },
               );
+              // Normalized scroll-distance handoff, not a timed transition.
+              // A shared light plane enters from the preceding chapter's
+              // camera direction, then hands its energy to the next one.
+              const previous = chapterSections[index - 1];
+              const incomingPan = previous
+                ? chapterFor(previous).pan
+                : chapter.pan;
+              const handoff = gsap.timeline({
+                scrollTrigger: {
+                  trigger: section,
+                  start: "top bottom",
+                  end: "bottom top",
+                  scrub: isDesktop
+                    ? motionDuration.chapter
+                    : motionDuration.component,
+                },
+              });
+              handoff
+                .fromTo(
+                  section,
+                  {
+                    "--handoff-light-x": `${incomingPan * (isDesktop ? 95 : 28)}px`,
+                    "--handoff-light-spread": 1.15,
+                    "--handoff-light-opacity": 0.25,
+                  },
+                  {
+                    "--handoff-light-x": "0px",
+                    "--handoff-light-spread": 1,
+                    "--handoff-light-opacity": 0.42,
+                    duration: 0.45,
+                    ease: "none",
+                  },
+                  0,
+                )
+                .to(
+                  section,
+                  {
+                    "--handoff-light-x": `${chapter.pan * (isDesktop ? -72 : -22)}px`,
+                    "--handoff-light-spread": 1.1,
+                    "--handoff-light-opacity": 0.12,
+                    duration: 0.55,
+                    ease: "none",
+                  },
+                  0.45,
+                );
               const next = chapterSections[index + 1];
               if (next) {
                 // The following chapter controls the previous chapter's light.
@@ -865,7 +915,9 @@ export function ScrollCinema() {
                       trigger: next,
                       start: "top 96%",
                       end: "top 22%",
-                      scrub: isDesktop ? 0.7 : 0.35,
+                      scrub: isDesktop
+                        ? motionDuration.component
+                        : motionDuration.card,
                     },
                   },
                 );
@@ -908,12 +960,12 @@ export function ScrollCinema() {
                             clearProps: "clipPath",
                           }
                         : {}),
-                      duration: isDesktop ? 1.35 : 1,
+                      duration: motionDuration.chapter,
                       delay: Math.min(
-                        itemIndex * 0.085 + layerIndex * 0.035,
-                        0.3,
+                        (itemIndex + layerIndex) * motionDuration.micro,
+                        motionDuration.card,
                       ),
-                      ease: "power3.out",
+                      ease: gsapEase.content,
                       immediateRender: false,
                       scrollTrigger: {
                         trigger: layer,
@@ -936,7 +988,9 @@ export function ScrollCinema() {
                         trigger: section,
                         start: "top bottom",
                         end: "bottom top",
-                        scrub: isDesktop ? 1.15 : 0.45,
+                        scrub: isDesktop
+                          ? motionDuration.chapter
+                          : motionDuration.reveal,
                       },
                     },
                   );
@@ -959,7 +1013,9 @@ export function ScrollCinema() {
                     trigger: heading,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: isDesktop ? 0.9 : 0.4,
+                    scrub: isDesktop
+                      ? motionDuration.chapter
+                      : motionDuration.reveal,
                   },
                 },
               );
@@ -973,7 +1029,9 @@ export function ScrollCinema() {
               scenes.push(photo);
               photo.classList.add("cinema-photo-scene");
               const chapter = chapterFor(photo);
-              const duration = (isDesktop ? 13 : 15) + (index % 5);
+              // The breathing cycle is a multiple of the narrative clock;
+              // phase offsets keep photographs organic without new timings.
+              const duration = motionDuration.narrative * (isDesktop ? 5 : 6);
               const loop = {
                 photo,
                 tween: gsap.fromTo(
@@ -984,7 +1042,8 @@ export function ScrollCinema() {
                     duration,
                     repeat: -1,
                     yoyo: true,
-                    ease: "sine.inOut",
+                    ease: organicCameraEase,
+                    delay: -motionDuration.narrative * (index % 5),
                     paused: true,
                   },
                 ),
@@ -1027,7 +1086,9 @@ export function ScrollCinema() {
                     trigger: photo,
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: isDesktop ? 1.1 : 0.5,
+                    scrub: isDesktop
+                      ? motionDuration.chapter
+                      : motionDuration.component,
                   },
                 },
               );
@@ -1041,9 +1102,9 @@ export function ScrollCinema() {
                 },
                 {
                   clipPath: chapter.aperture[1],
-                  duration: isDesktop ? 1.5 : 1.1,
-                  delay: Math.min((index % 3) * 0.065, 0.13),
-                  ease: "power3.inOut",
+                  duration: motionDuration.chapter,
+                  delay: (index % 3) * motionDuration.micro,
+                  ease: gsapEase.editorial,
                   immediateRender: false,
                   clearProps: "clipPath",
                   scrollTrigger: {
@@ -1145,6 +1206,7 @@ export function ScrollCinema() {
         document.removeEventListener("visibilitychange", visibility);
         gsap.ticker.remove(tick);
         lenis?.destroy();
+        loops.forEach(({ release }) => release());
         context.revert();
         sections.forEach((section) => {
           section.classList.remove("cinema-section");

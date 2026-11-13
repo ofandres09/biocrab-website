@@ -101,6 +101,22 @@
   initial-value: 0px;
 }
 
+@property --handoff-light-x {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --handoff-light-spread {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+@property --handoff-light-opacity {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.3;
+}
+
 .cinema-heading {
   translate: 0 var(--heading-travel, 0px);
   perspective: 900px;
@@ -127,6 +143,14 @@
 .cinema-section {
   position: relative;
 }
+/* The material cloud is one continuous environment. Local gradients survive,
+   but flat fills and hairline dividers no longer reset the scene at a boundary. */
+#contenido > section:not(#inicio) {
+  border-bottom-color: transparent;
+}
+:root:not([data-theme="light"]) #contenido > section:not(#inicio) {
+  background-color: transparent;
+}
 .cinema-layer {
   translate: calc(var(--layer-x, 0px) + var(--layer-enter-x, 0px))
     calc(var(--layer-y, 0px) + var(--layer-enter-y, 0px))
@@ -135,7 +159,7 @@
   scale: var(--layer-scale, 1);
   transform-origin: 50% 50%;
 }
-.cinema-assembly {
+#contenido .cinema-assembly {
   transform: perspective(1500px)
     translate3d(0, var(--assembly-rise), var(--assembly-depth))
     rotateX(var(--assembly-pitch)) rotateY(var(--assembly-yaw))
@@ -152,17 +176,28 @@
 .cinema-section[data-cinema-scene]::before {
   --scene-travel: inherit;
   --chapter-phase: inherit;
+  --handoff-light-x: inherit;
+  --handoff-light-spread: inherit;
+  --handoff-light-opacity: inherit;
   content: "";
   position: absolute;
   z-index: 2;
   pointer-events: none;
-  inset: 0 0 auto;
+  inset: -24vh 0 auto;
   width: 100%;
-  height: min(58vh, 540px);
-  max-height: 65%;
-  opacity: calc(0.15 + var(--chapter-phase) * 0.2);
+  height: min(110vh, 980px);
+  max-height: none;
+  opacity: var(--handoff-light-opacity);
+  mask-image: linear-gradient(
+    180deg,
+    transparent,
+    #000 24%,
+    #000 68%,
+    transparent
+  );
   background: radial-gradient(ellipse at 14% 0%, #2389ff30, transparent 65%);
-  transform: translate3d(0, var(--scene-travel, 0px), 0);
+  transform: translate3d(var(--handoff-light-x), var(--scene-travel, 0px), 0)
+    scaleX(var(--handoff-light-spread));
   box-shadow: none;
   border: 0;
 }
@@ -174,7 +209,7 @@
   pointer-events: none;
   inset: 0;
   opacity: var(--scene-shade, 0);
-  background: linear-gradient(180deg, #020508da, #020508 72%);
+  background: linear-gradient(180deg, transparent, #02050855 48%, #020508d9);
 }
 .cinema-section[data-cinema-scene="origin"]::before {
   background: radial-gradient(
@@ -474,9 +509,9 @@
 }
 .cinema-section[data-cinema-scene="hypothesis"] .research-detail summary {
   transition:
-    color 220ms ease,
-    padding-left 350ms ease,
-    background 350ms ease;
+    color var(--motion-duration-micro) var(--motion-ease-micro),
+    padding-left var(--motion-duration-hover) var(--motion-ease-hover),
+    background var(--motion-duration-hover) var(--motion-ease-hover);
 }
 .cinema-section[data-cinema-scene="hypothesis"] .research-detail summary:hover,
 .cinema-section[data-cinema-scene="hypothesis"]

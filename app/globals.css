@@ -150,7 +150,7 @@ summary:focus-visible,
 .desktop-nav a {
   padding: 10px 0;
   color: var(--muted);
-  transition: color 0.2s;
+  transition: color var(--motion-duration-hover) var(--motion-ease-hover);
 }
 .desktop-nav a:hover {
   color: var(--text);
@@ -432,8 +432,8 @@ summary:focus-visible,
   font-size: 11px;
   font-weight: 600;
   transition:
-    transform 0.25s,
-    box-shadow 0.25s;
+    transform var(--motion-duration-button) var(--motion-ease-micro),
+    box-shadow var(--motion-duration-button) var(--motion-ease-micro);
 }
 .primary {
   background: var(--green);
@@ -592,13 +592,15 @@ summary:focus-visible,
 .project-photo img {
   object-fit: contain;
   object-position: center;
-  transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: filter var(--motion-duration-component)
+    var(--motion-ease-editorial);
 }
 .hero-photo .project-photo {
   background: transparent;
 }
 .hero-photo .project-photo img {
-  animation: hero-photo-in 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: hero-photo-in var(--motion-duration-hero) var(--motion-ease-hero)
+    both;
 }
 .image-vignette {
   position: absolute;
@@ -675,7 +677,7 @@ summary:focus-visible,
   font-size: 8px;
   letter-spacing: 1px;
   color: #d7e0e7;
-  animation: float 7s ease-in-out infinite;
+  animation: none;
 }
 .floating-tag svg {
   color: #00ff99;
@@ -727,11 +729,12 @@ summary:focus-visible,
   position: absolute;
   inset: 0;
   background: radial-gradient(ellipse at 85% 50%, #0066ff26, transparent 60%);
-  animation: ambient-shift 16s ease-in-out infinite alternate;
+  animation: ambient-shift calc(var(--motion-duration-narrative) * 6)
+    var(--motion-ease-editorial) infinite alternate;
 }
 .caustic-two {
   background: radial-gradient(ellipse at 35% 95%, #00ff9910, transparent 55%);
-  animation-delay: -7s;
+  animation-delay: calc(var(--motion-duration-narrative) * -1);
 }
 .ocean-beam {
   position: absolute;
@@ -757,7 +760,7 @@ summary:focus-visible,
   height: 2px;
   background: #00ff99;
   border-radius: 50%;
-  animation: particle-drift 15s ease-in-out infinite;
+  animation: none;
   opacity: 0;
 }
 .ocean-particle:nth-child(3n) {
@@ -919,8 +922,8 @@ summary:focus-visible,
   overflow: hidden;
   background: var(--bg);
   transition:
-    transform 0.35s,
-    border-color 0.35s;
+    transform var(--motion-duration-card) var(--motion-ease-hover),
+    border-color var(--motion-duration-card) var(--motion-ease-hover);
 }
 .why-card:hover {
   transform: translateY(-5px);
@@ -990,8 +993,8 @@ summary:focus-visible,
   color: var(--muted);
   margin-bottom: 20px;
   transition:
-    background 0.3s,
-    color 0.3s;
+    background var(--motion-duration-hover) var(--motion-ease-content),
+    color var(--motion-duration-hover) var(--motion-ease-content);
 }
 .journey-route button[aria-pressed="true"] {
   border-color: var(--green);
@@ -1374,7 +1377,8 @@ summary:focus-visible,
   padding: 22px;
   min-height: 175px;
   border-radius: 5px;
-  transition: border-color 0.25s;
+  transition: border-color var(--motion-duration-button)
+    var(--motion-ease-micro);
 }
 .process-rail button[aria-pressed="true"] {
   border-color: var(--green);
@@ -1613,9 +1617,9 @@ summary:focus-visible,
   border-radius: 8px;
   background: var(--surface);
   transition:
-    border-color 0.3s,
-    box-shadow 0.3s,
-    transform 0.3s;
+    border-color var(--motion-duration-card) var(--motion-ease-hover),
+    box-shadow var(--motion-duration-card) var(--motion-ease-hover),
+    transform var(--motion-duration-card) var(--motion-ease-hover);
 }
 .gallery-card:hover {
   border-color: var(--green);
@@ -1805,13 +1809,13 @@ summary:focus-visible,
   border-radius: 10px;
   transform: rotate(-25deg);
   box-shadow: 0 25px 60px #0005;
-  animation: float 8s ease-in-out infinite;
+  animation: none;
 }
 .secondary-sheet {
   position: absolute;
   transform: rotate(20deg) translate(10px, 10px);
   opacity: 0.5;
-  animation-delay: -3s;
+  animation-delay: calc(var(--motion-duration-narrative) * -1);
 }
 .comparator-copy {
   padding: 35px;
@@ -2003,8 +2007,8 @@ summary:focus-visible,
   border-radius: 5px;
   background: var(--bg);
   transition:
-    transform 0.35s,
-    border-color 0.35s;
+    transform var(--motion-duration-card) var(--motion-ease-hover),
+    border-color var(--motion-duration-card) var(--motion-ease-hover);
 }
 .future-card:hover {
   transform: translateY(-4px);
@@ -2105,7 +2109,7 @@ summary:focus-visible,
   color: white;
 }
 .circular-overlay > svg {
-  animation: circle-turn 35s linear infinite;
+  animation: none;
 }
 .gummy-section {
   display: grid;
@@ -2346,7 +2350,7 @@ summary:focus-visible,
   border: 1px solid #ffffff25;
   border-top-color: #00ff99;
   border-radius: 50%;
-  animation: circle-turn 1.5s linear infinite;
+  animation: none;
 }
 .photo-placeholder {
   position: absolute;
@@ -3446,8 +3450,8 @@ summary:focus-visible,
   background: linear-gradient(130deg, #ffffff04, transparent), var(--bg);
   box-shadow: 0 15px 45px #0002;
   transition:
-    transform 0.3s,
-    border-color 0.3s;
+    transform var(--motion-duration-hover) var(--motion-ease-content),
+    border-color var(--motion-duration-hover) var(--motion-ease-content);
 }
 .evidence-counter:hover {
   transform: translateY(-4px);

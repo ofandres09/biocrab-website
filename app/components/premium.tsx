@@ -3,11 +3,12 @@
 import { useEffect, useState, type ReactNode } from "react";
 import {
   motion,
+  animate,
   useMotionTemplate,
   useMotionValue,
-  useSpring,
 } from "framer-motion";
 import { useMotionPause, useReducedMotionPreference } from "./cinematic";
+import { motionDuration, motionEase } from "./motion-system";
 
 export function DepthSurface({
   children,
@@ -32,19 +33,31 @@ export function DepthSurface({
   const y = useMotionValue(0);
   const lightX = useMotionValue(50);
   const lightY = useMotionValue(30);
-  const rotateX = useSpring(x, { stiffness: 160, damping: 24 });
-  const rotateY = useSpring(y, { stiffness: 160, damping: 24 });
+  const rotateX = x;
+  const rotateY = y;
   const reflection = useMotionTemplate`radial-gradient(ellipse at ${lightX}% ${lightY}%, rgba(255,255,255,.13), rgba(0,102,255,.05) 35%, transparent 68%)`;
   const active = enabled && !reduced && !paused;
   useEffect(() => {
     if (!active) {
+      x.stop();
+      y.stop();
       x.set(0);
       y.set(0);
     }
+    return () => {
+      x.stop();
+      y.stop();
+    };
   }, [active, x, y]);
   const reset = () => {
-    x.set(0);
-    y.set(0);
+    animate(x, 0, {
+      duration: active ? motionDuration.hover : 0,
+      ease: motionEase.hover,
+    });
+    animate(y, 0, {
+      duration: active ? motionDuration.hover : 0,
+      ease: motionEase.hover,
+    });
     lightX.set(50);
     lightY.set(30);
   };
@@ -68,8 +81,14 @@ export function DepthSurface({
             0,
             Math.min(1, (event.clientY - box.top) / box.height),
           );
-          x.set(-(py - 0.5) * 8);
-          y.set((px - 0.5) * 12);
+          animate(x, -(py - 0.5) * 8, {
+            duration: motionDuration.card,
+            ease: motionEase.hover,
+          });
+          animate(y, (px - 0.5) * 12, {
+            duration: motionDuration.card,
+            ease: motionEase.hover,
+          });
           lightX.set(px * 100);
           lightY.set(py * 100);
         }}

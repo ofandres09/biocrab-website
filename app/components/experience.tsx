@@ -1,4 +1,5 @@
 "use client";
+import { motionDuration, motionEase } from "./motion-system";
 import {
   useEffect,
   useState,
@@ -95,7 +96,13 @@ export function Experience({
   }, []);
   return (
     <ImageAssets.Provider value={imageNames}>
-      <MotionConfig reducedMotion="user">
+      <MotionConfig
+        reducedMotion="user"
+        transition={{
+          duration: motionDuration.component,
+          ease: motionEase.content,
+        }}
+      >
         <MolecularBackdrop />
         <GlobalAtmosphere />
         <ScrollCinema />
@@ -208,12 +215,14 @@ export function Photo({
   caption,
   className = "",
   priority = false,
+  sizes,
 }: {
   name: string;
   alt: string;
   caption?: string;
   className?: string;
   priority?: boolean;
+  sizes?: string;
 }) {
   const [failed, setFailed] = useState(false);
   const source = resolvePhoto(name, useContext(ImageAssets));
@@ -228,9 +237,10 @@ export function Photo({
           alt={alt}
           fill
           sizes={
-            className.includes("full-width")
+            sizes ??
+            (className.includes("full-width")
               ? "100vw"
-              : "(max-width: 800px) 100vw, 65vw"
+              : "(max-width: 800px) 90vw, 45vw")
           }
           priority={priority}
           onError={() => setFailed(true)}
@@ -316,7 +326,10 @@ export function Timeline() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{
+              duration: motionDuration.reveal,
+              ease: motionEase.content,
+            }}
             className="timeline-panel"
           >
             <div>

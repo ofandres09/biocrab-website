@@ -1,12 +1,13 @@
 "use client";
+import { motionDuration, motionEase } from "./motion-system";
 import { useEffect, useRef, useState } from "react";
 import { useMotionPause, useReducedMotionPreference } from "./cinematic";
-import { DigitalNetwork } from "./digital-network";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { CircleDashed, Microscope, Recycle, Waves } from "lucide-react";
 export function ReadingProgress() {
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+  // Reading progress maps directly to position; it is not a timed animation.
+  const scaleX = scrollYProgress;
   return (
     <motion.div
       aria-hidden="true"
@@ -16,11 +17,10 @@ export function ReadingProgress() {
   );
 }
 export function OceanAtmosphere() {
-  // One global particle system supplies motion across the whole document.
-  // Keep the large SVG/gradients cached rather than repainting a viewport per node.
+  // Quiet ocean light supports the shared molecular structures without a
+  // second, generic digital network competing for attention.
   return (
     <div className="ocean-atmosphere" aria-hidden="true">
-      <DigitalNetwork />
       <div
         className="ocean-caustic caustic-one"
         style={{ animation: "none" }}
@@ -74,7 +74,11 @@ export function VisualComparison() {
           initial={false}
           whileInView={reduce ? undefined : { opacity: [0.65, 1], y: [10, 0] }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: i * 0.08 }}
+          transition={{
+            duration: motionDuration.reveal,
+            delay: i * motionDuration.micro,
+            ease: motionEase.content,
+          }}
         >
           <span>
             <Icon size={20} strokeWidth={1.2} />

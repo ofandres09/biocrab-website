@@ -1,129 +1,128 @@
 {
-  "url": "http://127.0.0.1:3044",
-  "design": "biomaterial-laboratory-v8",
+  "url": "http://127.0.0.1:3057",
+  "design": "immersive-biomaterials-v9",
   "chapters": [
     {
       "id": "inicio",
-      "uTime": 0.23999999463558197,
+      "uTime": 0.30000001192092896,
       "uFrom": 0,
       "uTo": 0,
       "uBlend": 1,
-      "uProgress": 0.176901713013649
+      "uProgress": 0.3216278851032257
     },
     {
       "id": "sobre",
-      "uTime": 0.47999998927116394,
+      "uTime": 0.699999988079071,
       "uFrom": 0,
       "uTo": 1,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.28057774901390076
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.39387765526771545
     },
     {
       "id": "por-que-biocrab",
-      "uTime": 0.6600000262260437,
-      "uFrom": 0,
+      "uTime": 1.2000000476837158,
+      "uFrom": 1,
       "uTo": 2,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.3251940608024597
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.398796021938324
     },
     {
       "id": "innovacion",
-      "uTime": 0.8999999761581421,
-      "uFrom": 0,
+      "uTime": 1.7000000476837158,
+      "uFrom": 2,
       "uTo": 3,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.35988837480545044
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.39994579553604126
     },
     {
       "id": "del-residuo-al-biomaterial",
-      "uTime": 1.0800000429153442,
-      "uFrom": 0,
+      "uTime": 2.200000047683716,
+      "uFrom": 3,
       "uTo": 4,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.374869167804718
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.4003394842147827
     },
     {
       "id": "investigacion",
-      "uTime": 1.2599999904632568,
-      "uFrom": 0,
+      "uTime": 2.700000047683716,
+      "uFrom": 4,
       "uTo": 5,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.38425397872924805
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.40019917488098145
     },
     {
       "id": "metodologia",
-      "uTime": 1.440000057220459,
-      "uFrom": 0,
+      "uTime": 3.200000047683716,
+      "uFrom": 5,
       "uTo": 6,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.39018502831459045
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.3999994099140167
     },
     {
       "id": "recorrido",
-      "uTime": 1.6200000047683716,
-      "uFrom": 0,
+      "uTime": 3.700000047683716,
+      "uFrom": 6,
       "uTo": 7,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.39382582902908325
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.3999689519405365
     },
     {
       "id": "comparacion",
-      "uTime": 1.7999999523162842,
-      "uFrom": 0,
+      "uTime": 4.199999809265137,
+      "uFrom": 7,
       "uTo": 8,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.39602920413017273
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.39966440200805664
     },
     {
       "id": "aplicaciones-futuras",
-      "uTime": 1.9800000190734863,
-      "uFrom": 0,
+      "uTime": 4.699999809265137,
+      "uFrom": 8,
       "uTo": 9,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.3975105583667755
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.40005648136138916
     },
     {
       "id": "vision-futura",
-      "uTime": 2.1600000858306885,
-      "uFrom": 0,
+      "uTime": 5.199999809265137,
+      "uFrom": 9,
       "uTo": 10,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.39835041761398315
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.40027230978012085
     },
     {
       "id": "impacto-potencial",
-      "uTime": 2.3399999141693115,
-      "uFrom": 0,
+      "uTime": 5.699999809265137,
+      "uFrom": 10,
       "uTo": 11,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.39895394444465637
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.4000760018825531
     },
     {
       "id": "gomitas",
-      "uTime": 2.5799999237060547,
-      "uFrom": 0,
+      "uTime": 6.199999809265137,
+      "uFrom": 11,
       "uTo": 12,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.39936840534210205
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.3994576930999756
     },
     {
       "id": "equipo",
-      "uTime": 2.759999990463257,
-      "uFrom": 0,
+      "uTime": 6.699999809265137,
+      "uFrom": 12,
       "uTo": 13,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.39953964948654175
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.3997441828250885
     },
     {
       "id": "contacto",
-      "uTime": 2.940000057220459,
-      "uFrom": 0,
+      "uTime": 7.199999809265137,
+      "uFrom": 13,
       "uTo": 14,
-      "uBlend": 0.021104935556650162,
-      "uProgress": 0.4022820293903351
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.4042806625366211
     }
   ],
   "pauseStable": true,
   "errors": []
 }
-

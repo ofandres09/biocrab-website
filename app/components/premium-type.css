@@ -1320,3 +1320,487 @@ p {
     font-size: 38px;
   }
 }
+
+/* Research editorial system: photographs read as specimens, captions as notes.
+   These surfaces never animate their camera transform; ScrollCinema owns it. */
+:root {
+  --research-mat: #071018;
+  --research-edge: #85caff30;
+  --research-sheet: #0b1218;
+  --research-rule: color-mix(in srgb, var(--blue) 24%, var(--line));
+}
+:root[data-theme="light"] {
+  --research-mat: #e7edf0;
+  --research-edge: #005fcb30;
+  --research-sheet: #f5f8fa;
+}
+
+.section .section-heading h2 {
+  font-size: clamp(60px, 7.45vw, 118px);
+  font-weight: 540;
+  line-height: 1.015;
+  letter-spacing: -0.058em;
+}
+.section .section-heading {
+  align-items: end;
+  gap: clamp(24px, 3.3vw, 58px);
+  margin-bottom: clamp(30px, 3.3vw, 54px);
+}
+.section .section-heading .section-description {
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 34ch;
+  padding-bottom: 0.35em;
+}
+.section .section-heading .eyebrow,
+.section .editorial-copy > .eyebrow,
+.section .impact-copy > .eyebrow,
+.gummy-section .gummy-copy > .eyebrow {
+  font-size: 10px;
+  font-weight: 560;
+  letter-spacing: 0.16em;
+  margin-bottom: 24px;
+}
+.section .editorial-copy h2,
+.section .impact-copy h2,
+.section.future-vision h2,
+.gummy-section .gummy-copy h2,
+.section .contact-layout h2 {
+  font-size: clamp(60px, 6.35vw, 102px);
+  font-weight: 540;
+  line-height: 1.015;
+  letter-spacing: -0.058em;
+}
+.section .lead,
+.gummy-section .lead {
+  font-size: clamp(22px, 1.8vw, 29px);
+  font-weight: 400;
+  line-height: 1.44;
+  letter-spacing: -0.035em;
+}
+.section
+  :is(.editorial-copy, .technology-copy, .project-copy)
+  > p:not(.eyebrow):not(.lead):not(.annotation),
+.section .research-detail :is(p, li),
+.section .future-card p,
+.section .impact-row p,
+.section .journey-detail p:not(.eyebrow):not(.annotation),
+.section .timeline-panel p,
+.section .comparator-copy p,
+.gummy-section .gummy-copy > p:not(.eyebrow):not(.lead):not(.annotation) {
+  font-size: clamp(14px, 1.05vw, 16px);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.012em;
+}
+.section .research-copy blockquote {
+  font-size: clamp(36px, 3.6vw, 56px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+  max-width: 21ch;
+  margin-block: 22px 35px;
+}
+.section .research-detail summary {
+  font-size: 17px;
+  font-weight: 500;
+  padding-block: 3px;
+}
+.section .annotation,
+.gummy-section .annotation,
+.section .validation-label {
+  font-size: 12px;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+.section .technology-copy h3,
+.section .project-copy h3 {
+  font-weight: 540;
+}
+
+/* The mat reserves a margin around every original, including portrait images. */
+.section
+  :is(
+    .editorial-figure,
+    .research-photo,
+    .technology-visual,
+    .impact-photo,
+    .project-figure
+  )
+  > .parallax-frame,
+.section.future-vision > figure > .parallax-frame,
+.gummy-section .gummy-visual > .parallax-frame {
+  border: 1px solid var(--research-edge);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at 0 0, #278dff12, transparent 64%),
+    var(--research-mat);
+  box-shadow:
+    inset 0 1px 0 #ffffff08,
+    0 24px 55px #0000001a;
+}
+.section
+  :is(
+    .editorial-figure,
+    .research-photo,
+    .technology-visual,
+    .impact-photo,
+    .project-figure
+  )
+  > .parallax-frame
+  > .parallax-inner,
+.section.future-vision > figure > .parallax-frame > .parallax-inner,
+.gummy-section .gummy-visual > .parallax-frame > .parallax-inner {
+  position: absolute;
+  inset: clamp(10px, 1.2vw, 18px);
+  width: auto;
+  height: auto;
+  min-height: 0;
+}
+.section
+  :is(
+    .editorial-figure,
+    .research-photo,
+    .technology-visual,
+    .impact-photo,
+    .project-figure
+  )
+  .project-photo,
+.section.future-vision > figure .project-photo,
+.gummy-section .gummy-visual .project-photo {
+  border-radius: 8px;
+  background: transparent;
+}
+.section
+  :is(
+    .editorial-figure,
+    .research-photo,
+    .technology-visual,
+    .impact-photo,
+    .project-figure
+  )
+  img,
+.section.future-vision > figure img,
+.section :is(.why-card, .future-card) img,
+.gummy-section .gummy-visual img {
+  object-fit: contain;
+  object-position: center;
+}
+.section .photo-caption,
+.gummy-section .photo-caption {
+  gap: 12px;
+  padding-block: 17px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--muted);
+  border-color: var(--research-rule);
+  letter-spacing: -0.005em;
+}
+.photo-caption .photo-dot {
+  flex: 0 0 4px;
+}
+.section .figure-number {
+  border-color: var(--research-edge);
+  border-radius: 20px;
+  padding: 7px 12px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+.section .research-stamp {
+  border-radius: 12px;
+  border-color: var(--research-edge);
+  padding: 17px 20px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+.section .impact-photo {
+  max-width: 480px;
+}
+.section .project-figure > .project-photo {
+  border: 1px solid var(--research-edge);
+  border-radius: 16px;
+  padding: 12px;
+  background: var(--research-mat);
+}
+
+/* Distributed contact sheets: larger real records, quieter material framing. */
+.section .why-grid {
+  gap: clamp(16px, 1.8vw, 30px);
+}
+.section .future-grid {
+  gap: clamp(22px, 2.5vw, 42px);
+}
+.section .why-card,
+.section .future-card {
+  border-radius: 16px;
+  border-color: var(--research-rule);
+  background:
+    linear-gradient(155deg, #ffffff05, transparent 46%), var(--research-sheet);
+  box-shadow: inset 0 1px 0 #ffffff06;
+  transition:
+    border-color var(--motion-duration-card) var(--motion-ease-hover),
+    box-shadow var(--motion-duration-card) var(--motion-ease-hover);
+}
+.section .why-card > .project-photo {
+  height: clamp(300px, 27vw, 420px);
+  background: var(--research-mat);
+}
+.section .future-card > .project-photo {
+  height: clamp(340px, 34vw, 530px);
+  background: var(--research-mat);
+}
+.section :is(.why-card, .future-card) > .project-photo img {
+  padding: clamp(12px, 1.5vw, 22px);
+}
+.section .why-copy,
+.section .future-card > div:last-child {
+  padding: clamp(24px, 2.2vw, 36px);
+  border-top: 1px solid var(--research-rule);
+}
+.section .why-copy h3,
+.section .future-card h3 {
+  font-size: clamp(32px, 3vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.047em;
+  font-weight: 540;
+  padding-right: 0;
+  margin-block: 18px 17px;
+}
+.section .why-copy > svg,
+.section .future-card > div:last-child > svg {
+  top: 26px;
+  right: 26px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.75;
+}
+.section .why-copy .micro,
+.section .future-card .micro {
+  font-size: 10px;
+  font-weight: 550;
+  letter-spacing: 0.13em;
+  padding-right: 22px;
+}
+.section .future-card .annotation {
+  border-left: 1px solid var(--research-edge);
+  padding-left: 13px;
+  margin-top: 20px;
+}
+
+/* Small, bounded hover surfaces provide physical feedback without another loop. */
+.section .text-link,
+.gummy-section .text-link {
+  font-size: 13px;
+  font-weight: 500;
+  gap: 24px;
+  border-color: transparent;
+  background-image:
+    linear-gradient(var(--green), var(--green)),
+    linear-gradient(var(--line), var(--line));
+  background-size:
+    0 1px,
+    100% 1px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition:
+    background-size var(--motion-duration-hover) var(--motion-ease-hover),
+    color var(--motion-duration-hover) var(--motion-ease-hover);
+}
+.desktop-nav a {
+  font-size: 12px;
+  font-weight: 480;
+  padding-block: 10px;
+  background-image: linear-gradient(var(--green), var(--green));
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition:
+    background-size var(--motion-duration-hover) var(--motion-ease-hover),
+    color var(--motion-duration-hover) var(--motion-ease-hover);
+}
+.section .button,
+.gummy-section .button {
+  min-height: 50px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 550;
+  box-shadow: inset 0 1px 0 #ffffff20;
+}
+.section
+  :is(
+    .button,
+    .text-link,
+    .journey-controls button,
+    .dimension-controls button,
+    .comparator-toolbar button
+  ):focus-visible,
+.gummy-section .text-link:focus-visible,
+.desktop-nav a:focus-visible,
+.site-footer a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 6px;
+}
+.section .text-link svg,
+.gummy-section .text-link svg,
+.section .why-copy > svg,
+.section .future-card > div:last-child > svg {
+  transition:
+    translate var(--motion-duration-card) var(--motion-ease-hover),
+    color var(--motion-duration-card) var(--motion-ease-hover);
+}
+.section .contact-form input,
+.section .contact-form textarea {
+  border-radius: 12px;
+  border-color: var(--research-rule);
+  padding: 16px 18px;
+  background: var(--research-sheet);
+  transition:
+    border-color var(--motion-duration-hover) var(--motion-ease-content),
+    box-shadow var(--motion-duration-hover) var(--motion-ease-content);
+}
+.section .contact-form input:focus,
+.section .contact-form textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--green) 10%, transparent);
+}
+@media (hover: hover) and (pointer: fine) {
+  .section .why-card:hover,
+  .section .future-card:hover {
+    border-color: color-mix(in srgb, var(--green) 58%, var(--research-edge));
+    box-shadow:
+      inset 0 1px 0 #ffffff0f,
+      0 20px 50px #00000024,
+      0 0 30px #00ffa309;
+  }
+  .section .text-link:hover,
+  .gummy-section .text-link:hover,
+  .desktop-nav a:hover {
+    background-size:
+      100% 1px,
+      100% 1px;
+    color: var(--green);
+  }
+  .section .text-link:hover svg,
+  .gummy-section .text-link:hover svg,
+  .section .why-card:hover .why-copy > svg,
+  .section .future-card:hover > div:last-child > svg {
+    translate: 3px -3px;
+  }
+}
+@media (max-width: 1100px) {
+  .section .section-heading h2 {
+    font-size: clamp(54px, 7.6vw, 84px);
+  }
+  .section .editorial-copy h2,
+  .section .impact-copy h2,
+  .section.future-vision h2,
+  .gummy-section .gummy-copy h2,
+  .section .contact-layout h2 {
+    font-size: clamp(52px, 6.25vw, 73px);
+  }
+  .section .why-copy h3 {
+    font-size: clamp(28px, 3.2vw, 35px);
+  }
+}
+@media (max-width: 650px) {
+  .section .section-heading {
+    gap: 22px;
+    margin-bottom: 30px;
+  }
+  .section .section-heading h2,
+  .section .editorial-copy h2,
+  .section .impact-copy h2,
+  .section.future-vision h2,
+  .gummy-section .gummy-copy h2,
+  .section .contact-layout h2 {
+    font-size: clamp(48px, 12.85vw, 78px);
+    font-weight: 550;
+    line-height: 1.04;
+    letter-spacing: -0.055em;
+  }
+  .section .section-heading .section-description {
+    font-size: 15px;
+    line-height: 1.75;
+    max-width: 38ch;
+    padding-bottom: 0;
+  }
+  .section .lead,
+  .gummy-section .lead {
+    font-size: clamp(22px, 5.7vw, 28px);
+    line-height: 1.48;
+  }
+  .section .research-detail :is(p, li),
+  .section
+    :is(.editorial-copy, .technology-copy, .project-copy)
+    > p:not(.eyebrow):not(.lead):not(.annotation),
+  .section .why-copy p,
+  .section .future-card p,
+  .section .impact-row p,
+  .gummy-section .gummy-copy > p:not(.eyebrow):not(.lead):not(.annotation) {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .section .why-card > .project-photo {
+    height: min(100vw, 440px);
+  }
+  .section .future-card > .project-photo {
+    height: min(112vw, 490px);
+  }
+  .section .why-copy,
+  .section .future-card > div:last-child {
+    padding: 26px 24px;
+  }
+  .section .why-copy h3,
+  .section .future-card h3 {
+    font-size: clamp(34px, 9.5vw, 53px);
+    line-height: 1.08;
+  }
+  .section .research-copy blockquote {
+    font-size: clamp(34px, 8.8vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -0.045em;
+  }
+  .section .photo-caption,
+  .gummy-section .photo-caption {
+    font-size: 12px;
+    line-height: 1.7;
+    padding-block: 16px;
+  }
+  .section .impact-photo {
+    max-width: min(100%, 420px);
+  }
+  .section .impact-row h3 {
+    font-size: 29px;
+    line-height: 1.12;
+  }
+}
+[data-motion="paused"]
+  .section
+  :is(.text-link, .button, .why-card, .future-card),
+[data-motion="paused"] .gummy-section .text-link,
+[data-motion="paused"] .desktop-nav a,
+[data-motion="paused"] .section .contact-form :is(input, textarea) {
+  transition: none;
+}
+[data-motion="paused"] .section .text-link svg,
+[data-motion="paused"] .gummy-section .text-link svg,
+[data-motion="paused"] .section .why-copy > svg,
+[data-motion="paused"] .section .future-card > div:last-child > svg {
+  transition: none;
+  translate: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .section :is(.text-link, .button, .why-card, .future-card),
+  .gummy-section .text-link,
+  .desktop-nav a,
+  .section .contact-form :is(input, textarea) {
+    transition: none;
+  }
+  .section .text-link svg,
+  .gummy-section .text-link svg,
+  .section .why-copy > svg,
+  .section .future-card > div:last-child > svg {
+    transition: none;
+    translate: none;
+  }
+}

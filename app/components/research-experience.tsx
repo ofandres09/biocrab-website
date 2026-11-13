@@ -1,4 +1,5 @@
 "use client";
+import { motionDuration, motionEase } from "./motion-system";
 import { KineticHeading } from "./scroll-cinema";
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -78,7 +79,11 @@ export function MaterialJourney() {
                 initial={false}
                 whileInView={reduce ? undefined : { opacity: [0.2, 1] }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.15 }}
+                transition={{
+                  duration: motionDuration.component,
+                  delay: i * motionDuration.micro,
+                  ease: motionEase.content,
+                }}
               >
                 <ArrowRight size={17} />
               </motion.span>
@@ -103,7 +108,10 @@ export function MaterialJourney() {
               initial={reduce ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              transition={{
+                duration: motionDuration.reveal,
+                ease: motionEase.content,
+              }}
             >
               <KineticHeading as="h3">{selected.title}</KineticHeading>
               <p>{selected.text}</p>
@@ -222,7 +230,10 @@ export function MaterialComparator() {
                 initial={reduce ? false : { opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.18 }}
+                transition={{
+                  duration: motionDuration.reveal,
+                  ease: motionEase.content,
+                }}
               >
                 <span className="micro">
                   {dimensions[dimension].name.toUpperCase()}

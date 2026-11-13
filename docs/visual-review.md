@@ -1,49 +1,47 @@
-# Revisión visual de BioCrab
+# Revisión editorial y gráfica de BioCrab
 
-Revisión `biomaterial-laboratory-v8`, fuente `fdfe6f6`, 11 de noviembre de 2026.
+Revisión `immersive-biomaterials-v9`, 13 de noviembre de 2026. La verificación pública y las capturas se incorporan tras el despliegue; las mediciones siguientes corresponden a la compilación local de producción.
 
-Se eliminaron completamente «Esto es real. Así empieza el trabajo.» y «Hacer visible la pregunta. Construir la respuesta.», sus componentes y enlaces. También desapareció la galería de referencias incluida en el primer bloque. No quedan huecos reservados. Las catorce secciones restantes conservan sus textos científicos y funciones.
+## Dirección artística
 
-## Resultado
+La portada abre el modelo molecular y establece una jerarquía clara de marca, titular y evidencia. Se refinan títulos, espaciados, pies, marcos fotográficos y zonas de lectura. La hipótesis precede a la transformación; el impacto potencial conduce a las aplicaciones y al futuro. Se conservan las catorce secciones, las seis fotografías reales, las referencias conceptuales y todas las funciones existentes.
 
-- Una nebulosa molecular generativa de Three.js/React Three Fiber permanece en todo el sitio, incluido el hero. Sin estrellas ni video de fondo.
-- Átomos, enlaces y halos se transforman juntos: anillos dispersos, ensamblaje de láminas, cadenas ramificadas, cinco nodos de proceso, expansión circular y cierre calmado en contacto.
-- Cada capítulo tiene una coreografía de GSAP/ScrollTrigger: cámaras, planos, máscaras, rutas, encuadres, órbitas y aperturas distintas.
-- Metodología sincronizada con la lectura del detalle, con prioridad de selección manual, navegación por teclado y rail móvil que se centra sin desplazar la página.
-- Contador de dos vínculos temáticos con ODS 12 y 14. No representa impacto medido ni resultados experimentales.
-- Fotografías completas, marca BioCrab, Inter Tight/Geist, comparador, temas, formulario, controles de movimiento y explorador molecular preservados.
+Se documentan [diez correcciones concretas](art-direction-audit.md), el [sistema compartido de movimiento](editorial-motion-system.md) y la [auditoría de shaders y composición](shader-audit.md). No se incorporan nuevas secciones, partículas ni efectos de postprocesado. Las cinco fichas científicas y las tres anotaciones de precaución de la página permanecen íntegras; `lib/project.ts` no cambia.
 
-## Verificación local
+## Rendimiento medido
 
-La compilación de producción, TypeScript y `git diff --check` pasan.
+Chromium 154, ANGLE/SwiftShader por software, Lighthouse 13.6, preset de escritorio y throttling `provided`. Navegadores secuenciales; WebGL activo. Baseline: `d7aa84b`. No son mediciones de una GPU física ni una certificación de 60 FPS.
 
-Chromium comprobó los catorce capítulos y veinticinco apariciones iniciales de imágenes por vista, sin recursos rotos ni enlaces internos inexistentes. Se verificaron cinco etapas por scroll en 1440 y 390 px, pausa estable, movimiento reducido y los controles de material/giro.
+| Medida                                  |           Antes |         Después |
+| --------------------------------------- | --------------: | --------------: |
+| Lighthouse Performance                  |              35 |              43 |
+| Accessibility / Best Practices / SEO    | 100 / 100 / 100 | 100 / 100 / 100 |
+| LCP                                     |          6,38 s |          3,12 s |
+| TBT                                     |         20,67 s |         13,88 s |
+| TTI diagnóstico                         |         22,49 s |         17,35 s |
+| Fondo, FPS escritorio en reposo         |            1,59 |            4,92 |
+| Fondo, FPS móvil emulado en reposo      |            5,33 |           20,96 |
+| Fondo, FPS escritorio en scroll frío    |            0,67 |            0,49 |
+| Fondo, FPS móvil emulado en scroll frío |            1,94 |            2,39 |
 
-La prueba lee los valores reales del programa WebGL: el reloj avanza y el identificador molecular cambia en todos los capítulos. También se comprobó el estado adicional de contacto. Así se detectó y corrigió una copia de uniforms de Fiber que permitía repintar el canvas sin transformar sus moléculas.
+La carga y el reposo mejoran; la prueba corta de scroll frío de escritorio **no mejora consistentemente**. Los bloqueos y la fluidez de este renderer por software siguen lejos del objetivo de 60 FPS. Se conserva esa limitación en la evidencia, sin sustituirla por cifras de otra configuración. Las ventanas solicitadas duran seis segundos y pueden prolongarse por frames lentos; los diseños editoriales tienen alturas diferentes.
 
-Cinco etapas manuales y teclado, cinco pasos del recorrido, tres pestañas de cronología, ocho estados del comparador, menú móvil y copia exacta del formulario: comprobados. Anchos 320, 390, 768, 1024 y 1440 px sin desbordamiento horizontal. La comprobación de imágenes tras cambiar el comparador encontró veinticuatro nodos: el estado plástico sustituye una fotografía por su ilustración conceptual.
+Las consultas `EXT_disjoint_timer_query_webgl2` registran cinco muestras válidas por programa activo, sin resultados disjuntos. Medianas por dibujo en SwiftShader: niebla 50,21 → 17,20 ms; enlaces 95,44 → 3,89 ms; átomos 166,36 → 2,32 ms. Cambian geometría, resolución y ruta de dibujo, por lo que no son un A/B aislado del mismo shader ni deben sumarse como frame time. El uso porcentual de GPU física no está disponible. Se registran por separado CPU, dibujos y geometría enviada.
 
-Axe en escritorio/móvil y oscuro/claro, con movimiento reducido: cero infracciones automáticas tras corregir el nombre accesible de la marca. Dos comprobaciones incompletas por caso; no constituye certificación integral.
+No existe bloom de postprocesado. Se conservan los halos locales; se reducen ruido, geometría redundante, evaluaciones por vértice, contextos temporales y reconstrucciones durante el scroll. Una prueba adicional de eliminación global de desenfoques CSS no mostró una mejora: se rechazó y no se publicó ese override.
 
-Sin WebGL funciona el respaldo SVG. Se probó pérdida real del contexto del explorador y del fondo, aislamiento del fallo y conservación de la pausa al redimensionar.
+[Evidencia comparativa, condiciones y límites](editorial-performance.json). Los scripts `measure-rendering.cjs` y `profile-shaders.cjs` permiten repetir el muestreo.
 
-## Producción
+## Funcionalidad y accesibilidad
 
-<https://biocrab-website.vercel.app/> sirve `X-BioCrab-Design: biomaterial-laboratory-v8`. El despliegue `Vercel – biocrab-website` del commit `fdfe6f6` terminó correctamente.
+Compilación de producción, TypeScript y `git diff --check`: correctos. Veintiuna comprobaciones funcionales aprobadas: etapas manuales y teclado, recorrido, cronología, ocho estados del comparador, menú móvil, formulario y copia. Veinticinco imágenes iniciales y veinticuatro tras seleccionar plástico decodificadas. Los anchos 320, 390, 768, 1024 y 1440 px no presentan desbordamiento.
 
-El enlace público `/#hipotesis` abre el detalle de la hipótesis y lo sitúa debajo de la navegación. El favicon y la imagen social responden 200 como PNG.
+Axe en escritorio/móvil y oscuro/claro con movimiento reducido: cero infracciones automáticas. No constituye una certificación integral de WCAG. Las zonas de lectura usan fondos locales, sin depender del brillo del canvas; los pares de texto secundario y velo en sus áreas interiores superan 5:1 incluso frente a un fondo extremo blanco/negro. Las fotografías mantienen `object-fit: contain` y pies externos.
 
-Las capturas enlazadas se toman directamente del dominio público con WebGL y movimiento activados, esperando a que las máscaras y los títulos terminen su entrada:
+La prueba lee los uniforms reales de WebGL en quince estados, incluido contacto: cambian con el capítulo y quedan estables al pausar. Sin errores de consola o excepciones en esa ruta normal. Al deshabilitar deliberadamente WebGL, Three/React emiten ocho avisos de contexto no disponible, capturados por el boundary: se conservan los logs crudos y el respaldo SVG. La prueba solo permite esos mensajes exactos; otros errores siguen fallando.
 
-- [Hero de escritorio](previews/laboratorio-v8/hero-1440.jpg)
-- [Hero móvil](previews/laboratorio-v8/hero-390.jpg)
-- [Problema](previews/laboratorio-v8/problema-1440.jpg)
-- [Transformación](previews/laboratorio-v8/transformacion-1440.jpg)
-- [Metodología móvil](previews/laboratorio-v8/metodologia-390.jpg)
-- [Investigación](previews/laboratorio-v8/investigacion-1440.jpg)
-- [Impacto](previews/laboratorio-v8/impacto-1440.jpg)
-- [Contacto móvil](previews/laboratorio-v8/contacto-390.jpg)
+[Controles y Axe](molecular-functional.json), [avisos de fallback observados](graphics-fallback-observed.json), [integración GPU](gpu-integration.json) y [respaldo/pérdida de contexto](runtime-verification.json).
 
-Evidencia: [producción](production-verification.json), [movimiento local](motion-verification.json), [uniforms reales](gpu-integration.json), [controles/accesibilidad](molecular-functional.json), [respaldo gráfico](runtime-verification.json) y [detalle técnico](molecular-experience.md).
+## Publicación y capturas
 
-El navegador utiliza ANGLE/SwiftShader por software y viewports emulados. Estas pruebas no certifican una frecuencia de cuadros en todos los teléfonos físicos. Las capturas anteriores fuera de `laboratorio-v8` se conservan como historial y no acreditan esta revisión.
+Pendiente de verificación pública de esta revisión. Las capturas v8 de `previews/laboratorio-v8` son historial y no acreditan v9.

@@ -20,6 +20,10 @@ export type MolecularMode = "both" | "chitosan" | "starch";
 export type MolecularInteraction = {
   x: number;
   y: number;
+  /** Normalized screen-space input for the decorative material field. */
+  pointerX?: number;
+  pointerY?: number;
+  pointerStrength?: number;
   reset?: boolean;
   invalidate?: () => void;
 };
@@ -67,6 +71,9 @@ function usePageVisibility() {
   return visible;
 }
 
+// Stable SVG serialization across Node and browser trigonometric implementations.
+const svgCoordinate = (value: number) => Math.round(value * 1000) / 1000;
+
 function StaticMolecules({
   backdrop = false,
   mode = "both",
@@ -109,10 +116,13 @@ function StaticMolecules({
         >
           {Array.from({ length: 5 }, (_, index) => {
             const cx = 72 + index * 80;
-            const cy = Math.sin(index * 1.1) * 12;
+            const cy = svgCoordinate(Math.sin(index * 1.1) * 12);
             const vertices = Array.from({ length: 6 }, (_, vertex) => {
               const angle = (vertex * Math.PI) / 3;
-              return [cx + Math.cos(angle) * 24, cy + Math.sin(angle) * 21];
+              return [
+                svgCoordinate(cx + Math.cos(angle) * 24),
+                svgCoordinate(cy + Math.sin(angle) * 21),
+              ];
             });
             return (
               <g key={index}>
@@ -121,12 +131,12 @@ function StaticMolecules({
                 />
                 {index < 4 && (
                   <path
-                    d={`M${cx + 24} ${cy} L${cx + 40} ${cy - 6} L${cx + 56} ${Math.sin((index + 1) * 1.1) * 12}`}
+                    d={`M${cx + 24} ${cy} L${cx + 40} ${svgCoordinate(cy - 6)} L${cx + 56} ${svgCoordinate(Math.sin((index + 1) * 1.1) * 12)}`}
                     opacity=".7"
                   />
                 )}
                 <path
-                  d={`M${cx - 12} ${cy - 18} l-7 -16 l8 -10`}
+                  d={`M${cx - 12} ${svgCoordinate(cy - 18)} l-7 -16 l8 -10`}
                   opacity=".8"
                 />
                 {vertices.map(([x, y], vertex) => (
@@ -142,7 +152,7 @@ function StaticMolecules({
                 ))}
                 <circle
                   cx={cx - 11}
-                  cy={cy - 44}
+                  cy={svgCoordinate(cy - 44)}
                   r="4"
                   fill={strand.color}
                   strokeWidth="0"
@@ -151,16 +161,6 @@ function StaticMolecules({
             );
           })}
         </g>
-      ))}
-      {Array.from({ length: 17 }, (_, index) => (
-        <circle
-          key={index}
-          cx={24 + ((index * 79) % 430)}
-          cy={20 + ((index * 47) % 260)}
-          r={index % 3 === 0 ? 1.6 : 1}
-          fill={index % 2 === 0 ? "#78b9ff" : "#63e6c0"}
-          opacity=".35"
-        />
       ))}
     </svg>
   );
@@ -181,8 +181,18 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
     let lastUpdate = 0;
     let pointerX = 0;
     let pointerY = 0;
+    let strength = 0;
+    const leave = () => {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      strength = 0;
+      interaction.current.pointerStrength = 0;
+    };
+    const release = (event: PointerEvent) => {
+      if (event.pointerType === "touch") leave();
+    };
     const onPointerMove = (event: PointerEvent) => {
-      if (event.pointerType === "touch") return;
+      strength = event.pointerType === "touch" ? 0.45 : 1;
       pointerX = (event.clientX / Math.max(window.innerWidth, 1)) * 2 - 1;
       pointerY = (event.clientY / Math.max(window.innerHeight, 1)) * 2 - 1;
       if (frame) return;
@@ -190,6 +200,9 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
         frame = 0;
         if (time - lastUpdate < 100) return;
         lastUpdate = time;
+        interaction.current.pointerX = pointerX;
+        interaction.current.pointerY = -pointerY;
+        interaction.current.pointerStrength = strength;
         interaction.current.x = Math.max(
           -0.12,
           Math.min(0.12, pointerY * 0.12),
@@ -201,8 +214,17 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
       });
     };
     window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerup", release, { passive: true });
+    window.addEventListener("blur", leave);
+    window.addEventListener("resize", leave, { passive: true });
+    document.documentElement.addEventListener("pointerleave", leave);
     return () => {
       window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", release);
+      window.removeEventListener("blur", leave);
+      window.removeEventListener("resize", leave);
+      document.documentElement.removeEventListener("pointerleave", leave);
+      leave();
       cancelAnimationFrame(frame);
     };
   }, [ready, paused, reduced, visible]);
@@ -251,6 +273,7 @@ export function MolecularBackdrop({ className = "" }: { className?: string }) {
 export function MolecularExplorer({ className = "" }: { className?: string }) {
   const [mode, setMode] = useState<MolecularMode>("both");
   const [inView, setInView] = useState(false);
+  const [hasEntered, setHasEntered] = useState(false);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
   const container = useRef<HTMLElement>(null);
@@ -265,18 +288,18 @@ export function MolecularExplorer({ className = "" }: { className?: string }) {
   useEffect(() => {
     if (!container.current) return;
     const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
+      ([entry]) => {
+        setInView(entry.isIntersecting);
+        if (entry.isIntersecting) setHasEntered(true);
+      },
       { threshold: 0.08 },
     );
     observer.observe(container.current);
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    // The bounded viewer releases its GPU scene off screen; the global nebula
-    // continues independently across all chapters.
-    if (!inView) setReady(false);
-  }, [inView]);
+  // Retain the bounded context and its compiled programs after first entry.
+  // Offscreen work stops through `active`; scrolling back does not recompile it.
 
   const rotate = useCallback((x: number, y: number) => {
     interaction.current.x = Math.max(
@@ -372,12 +395,12 @@ export function MolecularExplorer({ className = "" }: { className?: string }) {
           className="molecular-crosshair molecular-crosshair--two"
           aria-hidden="true"
         />
-        {inView && !failed && (
+        {hasEntered && !failed && (
           <GraphicsBoundary onFailure={onFailure}>
             <MolecularCanvas
               kind="explorer"
               mode={mode}
-              active={pageVisible && !paused && !reduced}
+              active={inView && pageVisible && !paused && !reduced}
               interaction={interaction}
               onReady={onReady}
               onFailure={onFailure}

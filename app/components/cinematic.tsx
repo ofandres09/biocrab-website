@@ -9,6 +9,7 @@ import {
 } from "react";
 import { motion, stagger, useAnimate, useInView } from "framer-motion";
 import { Pause, Play } from "lucide-react";
+import { motionDuration, motionEase } from "./motion-system";
 
 function subscribeReducedMotion(listener: () => void) {
   const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -27,7 +28,6 @@ export function useReducedMotionPreference() {
   );
 }
 
-const cinematicEase = [0.16, 1, 0.3, 1] as const;
 const motionEvent = "biocrab:motionchange";
 
 /** Shared with decorative effects, so one control pauses both CSS and Motion. */
@@ -104,7 +104,7 @@ export function HeroTitle() {
       // be overwritten by the deferred render of an interrupted native effect.
       animate(
         lines,
-        { y: 0, rotateX: 0, scale: 1, opacity: 1, filter: "blur(0px)" },
+        { y: 0, rotateX: 0, scale: 1, opacity: 1 },
         { duration: 0 },
       );
     };
@@ -119,15 +119,11 @@ export function HeroTitle() {
         y: [76, 0],
         rotateX: [-18, 0],
         scale: [0.94, 1],
-        filter: [
-          window.innerWidth >= 900 ? "blur(4px)" : "blur(1px)",
-          "blur(0px)",
-        ],
       },
       {
-        duration: 1.1,
-        delay: stagger(0.14, { startDelay: 0.08 }),
-        ease: cinematicEase,
+        duration: motionDuration.hero,
+        delay: stagger(motionDuration.micro),
+        ease: motionEase.hero,
       },
     );
     return () => {
@@ -176,9 +172,9 @@ export function CinematicReveal({
       }
       viewport={{ once: true, amount: 0.12, margin: "0px 0px -30px 0px" }}
       transition={{
-        duration: still ? 0 : 0.9,
+        duration: still ? 0 : motionDuration.reveal,
         delay: still ? 0 : delay,
-        ease: cinematicEase,
+        ease: motionEase.content,
       }}
     >
       {children}
@@ -203,7 +199,9 @@ export function Stagger({
       whileInView="visible"
       viewport={{ once: true, amount: 0.12 }}
       variants={{
-        visible: { transition: { staggerChildren: still ? 0 : 0.16 } },
+        visible: {
+          transition: { staggerChildren: still ? 0 : motionDuration.micro },
+        },
       }}
     >
       {Children.map(children, (child) => (
@@ -216,7 +214,10 @@ export function Stagger({
                   y: [42, 0],
                   scale: [0.98, 1],
                   rotateY: [3, 0],
-                  transition: { duration: 0.85, ease: cinematicEase },
+                  transition: {
+                    duration: motionDuration.component,
+                    ease: motionEase.content,
+                  },
                 },
           }}
         >

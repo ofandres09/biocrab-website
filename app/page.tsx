@@ -90,19 +90,15 @@ export default function Home() {
       <ReadingProgress />
       <Header />
       <main id="contenido">
-        <section id="inicio" className="hero image-led-hero">
-          <Photo
-            name="pinterest-adn.png"
-            alt="Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab"
-            caption="Imagen conceptual de ADN · Ambientación tecnológica"
-            className="hero-reference-background full-width"
-            priority
-          />
+        <section id="inicio" className="hero image-led-hero hero-immersive">
           <OceanAtmosphere />
-          <div className="hero-grid" />
+          <div className="hero-grid" aria-hidden="true" />
           <div className="hero-copy">
             <div className="hero-brand">
               <Brand hero link={false} />
+              <span className="hero-brand-signature" aria-hidden="true">
+                BioCrab
+              </span>
             </div>
             <p className="eyebrow">
               <span className="live-dot" /> BIOMATERIALES. NUEVAS POSIBILIDADES.
@@ -132,10 +128,16 @@ export default function Home() {
                 Ver el trabajo real <ArrowRight size={16} />
               </a>
             </div>
+          </div>
+          <div className="hero-art hero-orbit-stage">
+            <MolecularExplorer />
+          </div>
+          <div className="hero-evidence-deck">
             <DepthSurface className="hero-project-depth">
               <div className="hero-project-preview">
                 <Photo
                   name="biopelicula-secando.jpg"
+                  sizes="118px"
                   alt="Registro real del proyecto: biopelícula durante el secado"
                 />
                 <div>
@@ -147,9 +149,14 @@ export default function Home() {
                 </div>
               </div>
             </DepthSurface>
-          </div>
-          <div className="hero-art">
-            <MolecularExplorer />
+            <Photo
+              name="pinterest-adn.png"
+              sizes="(max-width: 650px) 106px, 90px"
+              alt="Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab"
+              caption="Imagen conceptual de ADN · Ambientación tecnológica"
+              className="hero-reference-background full-width"
+              priority
+            />
           </div>
           <div className="hero-bottom">
             <span>ORIGEN BIOLÓGICO. MÉTODO CIENTÍFICO.</span>
@@ -193,21 +200,19 @@ export default function Home() {
               <span className="figure-number">01 / OBSERVAR</span>
             </figure>
             <div className="editorial-copy">
-              <p className="eyebrow">01 / EL PROBLEMA GLOBAL</p>
+              <p className="eyebrow">EL PROBLEMA GLOBAL</p>
               <KineticHeading as="h2">
-                El alimento importa.
+                Conservar alimentos.
                 <br />
-                <span>Su protección también.</span>
+                <span>Repensar el material.</span>
               </KineticHeading>
               <p className="lead">
-                Conservar alimentos exige materiales que respondan durante su
-                uso y una gestión responsable después.
+                Conservar alimentos exige estudiar el material y su destino
+                final.
               </p>
               <p>
-                BioCrab explora una conexión: aprovechar recursos biológicos
-                para investigar nuevas películas. La pregunta incluye sus
-                propiedades, su seguridad y lo que sucede al terminar su vida
-                útil.
+                BioCrab explora películas de origen biológico: sus propiedades,
+                su seguridad y su fin de vida.
               </p>
               <div className="inline-note">
                 <span className="red-dot" />
@@ -224,34 +229,34 @@ export default function Home() {
         </section>
         <section id="por-que-biocrab" className="section why-section">
           <SectionHeading
-            label="02 / ¿POR QUÉ BIOCRAB?"
+            label="¿POR QUÉ BIOCRAB?"
             title={
               <>
-                La innovación empieza
+                Combinar orígenes.
                 <br />
-                con <span>otra mirada.</span>
+                <span>Estudiar interacciones.</span>
               </>
             }
-            description="Un recurso marino. Una matriz vegetal. Un proceso que se construye con evidencia."
+            description="Quitosano y almidón de yuca como matriz propuesta."
           />
           <Stagger className="why-grid">
             {[
               {
                 image: "exoesqueletos-separados.jpg",
                 label: "EL RECURSO",
-                title: "Ver valor donde hay un residuo.",
+                title: "Exoesqueletos como recurso.",
                 text: "Explorar exoesqueletos de cangrejo como materia prima para estudiar biopolímeros.",
               },
               {
                 image: "biopelicula-secando.jpg",
                 label: "EL MATERIAL",
-                title: "Conectar dos orígenes.",
+                title: "Una matriz por caracterizar.",
                 text: "Investigar cómo el quitosano y el almidón de yuca pueden formar una matriz.",
               },
               {
                 image: "peliculas-secando.jpg",
                 label: "EL MÉTODO",
-                title: "De la idea a la evidencia.",
+                title: "Formular, medir, contrastar.",
                 text: "Documentar formulaciones y contrastar propiedades, sin anticipar conclusiones.",
               },
             ].map((c) => (
@@ -275,12 +280,12 @@ export default function Home() {
             label="TECNOLOGÍA / INNOVACIÓN"
             title={
               <>
-                Conectar ideas.
+                Una matriz.
                 <br />
-                <span>Transformar posibilidades.</span>
+                <span>Interacciones por estudiar.</span>
               </>
             }
-            description="Una identidad tecnológica para una investigación que une recursos biológicos, ciencia de materiales y conservación de alimentos."
+            description="Formulación, estructura y propiedades del quitosano y el almidón de yuca."
           />
           <Reveal className="technology-layout">
             <DepthSurface className="technology-depth">
@@ -299,14 +304,13 @@ export default function Home() {
             <div className="technology-copy">
               <p className="eyebrow">UNA NUEVA MANERA DE MIRAR EL MATERIAL</p>
               <KineticHeading as="h3">
-                El valor está
+                Formular para
                 <br />
-                en las conexiones.
+                comprender.
               </KineticHeading>
               <p>
-                BioCrab conecta un recurso marino con una matriz vegetal. El
-                método científico permite explorar qué propiedades emergen de
-                esa combinación.
+                El estudio explora cómo los biopolímeros podrían interactuar y
+                qué propiedades tendría la película.
               </p>
               <ul>
                 <li>
@@ -337,37 +341,18 @@ export default function Home() {
             </div>
           </Reveal>
         </section>
-        <section
-          id="del-residuo-al-biomaterial"
-          className="section transformation-section"
-        >
-          <SectionHeading
-            label="03 / DEL RESIDUO AL BIOMATERIAL"
-            title={
-              <>
-                No es un final.
-                <br />
-                <span>Es un punto de partida.</span>
-              </>
-            }
-            description="Explora el recorrido conceptual del recurso a una posible aplicación. Cada etapa abre una pregunta que debe validarse."
-          />
-          <Reveal>
-            <MaterialJourney />
-          </Reveal>
-        </section>
         <section id="investigacion" className="section research-section">
           <span id="ciencia" className="anchor-alias" />
           <SectionHeading
-            label="04 / INVESTIGACIÓN CIENTÍFICA"
+            label="INVESTIGACIÓN CIENTÍFICA"
             title={
               <>
                 Una hipótesis.
                 <br />
-                <span>Muchas preguntas útiles.</span>
+                <span>Por contrastar.</span>
               </>
             }
-            description="Ciencia de materiales aplicada a una posibilidad concreta: películas de quitosano y almidón de yuca."
+            description="Biopelículas de quitosano y almidón de yuca: formulación y propiedades por investigar."
           />
           <div className="research-layout">
             <figure className="research-photo">
@@ -494,14 +479,33 @@ export default function Home() {
             </Reveal>
           </div>
         </section>
-        <section id="metodologia" className="section method-section">
+        <section
+          id="del-residuo-al-biomaterial"
+          className="section transformation-section"
+        >
           <SectionHeading
-            label="05 / METODOLOGÍA"
+            label="DEL RESIDUO AL BIOMATERIAL"
             title={
               <>
-                La diferencia está
+                Del recurso
                 <br />
-                <span>en cómo investigamos.</span>
+                <span>a la película.</span>
+              </>
+            }
+            description="Un recorrido conceptual del recurso a su posible aplicación, con validación pendiente en cada etapa."
+          />
+          <Reveal>
+            <MaterialJourney />
+          </Reveal>
+        </section>
+        <section id="metodologia" className="section method-section">
+          <SectionHeading
+            label="METODOLOGÍA"
+            title={
+              <>
+                Formular el material.
+                <br />
+                <span>Documentar el proceso.</span>
               </>
             }
             description="Selecciona una etapa para conocer el método. Las fotos acompañan el relato; no certifican la composición química ni un ensayo completado."
@@ -521,14 +525,13 @@ export default function Home() {
             <div className="method-reference-copy">
               <p className="eyebrow">DEL DISEÑO AL PROCEDIMIENTO</p>
               <KineticHeading as="h3">
-                Una exploración guiada
+                El proceso,
                 <br />
-                por el método.
+                bajo observación.
               </KineticHeading>
               <p>
-                Definir condiciones, registrar el proceso y contrastar
-                propiedades permite transformar una propuesta en conocimiento
-                verificable.
+                Definir condiciones y registrar procedimientos permite
+                contrastar propiedades.
               </p>
               <p className="annotation">
                 La imagen ambienta esta sección. Las fotografías reales
@@ -550,9 +553,9 @@ export default function Home() {
             label="EL RECORRIDO / DE PREGUNTAS A EVIDENCIA"
             title={
               <>
-                La ciencia avanza.
+                El recorrido
                 <br />
-                <span>Una pregunta a la vez.</span>
+                <span>de una investigación.</span>
               </>
             }
           />
@@ -562,31 +565,96 @@ export default function Home() {
         </section>
         <section id="comparacion" className="section compare-section">
           <SectionHeading
-            label="07 / MATERIALES EN PERSPECTIVA"
+            label="MATERIALES EN PERSPECTIVA"
             title={
               <>
-                Comparar mejor.
+                Materiales
                 <br />
-                <span>No prometer más.</span>
+                <span>bajo comparación.</span>
               </>
             }
-            description="Explora BioCrab y el plástico convencional por dimensión. Una comparación cualitativa sin puntuaciones ni resultados simulados."
+            description="BioCrab y plástico convencional, por dimensión. Una comparación cualitativa sin puntuaciones ni resultados simulados."
           />
           <Reveal>
             <MaterialComparator />
           </Reveal>
         </section>
+        <section id="impacto-potencial" className="section impact-section">
+          <span id="impacto" className="anchor-alias" />
+          <div className="impact-layout">
+            <Reveal className="impact-copy">
+              <p className="eyebrow">IMPACTO POTENCIAL</p>
+              <KineticHeading as="h2">
+                El impacto,
+                <br />
+                <span>por evaluar.</span>
+              </KineticHeading>
+              <p className="lead">
+                Recurso, agua, energía y fin de vida forman parte de la
+                evaluación.
+              </p>
+              <div className="impact-row">
+                <Recycle size={23} />
+                <div>
+                  <KineticHeading as="h3">
+                    Aprovechar recursos biológicos
+                  </KineticHeading>
+                  <p>
+                    Explorar una nueva función para subproductos de crustáceos,
+                    con trazabilidad y gestión responsable.
+                  </p>
+                </div>
+              </div>
+              <div className="impact-row">
+                <Leaf size={23} />
+                <div>
+                  <KineticHeading as="h3">
+                    Evaluar el ciclo completo
+                  </KineticHeading>
+                  <p>
+                    La reducción potencial de residuos o impactos debe
+                    contrastarse considerando proceso, uso y fin de vida.
+                  </p>
+                </div>
+              </div>
+              <SustainabilityLinks />
+              <p className="annotation">
+                Alineación temática con ODS 12 y 14. Sin certificación,
+                reducción cuantificada ni resultados ambientales atribuidos.
+              </p>
+              <a className="text-link" href="#investigacion">
+                Primero, construir evidencia <ArrowUpRight size={16} />
+              </a>
+            </Reveal>
+            <figure className="impact-photo">
+              <ParallaxFrame>
+                <Photo
+                  name="pinterest-huella.png"
+                  alt="Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad"
+                />
+              </ParallaxFrame>
+              <div className="circular-overlay">
+                <span>RECURSO</span>
+                <Recycle size={48} strokeWidth={0.8} />
+                <span>MATERIAL · USO · FIN DE VIDA</span>
+              </div>
+              <Caption>
+                Biotecnología y sostenibilidad · Imagen conceptual recibida.
+              </Caption>
+            </figure>
+          </div>
+        </section>
         <section id="aplicaciones-futuras" className="section future-section">
           <SectionHeading
-            label="08 / APLICACIONES FUTURAS"
+            label="APLICACIONES FUTURAS"
             title={
               <>
-                El potencial abre puertas.
+                Aplicaciones posibles.
                 <br />
-                <span>La evidencia decide cuáles.</span>
+                <span>Validación específica.</span>
               </>
             }
-            description="Posibles líneas de trabajo, sujetas a validación específica. No son aplicaciones aprobadas ni productos disponibles."
+            description="Líneas de trabajo por validar. No son aplicaciones aprobadas ni productos disponibles."
           />
           <Stagger className="future-grid">
             {[
@@ -643,9 +711,9 @@ export default function Home() {
           <Reveal>
             <p className="eyebrow">BIOTECNOLOGÍA / FUTURO</p>
             <KineticHeading as="h2">
-              La naturaleza inspira.
+              El futuro
               <br />
-              <span>La ciencia contrasta.</span>
+              <span>se investiga.</span>
             </KineticHeading>
             <p className="lead">
               Diseñar con recursos biológicos exige mirar más allá del origen
@@ -661,71 +729,6 @@ export default function Home() {
             </a>
           </Reveal>
         </section>
-        <section id="impacto-potencial" className="section impact-section">
-          <span id="impacto" className="anchor-alias" />
-          <div className="impact-layout">
-            <Reveal className="impact-copy">
-              <p className="eyebrow">09 / IMPACTO POTENCIAL</p>
-              <KineticHeading as="h2">
-                Pensar en el material.
-                <br />
-                <span>Pensar más allá.</span>
-              </KineticHeading>
-              <p className="lead">
-                El recurso, la energía, el agua y el destino final también
-                forman parte de la misma pregunta.
-              </p>
-              <div className="impact-row">
-                <Recycle size={23} />
-                <div>
-                  <KineticHeading as="h3">
-                    Aprovechar recursos biológicos
-                  </KineticHeading>
-                  <p>
-                    Explorar una nueva función para subproductos de crustáceos,
-                    con trazabilidad y gestión responsable.
-                  </p>
-                </div>
-              </div>
-              <div className="impact-row">
-                <Leaf size={23} />
-                <div>
-                  <KineticHeading as="h3">
-                    Evaluar el ciclo completo
-                  </KineticHeading>
-                  <p>
-                    La reducción potencial de residuos o impactos debe
-                    contrastarse considerando proceso, uso y fin de vida.
-                  </p>
-                </div>
-              </div>
-              <SustainabilityLinks />
-              <p className="annotation">
-                Alineación temática con ODS 12 y 14. Sin certificación,
-                reducción cuantificada ni resultados ambientales atribuidos.
-              </p>
-              <a className="text-link" href="#investigacion">
-                Primero, construir evidencia <ArrowUpRight size={16} />
-              </a>
-            </Reveal>
-            <figure className="impact-photo">
-              <ParallaxFrame>
-                <Photo
-                  name="pinterest-huella.png"
-                  alt="Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad"
-                />
-              </ParallaxFrame>
-              <div className="circular-overlay">
-                <span>RECURSO</span>
-                <Recycle size={48} strokeWidth={0.8} />
-                <span>MATERIAL · USO · FIN DE VIDA</span>
-              </div>
-              <Caption>
-                Biotecnología y sostenibilidad · Imagen conceptual recibida.
-              </Caption>
-            </figure>
-          </div>
-        </section>
         <section id="gomitas" className="gummy-section">
           <div className="gummy-visual">
             <ParallaxFrame>
@@ -739,15 +742,15 @@ export default function Home() {
             </span>
           </div>
           <Reveal className="gummy-copy">
-            <p className="eyebrow">10 / LÍNEA DE GOMITAS DE FRUTA</p>
+            <p className="eyebrow">LÍNEA DE GOMITAS DE FRUTA</p>
             <KineticHeading as="h2">
-              La ciencia también
+              Fruta, matriz
               <br />
-              <span>explora la textura.</span>
+              <span>y textura.</span>
             </KineticHeading>
             <p className="lead">
-              Una matriz con fruta abre nuevas preguntas sobre formulación,
-              estructura y conservación.
+              Una matriz con fruta para estudiar formulación, estructura y
+              conservación.
             </p>
             <p>
               Este registro forma parte de la exploración del proyecto. La
@@ -764,15 +767,15 @@ export default function Home() {
         </section>
         <section id="equipo" className="section project-section">
           <SectionHeading
-            label="11 / EQUIPO Y PROYECTO"
+            label="EQUIPO Y PROYECTO"
             title={
               <>
-                Las ideas crecen
+                La investigación
                 <br />
-                <span>cuando se conectan.</span>
+                <span>se comparte.</span>
               </>
             }
-            description="Un punto de encuentro entre biomateriales, ciencia de alimentos y sostenibilidad."
+            description="Biomateriales, ciencia de alimentos y sostenibilidad: el ámbito compartido del proyecto."
           />
           <div className="project-layout">
             <figure className="project-figure">
@@ -790,12 +793,11 @@ export default function Home() {
               <KineticHeading as="h3">
                 BioCrab.
                 <br />
-                Investigación con propósito.
+                Investigación en curso.
               </KineticHeading>
               <p>
-                El proyecto está abierto al diálogo con estudiantes,
-                investigadores y organizaciones interesadas en nuevas preguntas
-                sobre los materiales.
+                Un proyecto abierto al diálogo con estudiantes, investigadores y
+                organizaciones interesadas en biomateriales.
               </p>
               <p className="annotation">
                 Los nombres y contribuciones del equipo se incorporarán cuando
@@ -813,13 +815,13 @@ export default function Home() {
             <div>
               <p className="eyebrow">LA PRÓXIMA CONVERSACIÓN</p>
               <KineticHeading as="h2">
-                ¿Y si lo
+                Conversemos
                 <br />
-                <span>exploramos juntos?</span>
+                <span>sobre biomateriales.</span>
               </KineticHeading>
               <p>
-                Investigación, colaboración o una pregunta compartida. El
-                siguiente capítulo puede empezar aquí.
+                Para compartir preguntas de investigación o explorar una
+                colaboración.
               </p>
             </div>
             <Contact />

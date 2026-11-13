@@ -24,7 +24,7 @@ const chapters = [
   "contacto",
 ];
 const url = process.env.BIOCRAB_URL || "http://localhost:3000";
-const expectedDesign = "biomaterial-laboratory-v8";
+const expectedDesign = "immersive-biomaterials-v9";
 
 function readUniforms() {
   const canvas = document.querySelector(".molecular-backdrop canvas");

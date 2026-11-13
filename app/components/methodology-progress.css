@@ -32,10 +32,10 @@
   background:
     linear-gradient(150deg, #00ff9903, transparent 70%), var(--surface);
   transition:
-    border-color 300ms ease,
-    background-color 300ms ease,
-    box-shadow 300ms ease,
-    transform 300ms ease;
+    border-color var(--motion-duration-button) var(--motion-ease-micro),
+    background-color var(--motion-duration-button) var(--motion-ease-micro),
+    box-shadow var(--motion-duration-button) var(--motion-ease-micro),
+    transform var(--motion-duration-button) var(--motion-ease-micro);
 }
 
 /* Each stage draws its outgoing link into the next stage. */
@@ -61,7 +61,7 @@
   background: linear-gradient(90deg, var(--green), #00c8ff);
   box-shadow: 0 0 10px #00ff9938;
   transform: scaleX(var(--method-stage-build, 0));
-  transition: transform 240ms linear;
+  transition: transform var(--motion-duration-button) var(--motion-ease-micro);
 }
 
 .methodology-progress .process-rail button > span {
@@ -78,9 +78,9 @@
   border-radius: 50%;
   background: var(--surface);
   transition:
-    color 300ms ease,
-    border-color 300ms ease,
-    box-shadow 300ms ease;
+    color var(--motion-duration-button) var(--motion-ease-micro),
+    border-color var(--motion-duration-button) var(--motion-ease-micro),
+    box-shadow var(--motion-duration-button) var(--motion-ease-micro);
 }
 
 .methodology-progress .process-rail button > span::before {
@@ -149,7 +149,7 @@
   background: linear-gradient(90deg, var(--green), #00c8ff);
   transform: scaleX(var(--method-progress, 0));
   transform-origin: left;
-  transition: transform 240ms linear;
+  transition: transform var(--motion-duration-hover) var(--motion-ease-content);
 }
 
 @media (max-width: 800px) {

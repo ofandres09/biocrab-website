@@ -1,0 +1,25 @@
+/* The same nine durations and five named curves as motion-system.ts. */
+:root {
+  --motion-duration-micro: 160ms;
+  --motion-duration-button: 200ms;
+  --motion-duration-hover: 260ms;
+  --motion-duration-card: 320ms;
+  --motion-duration-reveal: 440ms;
+  --motion-duration-component: 640ms;
+  --motion-duration-chapter: 960ms;
+  --motion-duration-hero: 1600ms;
+  --motion-duration-narrative: 2800ms;
+
+  --motion-ease-micro: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-content: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-hover: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-editorial: cubic-bezier(0.33, 1, 0.68, 1);
+  --motion-ease-hero: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Native scrolling stays immediate for readers who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
