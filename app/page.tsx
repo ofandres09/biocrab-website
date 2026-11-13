@@ -92,7 +92,6 @@ export default function Home() {
       <main id="contenido">
         <section id="inicio" className="hero image-led-hero hero-immersive">
           <OceanAtmosphere />
-          <div className="hero-grid" aria-hidden="true" />
           <div className="hero-copy">
             <div className="hero-brand">
               <Brand hero link={false} />
@@ -137,7 +136,7 @@ export default function Home() {
               <div className="hero-project-preview">
                 <Photo
                   name="biopelicula-secando.jpg"
-                  sizes="118px"
+                  sizes="(max-width: 650px) 120px, 140px"
                   alt="Registro real del proyecto: biopelícula durante el secado"
                 />
                 <div>
@@ -184,7 +183,6 @@ export default function Home() {
             <FlaskConical size={17} /> Biopelícula en estudio
           </div>
         </div>
-        <EvidenceCounters />
         <section id="sobre" className="section problem-section">
           <Reveal className="split-editorial">
             <figure className="editorial-figure">
@@ -479,6 +477,7 @@ export default function Home() {
             </Reveal>
           </div>
         </section>
+        <EvidenceCounters />
         <section
           id="del-residuo-al-biomaterial"
           className="section transformation-section"

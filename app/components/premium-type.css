@@ -1339,7 +1339,7 @@ p {
   font-size: clamp(60px, 7.45vw, 118px);
   font-weight: 540;
   line-height: 1.015;
-  letter-spacing: -0.058em;
+  letter-spacing: -0.048em;
 }
 .section .section-heading {
   align-items: end;
@@ -1369,14 +1369,14 @@ p {
   font-size: clamp(60px, 6.35vw, 102px);
   font-weight: 540;
   line-height: 1.015;
-  letter-spacing: -0.058em;
+  letter-spacing: -0.048em;
 }
 .section .lead,
 .gummy-section .lead {
   font-size: clamp(22px, 1.8vw, 29px);
   font-weight: 400;
   line-height: 1.44;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
 }
 .section
   :is(.editorial-copy, .technology-copy, .project-copy)
@@ -1397,7 +1397,7 @@ p {
   font-size: clamp(36px, 3.6vw, 56px);
   font-weight: 500;
   line-height: 1.15;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
   max-width: 21ch;
   margin-block: 22px 35px;
 }

@@ -28,3 +28,15 @@ Antes de cerrar la revisión se requiere evidencia de producción en escritorio 
 ## Límites científicos
 
 Se conservan hipótesis, fundamentos, objetivos, fuentes, precauciones metodológicas y condiciones de seguridad alimentaria. Las imágenes conceptuales y el modelo molecular no se presentan como evidencia experimental. La mejora editorial no añade resultados, porcentajes ni afirmaciones de superioridad o de aplicación alimentaria validada.
+
+## Cierre sobre las cinco prioridades
+
+| Prioridad             | Acabado final                                                                                                                                                   |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero                  | Composición molecular abierta, sin cuadrícula ornamental; fotografía real de la película más grande y titular con espaciado menos comprimido.                   |
+| Fondo molecular       | Se conserva el renderer auditado, su profundidad y sus colores; no se incorporan programas, partículas ni capas.                                                |
+| Fotografías reales    | Se retira la red dibujada encima de la fotografía de preparación. Permanecen el encuadre completo, el pie y el movimiento fotográfico existente.                |
+| Jerarquía tipográfica | Se afloja el tracking de titulares, entradillas y pregunta científica sin cambiar fuentes ni aumentar la cantidad de texto.                                     |
+| Primeros capítulos    | Los contadores existentes pasan al cierre de investigación. La portada conduce directamente al recurso y la fotografía; las cifras acompañan después el método. |
+
+Este cierre elimina decoración y sus llamadas de animación asociadas. No añade secciones, funciones, contenido científico ni efectos.

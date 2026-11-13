@@ -708,16 +708,6 @@ summary:focus-visible,
   width: 32px;
   height: 32px;
 }
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background-image:
-    linear-gradient(#ffffff04 1px, transparent 1px),
-    linear-gradient(90deg, #ffffff04 1px, transparent 1px);
-  background-size: 75px 75px;
-  mask-image: linear-gradient(90deg, transparent, #000);
-}
 .ocean-atmosphere {
   position: absolute;
   inset: 0;

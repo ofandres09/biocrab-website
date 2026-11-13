@@ -514,11 +514,9 @@ export function ScrollCinema() {
               0,
               1,
             );
-            draw(".hero-grid", 0, 1);
             break;
           case "sobre":
-            // Fragmented links resolve into one connected material map.
-            draw(".editorial-figure", 0.08, 0.68);
+            // Keep the camera on the original photograph, without an overlaid map.
             object(
               ".editorial-figure > .parallax-frame",
               {
