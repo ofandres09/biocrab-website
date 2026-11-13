@@ -431,6 +431,19 @@ type GraphicsCapability = { software: boolean };
 
 export default function MolecularCanvas(props: MolecularCanvasProps) {
   const [mobile, setMobile] = useState(true);
+  const [afterFirstPaint, setAfterFirstPaint] = useState(false);
+  useEffect(() => {
+    // Paint the server-rendered scientific cover before initializing the GPU.
+    // A browser scheduling boundary does not add an animation duration.
+    let secondFrame = 0;
+    const firstFrame = requestAnimationFrame(() => {
+      secondFrame = requestAnimationFrame(() => setAfterFirstPaint(true));
+    });
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      cancelAnimationFrame(secondFrame);
+    };
+  }, []);
   // Bootstrap from the real canvas, not a disposable third WebGL context.
   // Until onCreated supplies a tier, no molecular materials are mounted.
   const [capability, setCapability] = useState<GraphicsCapability | null>(null);
@@ -443,57 +456,62 @@ export default function MolecularCanvas(props: MolecularCanvasProps) {
   }, []);
   return (
     <div className="molecular-canvas" aria-hidden="true">
-      <Canvas
-        camera={{
-          position: [0, 0, props.kind === "backdrop" ? 16 : 10.8],
-          fov: props.kind === "backdrop" ? 48 : 36,
-          near: 0.1,
-          far: 40,
-        }}
-        dpr={props.kind === "backdrop" ? 1 : [1, mobile ? 1 : 1.25]}
-        frameloop="demand"
-        gl={{
-          alpha: true,
-          // The atmospheric layer is intentionally soft; avoid a full-screen
-          // multisample framebuffer. The focal explorer retains desktop AA.
-          antialias: props.kind === "explorer" && !mobile,
-          powerPreference: "low-power",
-          stencil: false,
-          depth: true,
-          preserveDrawingBuffer: false,
-        }}
-        fallback={<span>Vista molecular conceptual estática</span>}
-        onCreated={({ gl, invalidate }) => {
-          gl.setClearColor(0x000000, 0);
-          gl.outputColorSpace = THREE.SRGBColorSpace;
-          gl.domElement.setAttribute("aria-hidden", "true");
-          const context = gl.getContext();
-          if (context.isContextLost()) {
-            props.onFailure();
-            return;
-          }
-          const debug = context.getExtension("WEBGL_debug_renderer_info");
-          const renderer = debug
-            ? String(context.getParameter(debug.UNMASKED_RENDERER_WEBGL))
-            : "";
-          setCapability({
-            software: /swiftshader|llvmpipe|software|lavapipe/i.test(renderer),
-          });
-          invalidate();
-        }}
-        style={{ pointerEvents: "none" }}
-      >
-        {capability && (
-          <>
-            <AdaptiveQuality active={props.active} kind={props.kind} />
-            <Scene {...props} economy={capability.software} />
-          </>
-        )}
-        <RendererLifecycle
-          onFailure={props.onFailure}
-          onReady={capability ? props.onReady : undefined}
-        />
-      </Canvas>
+      {afterFirstPaint && (
+        <Canvas
+          camera={{
+            position: [0, 0, props.kind === "backdrop" ? 16 : 10.8],
+            fov: props.kind === "backdrop" ? 48 : 36,
+            near: 0.1,
+            far: 40,
+          }}
+          dpr={props.kind === "backdrop" ? 1 : [1, mobile ? 1 : 1.25]}
+          frameloop="demand"
+          resize={{ scroll: false, offsetSize: true }}
+          gl={{
+            alpha: true,
+            // The atmospheric layer is intentionally soft; avoid a full-screen
+            // multisample framebuffer. The focal explorer retains desktop AA.
+            antialias: props.kind === "explorer" && !mobile,
+            powerPreference: "low-power",
+            stencil: false,
+            depth: true,
+            preserveDrawingBuffer: false,
+          }}
+          fallback={<span>Vista molecular conceptual estática</span>}
+          onCreated={({ gl, invalidate }) => {
+            gl.setClearColor(0x000000, 0);
+            gl.outputColorSpace = THREE.SRGBColorSpace;
+            gl.domElement.setAttribute("aria-hidden", "true");
+            const context = gl.getContext();
+            if (context.isContextLost()) {
+              props.onFailure();
+              return;
+            }
+            const debug = context.getExtension("WEBGL_debug_renderer_info");
+            const renderer = debug
+              ? String(context.getParameter(debug.UNMASKED_RENDERER_WEBGL))
+              : "";
+            setCapability({
+              software: /swiftshader|llvmpipe|software|lavapipe/i.test(
+                renderer,
+              ),
+            });
+            invalidate();
+          }}
+          style={{ pointerEvents: "none" }}
+        >
+          {capability && (
+            <>
+              <AdaptiveQuality active={props.active} kind={props.kind} />
+              <Scene {...props} economy={capability.software} />
+            </>
+          )}
+          <RendererLifecycle
+            onFailure={props.onFailure}
+            onReady={capability ? props.onReady : undefined}
+          />
+        </Canvas>
+      )}
     </div>
   );
 }
