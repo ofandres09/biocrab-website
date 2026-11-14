@@ -34,3 +34,20 @@ La comprobación adicional recorre las 13 tarjetas con titulares en nueve anchos
 Composición tablet, con el respaldo gráfico intencionado de la prueba de tipografía: [orígenes](previews/technical-modules/tablet-why-768.jpg) · [aplicaciones](previews/technical-modules/tablet-future-768.jpg).
 
 Antes: [tarjeta de orígenes en escritorio](previews/technical-modules/before/why-1440.jpg) · [móvil](previews/technical-modules/before/why-390.jpg).
+
+## Producción
+
+Implementación `5909a88`, publicada en [BioCrab](https://biocrab-website.vercel.app/#por-que-biocrab), con [despliegue correcto en Vercel](https://vercel.com/andres-pacheco/biocrab-website/5BTvXsoAGsjoRwTdFEjmyrKDwAYJ).
+
+Capturas públicas, con WebGL real, el control de pausa existente y sin estilos inyectados:
+
+| Módulo | Escritorio | Móvil |
+| --- | --- | --- |
+| Orígenes | [Ver](previews/technical-modules/after/why-1440.jpg) | [Ver](previews/technical-modules/after/why-390.jpg) |
+| Aplicaciones | [Ver](previews/technical-modules/after/future-1440.jpg) | [Ver](previews/technical-modules/after/future-390.jpg) |
+| Metodología | [Ver](previews/technical-modules/after/method-1440.jpg) | [Ver](previews/technical-modules/after/method-390.jpg) |
+| Referencias | [Ver](previews/technical-modules/after/citation-1440.jpg) | [Ver](previews/technical-modules/after/citation-390.jpg) |
+
+La comprobación pública verifica las ocho familias de módulos, las 25 imágenes, las 14 secciones y la ausencia de errores de navegador y desbordamientos en ambos tamaños. Los tamaños medidos coinciden con la composición aprobada localmente.
+
+[Comprobación de producción](previews/technical-modules/after/verification.json).

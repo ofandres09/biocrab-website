@@ -1,0 +1,495 @@
+{
+  "url": "https://biocrab-website.vercel.app",
+  "checkedAt": "2026-11-14T19:37:54.205Z",
+  "views": [
+    {
+      "width": 1440,
+      "cards": {
+        "why": {
+          "width": 451.1875,
+          "height": 721.53125,
+          "titleSize": "54px",
+          "title": "Exoesqueletos como recurso.",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 435.1875,
+            "boxHeight": 445.109375,
+            "paintedWidth": 435.1875,
+            "paintedHeight": 435.1875,
+            "area": 189388.16015625,
+            "objectFit": "contain"
+          }
+        },
+        "future": {
+          "width": 685.796875,
+          "height": 825.46875,
+          "titleSize": "56.7px",
+          "title": "Conservación de frutas",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 669.796875,
+            "boxHeight": 561.03125,
+            "paintedWidth": 561.03125,
+            "paintedHeight": 561.03125,
+            "area": 314756.0634765625,
+            "objectFit": "contain"
+          }
+        },
+        "journey": {
+          "width": 1310.40625,
+          "height": 542,
+          "titleSize": "64.8px",
+          "title": "Exoesqueleto de cangrejo",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 751.625,
+            "boxHeight": 540,
+            "paintedWidth": 540,
+            "paintedHeight": 540,
+            "area": 291600,
+            "objectFit": "contain"
+          }
+        },
+        "method": {
+          "width": 1310.40625,
+          "height": 502,
+          "titleSize": "64.8px",
+          "title": "Recolección y limpieza",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 751.625,
+            "boxHeight": 500,
+            "paintedWidth": 500,
+            "paintedHeight": 500,
+            "area": 250000,
+            "objectFit": "contain"
+          }
+        },
+        "timeline": {
+          "width": 1285.40625,
+          "height": 382,
+          "titleSize": "64.8px",
+          "title": "El punto de partida",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 713.015625,
+            "boxHeight": 380,
+            "paintedWidth": 380.00000000000006,
+            "paintedHeight": 380.00000000000006,
+            "area": 144400.00000000003,
+            "objectFit": "contain"
+          }
+        },
+        "comparator": {
+          "width": 1310.40625,
+          "height": 634.390625,
+          "titleSize": "64.8px",
+          "title": "Biopelícula BioCrab",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 667.21875,
+            "boxHeight": 422,
+            "paintedWidth": 316.5,
+            "paintedHeight": 422,
+            "area": 133563,
+            "objectFit": "contain"
+          }
+        },
+        "citation": {
+          "width": 320.171875,
+          "height": 226.421875,
+          "titleSize": "30px",
+          "title": "Seda para conservar alimentos.",
+          "padding": "16px",
+          "border": "9px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": null
+        },
+        "ods": {
+          "width": 305.21875,
+          "height": 94.5,
+          "titleSize": "15px",
+          "title": "Producción y consumo responsables",
+          "padding": "13px",
+          "border": "9px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": null
+        }
+      },
+      "images": [
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=256&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=96&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true
+        }
+      ],
+      "overflow": false,
+      "sections": 14,
+      "hero": "BioCrab BIOMATERIALES. NUEVAS POSIBILIDADES.Del residuo.A biopelícula.BioCrab investiga biopelículas de quitosano de exoesqueletos de cangrejo y almidón de yuca para explorar nuevas formas de conservar alimentos. Origen marino Matriz vegetal En investigaciónExplora la transformación Ver el trabajo real MATERIA EN MOVIMIENTOUna conexión natural.3D Vista molecular conceptual estática QUITOSANO ALMIDÓNPOLÍMEROS DE ORIGEN NATURALQuitosanoAlmidónAmbosRepresentación conceptual de cadenas de quitosano y almidón. No es una simulación ni un resultado experimental.ARRASTRA PARA GIRARARCHIVO DEL PROYECTORegistro real del proyecto: biopelícula durante el secadoFotografía pendiente de incorporaciónDEL CONCEPTO AL TRABAJO REALExplora las formulaciones y el proceso de BioCrab.Ver las fotografías ARCHIVO DEL PROYECTOImagen conceptual azul de ADN aportada para la identidad visual de BioCrabFotografía pendiente de incorporaciónImagen conceptual de ADN · Ambientación tecnológicaORIGEN BIOLÓGICO. MÉTODO CIENTÍFICO.BIOCRAB / ARCHIVO DE INVESTIGACIÓN",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "cards": {
+        "why": {
+          "width": 365.03125,
+          "height": 608.640625,
+          "titleSize": "46.3125px",
+          "title": "Exoesqueletos como recurso.",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 353.03125,
+            "boxHeight": 353.03125,
+            "paintedWidth": 353.03125,
+            "paintedHeight": 353.03125,
+            "area": 124631.0634765625,
+            "objectFit": "contain"
+          }
+        },
+        "future": {
+          "width": 365.03125,
+          "height": 691.484375,
+          "titleSize": "46.3125px",
+          "title": "Conservación de frutas",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 353.03125,
+            "boxHeight": 353.03125,
+            "paintedWidth": 353.03125,
+            "paintedHeight": 353.03125,
+            "area": 124631.0634765625,
+            "objectFit": "contain"
+          }
+        },
+        "journey": {
+          "width": 351,
+          "height": 778.71875,
+          "titleSize": "48.75px",
+          "title": "Exoesqueleto de cangrejo",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 349,
+            "boxHeight": 349,
+            "paintedWidth": 349,
+            "paintedHeight": 349,
+            "area": 121801,
+            "objectFit": "contain"
+          }
+        },
+        "method": {
+          "width": 351,
+          "height": 849.609375,
+          "titleSize": "48.75px",
+          "title": "Recolección y limpieza",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 349,
+            "boxHeight": 349,
+            "paintedWidth": 349,
+            "paintedHeight": 349,
+            "area": 121801,
+            "objectFit": "contain"
+          }
+        },
+        "timeline": {
+          "width": 336,
+          "height": 730.703125,
+          "titleSize": "48.75px",
+          "title": "El punto de partida",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 334,
+            "boxHeight": 334,
+            "paintedWidth": 334,
+            "paintedHeight": 334,
+            "area": 111556,
+            "objectFit": "contain"
+          }
+        },
+        "comparator": {
+          "width": 351,
+          "height": 1029.5,
+          "titleSize": "48.75px",
+          "title": "Biopelícula BioCrab",
+          "padding": "0px",
+          "border": "14px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": {
+            "boxWidth": 325,
+            "boxHeight": 282,
+            "paintedWidth": 211.3490364025696,
+            "paintedHeight": 282,
+            "area": 59600.42826552463,
+            "objectFit": "contain"
+          }
+        },
+        "citation": {
+          "width": 351,
+          "height": 204.984375,
+          "titleSize": "30px",
+          "title": "Seda para conservar alimentos.",
+          "padding": "16px",
+          "border": "9px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": null
+        },
+        "ods": {
+          "width": 169.5,
+          "height": 108.25,
+          "titleSize": "13.75px",
+          "title": "Producción y consumo responsables",
+          "padding": "13px",
+          "border": "9px",
+          "background": "linear-gradient(145deg, rgba(232, 247, 255, 0.035), rgba(0, 0, 0, 0) 32%), radial-gradient(at 100% 0px, rgba(0, 102, 255, 0.024), rgba(0, 0, 0, 0) 58%), none",
+          "shadow": "rgba(181, 231, 255, 0.07) 0px 1px 0px 0px inset, rgb(11, 18, 24) 0px 0px 0px 4px inset, rgba(181, 231, 255, 0.07) 0px 0px 0px 5px inset, rgba(0, 0, 0, 0.157) 0px 12px 28px 0px, rgba(0, 102, 255, 0.03) 0px 0px 20px 0px",
+          "photo": null
+        }
+      },
+      "images": [
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=128&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=384&q=75",
+          "ok": true
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true
+        }
+      ],
+      "overflow": false,
+      "sections": 14,
+      "hero": "BioCrab BIOMATERIALES. NUEVAS POSIBILIDADES.Del residuo.A biopelícula.BioCrab investiga biopelículas de quitosano de exoesqueletos de cangrejo y almidón de yuca para explorar nuevas formas de conservar alimentos. Origen marino Matriz vegetal En investigaciónExplora la transformación Ver el trabajo real MATERIA EN MOVIMIENTOUna conexión natural.3D Vista molecular conceptual estática QUITOSANO ALMIDÓNPOLÍMEROS DE ORIGEN NATURALQuitosanoAlmidónAmbosRepresentación conceptual de cadenas de quitosano y almidón. No es una simulación ni un resultado experimental.ARRASTRA PARA GIRARARCHIVO DEL PROYECTORegistro real del proyecto: biopelícula durante el secadoFotografía pendiente de incorporaciónDEL CONCEPTO AL TRABAJO REALExplora las formulaciones y el proceso de BioCrab.Ver las fotografías ARCHIVO DEL PROYECTOImagen conceptual azul de ADN aportada para la identidad visual de BioCrabFotografía pendiente de incorporaciónImagen conceptual de ADN · Ambientación tecnológicaORIGEN BIOLÓGICO. MÉTODO CIENTÍFICO.BIOCRAB / ARCHIVO DE INVESTIGACIÓN",
+      "errors": []
+    }
+  ],
+  "sourceCommit": "5909a88",
+  "deployment": {
+    "context": "Vercel – biocrab-website",
+    "state": "success",
+    "target_url": "https://vercel.com/andres-pacheco/biocrab-website/5BTvXsoAGsjoRwTdFEjmyrKDwAYJ"
+  },
+  "heroContentComparedToBaseline": true
+}
