@@ -457,10 +457,17 @@ p {
 
 .method-reference-feature {
   padding: 25px;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
   gap: 5%;
   margin-bottom: 28px;
   border-radius: 3px;
   box-shadow: none;
+}
+.method-reference-feature figure {
+  max-width: 260px;
+}
+.method-reference-feature .annotation {
+  max-width: 76ch;
 }
 
 .method-reference-feature h3,
@@ -1183,7 +1190,12 @@ p {
 
   .method-reference-feature {
     padding: 17px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 25px;
+  }
+  .method-reference-feature figure {
+    max-width: 220px;
+    justify-self: start;
   }
 
   .method-reference-feature h3,
@@ -1554,6 +1566,9 @@ p {
 }
 .section :is(.why-card, .future-card) > .project-photo img {
   padding: clamp(12px, 1.5vw, 22px);
+}
+.section .why-card > .project-photo img {
+  padding: 0;
 }
 .section .why-copy,
 .section .future-card > div:last-child {

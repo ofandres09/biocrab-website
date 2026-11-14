@@ -1,5 +1,5 @@
-/* Scientific cover: the real specimen leads; the model explains it below.
-   Existing elements only. The two conceptual views keep their own captions. */
+/* Shared cover: real evidence and its conceptual model occupy the same scene.
+   The specimen keeps its scale; the model fills the space below the introduction. */
 .hero.image-led-hero.hero-immersive {
   isolation: auto;
   display: grid;
@@ -8,7 +8,7 @@
   min-height: calc(100svh - 88px);
   align-content: start;
   align-items: center;
-  gap: 48px 6%;
+  gap: 24px 6%;
   padding: 42px 4.5% 22px;
   background:
     radial-gradient(ellipse at 78% 28%, #082c3e44, transparent 58%), #030709;
@@ -104,7 +104,8 @@
 .hero.hero-immersive .hero-project-depth {
   display: block;
   grid-column: 2;
-  grid-row: 1;
+  grid-row: 1 / span 2;
+  align-self: start;
   width: 100%;
   max-width: none;
   min-width: 0;
@@ -164,12 +165,13 @@
   display: block;
   position: relative;
   inset: auto;
-  width: 100%;
+  width: calc(100% + max(0px, 5vw - 40px));
   max-width: none;
   height: auto;
-  grid-column: 2;
+  grid-column: 1;
   grid-row: 2;
-  z-index: 5;
+  align-self: start;
+  z-index: 7;
   color: #bbd7e7;
 }
 .hero-orbit-stage::before {
@@ -185,8 +187,10 @@
   color: #d6e9fa;
 }
 .hero.hero-immersive .molecular-explorer-heading {
-  position: relative;
-  inset: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: auto;
   padding: 0;
   z-index: 3;
   gap: 20px;
@@ -206,15 +210,15 @@
   border-color: #82caff29;
 }
 .hero.hero-immersive .molecular-viewport {
-  height: 300px;
+  height: clamp(340px, 28vw, 430px);
   min-height: 0;
 }
 .hero.hero-immersive .molecular-viewport::before {
   background: none;
 }
 .hero.hero-immersive .molecular-material-key {
-  top: 10px;
-  right: 0;
+  top: 74px;
+  right: 4%;
 }
 .hero.hero-immersive .molecular-viewport-note {
   left: 0;
@@ -272,10 +276,11 @@
 .hero.hero-immersive .hero-reference-background {
   position: relative;
   inset: auto;
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 2;
+  align-self: end;
   width: 100%;
-  height: 280px;
+  height: 220px;
   min-height: 0;
   border-radius: 0;
   background: transparent;
@@ -284,15 +289,15 @@
   z-index: 7;
 }
 .hero.hero-immersive .hero-reference-background img {
-  width: 150px !important;
-  height: 280px !important;
+  width: 124px !important;
+  height: 220px !important;
   padding: 0;
   object-fit: contain;
   object-position: center;
 }
 .hero.hero-immersive .hero-reference-background .hero-reference-note {
   position: absolute;
-  inset: 0 0 0 180px;
+  inset: 0 0 0 154px;
   display: flex;
   align-items: center;
   color: #b4c8d3;
@@ -337,11 +342,22 @@
   .hero.hero-immersive .hero-description {
     font-size: 14px;
   }
+  .hero.hero-immersive .hero-art {
+    width: 100%;
+  }
+  .hero.hero-immersive .molecular-explorer-heading {
+    position: relative;
+    inset: auto;
+  }
   .hero.hero-immersive .hero-project-preview > .project-photo {
     height: 420px;
   }
   .hero.hero-immersive .molecular-viewport {
     height: 250px;
+  }
+  .hero.hero-immersive .molecular-material-key {
+    top: 10px;
+    right: 0;
   }
   .hero.hero-immersive .hero-reference-background .hero-reference-note {
     left: 150px;
@@ -353,6 +369,33 @@
   }
   .hero.hero-immersive .molecular-controls {
     flex-wrap: wrap;
+  }
+}
+@media (min-width: 1000px) and (max-height: 820px) {
+  .hero.image-led-hero.hero-immersive {
+    padding-top: 26px;
+    row-gap: 20px;
+  }
+  .hero.hero-immersive .hero-brand {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-right: 24px;
+    margin-bottom: 16px;
+  }
+  .hero.hero-immersive .hero-brand .official-brand-image {
+    width: 48px;
+    height: 48px;
+  }
+  .hero.hero-immersive .hero-copy > .eyebrow {
+    display: inline-flex;
+    vertical-align: middle;
+    margin-bottom: 16px;
+  }
+  .hero.hero-immersive .hero-title {
+    margin-bottom: 20px;
+  }
+  .hero.hero-immersive .hero-description {
+    margin-bottom: 18px;
   }
 }
 @media (max-width: 650px) {
@@ -423,11 +466,14 @@
   .hero.hero-immersive .hero-art {
     grid-column: 1;
     grid-row: 3;
+    width: 100%;
   }
   .hero.hero-immersive .molecular-viewport {
     height: clamp(260px, 78vw, 390px);
   }
   .hero.hero-immersive .molecular-explorer-heading {
+    position: relative;
+    inset: auto;
     justify-content: space-between;
     gap: 10px;
   }
@@ -436,6 +482,10 @@
   }
   .hero.hero-immersive .molecular-controls {
     gap: 10px;
+  }
+  .hero.hero-immersive .molecular-material-key {
+    top: 10px;
+    right: 0;
   }
   .hero.hero-immersive .molecular-modes button {
     padding: 8px 10px;

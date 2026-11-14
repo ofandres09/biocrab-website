@@ -1,0 +1,230 @@
+{
+  "url": "http://127.0.0.1:3076",
+  "motion": "active",
+  "cases": [
+    {
+      "height": 1000,
+      "progress": 0,
+      "scrollY": 0,
+      "heading": {
+        "x": 460.04083251953125,
+        "y": 707.8388671875,
+        "width": 292.913818359375,
+        "height": 71.54998779296875,
+        "top": 707.8388671875,
+        "right": 752.9546508789062,
+        "bottom": 779.3888549804688,
+        "left": 460.04083251953125
+      },
+      "caption": {
+        "x": 808.5625,
+        "y": 650,
+        "width": 566.640625,
+        "height": 158.171875,
+        "top": 650,
+        "right": 1375.203125,
+        "bottom": 808.171875,
+        "left": 808.5625
+      },
+      "captionOverlap": false,
+      "buttonOverlap": false,
+      "overflow": false
+    },
+    {
+      "height": 1000,
+      "progress": 0.14,
+      "scrollY": 176,
+      "heading": {
+        "x": 459.7579345703125,
+        "y": 532.0491943359375,
+        "width": 293.18096923828125,
+        "height": 71.2650146484375,
+        "top": 532.0491943359375,
+        "right": 752.9389038085938,
+        "bottom": 603.314208984375,
+        "left": 459.7579345703125
+      },
+      "caption": {
+        "x": 808.5625,
+        "y": 474,
+        "width": 566.640625,
+        "height": 158.171875,
+        "top": 474,
+        "right": 1375.203125,
+        "bottom": 632.171875,
+        "left": 808.5625
+      },
+      "captionOverlap": false,
+      "buttonOverlap": false,
+      "overflow": false
+    },
+    {
+      "height": 1000,
+      "progress": 0.28,
+      "scrollY": 352,
+      "heading": {
+        "x": 457.7185974121094,
+        "y": 357.48681640625,
+        "width": 296.1866760253906,
+        "height": 67.97784423828125,
+        "top": 357.48681640625,
+        "right": 753.9052734375,
+        "bottom": 425.46466064453125,
+        "left": 457.7185974121094
+      },
+      "caption": {
+        "x": 808.5625,
+        "y": 298,
+        "width": 566.640625,
+        "height": 158.171875,
+        "top": 298,
+        "right": 1375.203125,
+        "bottom": 456.171875,
+        "left": 808.5625
+      },
+      "captionOverlap": false,
+      "buttonOverlap": false,
+      "overflow": false
+    },
+    {
+      "height": 1000,
+      "progress": 0.42,
+      "scrollY": 528,
+      "heading": {
+        "x": 456.6784362792969,
+        "y": 181.69171142578125,
+        "width": 297.7622985839844,
+        "height": 66.17034912109375,
+        "top": 181.69171142578125,
+        "right": 754.4407348632812,
+        "bottom": 247.862060546875,
+        "left": 456.6784362792969
+      },
+      "caption": {
+        "x": 808.5625,
+        "y": 122,
+        "width": 566.640625,
+        "height": 158.171875,
+        "top": 122,
+        "right": 1375.203125,
+        "bottom": 280.171875,
+        "left": 808.5625
+      },
+      "captionOverlap": false,
+      "buttonOverlap": false,
+      "overflow": false
+    },
+    {
+      "height": 768,
+      "progress": 0,
+      "scrollY": 0,
+      "heading": {
+        "x": 461.1795349121094,
+        "y": 611.2898559570312,
+        "width": 292.9138488769531,
+        "height": 71.54998779296875,
+        "top": 611.2898559570312,
+        "right": 754.0933837890625,
+        "bottom": 682.83984375,
+        "left": 461.1795349121094
+      },
+      "caption": {
+        "x": 808.5625,
+        "y": 534,
+        "width": 566.640625,
+        "height": 158.171875,
+        "top": 534,
+        "right": 1375.203125,
+        "bottom": 692.171875,
+        "left": 808.5625
+      },
+      "captionOverlap": false,
+      "buttonOverlap": false,
+      "overflow": false
+    },
+    {
+      "height": 768,
+      "progress": 0.14,
+      "scrollY": 162,
+      "heading": {
+        "x": 459.845458984375,
+        "y": 450.17462158203125,
+        "width": 293.8531494140625,
+        "height": 70.54315185546875,
+        "top": 450.17462158203125,
+        "right": 753.6986083984375,
+        "bottom": 520.7177734375,
+        "left": 459.845458984375
+      },
+      "caption": {
+        "x": 808.5625,
+        "y": 372,
+        "width": 566.640625,
+        "height": 158.171875,
+        "top": 372,
+        "right": 1375.203125,
+        "bottom": 530.171875,
+        "left": 808.5625
+      },
+      "captionOverlap": false,
+      "buttonOverlap": false,
+      "overflow": false
+    },
+    {
+      "height": 768,
+      "progress": 0.28,
+      "scrollY": 324,
+      "heading": {
+        "x": 458.5005798339844,
+        "y": 289.11004638671875,
+        "width": 296.0018615722656,
+        "height": 68.18524169921875,
+        "top": 289.11004638671875,
+        "right": 754.50244140625,
+        "bottom": 357.2952880859375,
+        "left": 458.5005798339844
+      },
+      "caption": {
+        "x": 808.5625,
+        "y": 210,
+        "width": 566.640625,
+        "height": 158.171875,
+        "top": 210,
+        "right": 1375.203125,
+        "bottom": 368.171875,
+        "left": 808.5625
+      },
+      "captionOverlap": false,
+      "buttonOverlap": false,
+      "overflow": false
+    },
+    {
+      "height": 768,
+      "progress": 0.42,
+      "scrollY": 486,
+      "heading": {
+        "x": 457.3037109375,
+        "y": 127.46600341796875,
+        "width": 297.5660400390625,
+        "height": 66.40057373046875,
+        "top": 127.46600341796875,
+        "right": 754.8697509765625,
+        "bottom": 193.8665771484375,
+        "left": 457.3037109375
+      },
+      "caption": {
+        "x": 808.5625,
+        "y": 48,
+        "width": 566.640625,
+        "height": 158.171875,
+        "top": 48,
+        "right": 1375.203125,
+        "bottom": 206.171875,
+        "left": 808.5625
+      },
+      "captionOverlap": false,
+      "buttonOverlap": false,
+      "overflow": false
+    }
+  ]
+}
