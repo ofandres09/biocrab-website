@@ -28,4 +28,16 @@ Ambas páginas respondieron HTTP 200 y se comprobó su contenido. Se presentan c
 
 Antes: [escritorio](previews/research-editorial/before/investigacion-1440.jpg) · [móvil](previews/research-editorial/before/investigacion-390.jpg).
 
-La verificación pública y las capturas finales se incorporan después del despliegue.
+Después, en producción: [escritorio](previews/research-editorial/after/investigacion-1440.jpg) · [móvil](previews/research-editorial/after/investigacion-390.jpg).
+
+Sección completa: [escritorio](previews/research-editorial/after/investigacion-completa-1440.jpg) · [móvil](previews/research-editorial/after/investigacion-completa-390.jpg).
+
+Lecturas universitarias: [escritorio](previews/research-editorial/after/fuentes-1440.jpg) · [móvil](previews/research-editorial/after/fuentes-390.jpg).
+
+## Publicación
+
+Implementación `8754e94`, publicada en [BioCrab](https://biocrab-website.vercel.app/#investigacion), con [despliegue correcto en Vercel](https://vercel.com/andres-pacheco/biocrab-website/3h5KsuTEveWNHDNBHz4nRwgHEQNF).
+
+En la web pública se verificaron ambas composiciones, los cinco desplegables con teclado y el acceso directo a la hipótesis. Cargaron las 25 imágenes, sin errores de navegador ni desbordamiento horizontal. Las dos referencias oficiales permanecen fuera de los desplegables. El control de pausa detiene las animaciones para las capturas; el WebGL real sigue montado.
+
+[Verificación de producción](previews/research-editorial/after/verification.json).
