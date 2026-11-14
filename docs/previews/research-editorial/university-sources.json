@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-14T18:27:18.071589+00:00",
+  "sources": [
+    {
+      "url": "https://news.mit.edu/2020/mit-based-startup-cambridge-crops-wraps-food-in-silk-0605",
+      "status": 200,
+      "title": "MIT startup wraps food in silk for better shelf life",
+      "publisher": "MIT News",
+      "published": "2020-06-05",
+      "summary_es": "Recubrimientos de proteína de seda investigados para conservar alimentos. Contexto de biomateriales para protección alimentaria; no es quitosano ni almidón de yuca.",
+      "suggested_label_es": "MIT · Biomateriales para conservar alimentos",
+      "caution": "No trasladar resultados, porcentajes, aprobación o eficacia de Cambridge Crops a BioCrab."
+    },
+    {
+      "url": "https://wyss.harvard.edu/news/manufacturing-a-solution-to-planet-clogging-plastics/",
+      "status": 200,
+      "title": "Manufacturing a solution to planet-clogging plastics",
+      "publisher": "Wyss Institute at Harvard University",
+      "published": "2014-03-03",
+      "summary_es": "Investigación sobre fabricación de materiales basados en quitosano derivado de caparazones de camarón; destaca la relación entre procesado, estructura y propiedades.",
+      "suggested_label_es": "Harvard · Del quitosano al biomaterial",
+      "caution": "No extrapolar sus plazos de degradación ni propiedades a la formulación BioCrab."
+    }
+  ]
+}

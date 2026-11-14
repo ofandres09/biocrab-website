@@ -1,0 +1,1923 @@
+{
+  "baseURL": "http://127.0.0.1:3080",
+  "startedAt": "2026-11-14T18:50:53.130Z",
+  "browser": "/usr/bin/chromium",
+  "args": [
+    "--no-sandbox",
+    "--disable-webgl",
+    "--disable-webgl2"
+  ],
+  "reducedMotion": "reduce",
+  "checks": [
+    {
+      "name": "initial twenty-five images decode",
+      "passed": true,
+      "durationMs": 297,
+      "details": {
+        "imageCount": 25
+      }
+    },
+    {
+      "name": "fourteen original sections in final narrative order",
+      "passed": true,
+      "durationMs": 126,
+      "details": {
+        "sections": [
+          "inicio",
+          "sobre",
+          "por-que-biocrab",
+          "innovacion",
+          "investigacion",
+          "del-residuo-al-biomaterial",
+          "metodologia",
+          "recorrido",
+          "comparacion",
+          "impacto-potencial",
+          "aplicaciones-futuras",
+          "vision-futura",
+          "gomitas",
+          "equipo"
+        ],
+        "unpublished": 0,
+        "genericAmbientDots": 0
+      }
+    },
+    {
+      "name": "removed sections, preserved science, and internal anchors",
+      "passed": true,
+      "durationMs": 23,
+      "details": {
+        "deletedSections": 0,
+        "danglingHashLinks": 0,
+        "duplicateIds": 0,
+        "scientificContentPreserved": true
+      }
+    },
+    {
+      "name": "methodology: all five manual stages and scientific context",
+      "passed": true,
+      "durationMs": 1046,
+      "details": [
+        {
+          "index": 1,
+          "title": "Recolección y limpieza",
+          "body": "Recolección y limpieza de exoesqueletos de cangrejo. Registrar procedencia, acondicionamiento y trazabilidad de las muestras."
+        },
+        {
+          "index": 2,
+          "title": "Obtención de quitosano",
+          "body": "La quitina se separa de otros componentes del exoesqueleto y se transforma por desacetilación. La identidad y características del material deben verificarse analíticamente."
+        },
+        {
+          "index": 3,
+          "title": "Soluciones filmógenas",
+          "body": "Preparar y documentar las formulaciones de almidón de yuca y quitosano. La composición, el medio y las condiciones de preparación influyen en la formación de la matriz."
+        },
+        {
+          "index": 4,
+          "title": "Secado y formación",
+          "body": "Distribuir la solución sobre un soporte y controlar las condiciones de secado para obtener películas. Registrar espesor, uniformidad y defectos observables."
+        },
+        {
+          "index": 5,
+          "title": "Evaluación física",
+          "body": "Evaluar espesor, resistencia, flexibilidad y comportamiento frente a humedad mediante protocolos definidos, controles y réplicas. Publicar resultados con sus condiciones de ensayo."
+        }
+      ]
+    },
+    {
+      "name": "methodology: Arrow/Home/End keyboard navigation",
+      "passed": true,
+      "durationMs": 214
+    },
+    {
+      "name": "methodology: reduced motion holds selection during scrolling",
+      "passed": true,
+      "durationMs": 413
+    },
+    {
+      "name": "material journey: five steps and previous/next controls",
+      "passed": true,
+      "durationMs": 3068,
+      "details": [
+        "Exoesqueleto de cangrejo",
+        "Obtención de quitosano",
+        "Mezcla con almidón de yuca",
+        "Formación de biopelícula",
+        "Aplicación en alimentos"
+      ]
+    },
+    {
+      "name": "timeline: all three tabs and Arrow/Home/End navigation",
+      "passed": true,
+      "durationMs": 1685,
+      "details": [
+        "El punto de partida",
+        "BioCrab",
+        "Validar con evidencia"
+      ]
+    },
+    {
+      "name": "material comparator: all eight material/dimension states",
+      "passed": true,
+      "durationMs": 4168,
+      "details": [
+        {
+          "material": "BioCrab",
+          "dimension": "Origen"
+        },
+        {
+          "material": "BioCrab",
+          "dimension": "Propiedades"
+        },
+        {
+          "material": "BioCrab",
+          "dimension": "Fin de vida"
+        },
+        {
+          "material": "BioCrab",
+          "dimension": "Uso alimentario"
+        },
+        {
+          "material": "Plástico convencional",
+          "dimension": "Origen"
+        },
+        {
+          "material": "Plástico convencional",
+          "dimension": "Propiedades"
+        },
+        {
+          "material": "Plástico convencional",
+          "dimension": "Fin de vida"
+        },
+        {
+          "material": "Plástico convencional",
+          "dimension": "Uso alimentario"
+        }
+      ]
+    },
+    {
+      "name": "contact form copies exact message to granted clipboard",
+      "passed": true,
+      "durationMs": 493,
+      "details": {
+        "exactMessageCopied": true
+      }
+    },
+    {
+      "name": "responsive layout and images at 320px",
+      "passed": true,
+      "durationMs": 631,
+      "details": {
+        "viewport": 320,
+        "scrollWidth": 320,
+        "bodyWidth": 320,
+        "offenders": [],
+        "imageCount": 24
+      }
+    },
+    {
+      "name": "responsive layout and images at 390px",
+      "passed": true,
+      "durationMs": 563,
+      "details": {
+        "viewport": 390,
+        "scrollWidth": 390,
+        "bodyWidth": 390,
+        "offenders": [],
+        "imageCount": 24
+      }
+    },
+    {
+      "name": "responsive layout and images at 768px",
+      "passed": true,
+      "durationMs": 682,
+      "details": {
+        "viewport": 768,
+        "scrollWidth": 768,
+        "bodyWidth": 768,
+        "offenders": [],
+        "imageCount": 24
+      }
+    },
+    {
+      "name": "responsive layout and images at 1024px",
+      "passed": true,
+      "durationMs": 896,
+      "details": {
+        "viewport": 1024,
+        "scrollWidth": 1024,
+        "bodyWidth": 1024,
+        "offenders": [],
+        "imageCount": 24
+      }
+    },
+    {
+      "name": "responsive layout and images at 1440px",
+      "passed": true,
+      "durationMs": 1021,
+      "details": {
+        "viewport": 1440,
+        "scrollWidth": 1440,
+        "bodyWidth": 1440,
+        "offenders": [],
+        "imageCount": 24
+      }
+    },
+    {
+      "name": "mobile menu opens, follows a valid anchor, and closes with Escape",
+      "passed": true,
+      "durationMs": 571
+    },
+    {
+      "name": "axe desktop dark",
+      "passed": true,
+      "durationMs": 5343,
+      "details": {
+        "passCount": 51,
+        "incompleteCount": 2
+      }
+    },
+    {
+      "name": "axe desktop light",
+      "passed": true,
+      "durationMs": 4401,
+      "details": {
+        "passCount": 51,
+        "incompleteCount": 2
+      }
+    },
+    {
+      "name": "axe mobile dark",
+      "passed": true,
+      "durationMs": 4172,
+      "details": {
+        "passCount": 52,
+        "incompleteCount": 2
+      }
+    },
+    {
+      "name": "axe mobile light",
+      "passed": true,
+      "durationMs": 3859,
+      "details": {
+        "passCount": 52,
+        "incompleteCount": 2
+      }
+    },
+    {
+      "name": "no uncaught exceptions, failed assets or unexpected console errors",
+      "passed": true,
+      "durationMs": 23,
+      "details": {
+        "pageErrors": [],
+        "rawConsoleErrorCount": 8,
+        "expectedGraphicsFallback": 8,
+        "unexpectedConsoleErrors": [],
+        "consoleWarnings": [
+          {
+            "type": "warning",
+            "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+            "location": {
+              "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+              "line": 0,
+              "column": 7942,
+              "lineNumber": 0,
+              "columnNumber": 7942
+            }
+          },
+          {
+            "type": "warning",
+            "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+            "location": {
+              "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+              "line": 0,
+              "column": 7942,
+              "lineNumber": 0,
+              "columnNumber": 7942
+            }
+          }
+        ],
+        "failedResponses": []
+      }
+    }
+  ],
+  "responsive": [
+    {
+      "width": 320,
+      "viewport": 320,
+      "scrollWidth": 320,
+      "bodyWidth": 320,
+      "offenders": []
+    },
+    {
+      "width": 390,
+      "viewport": 390,
+      "scrollWidth": 390,
+      "bodyWidth": 390,
+      "offenders": []
+    },
+    {
+      "width": 768,
+      "viewport": 768,
+      "scrollWidth": 768,
+      "bodyWidth": 768,
+      "offenders": []
+    },
+    {
+      "width": 1024,
+      "viewport": 1024,
+      "scrollWidth": 1024,
+      "bodyWidth": 1024,
+      "offenders": []
+    },
+    {
+      "width": 1440,
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "bodyWidth": 1440,
+      "offenders": []
+    }
+  ],
+  "axe": [
+    {
+      "label": "desktop-dark",
+      "violationCount": 0,
+      "passCount": 51,
+      "incompleteCount": 2,
+      "violations": []
+    },
+    {
+      "label": "desktop-light",
+      "violationCount": 0,
+      "passCount": 51,
+      "incompleteCount": 2,
+      "violations": []
+    },
+    {
+      "label": "mobile-dark",
+      "violationCount": 0,
+      "passCount": 52,
+      "incompleteCount": 2,
+      "violations": []
+    },
+    {
+      "label": "mobile-light",
+      "violationCount": 0,
+      "passCount": 52,
+      "incompleteCount": 2,
+      "violations": []
+    }
+  ],
+  "images": [
+    {
+      "label": "initial state",
+      "count": 25,
+      "broken": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 72,
+          "height": 72,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 66,
+          "height": 66,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=256&q=75",
+          "alt": "Registro real del proyecto: biopelícula durante el secado",
+          "complete": true,
+          "width": 140,
+          "height": 186,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=96&q=75",
+          "alt": "Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab",
+          "complete": true,
+          "width": 89,
+          "height": 160,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "alt": "Preparación y limpieza del material de cangrejo bajo el agua",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el recurso",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el material",
+          "complete": true,
+          "width": 648,
+          "height": 864,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el método",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "alt": "Red digital abstracta de conexiones azules aportada para el diseño",
+          "complete": true,
+          "width": 266,
+          "height": 473,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real de la biopelícula durante el secado",
+          "complete": true,
+          "width": 648,
+          "height": 864,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio",
+          "complete": true,
+          "width": 648,
+          "height": 972,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Archivo del proyecto: Exoesqueleto de cangrejo. Registro contextual, no verificación del resultado.",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual de laboratorio con microscopio y globo digital",
+          "complete": true,
+          "width": 648,
+          "height": 972,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "alt": "Limpieza de cangrejos bajo agua en el registro aportado por el proyecto",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Materia prima del proyecto en un vaso de precipitados",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "",
+          "complete": true,
+          "width": 648,
+          "height": 864,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Registro de matriz con fruta; no es un ensayo de conservación.",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Foto de biopelícula; aplicación en verduras por investigar.",
+          "complete": true,
+          "width": 648,
+          "height": 864,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Películas en formación; desempeño de empaque por validar.",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Materia prima del proyecto; no representa un proceso industrial.",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Hoja verde y contacto digital: imagen conceptual de biotecnología",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Fotografía real de la matriz con fruta elaborada en el proyecto",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro real de las formulaciones extendidas en el espacio de trabajo del proyecto",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 66,
+          "height": 66,
+          "error": null
+        }
+      ]
+    },
+    {
+      "label": "320px",
+      "count": 24,
+      "broken": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 72,
+          "height": 72,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 56,
+          "height": 56,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real del proyecto: biopelícula durante el secado",
+          "complete": true,
+          "width": 120,
+          "height": 160,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=128&q=75",
+          "alt": "Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab",
+          "complete": true,
+          "width": 106,
+          "height": 188,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "alt": "Preparación y limpieza del material de cangrejo bajo el agua",
+          "complete": true,
+          "width": 287,
+          "height": 287,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el recurso",
+          "complete": true,
+          "width": 287,
+          "height": 287,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el material",
+          "complete": true,
+          "width": 287,
+          "height": 383,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el método",
+          "complete": true,
+          "width": 287,
+          "height": 511,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "alt": "Red digital abstracta de conexiones azules aportada para el diseño",
+          "complete": true,
+          "width": 118,
+          "height": 210,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real de la biopelícula durante el secado",
+          "complete": true,
+          "width": 287,
+          "height": 383,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio",
+          "complete": true,
+          "width": 287,
+          "height": 431,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Archivo del proyecto: Aplicación en alimentos. Registro contextual, no verificación del resultado.",
+          "complete": true,
+          "width": 287,
+          "height": 383,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual de laboratorio con microscopio y globo digital",
+          "complete": true,
+          "width": 287,
+          "height": 431,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fcangrejitos-secos.jpg&w=750&q=75",
+          "alt": "Registro de material de cangrejo acondicionado en un recipiente",
+          "complete": true,
+          "width": 287,
+          "height": 287,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro de exploración de materiales del proyecto",
+          "complete": true,
+          "width": 287,
+          "height": 287,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad",
+          "complete": true,
+          "width": 287,
+          "height": 511,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Registro de matriz con fruta; no es un ensayo de conservación.",
+          "complete": true,
+          "width": 287,
+          "height": 287,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Foto de biopelícula; aplicación en verduras por investigar.",
+          "complete": true,
+          "width": 287,
+          "height": 383,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Películas en formación; desempeño de empaque por validar.",
+          "complete": true,
+          "width": 287,
+          "height": 511,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Materia prima del proyecto; no representa un proceso industrial.",
+          "complete": true,
+          "width": 287,
+          "height": 287,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Hoja verde y contacto digital: imagen conceptual de biotecnología",
+          "complete": true,
+          "width": 287,
+          "height": 511,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Fotografía real de la matriz con fruta elaborada en el proyecto",
+          "complete": true,
+          "width": 287,
+          "height": 287,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro real de las formulaciones extendidas en el espacio de trabajo del proyecto",
+          "complete": true,
+          "width": 287,
+          "height": 511,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 56,
+          "height": 56,
+          "error": null
+        }
+      ]
+    },
+    {
+      "label": "390px",
+      "count": 24,
+      "broken": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 72,
+          "height": 72,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 56,
+          "height": 56,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real del proyecto: biopelícula durante el secado",
+          "complete": true,
+          "width": 120,
+          "height": 160,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=128&q=75",
+          "alt": "Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab",
+          "complete": true,
+          "width": 106,
+          "height": 188,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "alt": "Preparación y limpieza del material de cangrejo bajo el agua",
+          "complete": true,
+          "width": 351,
+          "height": 351,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el recurso",
+          "complete": true,
+          "width": 351,
+          "height": 351,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el material",
+          "complete": true,
+          "width": 351,
+          "height": 468,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el método",
+          "complete": true,
+          "width": 351,
+          "height": 623,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "alt": "Red digital abstracta de conexiones azules aportada para el diseño",
+          "complete": true,
+          "width": 144,
+          "height": 256,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real de la biopelícula durante el secado",
+          "complete": true,
+          "width": 351,
+          "height": 468,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio",
+          "complete": true,
+          "width": 351,
+          "height": 526,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Archivo del proyecto: Aplicación en alimentos. Registro contextual, no verificación del resultado.",
+          "complete": true,
+          "width": 351,
+          "height": 468,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual de laboratorio con microscopio y globo digital",
+          "complete": true,
+          "width": 351,
+          "height": 526,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fcangrejitos-secos.jpg&w=750&q=75",
+          "alt": "Registro de material de cangrejo acondicionado en un recipiente",
+          "complete": true,
+          "width": 351,
+          "height": 351,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro de exploración de materiales del proyecto",
+          "complete": true,
+          "width": 351,
+          "height": 351,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad",
+          "complete": true,
+          "width": 351,
+          "height": 623,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Registro de matriz con fruta; no es un ensayo de conservación.",
+          "complete": true,
+          "width": 351,
+          "height": 351,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Foto de biopelícula; aplicación en verduras por investigar.",
+          "complete": true,
+          "width": 351,
+          "height": 468,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Películas en formación; desempeño de empaque por validar.",
+          "complete": true,
+          "width": 351,
+          "height": 623,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Materia prima del proyecto; no representa un proceso industrial.",
+          "complete": true,
+          "width": 351,
+          "height": 351,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Hoja verde y contacto digital: imagen conceptual de biotecnología",
+          "complete": true,
+          "width": 351,
+          "height": 623,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Fotografía real de la matriz con fruta elaborada en el proyecto",
+          "complete": true,
+          "width": 351,
+          "height": 351,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro real de las formulaciones extendidas en el espacio de trabajo del proyecto",
+          "complete": true,
+          "width": 351,
+          "height": 623,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 56,
+          "height": 56,
+          "error": null
+        }
+      ]
+    },
+    {
+      "label": "768px",
+      "count": 24,
+      "broken": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 72,
+          "height": 72,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 66,
+          "height": 66,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real del proyecto: biopelícula durante el secado",
+          "complete": true,
+          "width": 140,
+          "height": 186,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=128&q=75",
+          "alt": "Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab",
+          "complete": true,
+          "width": 90,
+          "height": 160,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "alt": "Preparación y limpieza del material de cangrejo bajo el agua",
+          "complete": true,
+          "width": 691,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el recurso",
+          "complete": true,
+          "width": 691,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el material",
+          "complete": true,
+          "width": 691,
+          "height": 921,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el método",
+          "complete": true,
+          "width": 691,
+          "height": 1228,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "alt": "Red digital abstracta de conexiones azules aportada para el diseño",
+          "complete": true,
+          "width": 283,
+          "height": 505,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real de la biopelícula durante el secado",
+          "complete": true,
+          "width": 691,
+          "height": 921,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio",
+          "complete": true,
+          "width": 691,
+          "height": 1036,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Archivo del proyecto: Aplicación en alimentos. Registro contextual, no verificación del resultado.",
+          "complete": true,
+          "width": 691,
+          "height": 921,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual de laboratorio con microscopio y globo digital",
+          "complete": true,
+          "width": 691,
+          "height": 1036,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fcangrejitos-secos.jpg&w=750&q=75",
+          "alt": "Registro de material de cangrejo acondicionado en un recipiente",
+          "complete": true,
+          "width": 691,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro de exploración de materiales del proyecto",
+          "complete": true,
+          "width": 691,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad",
+          "complete": true,
+          "width": 691,
+          "height": 1228,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Registro de matriz con fruta; no es un ensayo de conservación.",
+          "complete": true,
+          "width": 691,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Foto de biopelícula; aplicación en verduras por investigar.",
+          "complete": true,
+          "width": 691,
+          "height": 921,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Películas en formación; desempeño de empaque por validar.",
+          "complete": true,
+          "width": 691,
+          "height": 1228,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Materia prima del proyecto; no representa un proceso industrial.",
+          "complete": true,
+          "width": 691,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Hoja verde y contacto digital: imagen conceptual de biotecnología",
+          "complete": true,
+          "width": 691,
+          "height": 1228,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Fotografía real de la matriz con fruta elaborada en el proyecto",
+          "complete": true,
+          "width": 691,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro real de las formulaciones extendidas en el espacio de trabajo del proyecto",
+          "complete": true,
+          "width": 691,
+          "height": 1228,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 66,
+          "height": 66,
+          "error": null
+        }
+      ]
+    },
+    {
+      "label": "1024px",
+      "count": 24,
+      "broken": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 72,
+          "height": 72,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 66,
+          "height": 66,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real del proyecto: biopelícula durante el secado",
+          "complete": true,
+          "width": 140,
+          "height": 186,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=128&q=75",
+          "alt": "Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab",
+          "complete": true,
+          "width": 90,
+          "height": 160,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "alt": "Preparación y limpieza del material de cangrejo bajo el agua",
+          "complete": true,
+          "width": 460,
+          "height": 460,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el recurso",
+          "complete": true,
+          "width": 460,
+          "height": 460,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el material",
+          "complete": true,
+          "width": 460,
+          "height": 614,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el método",
+          "complete": true,
+          "width": 460,
+          "height": 818,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "alt": "Red digital abstracta de conexiones azules aportada para el diseño",
+          "complete": true,
+          "width": 189,
+          "height": 336,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real de la biopelícula durante el secado",
+          "complete": true,
+          "width": 460,
+          "height": 614,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio",
+          "complete": true,
+          "width": 460,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Archivo del proyecto: Aplicación en alimentos. Registro contextual, no verificación del resultado.",
+          "complete": true,
+          "width": 460,
+          "height": 614,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual de laboratorio con microscopio y globo digital",
+          "complete": true,
+          "width": 460,
+          "height": 691,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fcangrejitos-secos.jpg&w=750&q=75",
+          "alt": "Registro de material de cangrejo acondicionado en un recipiente",
+          "complete": true,
+          "width": 460,
+          "height": 460,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro de exploración de materiales del proyecto",
+          "complete": true,
+          "width": 460,
+          "height": 460,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad",
+          "complete": true,
+          "width": 460,
+          "height": 818,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Registro de matriz con fruta; no es un ensayo de conservación.",
+          "complete": true,
+          "width": 460,
+          "height": 460,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Foto de biopelícula; aplicación en verduras por investigar.",
+          "complete": true,
+          "width": 460,
+          "height": 614,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Películas en formación; desempeño de empaque por validar.",
+          "complete": true,
+          "width": 460,
+          "height": 818,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Materia prima del proyecto; no representa un proceso industrial.",
+          "complete": true,
+          "width": 460,
+          "height": 460,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Hoja verde y contacto digital: imagen conceptual de biotecnología",
+          "complete": true,
+          "width": 460,
+          "height": 818,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Fotografía real de la matriz con fruta elaborada en el proyecto",
+          "complete": true,
+          "width": 460,
+          "height": 460,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro real de las formulaciones extendidas en el espacio de trabajo del proyecto",
+          "complete": true,
+          "width": 460,
+          "height": 818,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 66,
+          "height": 66,
+          "error": null
+        }
+      ]
+    },
+    {
+      "label": "1440px",
+      "count": 24,
+      "broken": [],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 72,
+          "height": 72,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 66,
+          "height": 66,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real del proyecto: biopelícula durante el secado",
+          "complete": true,
+          "width": 140,
+          "height": 186,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=128&q=75",
+          "alt": "Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab",
+          "complete": true,
+          "width": 90,
+          "height": 160,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "alt": "Preparación y limpieza del material de cangrejo bajo el agua",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el recurso",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el material",
+          "complete": true,
+          "width": 648,
+          "height": 864,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro del proyecto: el método",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "alt": "Red digital abstracta de conexiones azules aportada para el diseño",
+          "complete": true,
+          "width": 266,
+          "height": 473,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Registro real de la biopelícula durante el secado",
+          "complete": true,
+          "width": 648,
+          "height": 864,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio",
+          "complete": true,
+          "width": 648,
+          "height": 972,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Archivo del proyecto: Aplicación en alimentos. Registro contextual, no verificación del resultado.",
+          "complete": true,
+          "width": 648,
+          "height": 864,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "alt": "Imagen conceptual de laboratorio con microscopio y globo digital",
+          "complete": true,
+          "width": 648,
+          "height": 972,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fcangrejitos-secos.jpg&w=750&q=75",
+          "alt": "Registro de material de cangrejo acondicionado en un recipiente",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Registro de exploración de materiales del proyecto",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Imagen conceptual verde de una hoja y contacto digital, aportada para sostenibilidad",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Registro de matriz con fruta; no es un ensayo de conservación.",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "alt": "Foto de biopelícula; aplicación en verduras por investigar.",
+          "complete": true,
+          "width": 648,
+          "height": 864,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Películas en formación; desempeño de empaque por validar.",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "alt": "Materia prima del proyecto; no representa un proceso industrial.",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "alt": "Hoja verde y contacto digital: imagen conceptual de biotecnología",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "alt": "Fotografía real de la matriz con fruta elaborada en el proyecto",
+          "complete": true,
+          "width": 648,
+          "height": 648,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "alt": "Registro real de las formulaciones extendidas en el espacio de trabajo del proyecto",
+          "complete": true,
+          "width": 648,
+          "height": 1151,
+          "error": null
+        },
+        {
+          "src": "http://127.0.0.1:3080/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "alt": "Logo BioCrab: gota azul, hoja verde y motivo rojo",
+          "complete": true,
+          "width": 66,
+          "height": 66,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3080/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3080/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/255-b1e2483a7e02feee.js",
+        "line": 0,
+        "column": 76111,
+        "lineNumber": 0,
+        "columnNumber": 76111
+      }
+    },
+    {
+      "type": "error",
+      "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3080/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3080/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/255-b1e2483a7e02feee.js",
+        "line": 0,
+        "column": 76111,
+        "lineNumber": 0,
+        "columnNumber": 76111
+      }
+    }
+  ],
+  "consoleWarnings": [
+    {
+      "type": "warning",
+      "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 7942,
+        "lineNumber": 0,
+        "columnNumber": 7942
+      }
+    },
+    {
+      "type": "warning",
+      "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 7942,
+        "lineNumber": 0,
+        "columnNumber": 7942
+      }
+    }
+  ],
+  "rawConsole": [
+    {
+      "type": "warning",
+      "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 7942,
+        "lineNumber": 0,
+        "columnNumber": 7942
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "warning",
+      "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 7942,
+        "lineNumber": 0,
+        "columnNumber": 7942
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      }
+    },
+    {
+      "type": "error",
+      "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3080/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3080/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/255-b1e2483a7e02feee.js",
+        "line": 0,
+        "column": 76111,
+        "lineNumber": 0,
+        "columnNumber": 76111
+      }
+    },
+    {
+      "type": "error",
+      "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3080/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3080/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/255-b1e2483a7e02feee.js",
+        "line": 0,
+        "column": 76111,
+        "lineNumber": 0,
+        "columnNumber": 76111
+      }
+    }
+  ],
+  "expectedGraphicsFallback": [
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      },
+      "expectedBecause": "WebGL explicitly disabled by test command-line switches"
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      },
+      "expectedBecause": "WebGL explicitly disabled by test command-line switches"
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      },
+      "expectedBecause": "Three renderer initialization failed in the intentionally disabled graphics test"
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      },
+      "expectedBecause": "WebGL explicitly disabled by test command-line switches"
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      },
+      "expectedBecause": "WebGL explicitly disabled by test command-line switches"
+    },
+    {
+      "type": "error",
+      "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+        "line": 0,
+        "column": 8167,
+        "lineNumber": 0,
+        "columnNumber": 8167
+      },
+      "expectedBecause": "Three renderer initialization failed in the intentionally disabled graphics test"
+    },
+    {
+      "type": "error",
+      "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3080/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3080/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/255-b1e2483a7e02feee.js",
+        "line": 0,
+        "column": 76111,
+        "lineNumber": 0,
+        "columnNumber": 76111
+      },
+      "expectedBecause": "Exact WebGL initialization Error captured by the React graphics boundary"
+    },
+    {
+      "type": "error",
+      "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3080/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3080/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3080/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3080/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+      "location": {
+        "url": "http://127.0.0.1:3080/_next/static/chunks/255-b1e2483a7e02feee.js",
+        "line": 0,
+        "column": 76111,
+        "lineNumber": 0,
+        "columnNumber": 76111
+      },
+      "expectedBecause": "Exact WebGL initialization Error captured by the React graphics boundary"
+    }
+  ],
+  "unexpectedConsoleErrors": [],
+  "failedResponses": [],
+  "design": "immersive-biomaterials-v9",
+  "graphicsFallbackState": {
+    "fallbacks": 2,
+    "canvasCount": 0
+  },
+  "expectedGraphicsPolicy": {
+    "observedBuild": "immersive-biomaterials-v9 / localhost:3057",
+    "conditions": [
+      "intentionalWebGLDisabled === true",
+      "fallbackConfirmed === true"
+    ],
+    "literalMessages": [
+      "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+      "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context."
+    ],
+    "caughtError": "Exact first line 'Error: THREE.WebGLRenderer: Error creating WebGL context.', followed exclusively by at-stack lines including a local Next static chunk."
+  },
+  "finishedAt": "2026-11-14T18:51:30.174Z",
+  "passed": 21,
+  "failed": 0
+}

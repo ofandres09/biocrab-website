@@ -345,14 +345,45 @@ export default function Home() {
             label="INVESTIGACIÓN CIENTÍFICA"
             title={
               <>
-                Una hipótesis.
+                De la curiosidad
                 <br />
-                <span>Por contrastar.</span>
+                <span>a la evidencia.</span>
               </>
             }
-            description="Biopelículas de quitosano y almidón de yuca: formulación y propiedades por investigar."
+            description="Quitosano y almidón de yuca. Una pregunta de ciencia de materiales."
           />
           <div className="research-layout">
+            <Reveal className="research-copy research-intro">
+              <p className="paper-label">BIOCRAB / CUADERNO DE INVESTIGACIÓN</p>
+              <KineticHeading as="h3" className="research-question">
+                ¿Qué cambia al unir <em>quitosano</em> y{" "}
+                <em>almidón de yuca</em>?
+              </KineticHeading>
+              <p className="research-principle">
+                Un diálogo <em>fructífero</em> entre curiosidad y método.
+              </p>
+              <dl className="research-keys">
+                <div>
+                  <dt>Combinar</dt>
+                  <dd>Quitosano de origen marino y almidón de yuca.</dd>
+                </div>
+                <div>
+                  <dt>Observar</dt>
+                  <dd>Espesor, flexibilidad, resistencia y humedad.</dd>
+                </div>
+                <div>
+                  <dt>Contrastar</dt>
+                  <dd>Formulaciones con controles y réplicas.</dd>
+                </div>
+              </dl>
+              <p className="research-status">
+                <CircleDashed size={17} aria-hidden="true" />
+                <span>
+                  <strong>Hipótesis abierta.</strong> Desempeño alimentario e
+                  impacto ambiental por validar.
+                </span>
+              </p>
+            </Reveal>
             <figure className="research-photo">
               <ParallaxFrame>
                 <Photo
@@ -364,14 +395,14 @@ export default function Home() {
                 <span>
                   REGISTRO REAL DE BIOCRAB
                   <br />
-                  La exploración del material se documenta con fotografías y se
-                  contrasta mediante ensayos.
+                  Biopelícula durante el secado. Las propiedades requieren
+                  caracterización.
                 </span>
               </Caption>
               <div className="research-stamp">
-                <Microscope size={24} />
+                <Microscope size={22} aria-hidden="true" />
                 <span>
-                  PLANTEAMIENTO
+                  FORMULACIÓN
                   <br />
                   EN INVESTIGACIÓN
                 </span>
@@ -389,39 +420,53 @@ export default function Home() {
                 </div>
               </div>
             </figure>
-            <Reveal className="research-copy">
-              <p className="paper-label">BIOCRAB / CUADERNO DE INVESTIGACIÓN</p>
-              <blockquote>
-                ¿Cómo cambia una película cuando conectamos una matriz vegetal
-                con un biopolímero de origen marino?
-              </blockquote>
+            <Reveal className="research-copy research-dossier">
               <details id="hipotesis" className="research-detail" open>
                 <summary>
-                  La hipótesis propuesta <span>+</span>
+                  <span className="research-detail-title">
+                    La hipótesis de BioCrab
+                    <small>Qué podría cambiar.</small>
+                  </span>
+                  <span className="research-detail-toggle" aria-hidden="true">
+                    +
+                  </span>
                 </summary>
                 <p>
-                  La combinación de quitosano y almidón de yuca podría permitir
-                  la formación de películas cuyas propiedades físicas varíen con
-                  la formulación y las condiciones de preparación. La hipótesis
-                  no afirma eficacia alimentaria ni superioridad ambiental.
+                  La proporción de quitosano y almidón de yuca, junto con las
+                  condiciones de preparación, podría modificar las propiedades
+                  físicas de la película. No presupone eficacia alimentaria ni
+                  superioridad ambiental.
                 </p>
               </details>
               <details className="research-detail">
                 <summary>
-                  El fundamento científico <span>+</span>
+                  <span className="research-detail-title">
+                    La química del encuentro
+                    <small>Dos biopolímeros, distintas estructuras.</small>
+                  </span>
+                  <span className="research-detail-toggle" aria-hidden="true">
+                    +
+                  </span>
                 </summary>
                 <p>
-                  El quitosano es un derivado de la quitina obtenido por
-                  desacetilación. Sus grupos amino influyen en su comportamiento
-                  en medios ácidos. El almidón contiene amilosa y amilopectina;
-                  su gelatinización en agua y calor permite explorar matrices
-                  filmógenas. Las interacciones y propiedades dependen de cada
-                  formulación.
+                  El quitosano deriva de la quitina mediante desacetilación. Sus
+                  grupos amino influyen en su comportamiento en medios ácidos.
+                </p>
+                <p>
+                  El almidón contiene amilosa y amilopectina. Su gelatinización
+                  en agua y calor permite explorar matrices filmógenas; las
+                  interacciones dependen de la formulación.
                 </p>
               </details>
               <details className="research-detail">
                 <summary>
-                  Los objetivos del estudio <span>+</span>
+                  <span className="research-detail-title">
+                    Qué buscamos comprender
+                    <small>Del proceso a las propiedades.</small>
+                  </span>
+                  <span className="research-detail-toggle" aria-hidden="true">
+                    +
+                  </span>
                 </summary>
                 <ul>
                   <li>
@@ -439,22 +484,37 @@ export default function Home() {
               </details>
               <details className="research-detail">
                 <summary>
-                  Lo que falta por validar <span>+</span>
+                  <span className="research-detail-title">
+                    Lo que exige la evidencia
+                    <small>Inocuidad, estabilidad y fin de vida.</small>
+                  </span>
+                  <span className="research-detail-toggle" aria-hidden="true">
+                    +
+                  </span>
                 </summary>
                 <p>
-                  Propiedades físicas, biodegradación bajo condiciones
-                  definidas, inocuidad, migración y potencial alergénico. Los
-                  datos se publicarán con unidades, protocolos, controles,
-                  réplicas e incertidumbre.
+                  Antes de proponer una aplicación se deben evaluar propiedades
+                  físicas, biodegradación en condiciones definidas, inocuidad,
+                  migración y potencial alergénico.
+                </p>
+                <p>
+                  Cada resultado deberá comunicarse con unidades, protocolos,
+                  controles, réplicas e incertidumbre.
                 </p>
                 <span className="validation-label">
-                  <CircleDashed size={14} /> Dato en proceso de validación
-                  experimental
+                  <CircleDashed size={14} aria-hidden="true" /> Validación
+                  pendiente
                 </span>
               </details>
               <details className="research-detail sources">
                 <summary>
-                  Lecturas de referencia <ArrowUpRight size={17} />
+                  <span className="research-detail-title">
+                    Bibliografía técnica
+                    <small>Las bases para profundizar.</small>
+                  </span>
+                  <span className="research-detail-toggle" aria-hidden="true">
+                    +
+                  </span>
                 </summary>
                 <a
                   href="https://doi.org/10.1016/j.progpolymsci.2006.06.001"
@@ -477,6 +537,51 @@ export default function Home() {
                   BioCrab.
                 </p>
               </details>
+              <div className="research-citations">
+                <p className="paper-label">LECTURAS UNIVERSITARIAS</p>
+                <h3>Ampliar la mirada.</h3>
+                <div className="research-citation-grid">
+                  <a
+                    className="research-citation"
+                    href="https://news.mit.edu/2020/mit-based-startup-cambridge-crops-wraps-food-in-silk-0605"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span className="research-citation-institution">
+                      MIT <small>News · 2020</small>
+                    </span>
+                    <h4>Seda para conservar alimentos.</h4>
+                    <p>Recubrimientos a partir de proteínas de seda.</p>
+                    <span className="research-citation-domain">
+                      news.mit.edu <ArrowUpRight size={16} aria-hidden="true" />
+                    </span>
+                    <span className="sr-only">Abre una pestaña nueva.</span>
+                  </a>
+                  <a
+                    className="research-citation"
+                    href="https://wyss.harvard.edu/news/manufacturing-a-solution-to-planet-clogging-plastics/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <span className="research-citation-institution">
+                      Harvard <small>Wyss · 2014</small>
+                    </span>
+                    <h4>Del quitosano al biomaterial.</h4>
+                    <p>
+                      Fabricación de materiales con quitosano de caparazones.
+                    </p>
+                    <span className="research-citation-domain">
+                      wyss.harvard.edu{" "}
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </span>
+                    <span className="sr-only">Abre una pestaña nueva.</span>
+                  </a>
+                </div>
+                <p className="research-source-note">
+                  Investigaciones externas sobre otras formulaciones; BioCrab
+                  requiere evidencia propia.
+                </p>
+              </div>
             </Reveal>
           </div>
         </section>
