@@ -1,126 +1,126 @@
 {
-  "url": "http://127.0.0.1:3057",
+  "url": "http://127.0.0.1:3061",
   "design": "immersive-biomaterials-v9",
   "chapters": [
     {
       "id": "inicio",
-      "uTime": 0.30000001192092896,
+      "uTime": 0.4000000059604645,
       "uFrom": 0,
       "uTo": 0,
       "uBlend": 1,
-      "uProgress": 0.3216278851032257
+      "uProgress": 0.3216380774974823
     },
     {
       "id": "sobre",
       "uTime": 0.699999988079071,
       "uFrom": 0,
       "uTo": 1,
-      "uBlend": 0.838272213935852,
-      "uProgress": 0.39387765526771545
+      "uBlend": 0.5415281653404236,
+      "uProgress": 0.3856695294380188
     },
     {
       "id": "por-que-biocrab",
-      "uTime": 1.2000000476837158,
+      "uTime": 1.2999999523162842,
       "uFrom": 1,
       "uTo": 2,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.398796021938324
+      "uProgress": 0.39914846420288086
     },
     {
       "id": "innovacion",
-      "uTime": 1.7000000476837158,
+      "uTime": 1.7999999523162842,
       "uFrom": 2,
       "uTo": 3,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.39994579553604126
+      "uProgress": 0.3998570144176483
     },
     {
       "id": "del-residuo-al-biomaterial",
-      "uTime": 2.200000047683716,
+      "uTime": 2.299999952316284,
       "uFrom": 3,
       "uTo": 4,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.4003394842147827
+      "uProgress": 0.39975571632385254
     },
     {
       "id": "investigacion",
-      "uTime": 2.700000047683716,
+      "uTime": 2.799999952316284,
       "uFrom": 4,
       "uTo": 5,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.40019917488098145
+      "uProgress": 0.3998364806175232
     },
     {
       "id": "metodologia",
-      "uTime": 3.200000047683716,
+      "uTime": 3.299999952316284,
       "uFrom": 5,
       "uTo": 6,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.3999994099140167
+      "uProgress": 0.399999737739563
     },
     {
       "id": "recorrido",
-      "uTime": 3.700000047683716,
+      "uTime": 3.799999952316284,
       "uFrom": 6,
       "uTo": 7,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.3999689519405365
+      "uProgress": 0.40014344453811646
     },
     {
       "id": "comparacion",
-      "uTime": 4.199999809265137,
+      "uTime": 4.300000190734863,
       "uFrom": 7,
       "uTo": 8,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.39966440200805664
+      "uProgress": 0.39987143874168396
     },
     {
       "id": "aplicaciones-futuras",
-      "uTime": 4.699999809265137,
+      "uTime": 4.800000190734863,
       "uFrom": 8,
       "uTo": 9,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.40005648136138916
+      "uProgress": 0.39991891384124756
     },
     {
       "id": "vision-futura",
-      "uTime": 5.199999809265137,
+      "uTime": 5.300000190734863,
       "uFrom": 9,
       "uTo": 10,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.40027230978012085
+      "uProgress": 0.3996715843677521
     },
     {
       "id": "impacto-potencial",
-      "uTime": 5.699999809265137,
+      "uTime": 5.800000190734863,
       "uFrom": 10,
       "uTo": 11,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.4000760018825531
+      "uProgress": 0.400015652179718
     },
     {
       "id": "gomitas",
-      "uTime": 6.199999809265137,
+      "uTime": 6.300000190734863,
       "uFrom": 11,
       "uTo": 12,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.3994576930999756
+      "uProgress": 0.39996179938316345
     },
     {
       "id": "equipo",
-      "uTime": 6.699999809265137,
+      "uTime": 6.800000190734863,
       "uFrom": 12,
       "uTo": 13,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.3997441828250885
+      "uProgress": 0.40011847019195557
     },
     {
       "id": "contacto",
-      "uTime": 7.199999809265137,
+      "uTime": 7.300000190734863,
       "uFrom": 13,
       "uTo": 14,
       "uBlend": 0.838272213935852,
-      "uProgress": 0.4042806625366211
+      "uProgress": 0.4064573347568512
     }
   ],
   "pauseStable": true,

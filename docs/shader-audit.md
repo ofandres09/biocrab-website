@@ -47,6 +47,7 @@ En el fondo, la configuración volumétrica declara seis dibujos nominales: tres
 - Las poses económicas se cachean por capítulo y resolución del campo. Solo se copian atributos cuando cambian los capítulos o la geometría; los extremos de los enlaces reutilizan esos atributos.
 - Los uniforms y vectores de trabajo se reutilizan. Se actualizan las instancias reales de `ShaderMaterial`, evitando una copia declarativa que podría dejar estático el dibujo.
 - La pausa y la visibilidad interrumpen el reloj. El explorador conserva su contexto acotado después de la primera entrada, detiene su reloj fuera de pantalla y reutiliza programas al volver. Tiene respaldo estático si falla WebGL.
+- La portada de HTML y su respaldo disponen de un pintado antes de inicializar la GPU, mediante dos frames del navegador y sin añadir un temporizador decorativo.
 - La capacidad software se detecta en cada contexto real antes de montar materiales, sin un tercer contexto temporal de prueba. El ajuste de resolución se hace en ventanas de medida, con histéresis; no hay estado React nuevo en cada frame.
 - La ruta de volumen tiene techo de DPR 1,5 para el fondo y 2 para el foco; el suelo adaptativo es 0,85. La economía tiene presupuesto de dibujo de 30 Hz y la ruta saludable de GPU de 60 Hz. Son presupuestos, **no FPS certificados**.
 

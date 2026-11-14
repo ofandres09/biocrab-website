@@ -1,6 +1,6 @@
 # Revisión editorial y gráfica de BioCrab
 
-Revisión `immersive-biomaterials-v9`, 13 de noviembre de 2026. La verificación pública y las capturas se incorporan tras el despliegue; las mediciones siguientes corresponden a la compilación local de producción.
+Revisión `immersive-biomaterials-v9`, 13 de noviembre de 2026. Fuente final `e3fc5ee`, acabado editorial `ee3429e`. Producción y capturas verificadas; las métricas de rendimiento corresponden a compilaciones locales de producción.
 
 ## Dirección artística
 
@@ -14,17 +14,17 @@ Chromium 154, ANGLE/SwiftShader por software, Lighthouse 13.6, preset de escrito
 
 | Medida                                  |           Antes |         Después |
 | --------------------------------------- | --------------: | --------------: |
-| Lighthouse Performance                  |              35 |              43 |
+| Lighthouse Performance                  |              38 |              39 |
 | Accessibility / Best Practices / SEO    | 100 / 100 / 100 | 100 / 100 / 100 |
-| LCP                                     |          6,38 s |          3,12 s |
-| TBT                                     |         20,67 s |         13,88 s |
-| TTI diagnóstico                         |         22,49 s |         17,35 s |
-| Fondo, FPS escritorio en reposo         |            1,59 |            4,92 |
-| Fondo, FPS móvil emulado en reposo      |            5,33 |           20,96 |
-| Fondo, FPS escritorio en scroll frío    |            0,67 |            0,49 |
-| Fondo, FPS móvil emulado en scroll frío |            1,94 |            2,39 |
+| LCP                                     |          4,35 s |          3,93 s |
+| TBT                                     |         25,32 s |         13,33 s |
+| TTI diagnóstico                         |         27,28 s |         18,35 s |
+| Fondo, FPS escritorio en reposo         |            1,07 |            5,90 |
+| Fondo, FPS móvil emulado en reposo      |            4,35 |           22,05 |
+| Fondo, FPS escritorio en scroll frío    |            0,81 |            0,89 |
+| Fondo, FPS móvil emulado en scroll frío |            2,24 |            2,84 |
 
-La carga y el reposo mejoran; la prueba corta de scroll frío de escritorio **no mejora consistentemente**. Los bloqueos y la fluidez de este renderer por software siguen lejos del objetivo de 60 FPS. Se conserva esa limitación en la evidencia, sin sustituirla por cifras de otra configuración. Las ventanas solicitadas duran seis segundos y pueden prolongarse por frames lentos; los diseños editoriales tienen alturas diferentes.
+La carga y el reposo mejoran. La prueba corta de scroll frío sigue siendo lenta y sus tiempos de frame varían. Los bloqueos y la fluidez de este renderer por software siguen lejos del objetivo de 60 FPS. Se conserva esa limitación en la evidencia, sin sustituirla por cifras de otra configuración. Las ventanas solicitadas duran seis segundos y pueden prolongarse por frames lentos; los diseños editoriales tienen alturas diferentes.
 
 Las consultas `EXT_disjoint_timer_query_webgl2` registran cinco muestras válidas por programa activo, sin resultados disjuntos. Medianas por dibujo en SwiftShader: niebla 50,21 → 17,20 ms; enlaces 95,44 → 3,89 ms; átomos 166,36 → 2,32 ms. Cambian geometría, resolución y ruta de dibujo, por lo que no son un A/B aislado del mismo shader ni deben sumarse como frame time. El uso porcentual de GPU física no está disponible. Se registran por separado CPU, dibujos y geometría enviada.
 
@@ -44,4 +44,34 @@ La prueba lee los uniforms reales de WebGL en quince estados, incluido contacto:
 
 ## Publicación y capturas
 
-Pendiente de verificación pública de esta revisión. Las capturas v8 de `previews/laboratorio-v8` son historial y no acreditan v9.
+<https://biocrab-website.vercel.app/> sirve la revisión v9. Vercel confirmó el despliegue del commit `e3fc5ee`. El enlace `/#hipotesis` abre el detalle y lo sitúa bajo la navegación. Favicon e imagen social responden 200 como PNG.
+
+Se generaron 38 capturas públicas. El recorrido y las vistas claras conservan el movimiento activo; los ocho primeros planos usan el control de pausa existente para apreciar las fotografías completas, sin overrides de CSS. Las dos vistas cargan sus 25 imágenes sin errores ni desbordamiento. Contraste automatizado con WebGL activo, oscuro/claro y escritorio/móvil: cero infracciones y una comprobación incompleta por caso.
+
+| Capítulo            | Escritorio                                                              | Móvil                                                             |
+| ------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Portada             | [Escritorio](previews/editorial-v9/inicio-1440.jpg)                     | [Móvil](previews/editorial-v9/inicio-390.jpg)                     |
+| El problema         | [Escritorio](previews/editorial-v9/sobre-1440.jpg)                      | [Móvil](previews/editorial-v9/sobre-390.jpg)                      |
+| Los recursos        | [Escritorio](previews/editorial-v9/por-que-biocrab-1440.jpg)            | [Móvil](previews/editorial-v9/por-que-biocrab-390.jpg)            |
+| Innovación          | [Escritorio](previews/editorial-v9/innovacion-1440.jpg)                 | [Móvil](previews/editorial-v9/innovacion-390.jpg)                 |
+| Investigación       | [Escritorio](previews/editorial-v9/investigacion-1440.jpg)              | [Móvil](previews/editorial-v9/investigacion-390.jpg)              |
+| Transformación      | [Escritorio](previews/editorial-v9/del-residuo-al-biomaterial-1440.jpg) | [Móvil](previews/editorial-v9/del-residuo-al-biomaterial-390.jpg) |
+| Metodología         | [Escritorio](previews/editorial-v9/metodologia-1440.jpg)                | [Móvil](previews/editorial-v9/metodologia-390.jpg)                |
+| Trayectoria         | [Escritorio](previews/editorial-v9/recorrido-1440.jpg)                  | [Móvil](previews/editorial-v9/recorrido-390.jpg)                  |
+| Comparador          | [Escritorio](previews/editorial-v9/comparacion-1440.jpg)                | [Móvil](previews/editorial-v9/comparacion-390.jpg)                |
+| Impacto potencial   | [Escritorio](previews/editorial-v9/impacto-potencial-1440.jpg)          | [Móvil](previews/editorial-v9/impacto-potencial-390.jpg)          |
+| Aplicaciones        | [Escritorio](previews/editorial-v9/aplicaciones-futuras-1440.jpg)       | [Móvil](previews/editorial-v9/aplicaciones-futuras-390.jpg)       |
+| Futuro              | [Escritorio](previews/editorial-v9/vision-futura-1440.jpg)              | [Móvil](previews/editorial-v9/vision-futura-390.jpg)              |
+| Fruta               | [Escritorio](previews/editorial-v9/gomitas-1440.jpg)                    | [Móvil](previews/editorial-v9/gomitas-390.jpg)                    |
+| Proyecto y contacto | [Escritorio](previews/editorial-v9/equipo-1440.jpg)                     | [Móvil](previews/editorial-v9/equipo-390.jpg)                     |
+
+| Registro real, movimiento pausado | Escritorio                                                          | Móvil                                                         |
+| --------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Materia prima                     | [Escritorio](previews/editorial-v9/registro-materia-prima-1440.jpg) | [Móvil](previews/editorial-v9/registro-materia-prima-390.jpg) |
+| Material acondicionado            | [Escritorio](previews/editorial-v9/registro-secado-1440.jpg)        | [Móvil](previews/editorial-v9/registro-secado-390.jpg)        |
+| Biopelícula en secado             | [Escritorio](previews/editorial-v9/registro-biopelicula-1440.jpg)   | [Móvil](previews/editorial-v9/registro-biopelicula-390.jpg)   |
+| Formulación con fruta             | [Escritorio](previews/editorial-v9/registro-fruta-1440.jpg)         | [Móvil](previews/editorial-v9/registro-fruta-390.jpg)         |
+
+Tema claro: [escritorio](previews/editorial-v9/investigacion-claro-1440.jpg) y [móvil](previews/editorial-v9/investigacion-claro-390.jpg).
+
+[Evidencia de producción](production-verification.json), [capturas y recursos](previews/editorial-v9/capture-verification.json) y [fotografías completas](previews/editorial-v9/photo-verification.json). La evidencia v8 de `previews/laboratorio-v8` se conserva como historial.

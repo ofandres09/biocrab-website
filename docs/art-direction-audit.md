@@ -1,6 +1,6 @@
 # BioCrab: auditoría de dirección visual
 
-**Estado: revisión v9 en preparación; pendiente de evidencia pública.** Comparación entre la versión v8 del `HEAD` `d7aa84b` y el trabajo actual `immersive-biomaterials-v9`. Son diez correcciones del contenido y la interacción existentes, no diez funciones nuevas.
+**Estado: revisión final v9 publicada y verificada en escritorio y móvil.** Comparación entre la versión v8 del `HEAD` `d7aa84b` y el trabajo actual `immersive-biomaterials-v9`. Son diez correcciones del contenido y la interacción existentes, no diez funciones nuevas.
 
 ## Diez elementos revisados
 
@@ -17,13 +17,11 @@
 | 9   | Cursor, elevaciones y reflejos pueden competir entre sí o reemplazar la transformación de cámara de una tarjeta. | El cursor nativo permanece; su acompañamiento magnético se acota. Los hover actúan sobre borde, luz e iconos y respetan la matriz del scroll. El foco de teclado mantiene una señal independiente.                               | [global-atmosphere.tsx](../app/components/global-atmosphere.tsx), [interaction-system.css](../app/components/interaction-system.css).                                               |
 | 10  | Los tiempos y curvas independientes producen ritmos distintos entre componentes.                                 | Una escala de nueve duraciones y cinco curvas con nombre coordina CSS, Motion, GSAP y Lenis. La geometría ligada al scroll y la dinámica molecular conservan sus excepciones justificadas.                                       | [motion-system.ts](../app/components/motion-system.ts), [motion-system.css](../app/components/motion-system.css), [sistema editorial](editorial-motion-system.md).                  |
 
-## Lectura de las capturas locales
+## Revisión de producción
 
-Se inspeccionaron los borradores `inicio-1440.jpg`, `inicio-390.jpg`, `investigacion-1440.jpg`, `metodologia-390.jpg` e `impacto-potencial-1440.jpg` de `/tmp/biocrab-v9/captures`, junto al hero v8 de [la evidencia anterior](previews/laboratorio-v8/hero-1440.jpg). El registro local corresponde a `http://127.0.0.1:3052`; no acredita la versión desplegada.
+Las catorce pantallas se revisaron desde el dominio público en 1440 y 390 px. La portada, la fotografía de preparación sin red superpuesta, los titulares y las vistas claras se verificaron con sus revelados asentados. Los primeros planos adicionales usan la pausa del sitio para comprobar los bordes completos de las fotografías. La [revisión visual](visual-review.md) enlaza las 38 capturas y sus condiciones.
 
-Los borradores muestran el logo, la composición molecular abierta, la adaptación vertical del hero y la presencia directa de las imágenes conceptuales en investigación, metodología e impacto. También detectaron dos puntos que ya se ajustaron en el código: bordes demasiado definidos en las superficies de lectura y capturas de palabras tomadas antes de asentarse su transformación. Las nuevas máscaras y la espera del estado estable necesitan comprobarse en las capturas finales.
-
-Antes de cerrar la revisión se requiere evidencia de producción en escritorio y móvil: marcador v9, carga de imágenes, titulares asentados, límites de las fotografías, continuidad, pausa, movimiento reducido y controles existentes. Una captura estática no demuestra la fluidez de una animación. Este documento no atribuye una puntuación Lighthouse, conformidad global de contraste ni una frecuencia de cuadros medida.
+La comprobación de movimiento se registra por separado: quince estados de uniforms reales, pausa y pérdida de contexto. Una imagen estática no certifica fluidez ni 60 FPS.
 
 ## Límites científicos
 

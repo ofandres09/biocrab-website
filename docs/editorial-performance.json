@@ -1,6 +1,5 @@
 {
   "release": "immersive-biomaterials-v9",
-  "buildId": "9BbkHSBRrtxGaKzplfom2",
   "baselineCommit": "d7aa84bb4f369178a65142f7df578330bd9374fe",
   "conditions": {
     "renderer": "Chromium 154 / ANGLE SwiftShader (software), no physical GPU",
@@ -10,13 +9,13 @@
     "hardwareGpuUtilizationReason": "Not exposed by the software-rendered environment. CDP GPU-process CPU time is CPU, not hardware GPU utilization.",
     "limitations": [
       "Single local measurements, with short software-renderer samples and host variability; no universal 60 FPS or physical-phone certification.",
-      "Cold desktop scroll did not improve consistently; its full measurements remain in this evidence.",
+      "Cold scrolling remains slow and has variable frame times on SwiftShader; the measurements do not establish stable 60 FPS.",
       "Per-program timer queries sample different geometry, resolutions and rendering paths. They are not an isolated same-shader A/B and must not be summed into frame time."
     ]
   },
   "lighthouse": {
     "before": {
-      "fetchTime": "2026-11-13T13:49:10.494Z",
+      "fetchTime": "2026-11-13T23:26:56.327Z",
       "lighthouseVersion": "13.6.0",
       "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
       "configSettings": {
@@ -78,26 +77,26 @@
         "skipAudits": null
       },
       "scores": {
-        "performance": 35,
+        "performance": 38,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "metrics": {
         "first-contentful-paint": {
-          "value": 738.518,
+          "value": 612.297,
           "unit": "millisecond"
         },
         "largest-contentful-paint": {
-          "value": 6379.048,
+          "value": 4350.328,
           "unit": "millisecond"
         },
         "total-blocking-time": {
-          "value": 20667.703,
+          "value": 25318.782,
           "unit": "millisecond"
         },
         "interactive": {
-          "value": 22487.627,
+          "value": 27275.98,
           "unit": "millisecond"
         },
         "cumulative-layout-shift": {
@@ -105,7 +104,7 @@
           "unit": "unitless"
         },
         "speed-index": {
-          "value": 8245,
+          "value": 7330,
           "unit": "millisecond"
         }
       },
@@ -113,50 +112,49 @@
         {
           "group": "scriptEvaluation",
           "groupLabel": "Script Evaluation",
-          "duration": 19425.07700000007
-        },
-        {
-          "group": "styleLayout",
-          "groupLabel": "Style & Layout",
-          "duration": 1672.951000000003
+          "duration": 20951.199000000102
         },
         {
           "group": "other",
           "groupLabel": "Other",
-          "duration": 871.2329999999604
+          "duration": 3993.3100000000004
+        },
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 1775.1020000000003
         },
         {
           "group": "paintCompositeRender",
           "groupLabel": "Rendering",
-          "duration": 239.2530000000032
+          "duration": 140.86000000000442
         },
         {
           "group": "scriptParseCompile",
           "groupLabel": "Script Parsing & Compilation",
-          "duration": 100.45200000000001
-        },
-        {
-          "group": "garbageCollection",
-          "groupLabel": "Garbage Collection",
-          "duration": 59.492999999999995
+          "duration": 93.21299999999995
         },
         {
           "group": "parseHTML",
           "groupLabel": "Parse HTML & CSS",
-          "duration": 34.454
+          "duration": 31.285999999999998
+        },
+        {
+          "group": "garbageCollection",
+          "groupLabel": "Garbage Collection",
+          "duration": 20.839000000000002
         }
       ],
       "warnings": [],
       "runtimeError": null
     },
     "after": {
-      "fetchTime": "2026-11-13T13:56:14.917Z",
+      "fetchTime": "2026-11-13T23:34:08.301Z",
       "lighthouseVersion": "13.6.0",
       "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
       "configSettings": {
         "output": [
-          "json",
-          "html"
+          "json"
         ],
         "maxWaitForFcp": 30000,
         "maxWaitForLoad": 45000,
@@ -213,34 +211,34 @@
         "skipAudits": null
       },
       "scores": {
-        "performance": 43,
+        "performance": 39,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "metrics": {
         "first-contentful-paint": {
-          "value": 474.129,
+          "value": 744.052,
           "unit": "millisecond"
         },
         "largest-contentful-paint": {
-          "value": 3120.349,
+          "value": 3930.758,
           "unit": "millisecond"
         },
         "total-blocking-time": {
-          "value": 13878.474999999997,
+          "value": 13333.781,
           "unit": "millisecond"
         },
         "interactive": {
-          "value": 17349.567,
+          "value": 18351.464,
           "unit": "millisecond"
         },
         "cumulative-layout-shift": {
-          "value": 0.0007900669823729183,
+          "value": 0.0008124108550661183,
           "unit": "unitless"
         },
         "speed-index": {
-          "value": 4886,
+          "value": 5559,
           "unit": "millisecond"
         }
       },
@@ -248,37 +246,37 @@
         {
           "group": "scriptEvaluation",
           "groupLabel": "Script Evaluation",
-          "duration": 11637.457000000139
+          "duration": 10549.575000000252
         },
         {
           "group": "other",
           "groupLabel": "Other",
-          "duration": 2852.4140000000234
+          "duration": 3610.8100000000923
         },
         {
           "group": "styleLayout",
           "groupLabel": "Style & Layout",
-          "duration": 1152.9600000000025
+          "duration": 1374.7100000000023
         },
         {
           "group": "paintCompositeRender",
           "groupLabel": "Rendering",
-          "duration": 112.79000000001746
+          "duration": 104.96200000001556
         },
         {
           "group": "scriptParseCompile",
           "groupLabel": "Script Parsing & Compilation",
-          "duration": 68.313
+          "duration": 82.71700000000001
         },
         {
           "group": "garbageCollection",
           "groupLabel": "Garbage Collection",
-          "duration": 43.48299999999999
+          "duration": 59.40599999999997
         },
         {
           "group": "parseHTML",
           "groupLabel": "Parse HTML & CSS",
-          "duration": 17.782
+          "duration": 33.63
         }
       ],
       "warnings": [],
@@ -288,21 +286,25 @@
   "rendering": {
     "desktopBefore": {
       "url": "http://127.0.0.1:3058",
-      "checkedAt": "2026-11-13T13:42:09.339Z",
+      "checkedAt": "2026-11-13T23:35:35.474Z",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
       "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 1440x1000; not physical-device certification",
       "gpuHardwareLoad": null,
       "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
       "idle": {
-        "durationMs": 6293.399999976158,
-        "rafFps": 1.747862840442634,
-        "p95FrameMs": 683.3999999999978,
+        "durationMs": 6531.5,
+        "rafFps": 1.224833499196203,
+        "p95FrameMs": 1516.699999999997,
         "renderers": [
           {
             "role": "backdrop",
-            "drawCalls": 60,
-            "submittedVertexOrIndexCount": 2844420,
+            "drawCalls": 42,
+            "submittedVertexOrIndexCount": 1991094,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 1.5889662185842126,
+            "renderFps": 1.0717293117966777,
             "diagnostics": {
               "engine": "three.js r187"
             },
@@ -317,10 +319,10 @@
           },
           {
             "role": "explorer",
-            "drawCalls": 50,
-            "submittedVertexOrIndexCount": 828590,
+            "drawCalls": 35,
+            "submittedVertexOrIndexCount": 580013,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 1.5889662185842126,
+            "renderFps": 1.0717293117966777,
             "diagnostics": {
               "engine": "three.js r187"
             },
@@ -335,14 +337,14 @@
           }
         ],
         "cpu": {
-          "mainThreadTaskMs": 309.793,
-          "scriptMs": 29.186,
+          "mainThreadTaskMs": 478.84,
+          "scriptMs": 41.75,
           "layoutMs": 0,
-          "jsHeapUsedBytes": 13149112,
+          "jsHeapUsedBytes": 12497580,
           "processes": [
             {
               "type": "browser",
-              "cpuMs": 0
+              "cpuMs": 40.000000000000036
             },
             {
               "type": "renderer",
@@ -350,15 +352,15 @@
             },
             {
               "type": "renderer",
-              "cpuMs": 340.0000000000003
+              "cpuMs": 420.0000000000004
             },
             {
               "type": "renderer",
-              "cpuMs": 0
+              "cpuMs": 70.00000000000006
             },
             {
               "type": "GPU",
-              "cpuMs": 24710
+              "cpuMs": 24340.000000000004
             },
             {
               "type": "network.mojom.NetworkService",
@@ -372,16 +374,16 @@
         }
       },
       "scroll": {
-        "durationMs": 7451.5999999940395,
-        "rafFps": 0.8051961994745825,
-        "p95FrameMs": 2016.5999999999985,
+        "durationMs": 6152.0999999940395,
+        "rafFps": 0.975276734774437,
+        "p95FrameMs": 2399.899999999998,
         "renderers": [
           {
             "role": "backdrop",
             "drawCalls": 30,
             "submittedVertexOrIndexCount": 1422210,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 0.6709968328954855,
+            "renderFps": 0.8127306123120307,
             "diagnostics": {
               "engine": "three.js r187"
             },
@@ -399,7 +401,7 @@
             "drawCalls": 5,
             "submittedVertexOrIndexCount": 82859,
             "gpuTimerQueryAvailable": false,
-            "renderFps": 0.1341993665790971,
+            "renderFps": 0.16254612246240616,
             "diagnostics": {
               "engine": "three.js r187"
             },
@@ -414,14 +416,14 @@
           }
         ],
         "cpu": {
-          "mainThreadTaskMs": 3484.563,
-          "scriptMs": 2929.5159999999996,
-          "layoutMs": 22.137,
-          "jsHeapUsedBytes": 13828192,
+          "mainThreadTaskMs": 3712.732,
+          "scriptMs": 3025.7520000000004,
+          "layoutMs": 19.900000000000002,
+          "jsHeapUsedBytes": 13378572,
           "processes": [
             {
               "type": "browser",
-              "cpuMs": 60.00000000000006
+              "cpuMs": 30.00000000000003
             },
             {
               "type": "renderer",
@@ -429,15 +431,15 @@
             },
             {
               "type": "renderer",
-              "cpuMs": 879.9999999999999
+              "cpuMs": 1089.9999999999993
             },
             {
               "type": "renderer",
-              "cpuMs": 89.99999999999986
+              "cpuMs": 40.000000000000036
             },
             {
               "type": "GPU",
-              "cpuMs": 26810.000000000004
+              "cpuMs": 22970
             },
             {
               "type": "network.mojom.NetworkService",
@@ -452,8 +454,8 @@
       }
     },
     "desktopAfter": {
-      "url": "http://127.0.0.1:3057",
-      "checkedAt": "2026-11-13T13:57:34.597Z",
+      "url": "http://127.0.0.1:3061",
+      "checkedAt": "2026-11-13T23:36:08.781Z",
       "viewport": {
         "width": 1440,
         "height": 1000
@@ -462,16 +464,16 @@
       "gpuHardwareLoad": null,
       "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
       "idle": {
-        "durationMs": 6096.0999999940395,
-        "rafFps": 5.0852184183380045,
-        "p95FrameMs": 283.3000000000029,
+        "durationMs": 6097.4000000059605,
+        "rafFps": 6.068160199423333,
+        "p95FrameMs": 216.70000000000073,
         "renderers": [
           {
             "role": "backdrop",
-            "drawCalls": 90,
-            "submittedVertexOrIndexCount": 55740,
+            "drawCalls": 108,
+            "submittedVertexOrIndexCount": 66888,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 4.921179114520649,
+            "renderFps": 5.9041558697091885,
             "diagnostics": {
               "engine": "three.js r187",
               "graphicsPrimitives": "points-lines",
@@ -479,7 +481,7 @@
               "graphicsQuality": "balanced",
               "graphicsRenderer": "software",
               "graphicsTargetDpr": "0.85",
-              "graphicsFrameMs": "193.1"
+              "graphicsFrameMs": "168.1"
             },
             "resolution": [
               1224,
@@ -492,37 +494,37 @@
           },
           {
             "role": "explorer",
-            "drawCalls": 120,
-            "submittedVertexOrIndexCount": 1026000,
+            "drawCalls": 144,
+            "submittedVertexOrIndexCount": 1231200,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 4.921179114520649,
+            "renderFps": 5.9041558697091885,
             "diagnostics": {
               "engine": "three.js r187",
               "graphicsDpr": "0.85",
               "graphicsQuality": "balanced",
               "graphicsRenderer": "software",
               "graphicsTargetDpr": "0.85",
-              "graphicsFrameMs": "213.5"
+              "graphicsFrameMs": "169.4"
             },
             "resolution": [
-              790,
-              508
+              820,
+              514
             ],
             "css": [
-              930,
-              598
+              965,
+              605
             ]
           }
         ],
         "cpu": {
-          "mainThreadTaskMs": 836.011,
-          "scriptMs": 89.37,
+          "mainThreadTaskMs": 767.251,
+          "scriptMs": 115.84400000000001,
           "layoutMs": 0,
-          "jsHeapUsedBytes": 12397120,
+          "jsHeapUsedBytes": 12078272,
           "processes": [
             {
               "type": "browser",
-              "cpuMs": 20.000000000000018
+              "cpuMs": 89.99999999999986
             },
             {
               "type": "renderer",
@@ -530,7 +532,7 @@
             },
             {
               "type": "renderer",
-              "cpuMs": 710
+              "cpuMs": 580.0000000000001
             },
             {
               "type": "renderer",
@@ -538,11 +540,11 @@
             },
             {
               "type": "GPU",
-              "cpuMs": 23439.999999999996
+              "cpuMs": 23689.999999999996
             },
             {
               "type": "network.mojom.NetworkService",
-              "cpuMs": 0
+              "cpuMs": 30
             },
             {
               "type": "storage.mojom.StorageService",
@@ -552,16 +554,16 @@
         }
       },
       "scroll": {
-        "durationMs": 10294.40000000596,
-        "rafFps": 0.5828411563565168,
-        "p95FrameMs": 3216.5,
+        "durationMs": 6715.199999988079,
+        "rafFps": 1.0424112461300372,
+        "p95FrameMs": 3033.2000000000007,
         "renderers": [
           {
             "role": "backdrop",
-            "drawCalls": 15,
-            "submittedVertexOrIndexCount": 9290,
+            "drawCalls": 18,
+            "submittedVertexOrIndexCount": 11148,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 0.48570096363043064,
+            "renderFps": 0.8934953538257463,
             "diagnostics": {
               "engine": "three.js r187",
               "graphicsPrimitives": "points-lines",
@@ -569,7 +571,7 @@
               "graphicsQuality": "balanced",
               "graphicsRenderer": "software",
               "graphicsTargetDpr": "0.85",
-              "graphicsFrameMs": "988.0"
+              "graphicsFrameMs": "1184.8"
             },
             "resolution": [
               1224,
@@ -582,37 +584,37 @@
           },
           {
             "role": "explorer",
-            "drawCalls": 20,
-            "submittedVertexOrIndexCount": 171000,
+            "drawCalls": 16,
+            "submittedVertexOrIndexCount": 136800,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 0.48570096363043064,
+            "renderFps": 0.5956635692171641,
             "diagnostics": {
               "engine": "three.js r187",
-              "graphicsDpr": "1.00",
-              "graphicsQuality": "full",
+              "graphicsDpr": "0.85",
+              "graphicsQuality": "balanced",
               "graphicsRenderer": "software",
               "graphicsTargetDpr": "0.85",
-              "graphicsFrameMs": "349.5"
+              "graphicsFrameMs": "169.4"
             },
             "resolution": [
-              954,
-              600
+              820,
+              514
             ],
             "css": [
-              955,
-              600
+              965,
+              605
             ]
           }
         ],
         "cpu": {
-          "mainThreadTaskMs": 10041.649,
-          "scriptMs": 9404.886,
-          "layoutMs": 22.446,
-          "jsHeapUsedBytes": 13569124,
+          "mainThreadTaskMs": 4205.483,
+          "scriptMs": 3534.192,
+          "layoutMs": 18.018,
+          "jsHeapUsedBytes": 12860488,
           "processes": [
             {
               "type": "browser",
-              "cpuMs": 40.000000000000036
+              "cpuMs": 50.00000000000004
             },
             {
               "type": "renderer",
@@ -620,15 +622,15 @@
             },
             {
               "type": "renderer",
-              "cpuMs": 949.9999999999993
+              "cpuMs": 959.9999999999995
             },
             {
               "type": "renderer",
-              "cpuMs": 89.99999999999986
+              "cpuMs": 109.99999999999987
             },
             {
               "type": "GPU",
-              "cpuMs": 36910.00000000001
+              "cpuMs": 23679.999999999993
             },
             {
               "type": "network.mojom.NetworkService",
@@ -644,7 +646,7 @@
     },
     "mobileBefore": {
       "url": "http://127.0.0.1:3058",
-      "checkedAt": "2026-11-13T13:58:05.544Z",
+      "checkedAt": "2026-11-13T23:36:36.729Z",
       "viewport": {
         "width": 390,
         "height": 844
@@ -653,16 +655,16 @@
       "gpuHardwareLoad": null,
       "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
       "idle": {
-        "durationMs": 6194.5999999940395,
-        "rafFps": 5.488651406068627,
-        "p95FrameMs": 433.2999999999993,
+        "durationMs": 6206.399999976158,
+        "rafFps": 4.5114720288907515,
+        "p95FrameMs": 633.1999999999989,
         "renderers": [
           {
             "role": "backdrop",
-            "drawCalls": 198,
-            "submittedVertexOrIndexCount": 4797342,
+            "drawCalls": 162,
+            "submittedVertexOrIndexCount": 3925098,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 5.327220482360726,
+            "renderFps": 4.3503480278589395,
             "diagnostics": {
               "engine": "three.js r187"
             },
@@ -677,10 +679,10 @@
           },
           {
             "role": "explorer",
-            "drawCalls": 165,
-            "submittedVertexOrIndexCount": 2734347,
+            "drawCalls": 135,
+            "submittedVertexOrIndexCount": 2237193,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 5.327220482360726,
+            "renderFps": 4.3503480278589395,
             "diagnostics": {
               "engine": "three.js r187"
             },
@@ -695,10 +697,10 @@
           }
         ],
         "cpu": {
-          "mainThreadTaskMs": 319.88100000000003,
-          "scriptMs": 71.627,
+          "mainThreadTaskMs": 337.97099999999995,
+          "scriptMs": 62.217,
           "layoutMs": 0,
-          "jsHeapUsedBytes": 15122964,
+          "jsHeapUsedBytes": 14539072,
           "processes": [
             {
               "type": "browser",
@@ -718,7 +720,7 @@
             },
             {
               "type": "GPU",
-              "cpuMs": 23900
+              "cpuMs": 24480.000000000004
             },
             {
               "type": "network.mojom.NetworkService",
@@ -732,16 +734,16 @@
         }
       },
       "scroll": {
-        "durationMs": 6187.399999976158,
-        "rafFps": 2.1010440572857894,
-        "p95FrameMs": 1316.6000000000022,
+        "durationMs": 6260.5,
+        "rafFps": 2.3959747623991694,
+        "p95FrameMs": 800,
         "renderers": [
           {
             "role": "backdrop",
-            "drawCalls": 72,
-            "submittedVertexOrIndexCount": 1744488,
+            "drawCalls": 84,
+            "submittedVertexOrIndexCount": 2035236,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 1.939425283648421,
+            "renderFps": 2.2362431115725583,
             "diagnostics": {
               "engine": "three.js r187"
             },
@@ -756,16 +758,16 @@
           },
           {
             "role": "explorer",
-            "drawCalls": 20,
-            "submittedVertexOrIndexCount": 331436,
+            "drawCalls": 15,
+            "submittedVertexOrIndexCount": 248577,
             "gpuTimerQueryAvailable": false,
-            "renderFps": 0.6464750945494736,
+            "renderFps": 0.4791949524798339,
             "diagnostics": {
               "engine": "three.js r187"
             },
             "resolution": [
-              345,
-              223
+              344,
+              222
             ],
             "css": [
               0,
@@ -774,10 +776,10 @@
           }
         ],
         "cpu": {
-          "mainThreadTaskMs": 2392.278,
-          "scriptMs": 1768.334,
-          "layoutMs": 12.366,
-          "jsHeapUsedBytes": 12834724,
+          "mainThreadTaskMs": 1301.777,
+          "scriptMs": 652.2389999999999,
+          "layoutMs": 18.377000000000002,
+          "jsHeapUsedBytes": 12857452,
           "processes": [
             {
               "type": "browser",
@@ -789,7 +791,7 @@
             },
             {
               "type": "renderer",
-              "cpuMs": 1000
+              "cpuMs": 1240.0000000000002
             },
             {
               "type": "renderer",
@@ -797,11 +799,11 @@
             },
             {
               "type": "GPU",
-              "cpuMs": 18830.000000000004
+              "cpuMs": 18540.000000000007
             },
             {
               "type": "network.mojom.NetworkService",
-              "cpuMs": 9.99999999999998
+              "cpuMs": 10.000000000000009
             },
             {
               "type": "storage.mojom.StorageService",
@@ -812,8 +814,8 @@
       }
     },
     "mobileAfter": {
-      "url": "http://127.0.0.1:3057",
-      "checkedAt": "2026-11-13T13:58:31.463Z",
+      "url": "http://127.0.0.1:3061",
+      "checkedAt": "2026-11-13T23:37:03.487Z",
       "viewport": {
         "width": 390,
         "height": 844
@@ -822,16 +824,16 @@
       "gpuHardwareLoad": null,
       "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
       "idle": {
-        "durationMs": 6058.300000011921,
-        "rafFps": 21.623227638073754,
-        "p95FrameMs": 83.29999999999927,
+        "durationMs": 6032.800000011921,
+        "rafFps": 22.54342925337012,
+        "p95FrameMs": 66.70000000000073,
         "renderers": [
           {
             "role": "backdrop",
-            "drawCalls": 381,
-            "submittedVertexOrIndexCount": 176784,
+            "drawCalls": 399,
+            "submittedVertexOrIndexCount": 185136,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 20.962976412483716,
+            "renderFps": 22.04614772572225,
             "diagnostics": {
               "engine": "three.js r187",
               "graphicsPrimitives": "points-lines",
@@ -839,7 +841,7 @@
               "graphicsQuality": "balanced",
               "graphicsRenderer": "software",
               "graphicsTargetDpr": "0.85",
-              "graphicsFrameMs": "42.3"
+              "graphicsFrameMs": "45.0"
             },
             "resolution": [
               331,
@@ -852,37 +854,37 @@
           },
           {
             "role": "explorer",
-            "drawCalls": 496,
-            "submittedVertexOrIndexCount": 4240800,
+            "drawCalls": 524,
+            "submittedVertexOrIndexCount": 4480200,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 20.46778799329119,
+            "renderFps": 21.714626707290336,
             "diagnostics": {
               "engine": "three.js r187",
               "graphicsDpr": "0.85",
               "graphicsQuality": "balanced",
               "graphicsRenderer": "software",
               "graphicsTargetDpr": "0.85",
-              "graphicsFrameMs": "44.3"
+              "graphicsFrameMs": "45.3"
             },
             "resolution": [
-              327,
-              275
+              331,
+              278
             ],
             "css": [
-              385,
-              324
+              390,
+              328
             ]
           }
         ],
         "cpu": {
-          "mainThreadTaskMs": 543.5530000000001,
-          "scriptMs": 93.175,
+          "mainThreadTaskMs": 442.872,
+          "scriptMs": 111.167,
           "layoutMs": 0,
-          "jsHeapUsedBytes": 12641408,
+          "jsHeapUsedBytes": 16601452,
           "processes": [
             {
               "type": "browser",
-              "cpuMs": 30.00000000000003
+              "cpuMs": 20.000000000000018
             },
             {
               "type": "renderer",
@@ -890,7 +892,7 @@
             },
             {
               "type": "renderer",
-              "cpuMs": 939.9999999999995
+              "cpuMs": 869.9999999999997
             },
             {
               "type": "renderer",
@@ -898,7 +900,7 @@
             },
             {
               "type": "GPU",
-              "cpuMs": 22580
+              "cpuMs": 23280
             },
             {
               "type": "network.mojom.NetworkService",
@@ -912,16 +914,16 @@
         }
       },
       "scroll": {
-        "durationMs": 6274.700000017881,
-        "rafFps": 2.5499227054607236,
-        "p95FrameMs": 883.2999999999993,
+        "durationMs": 6335.9000000059605,
+        "rafFps": 3.3144462507268493,
+        "p95FrameMs": 666.6000000000022,
         "renderers": [
           {
             "role": "backdrop",
-            "drawCalls": 45,
-            "submittedVertexOrIndexCount": 20880,
+            "drawCalls": 54,
+            "submittedVertexOrIndexCount": 25056,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 2.3905525363694284,
+            "renderFps": 2.840953929194442,
             "diagnostics": {
               "engine": "three.js r187",
               "graphicsPrimitives": "points-lines",
@@ -929,7 +931,7 @@
               "graphicsQuality": "balanced",
               "graphicsRenderer": "software",
               "graphicsTargetDpr": "0.85",
-              "graphicsFrameMs": "412.3"
+              "graphicsFrameMs": "412.4"
             },
             "resolution": [
               331,
@@ -942,37 +944,37 @@
           },
           {
             "role": "explorer",
-            "drawCalls": 60,
-            "submittedVertexOrIndexCount": 513000,
+            "drawCalls": 28,
+            "submittedVertexOrIndexCount": 239400,
             "gpuTimerQueryAvailable": true,
-            "renderFps": 2.3905525363694284,
+            "renderFps": 1.1048154169089497,
             "diagnostics": {
               "engine": "three.js r187",
-              "graphicsDpr": "1.00",
-              "graphicsQuality": "full",
+              "graphicsDpr": "0.85",
+              "graphicsQuality": "balanced",
               "graphicsRenderer": "software",
               "graphicsTargetDpr": "0.85",
-              "graphicsFrameMs": "44.3"
+              "graphicsFrameMs": "45.3"
             },
             "resolution": [
-              392,
-              330
+              331,
+              278
             ],
             "css": [
-              393,
-              331
+              390,
+              328
             ]
           }
         ],
         "cpu": {
-          "mainThreadTaskMs": 3339.036,
-          "scriptMs": 2698.4370000000004,
-          "layoutMs": 24.979000000000003,
-          "jsHeapUsedBytes": 14091156,
+          "mainThreadTaskMs": 2373.9080000000004,
+          "scriptMs": 1442.296,
+          "layoutMs": 25.032,
+          "jsHeapUsedBytes": 13256264,
           "processes": [
             {
               "type": "browser",
-              "cpuMs": 30.00000000000003
+              "cpuMs": 29.999999999999805
             },
             {
               "type": "renderer",
@@ -980,7 +982,7 @@
             },
             {
               "type": "renderer",
-              "cpuMs": 1160.0000000000002
+              "cpuMs": 1520.0000000000005
             },
             {
               "type": "renderer",
@@ -988,11 +990,11 @@
             },
             {
               "type": "GPU",
-              "cpuMs": 18009.999999999996
+              "cpuMs": 17459.999999999993
             },
             {
               "type": "network.mojom.NetworkService",
-              "cpuMs": 19.99999999999999
+              "cpuMs": 20.000000000000018
             },
             {
               "type": "storage.mojom.StorageService",
@@ -1616,7 +1618,9 @@
         "mistVertex/mistFragment"
       ],
       "finishedAt": "2026-11-13T14:00:27.144Z"
-    }
+    },
+    "sourceCommit": "12c6f2dbc4c69bc30967e3a01c14454f960e150d",
+    "programsUnchangedInFinal": true
   },
   "compositorExperiment": {
     "url": "http://127.0.0.1:3057/",
@@ -1643,5 +1647,1270 @@
       }
     ]
   },
-  "compositorDecision": "Global removal of CSS blur was rejected: the short A/B did not show a performance improvement. No corresponding CSS overrides were shipped."
+  "compositorDecision": "Global removal of CSS blur was rejected: the short A/B did not show a performance improvement. No corresponding CSS overrides were shipped.",
+  "earlierCohort": {
+    "sourceCommit": "12c6f2dbc4c69bc30967e3a01c14454f960e150d",
+    "lighthouse": {
+      "before": {
+        "fetchTime": "2026-11-13T13:49:10.494Z",
+        "lighthouseVersion": "13.6.0",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "configSettings": {
+          "output": [
+            "json"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 5250,
+          "pauseAfterLoadMs": 5250,
+          "networkQuietThresholdMs": 5250,
+          "cpuQuietThresholdMs": 5250,
+          "formFactor": "desktop",
+          "throttling": {
+            "rttMs": 40,
+            "throughputKbps": 10240,
+            "requestLatencyMs": 0,
+            "downloadThroughputKbps": 0,
+            "uploadThroughputKbps": 0,
+            "cpuSlowdownMultiplier": 1
+          },
+          "throttlingMethod": "provided",
+          "screenEmulation": {
+            "mobile": false,
+            "width": 1350,
+            "height": 940,
+            "deviceScaleFactor": 1,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance",
+            "accessibility",
+            "best-practices",
+            "seo"
+          ],
+          "skipAudits": null
+        },
+        "scores": {
+          "performance": 35,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "first-contentful-paint": {
+            "value": 738.518,
+            "unit": "millisecond"
+          },
+          "largest-contentful-paint": {
+            "value": 6379.048,
+            "unit": "millisecond"
+          },
+          "total-blocking-time": {
+            "value": 20667.703,
+            "unit": "millisecond"
+          },
+          "interactive": {
+            "value": 22487.627,
+            "unit": "millisecond"
+          },
+          "cumulative-layout-shift": {
+            "value": 0.0005182695164543007,
+            "unit": "unitless"
+          },
+          "speed-index": {
+            "value": 8245,
+            "unit": "millisecond"
+          }
+        },
+        "mainThread": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 19425.07700000007
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 1672.951000000003
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 871.2329999999604
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 239.2530000000032
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 100.45200000000001
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 59.492999999999995
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 34.454
+          }
+        ],
+        "warnings": [],
+        "runtimeError": null
+      },
+      "after": {
+        "fetchTime": "2026-11-13T13:56:14.917Z",
+        "lighthouseVersion": "13.6.0",
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+        "configSettings": {
+          "output": [
+            "json",
+            "html"
+          ],
+          "maxWaitForFcp": 30000,
+          "maxWaitForLoad": 45000,
+          "pauseAfterFcpMs": 5250,
+          "pauseAfterLoadMs": 5250,
+          "networkQuietThresholdMs": 5250,
+          "cpuQuietThresholdMs": 5250,
+          "formFactor": "desktop",
+          "throttling": {
+            "rttMs": 40,
+            "throughputKbps": 10240,
+            "requestLatencyMs": 0,
+            "downloadThroughputKbps": 0,
+            "uploadThroughputKbps": 0,
+            "cpuSlowdownMultiplier": 1
+          },
+          "throttlingMethod": "provided",
+          "screenEmulation": {
+            "mobile": false,
+            "width": 1350,
+            "height": 940,
+            "deviceScaleFactor": 1,
+            "disabled": false
+          },
+          "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+          "auditMode": false,
+          "gatherMode": false,
+          "clearStorageTypes": [
+            "file_systems",
+            "shader_cache",
+            "service_workers",
+            "cache_storage"
+          ],
+          "disableStorageReset": false,
+          "debugNavigation": false,
+          "channel": "cli",
+          "usePassiveGathering": false,
+          "disableFullPageScreenshot": false,
+          "skipAboutBlank": false,
+          "blankPage": "about:blank",
+          "ignoreStatusCode": false,
+          "locale": "en-US",
+          "blockedUrlPatterns": null,
+          "additionalTraceCategories": null,
+          "extraHeaders": null,
+          "precomputedLanternData": null,
+          "onlyAudits": null,
+          "onlyCategories": [
+            "performance",
+            "accessibility",
+            "best-practices",
+            "seo"
+          ],
+          "skipAudits": null
+        },
+        "scores": {
+          "performance": 43,
+          "accessibility": 100,
+          "best-practices": 100,
+          "seo": 100
+        },
+        "metrics": {
+          "first-contentful-paint": {
+            "value": 474.129,
+            "unit": "millisecond"
+          },
+          "largest-contentful-paint": {
+            "value": 3120.349,
+            "unit": "millisecond"
+          },
+          "total-blocking-time": {
+            "value": 13878.474999999997,
+            "unit": "millisecond"
+          },
+          "interactive": {
+            "value": 17349.567,
+            "unit": "millisecond"
+          },
+          "cumulative-layout-shift": {
+            "value": 0.0007900669823729183,
+            "unit": "unitless"
+          },
+          "speed-index": {
+            "value": 4886,
+            "unit": "millisecond"
+          }
+        },
+        "mainThread": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 11637.457000000139
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 2852.4140000000234
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 1152.9600000000025
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 112.79000000001746
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 68.313
+          },
+          {
+            "group": "garbageCollection",
+            "groupLabel": "Garbage Collection",
+            "duration": 43.48299999999999
+          },
+          {
+            "group": "parseHTML",
+            "groupLabel": "Parse HTML & CSS",
+            "duration": 17.782
+          }
+        ],
+        "warnings": [],
+        "runtimeError": null
+      }
+    },
+    "rendering": {
+      "desktopBefore": {
+        "url": "http://127.0.0.1:3058",
+        "checkedAt": "2026-11-13T13:42:09.339Z",
+        "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 1440x1000; not physical-device certification",
+        "gpuHardwareLoad": null,
+        "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
+        "idle": {
+          "durationMs": 6293.399999976158,
+          "rafFps": 1.747862840442634,
+          "p95FrameMs": 683.3999999999978,
+          "renderers": [
+            {
+              "role": "backdrop",
+              "drawCalls": 60,
+              "submittedVertexOrIndexCount": 2844420,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 1.5889662185842126,
+              "diagnostics": {
+                "engine": "three.js r187"
+              },
+              "resolution": [
+                1440,
+                1000
+              ],
+              "css": [
+                1440,
+                1000
+              ]
+            },
+            {
+              "role": "explorer",
+              "drawCalls": 50,
+              "submittedVertexOrIndexCount": 828590,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 1.5889662185842126,
+              "diagnostics": {
+                "engine": "three.js r187"
+              },
+              "resolution": [
+                494,
+                249
+              ],
+              "css": [
+                495,
+                250
+              ]
+            }
+          ],
+          "cpu": {
+            "mainThreadTaskMs": 309.793,
+            "scriptMs": 29.186,
+            "layoutMs": 0,
+            "jsHeapUsedBytes": 13149112,
+            "processes": [
+              {
+                "type": "browser",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 340.0000000000003
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "GPU",
+                "cpuMs": 24710
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "cpuMs": 10.000000000000009
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "cpuMs": 0
+              }
+            ]
+          }
+        },
+        "scroll": {
+          "durationMs": 7451.5999999940395,
+          "rafFps": 0.8051961994745825,
+          "p95FrameMs": 2016.5999999999985,
+          "renderers": [
+            {
+              "role": "backdrop",
+              "drawCalls": 30,
+              "submittedVertexOrIndexCount": 1422210,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 0.6709968328954855,
+              "diagnostics": {
+                "engine": "three.js r187"
+              },
+              "resolution": [
+                1440,
+                1000
+              ],
+              "css": [
+                1440,
+                1000
+              ]
+            },
+            {
+              "role": "explorer",
+              "drawCalls": 5,
+              "submittedVertexOrIndexCount": 82859,
+              "gpuTimerQueryAvailable": false,
+              "renderFps": 0.1341993665790971,
+              "diagnostics": {
+                "engine": "three.js r187"
+              },
+              "resolution": [
+                494,
+                249
+              ],
+              "css": [
+                0,
+                0
+              ]
+            }
+          ],
+          "cpu": {
+            "mainThreadTaskMs": 3484.563,
+            "scriptMs": 2929.5159999999996,
+            "layoutMs": 22.137,
+            "jsHeapUsedBytes": 13828192,
+            "processes": [
+              {
+                "type": "browser",
+                "cpuMs": 60.00000000000006
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 879.9999999999999
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 89.99999999999986
+              },
+              {
+                "type": "GPU",
+                "cpuMs": 26810.000000000004
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "cpuMs": 10.000000000000009
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "cpuMs": 0
+              }
+            ]
+          }
+        }
+      },
+      "desktopAfter": {
+        "url": "http://127.0.0.1:3057",
+        "checkedAt": "2026-11-13T13:57:34.597Z",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 1440x1000; not physical-device certification",
+        "gpuHardwareLoad": null,
+        "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
+        "idle": {
+          "durationMs": 6096.0999999940395,
+          "rafFps": 5.0852184183380045,
+          "p95FrameMs": 283.3000000000029,
+          "renderers": [
+            {
+              "role": "backdrop",
+              "drawCalls": 90,
+              "submittedVertexOrIndexCount": 55740,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 4.921179114520649,
+              "diagnostics": {
+                "engine": "three.js r187",
+                "graphicsPrimitives": "points-lines",
+                "graphicsDpr": "0.85",
+                "graphicsQuality": "balanced",
+                "graphicsRenderer": "software",
+                "graphicsTargetDpr": "0.85",
+                "graphicsFrameMs": "193.1"
+              },
+              "resolution": [
+                1224,
+                850
+              ],
+              "css": [
+                1440,
+                1000
+              ]
+            },
+            {
+              "role": "explorer",
+              "drawCalls": 120,
+              "submittedVertexOrIndexCount": 1026000,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 4.921179114520649,
+              "diagnostics": {
+                "engine": "three.js r187",
+                "graphicsDpr": "0.85",
+                "graphicsQuality": "balanced",
+                "graphicsRenderer": "software",
+                "graphicsTargetDpr": "0.85",
+                "graphicsFrameMs": "213.5"
+              },
+              "resolution": [
+                790,
+                508
+              ],
+              "css": [
+                930,
+                598
+              ]
+            }
+          ],
+          "cpu": {
+            "mainThreadTaskMs": 836.011,
+            "scriptMs": 89.37,
+            "layoutMs": 0,
+            "jsHeapUsedBytes": 12397120,
+            "processes": [
+              {
+                "type": "browser",
+                "cpuMs": 20.000000000000018
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 710
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "GPU",
+                "cpuMs": 23439.999999999996
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "cpuMs": 0
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "cpuMs": 0
+              }
+            ]
+          }
+        },
+        "scroll": {
+          "durationMs": 10294.40000000596,
+          "rafFps": 0.5828411563565168,
+          "p95FrameMs": 3216.5,
+          "renderers": [
+            {
+              "role": "backdrop",
+              "drawCalls": 15,
+              "submittedVertexOrIndexCount": 9290,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 0.48570096363043064,
+              "diagnostics": {
+                "engine": "three.js r187",
+                "graphicsPrimitives": "points-lines",
+                "graphicsDpr": "0.85",
+                "graphicsQuality": "balanced",
+                "graphicsRenderer": "software",
+                "graphicsTargetDpr": "0.85",
+                "graphicsFrameMs": "988.0"
+              },
+              "resolution": [
+                1224,
+                850
+              ],
+              "css": [
+                1440,
+                1000
+              ]
+            },
+            {
+              "role": "explorer",
+              "drawCalls": 20,
+              "submittedVertexOrIndexCount": 171000,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 0.48570096363043064,
+              "diagnostics": {
+                "engine": "three.js r187",
+                "graphicsDpr": "1.00",
+                "graphicsQuality": "full",
+                "graphicsRenderer": "software",
+                "graphicsTargetDpr": "0.85",
+                "graphicsFrameMs": "349.5"
+              },
+              "resolution": [
+                954,
+                600
+              ],
+              "css": [
+                955,
+                600
+              ]
+            }
+          ],
+          "cpu": {
+            "mainThreadTaskMs": 10041.649,
+            "scriptMs": 9404.886,
+            "layoutMs": 22.446,
+            "jsHeapUsedBytes": 13569124,
+            "processes": [
+              {
+                "type": "browser",
+                "cpuMs": 40.000000000000036
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 949.9999999999993
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 89.99999999999986
+              },
+              {
+                "type": "GPU",
+                "cpuMs": 36910.00000000001
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "cpuMs": 9.99999999999998
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "cpuMs": 0
+              }
+            ]
+          }
+        }
+      },
+      "mobileBefore": {
+        "url": "http://127.0.0.1:3058",
+        "checkedAt": "2026-11-13T13:58:05.544Z",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 390x844; not physical-device certification",
+        "gpuHardwareLoad": null,
+        "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
+        "idle": {
+          "durationMs": 6194.5999999940395,
+          "rafFps": 5.488651406068627,
+          "p95FrameMs": 433.2999999999993,
+          "renderers": [
+            {
+              "role": "backdrop",
+              "drawCalls": 198,
+              "submittedVertexOrIndexCount": 4797342,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 5.327220482360726,
+              "diagnostics": {
+                "engine": "three.js r187"
+              },
+              "resolution": [
+                390,
+                844
+              ],
+              "css": [
+                390,
+                844
+              ]
+            },
+            {
+              "role": "explorer",
+              "drawCalls": 165,
+              "submittedVertexOrIndexCount": 2734347,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 5.327220482360726,
+              "diagnostics": {
+                "engine": "three.js r187"
+              },
+              "resolution": [
+                344,
+                222
+              ],
+              "css": [
+                345,
+                223
+              ]
+            }
+          ],
+          "cpu": {
+            "mainThreadTaskMs": 319.88100000000003,
+            "scriptMs": 71.627,
+            "layoutMs": 0,
+            "jsHeapUsedBytes": 15122964,
+            "processes": [
+              {
+                "type": "browser",
+                "cpuMs": 10.000000000000009
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 339.9999999999999
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "GPU",
+                "cpuMs": 23900
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "cpuMs": 0
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "cpuMs": 0
+              }
+            ]
+          }
+        },
+        "scroll": {
+          "durationMs": 6187.399999976158,
+          "rafFps": 2.1010440572857894,
+          "p95FrameMs": 1316.6000000000022,
+          "renderers": [
+            {
+              "role": "backdrop",
+              "drawCalls": 72,
+              "submittedVertexOrIndexCount": 1744488,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 1.939425283648421,
+              "diagnostics": {
+                "engine": "three.js r187"
+              },
+              "resolution": [
+                390,
+                844
+              ],
+              "css": [
+                390,
+                844
+              ]
+            },
+            {
+              "role": "explorer",
+              "drawCalls": 20,
+              "submittedVertexOrIndexCount": 331436,
+              "gpuTimerQueryAvailable": false,
+              "renderFps": 0.6464750945494736,
+              "diagnostics": {
+                "engine": "three.js r187"
+              },
+              "resolution": [
+                345,
+                223
+              ],
+              "css": [
+                0,
+                0
+              ]
+            }
+          ],
+          "cpu": {
+            "mainThreadTaskMs": 2392.278,
+            "scriptMs": 1768.334,
+            "layoutMs": 12.366,
+            "jsHeapUsedBytes": 12834724,
+            "processes": [
+              {
+                "type": "browser",
+                "cpuMs": 30.00000000000003
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 1000
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "GPU",
+                "cpuMs": 18830.000000000004
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "cpuMs": 9.99999999999998
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "cpuMs": 0
+              }
+            ]
+          }
+        }
+      },
+      "mobileAfter": {
+        "url": "http://127.0.0.1:3057",
+        "checkedAt": "2026-11-13T13:58:31.463Z",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "environment": "Chromium 154 / ANGLE SwiftShader software GPU, 390x844; not physical-device certification",
+        "gpuHardwareLoad": null,
+        "gpuHardwareLoadReason": "SwiftShader software renderer; process CPU time and submitted geometry are measured, not hardware GPU utilization or per-shader GPU time.",
+        "idle": {
+          "durationMs": 6058.300000011921,
+          "rafFps": 21.623227638073754,
+          "p95FrameMs": 83.29999999999927,
+          "renderers": [
+            {
+              "role": "backdrop",
+              "drawCalls": 381,
+              "submittedVertexOrIndexCount": 176784,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 20.962976412483716,
+              "diagnostics": {
+                "engine": "three.js r187",
+                "graphicsPrimitives": "points-lines",
+                "graphicsDpr": "0.85",
+                "graphicsQuality": "balanced",
+                "graphicsRenderer": "software",
+                "graphicsTargetDpr": "0.85",
+                "graphicsFrameMs": "42.3"
+              },
+              "resolution": [
+                331,
+                717
+              ],
+              "css": [
+                390,
+                844
+              ]
+            },
+            {
+              "role": "explorer",
+              "drawCalls": 496,
+              "submittedVertexOrIndexCount": 4240800,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 20.46778799329119,
+              "diagnostics": {
+                "engine": "three.js r187",
+                "graphicsDpr": "0.85",
+                "graphicsQuality": "balanced",
+                "graphicsRenderer": "software",
+                "graphicsTargetDpr": "0.85",
+                "graphicsFrameMs": "44.3"
+              },
+              "resolution": [
+                327,
+                275
+              ],
+              "css": [
+                385,
+                324
+              ]
+            }
+          ],
+          "cpu": {
+            "mainThreadTaskMs": 543.5530000000001,
+            "scriptMs": 93.175,
+            "layoutMs": 0,
+            "jsHeapUsedBytes": 12641408,
+            "processes": [
+              {
+                "type": "browser",
+                "cpuMs": 30.00000000000003
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 939.9999999999995
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "GPU",
+                "cpuMs": 22580
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "cpuMs": 0
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "cpuMs": 0
+              }
+            ]
+          }
+        },
+        "scroll": {
+          "durationMs": 6274.700000017881,
+          "rafFps": 2.5499227054607236,
+          "p95FrameMs": 883.2999999999993,
+          "renderers": [
+            {
+              "role": "backdrop",
+              "drawCalls": 45,
+              "submittedVertexOrIndexCount": 20880,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 2.3905525363694284,
+              "diagnostics": {
+                "engine": "three.js r187",
+                "graphicsPrimitives": "points-lines",
+                "graphicsDpr": "0.85",
+                "graphicsQuality": "balanced",
+                "graphicsRenderer": "software",
+                "graphicsTargetDpr": "0.85",
+                "graphicsFrameMs": "412.3"
+              },
+              "resolution": [
+                331,
+                717
+              ],
+              "css": [
+                390,
+                844
+              ]
+            },
+            {
+              "role": "explorer",
+              "drawCalls": 60,
+              "submittedVertexOrIndexCount": 513000,
+              "gpuTimerQueryAvailable": true,
+              "renderFps": 2.3905525363694284,
+              "diagnostics": {
+                "engine": "three.js r187",
+                "graphicsDpr": "1.00",
+                "graphicsQuality": "full",
+                "graphicsRenderer": "software",
+                "graphicsTargetDpr": "0.85",
+                "graphicsFrameMs": "44.3"
+              },
+              "resolution": [
+                392,
+                330
+              ],
+              "css": [
+                393,
+                331
+              ]
+            }
+          ],
+          "cpu": {
+            "mainThreadTaskMs": 3339.036,
+            "scriptMs": 2698.4370000000004,
+            "layoutMs": 24.979000000000003,
+            "jsHeapUsedBytes": 14091156,
+            "processes": [
+              {
+                "type": "browser",
+                "cpuMs": 30.00000000000003
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 1160.0000000000002
+              },
+              {
+                "type": "renderer",
+                "cpuMs": 0
+              },
+              {
+                "type": "GPU",
+                "cpuMs": 18009.999999999996
+              },
+              {
+                "type": "network.mojom.NetworkService",
+                "cpuMs": 19.99999999999999
+              },
+              {
+                "type": "storage.mojom.StorageService",
+                "cpuMs": 0
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "sourceCommit": "e3fc5eea23ec454354c0ae5d5832a17c113d6bda",
+  "localBuildId": "Q9CapZGWds9CRwQOS3cdn",
+  "schedulingRegressionCheck": {
+    "before": {
+      "fetchTime": "2026-11-13T23:22:26.820Z",
+      "lighthouseVersion": "13.6.0",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "configSettings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 5250,
+        "pauseAfterLoadMs": 5250,
+        "networkQuietThresholdMs": 5250,
+        "cpuQuietThresholdMs": 5250,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "provided",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "scores": {
+        "performance": 28,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 4427.92,
+          "unit": "millisecond"
+        },
+        "largest-contentful-paint": {
+          "value": 4427.92,
+          "unit": "millisecond"
+        },
+        "total-blocking-time": {
+          "value": 14645.235999999992,
+          "unit": "millisecond"
+        },
+        "interactive": {
+          "value": 26534.33,
+          "unit": "millisecond"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.001208333296026393,
+          "unit": "unitless"
+        },
+        "speed-index": {
+          "value": 6957,
+          "unit": "millisecond"
+        }
+      },
+      "mainThread": [
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 15062.677000000285
+        },
+        {
+          "group": "other",
+          "groupLabel": "Other",
+          "duration": 4936.912000001319
+        },
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 1350.0159999999994
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 266.6039999999804
+        },
+        {
+          "group": "garbageCollection",
+          "groupLabel": "Garbage Collection",
+          "duration": 79.312
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 75.61599999999999
+        },
+        {
+          "group": "parseHTML",
+          "groupLabel": "Parse HTML & CSS",
+          "duration": 29.825
+        }
+      ],
+      "warnings": [],
+      "runtimeError": null
+    },
+    "after": {
+      "fetchTime": "2026-11-13T23:34:08.301Z",
+      "lighthouseVersion": "13.6.0",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "configSettings": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 5250,
+        "pauseAfterLoadMs": 5250,
+        "networkQuietThresholdMs": 5250,
+        "cpuQuietThresholdMs": 5250,
+        "formFactor": "desktop",
+        "throttling": {
+          "rttMs": 40,
+          "throughputKbps": 10240,
+          "requestLatencyMs": 0,
+          "downloadThroughputKbps": 0,
+          "uploadThroughputKbps": 0,
+          "cpuSlowdownMultiplier": 1
+        },
+        "throttlingMethod": "provided",
+        "screenEmulation": {
+          "mobile": false,
+          "width": 1350,
+          "height": 940,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ],
+        "skipAudits": null
+      },
+      "scores": {
+        "performance": 39,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": {
+          "value": 744.052,
+          "unit": "millisecond"
+        },
+        "largest-contentful-paint": {
+          "value": 3930.758,
+          "unit": "millisecond"
+        },
+        "total-blocking-time": {
+          "value": 13333.781,
+          "unit": "millisecond"
+        },
+        "interactive": {
+          "value": 18351.464,
+          "unit": "millisecond"
+        },
+        "cumulative-layout-shift": {
+          "value": 0.0008124108550661183,
+          "unit": "unitless"
+        },
+        "speed-index": {
+          "value": 5559,
+          "unit": "millisecond"
+        }
+      },
+      "mainThread": [
+        {
+          "group": "scriptEvaluation",
+          "groupLabel": "Script Evaluation",
+          "duration": 10549.575000000252
+        },
+        {
+          "group": "other",
+          "groupLabel": "Other",
+          "duration": 3610.8100000000923
+        },
+        {
+          "group": "styleLayout",
+          "groupLabel": "Style & Layout",
+          "duration": 1374.7100000000023
+        },
+        {
+          "group": "paintCompositeRender",
+          "groupLabel": "Rendering",
+          "duration": 104.96200000001556
+        },
+        {
+          "group": "scriptParseCompile",
+          "groupLabel": "Script Parsing & Compilation",
+          "duration": 82.71700000000001
+        },
+        {
+          "group": "garbageCollection",
+          "groupLabel": "Garbage Collection",
+          "duration": 59.40599999999997
+        },
+        {
+          "group": "parseHTML",
+          "groupLabel": "Parse HTML & CSS",
+          "duration": 33.63
+        }
+      ],
+      "warnings": [],
+      "runtimeError": null
+    },
+    "note": "Separate single runs; deferring GPU initialization restores a paint opportunity for the server-rendered cover. Results remain subject to software-renderer and host variability."
+  }
 }

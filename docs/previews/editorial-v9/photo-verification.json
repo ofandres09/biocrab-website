@@ -1,0 +1,97 @@
+{
+  "url": "https://biocrab-website.vercel.app",
+  "sourceCommit": "e3fc5eea23ec454354c0ae5d5832a17c113d6bda",
+  "checkedAt": "2026-11-13T23:55:10.717Z",
+  "mode": "Existing persistent motion-pause control; no CSS overrides. Static close-ups verify whole original photographs.",
+  "captures": [
+    "registro-materia-prima-1440.jpg",
+    "registro-secado-1440.jpg",
+    "registro-biopelicula-1440.jpg",
+    "registro-fruta-1440.jpg",
+    "registro-materia-prima-390.jpg",
+    "registro-secado-390.jpg",
+    "registro-biopelicula-390.jpg",
+    "registro-fruta-390.jpg"
+  ],
+  "photos": [
+    {
+      "width": 1440,
+      "stage": 2,
+      "file": "registro-materia-prima-1440.jpg",
+      "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+      "alt": "Registro de material de cangrejo en un vaso de precipitados",
+      "natural": [
+        648,
+        648
+      ],
+      "fit": "contain",
+      "clip": "none"
+    },
+    {
+      "width": 1440,
+      "stage": 3,
+      "file": "registro-secado-1440.jpg",
+      "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fcangrejitos-secos.jpg&w=750&q=75",
+      "alt": "Registro de material de cangrejo acondicionado en un recipiente",
+      "natural": [
+        648,
+        648
+      ],
+      "fit": "contain",
+      "clip": "none"
+    },
+    {
+      "width": 1440,
+      "stage": 4,
+      "file": "registro-biopelicula-1440.jpg",
+      "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+      "alt": "Biopelícula del proyecto extendida sobre un soporte durante el secado",
+      "natural": [
+        648,
+        864
+      ],
+      "fit": "contain",
+      "clip": "none"
+    },
+    {
+      "width": 390,
+      "stage": 2,
+      "file": "registro-materia-prima-390.jpg",
+      "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+      "alt": "Registro de material de cangrejo en un vaso de precipitados",
+      "natural": [
+        350,
+        350
+      ],
+      "fit": "contain",
+      "clip": "none"
+    },
+    {
+      "width": 390,
+      "stage": 3,
+      "file": "registro-secado-390.jpg",
+      "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fcangrejitos-secos.jpg&w=384&q=75",
+      "alt": "Registro de material de cangrejo acondicionado en un recipiente",
+      "natural": [
+        350,
+        350
+      ],
+      "fit": "contain",
+      "clip": "none"
+    },
+    {
+      "width": 390,
+      "stage": 4,
+      "file": "registro-biopelicula-390.jpg",
+      "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+      "alt": "Biopelícula del proyecto extendida sobre un soporte durante el secado",
+      "natural": [
+        350,
+        467
+      ],
+      "fit": "contain",
+      "clip": "none"
+    }
+  ],
+  "errors": []
+}

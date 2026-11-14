@@ -1,6 +1,6 @@
 {
-  "url": "http://localhost:3057",
-  "startedAt": "2026-11-13T14:07:55.176Z",
+  "url": "http://127.0.0.1:3061",
+  "startedAt": "2026-11-13T23:38:54.524Z",
   "cases": [
     {
       "intentionalWebGLDisabled": true,
@@ -9,7 +9,7 @@
           "type": "warning",
           "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 7942,
             "lineNumber": 0,
@@ -20,7 +20,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -31,7 +31,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -42,29 +42,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          }
-        },
-        {
-          "type": "warning",
-          "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 7942,
-            "lineNumber": 0,
-            "columnNumber": 7942
-          }
-        },
-        {
-          "type": "error",
-          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -73,31 +51,9 @@
         },
         {
           "type": "error",
-          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3061/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3061/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          }
-        },
-        {
-          "type": "error",
-          "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          }
-        },
-        {
-          "type": "error",
-          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://localhost:3057/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://localhost:3057/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/255-b1e2483a7e02feee.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/255-b1e2483a7e02feee.js",
             "line": 0,
             "column": 76111,
             "lineNumber": 0,
@@ -105,10 +61,54 @@
           }
         },
         {
-          "type": "error",
-          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://localhost:3057/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://localhost:3057/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+          "type": "warning",
+          "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/255-b1e2483a7e02feee.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 7942,
+            "lineNumber": 0,
+            "columnNumber": 7942
+          }
+        },
+        {
+          "type": "error",
+          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          }
+        },
+        {
+          "type": "error",
+          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          }
+        },
+        {
+          "type": "error",
+          "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          }
+        },
+        {
+          "type": "error",
+          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3061/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3061/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/255-b1e2483a7e02feee.js",
             "line": 0,
             "column": 76111,
             "lineNumber": 0,
@@ -129,7 +129,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -140,7 +140,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -151,7 +151,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -160,42 +160,9 @@
         },
         {
           "type": "error",
-          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3061/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3061/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          }
-        },
-        {
-          "type": "error",
-          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          }
-        },
-        {
-          "type": "error",
-          "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          }
-        },
-        {
-          "type": "error",
-          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://localhost:3057/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://localhost:3057/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/255-b1e2483a7e02feee.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/255-b1e2483a7e02feee.js",
             "line": 0,
             "column": 76111,
             "lineNumber": 0,
@@ -204,9 +171,42 @@
         },
         {
           "type": "error",
-          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://localhost:3057/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://localhost:3057/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/255-b1e2483a7e02feee.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          }
+        },
+        {
+          "type": "error",
+          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          }
+        },
+        {
+          "type": "error",
+          "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          }
+        },
+        {
+          "type": "error",
+          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3061/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3061/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/255-b1e2483a7e02feee.js",
             "line": 0,
             "column": 76111,
             "lineNumber": 0,
@@ -219,7 +219,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -231,7 +231,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -243,7 +243,7 @@
           "type": "error",
           "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 8167,
             "lineNumber": 0,
@@ -253,45 +253,9 @@
         },
         {
           "type": "error",
-          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3061/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3061/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          },
-          "expectedBecause": "WebGL explicitly disabled by test command-line switches"
-        },
-        {
-          "type": "error",
-          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          },
-          "expectedBecause": "WebGL explicitly disabled by test command-line switches"
-        },
-        {
-          "type": "error",
-          "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
-            "line": 0,
-            "column": 8167,
-            "lineNumber": 0,
-            "columnNumber": 8167
-          },
-          "expectedBecause": "Three renderer initialization failed in the intentionally disabled graphics test"
-        },
-        {
-          "type": "error",
-          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://localhost:3057/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://localhost:3057/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
-          "location": {
-            "url": "http://localhost:3057/_next/static/chunks/255-b1e2483a7e02feee.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/255-b1e2483a7e02feee.js",
             "line": 0,
             "column": 76111,
             "lineNumber": 0,
@@ -301,9 +265,45 @@
         },
         {
           "type": "error",
-          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://localhost:3057/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://localhost:3057/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://localhost:3057/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://localhost:3057/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/255-b1e2483a7e02feee.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          },
+          "expectedBecause": "WebGL explicitly disabled by test command-line switches"
+        },
+        {
+          "type": "error",
+          "text": "THREE.WebGLRenderer: A WebGL context could not be created. Reason:  disabled by enterprise policy or commandline switch",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          },
+          "expectedBecause": "WebGL explicitly disabled by test command-line switches"
+        },
+        {
+          "type": "error",
+          "text": "THREE.WebGLRenderer: THREE.WebGLRenderer: Error creating WebGL context.",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "line": 0,
+            "column": 8167,
+            "lineNumber": 0,
+            "columnNumber": 8167
+          },
+          "expectedBecause": "Three renderer initialization failed in the intentionally disabled graphics test"
+        },
+        {
+          "type": "error",
+          "text": "Error: THREE.WebGLRenderer: Error creating WebGL context.\n    at new nw (http://127.0.0.1:3061/_next/static/chunks/b536a0f1.eb1194062ec5efb1.js:347:23711)\n    at http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156014\n    at c (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156047)\n    at Object.configure (http://127.0.0.1:3061/_next/static/chunks/e49654ac.58c384b6b62d7158.js:1:156157)\n    at http://127.0.0.1:3061/_next/static/chunks/847.7270ac9b31e6d335.js:1:4827\n    at o1 (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:88951)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94033)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)\n    at ui (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:94637)\n    at uk (http://127.0.0.1:3061/_next/static/chunks/4bd1b696-c023c6e3521b1417.js:1:104208)",
+          "location": {
+            "url": "http://127.0.0.1:3061/_next/static/chunks/255-b1e2483a7e02feee.js",
             "line": 0,
             "column": 76111,
             "lineNumber": 0,
@@ -334,7 +334,7 @@
           "type": "warning",
           "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 7942,
             "lineNumber": 0,
@@ -345,7 +345,7 @@
           "type": "warning",
           "text": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 7942,
             "lineNumber": 0,
@@ -356,7 +356,7 @@
           "type": "log",
           "text": "THREE.WebGLRenderer: Context Lost.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 7489,
             "lineNumber": 0,
@@ -367,7 +367,7 @@
           "type": "warning",
           "text": "THREE.WebGLRenderer: WEBGL_lose_context extension not supported.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 7942,
             "lineNumber": 0,
@@ -378,7 +378,7 @@
           "type": "log",
           "text": "THREE.WebGLRenderer: Context Lost.",
           "location": {
-            "url": "http://localhost:3057/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
+            "url": "http://127.0.0.1:3061/_next/static/chunks/bd904a5c.db54303232c8a55b.js",
             "line": 0,
             "column": 7489,
             "lineNumber": 0,
@@ -422,5 +422,5 @@
     }
   ],
   "errors": [],
-  "finishedAt": "2026-11-13T14:08:18.776Z"
+  "finishedAt": "2026-11-13T23:39:21.585Z"
 }
