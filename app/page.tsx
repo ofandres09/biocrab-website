@@ -108,6 +108,17 @@ export default function Home() {
               cangrejo y almidón de yuca para explorar nuevas formas de
               conservar alimentos.
             </p>
+            <div className="hero-badges">
+              <span className="marine-badge">
+                <Waves size={14} /> Origen marino
+              </span>
+              <span className="plant-badge">
+                <Leaf size={14} /> Matriz vegetal
+              </span>
+              <span className="validation-badge">
+                <CircleDashed size={14} /> En investigación
+              </span>
+            </div>
             <div className="hero-buttons">
               <a className="button primary" href="#sobre">
                 Explora la transformación <ArrowUpRight size={18} />
@@ -117,12 +128,15 @@ export default function Home() {
               </a>
             </div>
           </div>
+          <div className="hero-art hero-orbit-stage">
+            <MolecularExplorer />
+          </div>
           <div className="hero-evidence-deck">
             <DepthSurface className="hero-project-depth">
               <div className="hero-project-preview">
                 <Photo
                   name="biopelicula-secando.jpg"
-                  sizes="(max-width: 650px) 90vw, 43vw"
+                  sizes="(max-width: 650px) 120px, 140px"
                   alt="Registro real del proyecto: biopelícula durante el secado"
                   priority
                 />
@@ -132,30 +146,16 @@ export default function Home() {
                   <a href="#del-residuo-al-biomaterial">
                     Ver las fotografías <ArrowRight size={14} />
                   </a>
-                  <div className="hero-badges">
-                    <span className="marine-badge">
-                      <Waves size={14} /> Origen marino
-                    </span>
-                    <span className="plant-badge">
-                      <Leaf size={14} /> Matriz vegetal
-                    </span>
-                    <span className="validation-badge">
-                      <CircleDashed size={14} /> En investigación
-                    </span>
-                  </div>
                 </div>
               </div>
             </DepthSurface>
             <Photo
               name="pinterest-adn.png"
-              sizes="(max-width: 650px) 106px, 150px"
+              sizes="(max-width: 650px) 106px, 90px"
               alt="Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab"
               caption="Imagen conceptual de ADN · Ambientación tecnológica"
               className="hero-reference-background full-width"
             />
-          </div>
-          <div className="hero-art hero-orbit-stage">
-            <MolecularExplorer />
           </div>
           <div className="hero-bottom">
             <span>ORIGEN BIOLÓGICO. MÉTODO CIENTÍFICO.</span>
