@@ -1,0 +1,335 @@
+{
+  "url": "http://127.0.0.1:3070",
+  "checkedAt": "2026-11-14T13:15:06.960Z",
+  "captureMode": "Existing pause control freezes motion for reproducible composition comparisons; WebGL remains mounted.",
+  "views": [
+    {
+      "width": 1440,
+      "status": 200,
+      "captures": [
+        "metodologia-1440.jpg",
+        "comparacion-1440.jpg",
+        "aplicaciones-futuras-1440.jpg"
+      ],
+      "images": [
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        }
+      ],
+      "overflow": false,
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "rail": [
+        {
+          "text": "01\nRecolección y limpieza",
+          "height": 194,
+          "width": 250.875
+        },
+        {
+          "text": "02\nObtención de quitosano",
+          "height": 194,
+          "width": 250.875
+        },
+        {
+          "text": "03\nSoluciones filmógenas",
+          "height": 194,
+          "width": 250.890625
+        },
+        {
+          "text": "04\nSecado y formación",
+          "height": 194,
+          "width": 250.875
+        },
+        {
+          "text": "05\nEvaluación física",
+          "height": 194,
+          "width": 250.890625
+        }
+      ],
+      "photoFits": [
+        "contain",
+        "contain",
+        "contain",
+        "contain",
+        "contain"
+      ],
+      "axe": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "captures": [
+        "metodologia-390.jpg",
+        "comparacion-390.jpg",
+        "aplicaciones-futuras-390.jpg"
+      ],
+      "images": [
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        },
+        {
+          "src": "/_next/image",
+          "ok": true
+        }
+      ],
+      "overflow": false,
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "rail": [
+        {
+          "text": "01\nRecolección y limpieza",
+          "height": 206.46875,
+          "width": 155.640625
+        },
+        {
+          "text": "02\nObtención de quitosano",
+          "height": 206.46875,
+          "width": 154
+        },
+        {
+          "text": "03\nSoluciones filmógenas",
+          "height": 206.46875,
+          "width": 154
+        },
+        {
+          "text": "04\nSecado y formación",
+          "height": 206.46875,
+          "width": 154
+        },
+        {
+          "text": "05\nEvaluación física",
+          "height": 206.46875,
+          "width": 154
+        }
+      ],
+      "photoFits": [
+        "contain",
+        "contain",
+        "contain",
+        "contain",
+        "contain"
+      ],
+      "axe": [],
+      "errors": []
+    }
+  ]
+}
