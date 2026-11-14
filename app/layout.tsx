@@ -7,6 +7,7 @@ import "./components/hero-composition.css";
 import "./components/readability.css";
 import "./components/motion-system.css";
 import "./components/research-editorial.css";
+import "./components/technical-modules.css";
 const title = "BioCrab | Quitosano, almidón de yuca y biomateriales";
 const description =
   "BioCrab: investigación de biopelículas de quitosano y almidón de yuca, metodología científica y economía circular.";

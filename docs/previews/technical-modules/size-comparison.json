@@ -1,0 +1,132 @@
+{
+  "beforeCommit": "e643d55",
+  "measurement": "Contained photograph area, excluding letterbox and padding; fonts loaded; existing pause control; real WebGL.",
+  "views": [
+    {
+      "width": 1440,
+      "cards": {
+        "why": {
+          "titleBeforePx": 43.2,
+          "titleAfterPx": 54.0,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 151163.0,
+          "photoAreaAfterPx2": 189388.2,
+          "photoAreaIncreasePercent": 25.3
+        },
+        "future": {
+          "titleBeforePx": 45.36,
+          "titleAfterPx": 56.7,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 239702.0,
+          "photoAreaAfterPx2": 314756.1,
+          "photoAreaIncreasePercent": 31.3
+        },
+        "journey": {
+          "titleBeforePx": 51.84,
+          "titleAfterPx": 64.8,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 211600,
+          "photoAreaAfterPx2": 291600,
+          "photoAreaIncreasePercent": 37.8
+        },
+        "method": {
+          "titleBeforePx": 51.84,
+          "titleAfterPx": 64.8,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 184900,
+          "photoAreaAfterPx2": 250000,
+          "photoAreaIncreasePercent": 35.2
+        },
+        "timeline": {
+          "titleBeforePx": 51.84,
+          "titleAfterPx": 64.8,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 108900.0,
+          "photoAreaAfterPx2": 144400.0,
+          "photoAreaIncreasePercent": 32.6
+        },
+        "comparator": {
+          "titleBeforePx": 51.84,
+          "titleAfterPx": 64.8,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 104907,
+          "photoAreaAfterPx2": 133563,
+          "photoAreaIncreasePercent": 27.3
+        },
+        "citation": {
+          "titleBeforePx": 24.0,
+          "titleAfterPx": 30.0,
+          "titleIncreasePercent": 25.0
+        },
+        "ods": {
+          "titleBeforePx": 12.0,
+          "titleAfterPx": 15.0,
+          "titleIncreasePercent": 25.0
+        }
+      }
+    },
+    {
+      "width": 390,
+      "cards": {
+        "why": {
+          "titleBeforePx": 37.05,
+          "titleAfterPx": 46.3125,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 121801,
+          "photoAreaAfterPx2": 124631.1,
+          "photoAreaIncreasePercent": 2.3
+        },
+        "future": {
+          "titleBeforePx": 37.05,
+          "titleAfterPx": 46.3125,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 123201,
+          "photoAreaAfterPx2": 124631.1,
+          "photoAreaIncreasePercent": 1.2
+        },
+        "journey": {
+          "titleBeforePx": 39.0,
+          "titleAfterPx": 48.75,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 108900,
+          "photoAreaAfterPx2": 121801,
+          "photoAreaIncreasePercent": 11.8
+        },
+        "method": {
+          "titleBeforePx": 39.0,
+          "titleAfterPx": 48.75,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 108900,
+          "photoAreaAfterPx2": 121801,
+          "photoAreaIncreasePercent": 11.8
+        },
+        "timeline": {
+          "titleBeforePx": 39.0,
+          "titleAfterPx": 48.75,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 90000,
+          "photoAreaAfterPx2": 111556,
+          "photoAreaIncreasePercent": 24.0
+        },
+        "comparator": {
+          "titleBeforePx": 39.0,
+          "titleAfterPx": 48.75,
+          "titleIncreasePercent": 25.0,
+          "photoAreaBeforePx2": 41037.7,
+          "photoAreaAfterPx2": 59600.4,
+          "photoAreaIncreasePercent": 45.2
+        },
+        "citation": {
+          "titleBeforePx": 24.0,
+          "titleAfterPx": 30.0,
+          "titleIncreasePercent": 25.0
+        },
+        "ods": {
+          "titleBeforePx": 11.0,
+          "titleAfterPx": 13.75,
+          "titleIncreasePercent": 25.0
+        }
+      }
+    }
+  ]
+}

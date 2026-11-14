@@ -1,0 +1,275 @@
+/* Technical glass: a quiet optical edge, an inset mount and an opaque reading
+   plane. Existing camera transforms and cursor reflections retain ownership. */
+:root {
+  --module-rim: #9bd8ff30;
+  --module-inner-rim: #b5e7ff12;
+  --module-glint: #e8f7ff09;
+  --module-shade: #00000028;
+  --module-lumen: #0066ff08;
+}
+:root[data-theme="light"] {
+  --module-rim: #205b8838;
+  --module-inner-rim: #2f689a1c;
+  --module-glint: #ffffffb3;
+  --module-shade: #15364d12;
+  --module-lumen: #0066ff05;
+}
+:is(
+  #por-que-biocrab .why-card,
+  #aplicaciones-futuras .future-card,
+  #del-residuo-al-biomaterial .journey-detail,
+  #metodologia .method-detail,
+  #recorrido .timeline-panel,
+  #comparacion .material-comparator,
+  #investigacion .research-citation,
+  #impacto-potencial .ods-network__card
+) {
+  border: 1px solid var(--module-rim);
+  border-radius: 14px;
+  background:
+    linear-gradient(145deg, var(--module-glint), transparent 32%),
+    radial-gradient(ellipse at 100% 0, #0066ff06, transparent 58%),
+    var(--research-sheet);
+  box-shadow:
+    inset 0 1px 0 var(--module-inner-rim),
+    inset 0 0 0 4px var(--research-sheet),
+    inset 0 0 0 5px var(--module-inner-rim),
+    0 12px 28px var(--module-shade),
+    0 0 20px var(--module-lumen);
+}
+
+/* More of the actual specimen, with no crop or enlarged letterbox. The wider
+   desktop contact sheet also gives square records room to grow. */
+#por-que-biocrab .why-grid,
+#aplicaciones-futuras .future-grid {
+  gap: clamp(16px, 1.25vw, 22px);
+}
+#por-que-biocrab .why-card > .project-photo,
+#aplicaciones-futuras .future-card > .project-photo {
+  width: calc(100% - 12px);
+  margin: 6px 6px 0;
+  border: 1px solid var(--module-inner-rim);
+  border-radius: 9px 9px 3px 3px;
+  background: var(--research-mat);
+}
+#por-que-biocrab .why-card > .project-photo {
+  height: clamp(345px, 31.05vw, 483px);
+}
+#aplicaciones-futuras .future-card > .project-photo {
+  height: clamp(391px, 39.1vw, 610px);
+}
+#por-que-biocrab .why-card > .project-photo img,
+#aplicaciones-futuras .future-card > .project-photo img {
+  padding: 0;
+  object-fit: contain;
+}
+#por-que-biocrab .why-copy,
+#aplicaciones-futuras .future-card > div:last-child {
+  padding: clamp(20px, 1.65vw, 27px);
+  border-top: 1px solid var(--module-rim);
+  background: linear-gradient(180deg, var(--module-glint), transparent 70%);
+}
+#por-que-biocrab .why-copy h3 {
+  font-size: clamp(40px, 3.75vw, 60px);
+}
+#aplicaciones-futuras .future-card h3 {
+  font-size: clamp(42px, 3.9375vw, 61.25px);
+}
+#por-que-biocrab .why-copy h3,
+#aplicaciones-futuras .future-card h3 {
+  max-width: none;
+  margin-block: 14px 16px;
+  line-height: 1.055;
+  letter-spacing: -0.042em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+#por-que-biocrab .why-copy p,
+#aplicaciones-futuras .future-card p,
+#aplicaciones-futuras .future-card .annotation {
+  max-width: none;
+}
+#por-que-biocrab .why-copy > svg,
+#aplicaciones-futuras .future-card > div:last-child > svg {
+  top: 22px;
+  right: 22px;
+}
+#aplicaciones-futuras .future-card .annotation {
+  margin-top: 16px;
+}
+
+/* Interactive instruments keep their navigation and native reading order. */
+#del-residuo-al-biomaterial .journey-detail,
+#metodologia .method-detail {
+  grid-template-columns: 1.35fr 1fr;
+}
+#del-residuo-al-biomaterial .journey-detail > .parallax-frame {
+  height: 540px;
+}
+#metodologia .method-detail > .project-photo {
+  min-height: 500px;
+}
+#recorrido .timeline-panel {
+  grid-template-columns: 1fr 1.25fr;
+}
+#recorrido .timeline-panel > .project-photo {
+  min-height: 380px;
+}
+#del-residuo-al-biomaterial .journey-detail > div:last-child,
+#metodologia .method-detail > div:last-child,
+#recorrido .timeline-panel > div:first-child {
+  padding: clamp(22px, 1.85vw, 30px);
+}
+#del-residuo-al-biomaterial .journey-detail h3,
+#metodologia .method-detail h3,
+#recorrido .timeline-panel h3,
+#comparacion .comparator-copy h3 {
+  font-size: clamp(45px, 4.5vw, 70px);
+  line-height: 1.04;
+  letter-spacing: -0.042em;
+  margin-block: 14px 18px;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+#comparacion .comparator-body {
+  grid-template-columns: 1.12fr 1fr;
+}
+#comparacion .material-portrait > .project-photo {
+  inset: 12px 12px 36px;
+}
+#comparacion .comparator-copy {
+  padding: clamp(22px, 2.3vw, 36px);
+}
+
+/* References are reading instruments, not simulated institutional badges. */
+#investigacion .research-citation {
+  padding: 16px;
+  border-radius: 9px;
+}
+#investigacion .research-citation h4 {
+  font-size: 30px;
+  line-height: 1.1;
+  margin-block: 14px 10px;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+#investigacion .research-citation p {
+  margin-bottom: 15px;
+}
+#impacto-potencial .ods-network__card {
+  border-radius: 9px;
+  padding: 13px;
+}
+#impacto-potencial .ods-network__card strong {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+@media (min-width: 1101px) {
+  #por-que-biocrab .why-grid,
+  #aplicaciones-futuras .future-grid {
+    margin-inline: clamp(-42px, -2.75vw, -28px);
+  }
+}
+@media (min-width: 651px) and (max-width: 1100px) {
+  #por-que-biocrab .why-copy h3 {
+    font-size: clamp(35px, 4vw, 43.75px);
+  }
+  #por-que-biocrab .why-copy {
+    padding: 19px 17px;
+  }
+}
+@media (max-width: 850px) {
+  #del-residuo-al-biomaterial .journey-detail,
+  #metodologia .method-detail,
+  #recorrido .timeline-panel,
+  #comparacion .comparator-body {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 651px) and (max-width: 850px) {
+  #aplicaciones-futuras .future-card > div:last-child {
+    padding-inline: clamp(10px, calc(16vw - 94px), 18px);
+  }
+  #por-que-biocrab .why-grid {
+    grid-template-columns: 1fr;
+  }
+  #por-que-biocrab .why-card {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+  }
+  #por-que-biocrab .why-card > .project-photo {
+    height: 390px;
+    margin-bottom: 6px;
+  }
+  #por-que-biocrab .why-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 0;
+    border-left: 1px solid var(--module-rim);
+  }
+}
+@media (max-width: 650px) {
+  #por-que-biocrab .why-grid,
+  #aplicaciones-futuras .future-grid {
+    margin-inline: -2%;
+    gap: 20px;
+  }
+  #por-que-biocrab .why-card > .project-photo,
+  #aplicaciones-futuras .future-card > .project-photo {
+    width: calc(100% - 8px);
+    margin: 4px 4px 0;
+  }
+  #por-que-biocrab .why-card > .project-photo {
+    height: min(115vw, 506px);
+  }
+  #aplicaciones-futuras .future-card > .project-photo {
+    height: min(128.8vw, 563.5px);
+  }
+  #por-que-biocrab .why-card:first-child > .project-photo,
+  #aplicaciones-futuras .future-card:is(:first-child, :last-child) > .project-photo {
+    height: auto;
+    aspect-ratio: 1;
+  }
+  #por-que-biocrab .why-copy,
+  #aplicaciones-futuras .future-card > div:last-child {
+    padding: 20px 16px;
+  }
+  #del-residuo-al-biomaterial .journey-detail > div:last-child,
+  #metodologia .method-detail > div:last-child,
+  #recorrido .timeline-panel > div:first-child,
+  #comparacion .comparator-copy {
+    padding: 20px;
+  }
+  #por-que-biocrab .why-copy h3,
+  #aplicaciones-futuras .future-card h3 {
+    font-size: clamp(42.5px, 11.875vw, 66.25px);
+  }
+  #aplicaciones-futuras .future-card h3 {
+    font-size: clamp(42px, 11.875vw, 66.25px);
+  }
+  #del-residuo-al-biomaterial .journey-detail > .parallax-frame {
+    height: auto;
+    aspect-ratio: 1;
+  }
+  #metodologia .method-detail > .project-photo {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1;
+  }
+  #recorrido .timeline-panel > .project-photo {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1;
+  }
+  #del-residuo-al-biomaterial .journey-detail h3,
+  #metodologia .method-detail h3,
+  #recorrido .timeline-panel h3,
+  #comparacion .comparator-copy h3 {
+    font-size: clamp(43.5px, 12.5vw, 66.25px);
+  }
+  #impacto-potencial .ods-network__card strong {
+    font-size: 13.75px;
+  }
+}
