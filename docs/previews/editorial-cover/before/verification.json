@@ -1,0 +1,429 @@
+{
+  "url": "https://biocrab-website.vercel.app",
+  "checkedAt": "2026-11-14T15:38:33.590Z",
+  "motion": "Existing pause control used for repeatable editorial composition captures; no CSS overrides.",
+  "views": [
+    {
+      "width": 1440,
+      "status": 200,
+      "shots": [
+        "inicio-1440.jpg",
+        "modelo-1440.jpg",
+        "sobre-1440.jpg",
+        "por-que-biocrab-1440.jpg",
+        "investigacion-1440.jpg"
+      ],
+      "images": [
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        }
+      ],
+      "overflow": false,
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "canvas": [
+        {
+          "role": "backdrop",
+          "resolution": [
+            1224,
+            850
+          ],
+          "css": [
+            1440,
+            1000
+          ],
+          "diagnostics": {
+            "engine": "three.js r187",
+            "graphicsPrimitives": "points-lines",
+            "graphicsDpr": "0.85",
+            "graphicsQuality": "balanced",
+            "graphicsRenderer": "software",
+            "graphicsTargetDpr": "0.85",
+            "graphicsFrameMs": "1473.9"
+          }
+        },
+        {
+          "role": "explorer",
+          "resolution": [
+            965,
+            605
+          ],
+          "css": [
+            965,
+            605
+          ],
+          "diagnostics": {
+            "engine": "three.js r187",
+            "graphicsDpr": "1.00",
+            "graphicsQuality": "full",
+            "graphicsRenderer": "software",
+            "graphicsTargetDpr": "0.85",
+            "graphicsFrameMs": "1144.4"
+          }
+        }
+      ],
+      "cover": {
+        "photo": {
+          "x": 65.796875,
+          "y": -3529.53125,
+          "width": 138,
+          "height": 138,
+          "top": -3529.53125,
+          "right": 203.796875,
+          "bottom": -3391.53125,
+          "left": 65.796875
+        },
+        "primaryTarget": "#del-residuo-al-biomaterial",
+        "title": "115.2px",
+        "chapterTitle": "107.28px"
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "shots": [
+        "inicio-390.jpg",
+        "modelo-390.jpg",
+        "sobre-390.jpg",
+        "por-que-biocrab-390.jpg",
+        "investigacion-390.jpg"
+      ],
+      "images": [
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        }
+      ],
+      "overflow": false,
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "canvas": [
+        {
+          "role": "backdrop",
+          "resolution": [
+            390,
+            844
+          ],
+          "css": [
+            390,
+            844
+          ],
+          "diagnostics": {
+            "engine": "three.js r187",
+            "graphicsPrimitives": "points-lines",
+            "graphicsDpr": "1.00",
+            "graphicsQuality": "full",
+            "graphicsRenderer": "software",
+            "graphicsTargetDpr": "1.00"
+          }
+        },
+        {
+          "role": "explorer",
+          "resolution": [
+            390,
+            328
+          ],
+          "css": [
+            390,
+            328
+          ],
+          "diagnostics": {
+            "engine": "three.js r187",
+            "graphicsDpr": "1.00",
+            "graphicsQuality": "full",
+            "graphicsRenderer": "software",
+            "graphicsTargetDpr": "1.00"
+          }
+        }
+      ],
+      "cover": {
+        "photo": {
+          "x": 20.5,
+          "y": -5388.890625,
+          "width": 118,
+          "height": 134,
+          "top": -5388.890625,
+          "right": 138.5,
+          "bottom": -5254.890625,
+          "left": 20.5
+        },
+        "primaryTarget": "#del-residuo-al-biomaterial",
+        "title": "53.82px",
+        "chapterTitle": "50.115px"
+      },
+      "errors": []
+    }
+  ]
+}

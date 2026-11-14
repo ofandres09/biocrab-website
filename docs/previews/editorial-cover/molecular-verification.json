@@ -1,0 +1,128 @@
+{
+  "url": "http://127.0.0.1:3073",
+  "design": "immersive-biomaterials-v9",
+  "chapters": [
+    {
+      "id": "inicio",
+      "uTime": 0.5,
+      "uFrom": 0,
+      "uTo": 0,
+      "uBlend": 1,
+      "uProgress": 0.24071992933750153
+    },
+    {
+      "id": "sobre",
+      "uTime": 0.8999999761581421,
+      "uFrom": 0,
+      "uTo": 1,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.3765774071216583
+    },
+    {
+      "id": "por-que-biocrab",
+      "uTime": 1.399999976158142,
+      "uFrom": 1,
+      "uTo": 2,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.3970508873462677
+    },
+    {
+      "id": "innovacion",
+      "uTime": 1.899999976158142,
+      "uFrom": 2,
+      "uTo": 3,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.39936327934265137
+    },
+    {
+      "id": "del-residuo-al-biomaterial",
+      "uTime": 2.4000000953674316,
+      "uFrom": 3,
+      "uTo": 4,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.39998456835746765
+    },
+    {
+      "id": "investigacion",
+      "uTime": 2.9000000953674316,
+      "uFrom": 4,
+      "uTo": 5,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.4002012014389038
+    },
+    {
+      "id": "metodologia",
+      "uTime": 3.4000000953674316,
+      "uFrom": 5,
+      "uTo": 6,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.40004146099090576
+    },
+    {
+      "id": "recorrido",
+      "uTime": 3.9000000953674316,
+      "uFrom": 6,
+      "uTo": 7,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.400115966796875
+    },
+    {
+      "id": "comparacion",
+      "uTime": 4.400000095367432,
+      "uFrom": 7,
+      "uTo": 8,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.4002346098423004
+    },
+    {
+      "id": "aplicaciones-futuras",
+      "uTime": 4.900000095367432,
+      "uFrom": 8,
+      "uTo": 9,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.4002017080783844
+    },
+    {
+      "id": "vision-futura",
+      "uTime": 5.400000095367432,
+      "uFrom": 9,
+      "uTo": 10,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.3997391164302826
+    },
+    {
+      "id": "impacto-potencial",
+      "uTime": 5.900000095367432,
+      "uFrom": 10,
+      "uTo": 11,
+      "uBlend": 0.7231048941612244,
+      "uProgress": 0.39962148666381836
+    },
+    {
+      "id": "gomitas",
+      "uTime": 6.400000095367432,
+      "uFrom": 11,
+      "uTo": 12,
+      "uBlend": 0.7916692495346069,
+      "uProgress": 0.3998127281665802
+    },
+    {
+      "id": "equipo",
+      "uTime": 6.900000095367432,
+      "uFrom": 12,
+      "uTo": 13,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.400167316198349
+    },
+    {
+      "id": "contacto",
+      "uTime": 7.400000095367432,
+      "uFrom": 13,
+      "uTo": 14,
+      "uBlend": 0.838272213935852,
+      "uProgress": 0.4117848873138428
+    }
+  ],
+  "pauseStable": true,
+  "errors": []
+}
