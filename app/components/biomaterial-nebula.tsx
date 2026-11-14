@@ -584,14 +584,27 @@ const pointAtomFragment = /* glsl */ `
 const lineBondVertex = /* glsl */ `
   attribute vec4 aMeta;
   attribute vec3 aColor;
+  attribute float aKind;
   varying vec3 vColor;
   varying float vVisibility;
   varying float vDepth;
   ${economyMorphShader}
+  float crosslinkPresence(float chapter, float q, vec4 meta) {
+    // Match the volumetric network's hierarchy. Inter-strand connections are
+    // context, rather than the same visual weight as the sugar-ring backbone.
+    if (chapter > 0.5 && chapter < 1.5)
+      return smoothstep(meta.z * 0.65 + 0.12, meta.z * 0.65 + 0.31, q);
+    if (chapter > 2.5 && chapter < 3.5) return 0.95;
+    if (chapter > 10.5 && chapter < 11.5) return 0.7;
+    return 0.19;
+  }
   void main() {
     vec4 viewPosition = modelViewMatrix * vec4(economyPosition(aMeta), 1.0);
     vColor = aColor;
     vVisibility = economyVisibility(aMeta);
+    if (aKind > 1.5)
+      vVisibility *= mix(crosslinkPresence(uFrom, uPreviousProgress, aMeta),
+        crosslinkPresence(uTo, uProgress, aMeta), uBlend);
     vDepth = 1.0 - smoothstep(8.0, 34.0, -viewPosition.z);
     gl_Position = projectionMatrix * viewPosition;
   }
@@ -872,16 +885,33 @@ function makeGeometries(
   height: number,
 ) {
   if (economy) {
+    // Backbone endpoints remain indexed and shared. Only crosslink endpoints
+    // need separate attributes to carry their per-link presence; these copies
+    // are excluded from the atom draw range and add no visible particles.
+    const copiedAtomIndices = network.links
+      .filter((link) => link.kind > 1.5)
+      .flatMap((link) => [link.from, link.to]);
+    const expandedNetwork = {
+      atoms: [
+        ...network.atoms,
+        ...copiedAtomIndices.map((index) => network.atoms[index]),
+      ],
+      links: network.links,
+    };
     const atoms = new THREE.BufferGeometry();
-    Object.entries(atomAttributes(network, false)).forEach(([name, value]) =>
-      atoms.setAttribute(name, value),
+    Object.entries(atomAttributes(expandedNetwork, false)).forEach(
+      ([name, value]) => atoms.setAttribute(name, value),
     );
     atoms.setAttribute(
       "position",
-      new THREE.BufferAttribute(new Float32Array(network.atoms.length * 3), 3),
+      new THREE.BufferAttribute(
+        new Float32Array(expandedNetwork.atoms.length * 3),
+        3,
+      ),
     );
-    const start = economyLayout(network, width, height, 0, 0);
-    const end = economyLayout(network, width, height, 0, 1);
+    atoms.setDrawRange(0, network.atoms.length);
+    const start = economyLayout(expandedNetwork, width, height, 0, 0);
+    const end = economyLayout(expandedNetwork, width, height, 0, 1);
     for (const [name, array] of [
       ["aFrom0", start],
       ["aFrom1", end],
@@ -895,13 +925,22 @@ function makeGeometries(
     const bonds = new THREE.BufferGeometry();
     for (const [name, attribute] of Object.entries(atoms.attributes))
       bonds.setAttribute(name, attribute);
+    const kinds = new Float32Array(expandedNetwork.atoms.length);
+    kinds.fill(2, network.atoms.length);
+    bonds.setAttribute("aKind", new THREE.BufferAttribute(kinds, 1));
     const indices = new Uint16Array(network.links.length * 2);
+    let copiedIndex = network.atoms.length;
     network.links.forEach((link, index) => {
-      indices[index * 2] = link.from;
-      indices[index * 2 + 1] = link.to;
+      indices[index * 2] = link.kind > 1.5 ? copiedIndex++ : link.from;
+      indices[index * 2 + 1] = link.kind > 1.5 ? copiedIndex++ : link.to;
     });
     bonds.setIndex(new THREE.BufferAttribute(indices, 1));
-    return { atoms, bonds, halos: new THREE.BufferGeometry() };
+    return {
+      atoms,
+      bonds,
+      halos: new THREE.BufferGeometry(),
+      copiedAtomIndices,
+    };
   }
   // Low-poly instances keep the shared, full-screen backdrop affordable.
   const atoms = new THREE.SphereGeometry(1, 6, 4);
@@ -959,7 +998,7 @@ function makeGeometries(
   Object.entries(data).forEach(([name, { values, size }]) => {
     bonds.setAttribute(name, new THREE.InstancedBufferAttribute(values, size));
   });
-  return { atoms, bonds, halos };
+  return { atoms, bonds, halos, copiedAtomIndices: [] as number[] };
 }
 
 // Orientation, width, curl and density echo each chapter's physical motion.
@@ -1040,7 +1079,14 @@ export default function BiomaterialNebula({
       const attribute = geometries.atoms.getAttribute(
         name,
       ) as THREE.BufferAttribute;
-      (attribute.array as Float32Array).set(data);
+      const array = attribute.array as Float32Array;
+      array.set(data);
+      geometries.copiedAtomIndices.forEach((source, index) => {
+        const destination = (network.atoms.length + index) * 3;
+        array[destination] = data[source * 3];
+        array[destination + 1] = data[source * 3 + 1];
+        array[destination + 2] = data[source * 3 + 2];
+      });
       attribute.needsUpdate = true;
     }
     prepared.current = { geometry: geometries.atoms, from, to };

@@ -1336,10 +1336,10 @@ p {
 }
 
 .section .section-heading h2 {
-  font-size: clamp(60px, 7.45vw, 118px);
+  font-size: clamp(56px, 6.6vw, 96px);
   font-weight: 540;
-  line-height: 1.015;
-  letter-spacing: -0.048em;
+  line-height: 1.04;
+  letter-spacing: -0.044em;
 }
 .section .section-heading {
   align-items: end;
@@ -1419,6 +1419,9 @@ p {
 }
 
 /* The mat reserves a margin around every original, including portrait images. */
+.section .research-photo > .parallax-frame {
+  aspect-ratio: 3 / 4;
+}
 .section
   :is(
     .editorial-figure,
@@ -1689,7 +1692,7 @@ p {
 }
 @media (max-width: 1100px) {
   .section .section-heading h2 {
-    font-size: clamp(54px, 7.6vw, 84px);
+    font-size: clamp(56px, 6.6vw, 84px);
   }
   .section .editorial-copy h2,
   .section .impact-copy h2,
@@ -1716,7 +1719,10 @@ p {
     font-size: clamp(48px, 12.85vw, 78px);
     font-weight: 550;
     line-height: 1.04;
-    letter-spacing: -0.055em;
+    letter-spacing: -0.045em;
+  }
+  .section .section-heading h2 {
+    font-size: clamp(48px, 12.85vw, 56px);
   }
   .section .section-heading .section-description {
     font-size: 15px;

@@ -108,19 +108,8 @@ export default function Home() {
               cangrejo y almidón de yuca para explorar nuevas formas de
               conservar alimentos.
             </p>
-            <div className="hero-badges">
-              <span className="marine-badge">
-                <Waves size={14} /> Origen marino
-              </span>
-              <span className="plant-badge">
-                <Leaf size={14} /> Matriz vegetal
-              </span>
-              <span className="validation-badge">
-                <CircleDashed size={14} /> En investigación
-              </span>
-            </div>
             <div className="hero-buttons">
-              <a className="button primary" href="#del-residuo-al-biomaterial">
+              <a className="button primary" href="#sobre">
                 Explora la transformación <ArrowUpRight size={18} />
               </a>
               <a className="hero-secondary" href="#del-residuo-al-biomaterial">
@@ -128,16 +117,14 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="hero-art hero-orbit-stage">
-            <MolecularExplorer />
-          </div>
           <div className="hero-evidence-deck">
             <DepthSurface className="hero-project-depth">
               <div className="hero-project-preview">
                 <Photo
                   name="biopelicula-secando.jpg"
-                  sizes="(max-width: 650px) 120px, 140px"
+                  sizes="(max-width: 650px) 90vw, 43vw"
                   alt="Registro real del proyecto: biopelícula durante el secado"
+                  priority
                 />
                 <div>
                   <span className="micro">DEL CONCEPTO AL TRABAJO REAL</span>
@@ -145,17 +132,30 @@ export default function Home() {
                   <a href="#del-residuo-al-biomaterial">
                     Ver las fotografías <ArrowRight size={14} />
                   </a>
+                  <div className="hero-badges">
+                    <span className="marine-badge">
+                      <Waves size={14} /> Origen marino
+                    </span>
+                    <span className="plant-badge">
+                      <Leaf size={14} /> Matriz vegetal
+                    </span>
+                    <span className="validation-badge">
+                      <CircleDashed size={14} /> En investigación
+                    </span>
+                  </div>
                 </div>
               </div>
             </DepthSurface>
             <Photo
               name="pinterest-adn.png"
-              sizes="(max-width: 650px) 106px, 90px"
+              sizes="(max-width: 650px) 106px, 150px"
               alt="Imagen conceptual azul de ADN aportada para la identidad visual de BioCrab"
               caption="Imagen conceptual de ADN · Ambientación tecnológica"
               className="hero-reference-background full-width"
-              priority
             />
+          </div>
+          <div className="hero-art hero-orbit-stage">
+            <MolecularExplorer />
           </div>
           <div className="hero-bottom">
             <span>ORIGEN BIOLÓGICO. MÉTODO CIENTÍFICO.</span>
@@ -356,13 +356,17 @@ export default function Home() {
             <figure className="research-photo">
               <ParallaxFrame>
                 <Photo
-                  name="pinterest-laboratorio.png"
-                  alt="Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio"
+                  name="biopelicula-secando.jpg"
+                  alt="Registro real de la biopelícula durante el secado"
                 />
               </ParallaxFrame>
               <Caption>
-                Imagen conceptual de laboratorio; no representa las
-                instalaciones de BioCrab.
+                <span>
+                  REGISTRO REAL DE BIOCRAB
+                  <br />
+                  La exploración del material se documenta con fotografías y se
+                  contrasta mediante ensayos.
+                </span>
               </Caption>
               <div className="research-stamp">
                 <Microscope size={24} />
@@ -374,15 +378,14 @@ export default function Home() {
               </div>
               <div className="research-evidence-strip">
                 <Photo
-                  name="biopelicula-secando.jpg"
-                  alt="Registro real de la biopelícula durante el secado"
+                  name="pinterest-laboratorio.png"
+                  alt="Imagen conceptual recibida: microscopio, libros y globo digital en un laboratorio"
                 />
                 <div>
-                  <span className="micro">REGISTRO REAL DE BIOCRAB</span>
-                  <p>
-                    La exploración del material se documenta con fotografías y
-                    se contrasta mediante ensayos.
-                  </p>
+                  <span className="micro">
+                    Imagen conceptual de laboratorio;
+                  </span>
+                  <p>no representa las instalaciones de BioCrab.</p>
                 </div>
               </div>
             </figure>
