@@ -1,0 +1,493 @@
+{
+  "url": "https://biocrab-website.vercel.app",
+  "checkedAt": "2026-11-14T18:12:33.722Z",
+  "captureMode": "Existing pause control; real WebGL; no CSS overrides.",
+  "views": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "status": 200,
+      "file": "hero-1440.jpg",
+      "modes": [
+        "chitosan",
+        "starch",
+        "both"
+      ],
+      "rotationChangedActualMatrix": true,
+      "photoLinkWorks": true,
+      "images": [
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=256&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        }
+      ],
+      "overflow": false,
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "heroLayout": "absolute",
+      "readingContainer": "block",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 768,
+      "status": 200,
+      "file": "hero-1440-compact.jpg",
+      "modes": [
+        "chitosan",
+        "starch",
+        "both"
+      ],
+      "rotationChangedActualMatrix": true,
+      "photoLinkWorks": true,
+      "images": [
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=256&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=750&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        }
+      ],
+      "overflow": false,
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "heroLayout": "absolute",
+      "readingContainer": "block",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "file": "hero-390.jpg",
+      "modes": [
+        "chitosan",
+        "starch",
+        "both"
+      ],
+      "rotationChangedActualMatrix": true,
+      "photoLinkWorks": true,
+      "images": [
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=96&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=64&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=128&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-adn.png&w=128&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-conexiones.png&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-laboratorio.png&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Flavando-cangrejitos.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiopelicula-secando.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fexoesqueletos-separados.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpinterest-huella.png&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fgomitas-fruta.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fpeliculas-secando.jpg&w=384&q=75",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "https://biocrab-website.vercel.app/_next/image?url=%2Fimages%2Fbiocrab-logo-adaptado.png&w=64&q=75",
+          "ok": true,
+          "fit": "contain"
+        }
+      ],
+      "overflow": false,
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "heroLayout": "relative",
+      "readingContainer": "block",
+      "errors": []
+    }
+  ],
+  "sourceCommit": "53c2f344f02461348ab064fae6c0af0b52050cf1",
+  "deployment": {
+    "context": "Vercel – biocrab-website",
+    "state": "success",
+    "url": "https://vercel.com/andres-pacheco/biocrab-website/DsGaSnNg1r5MmcqGZ3pkwoJxn6kT"
+  }
+}
