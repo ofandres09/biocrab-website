@@ -58,3 +58,14 @@ La implementación solo modifica dos archivos CSS. Permanecen intactos el conten
 Las comparativas utilizan el control de pausa existente, WebGL montado y ninguna modificación de estilos para la captura. La prueba funcional sin WebGL registra sus avisos esperados por separado. La comprobación de movimiento activo es independiente de las fotografías pausadas.
 
 [Verificación visual previa al push](previews/third-version/proposed/verification.json) · [Informe funcional](previews/third-version/functional-verification.json) · [Movimiento activo](previews/third-version/motion-verification.json)
+
+
+## Versión pública verificada
+
+Implementación `4fd6ab3`, publicada en [BioCrab](https://biocrab-website.vercel.app) con [despliegue correcto de Vercel](https://vercel.com/andres-pacheco/biocrab-website/Ad27thhcygDwELod9x1HhuiUG6nd). Las 25 imágenes cargan en los tres tamaños revisados; sin errores de navegador ni desbordamientos. Se verificaron también los estilos publicados de fotografía y metodología.
+
+- Portada: [escritorio](previews/third-version/published/inicio-1440.jpg), [portátil](previews/third-version/published/inicio-1440-compact.jpg) y [móvil](previews/third-version/published/inicio-390.jpg).
+- Fotografía: [¿Por qué BioCrab?](previews/third-version/published/por-que-biocrab-1440.jpg) e [investigación](previews/third-version/published/investigacion-1440.jpg).
+- Metodología: [escritorio](previews/third-version/published/metodologia-1440.jpg) y [móvil](previews/third-version/published/metodologia-390.jpg).
+
+[Verificación de producción](previews/third-version/published/verification.json).

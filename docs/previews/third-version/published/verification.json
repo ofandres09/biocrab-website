@@ -1,0 +1,616 @@
+{
+  "url": "https://biocrab-website.vercel.app",
+  "checkedAt": "2026-11-14T16:28:24.663Z",
+  "captureMode": "Existing pause control, real mounted WebGL, no style overrides.",
+  "views": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "status": 200,
+      "cover": {
+        "copy": {
+          "x": 64.796875,
+          "y": 130,
+          "width": 665.15625,
+          "height": 550.953125,
+          "top": 130,
+          "right": 729.953125,
+          "bottom": 680.953125,
+          "left": 64.796875
+        },
+        "photo": {
+          "x": 808.5625,
+          "y": 130,
+          "width": 566.640625,
+          "height": 520,
+          "top": 130,
+          "right": 1375.203125,
+          "bottom": 650,
+          "left": 808.5625
+        },
+        "model": {
+          "x": 64.796875,
+          "y": 704.953125,
+          "width": 697.15625,
+          "height": 403.1875,
+          "top": 704.953125,
+          "right": 761.953125,
+          "bottom": 1108.140625,
+          "left": 64.796875
+        },
+        "art": {
+          "x": 64.796875,
+          "y": 704.953125,
+          "width": 697.15625,
+          "height": 539.6875,
+          "top": 704.953125,
+          "right": 761.953125,
+          "bottom": 1244.640625,
+          "left": 64.796875
+        },
+        "primary": "#sobre",
+        "title": "112.32px"
+      },
+      "shots": [
+        "inicio-1440.jpg",
+        "por-que-biocrab-1440.jpg",
+        "investigacion-1440.jpg",
+        "metodologia-1440.jpg"
+      ],
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "images": [
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        }
+      ],
+      "overflow": false,
+      "methodReferenceWidth": 260,
+      "whyPadding": "0px",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "height": 768,
+      "status": 200,
+      "cover": {
+        "copy": {
+          "x": 64.796875,
+          "y": 114,
+          "width": 665.15625,
+          "height": 474.953125,
+          "top": 114,
+          "right": 729.953125,
+          "bottom": 588.953125,
+          "left": 64.796875
+        },
+        "photo": {
+          "x": 808.5625,
+          "y": 114,
+          "width": 566.640625,
+          "height": 420,
+          "top": 114,
+          "right": 1375.203125,
+          "bottom": 534,
+          "left": 808.5625
+        },
+        "model": {
+          "x": 64.796875,
+          "y": 608.953125,
+          "width": 697.15625,
+          "height": 403.1875,
+          "top": 608.953125,
+          "right": 761.953125,
+          "bottom": 1012.140625,
+          "left": 64.796875
+        },
+        "art": {
+          "x": 64.796875,
+          "y": 608.953125,
+          "width": 697.15625,
+          "height": 539.6875,
+          "top": 608.953125,
+          "right": 761.953125,
+          "bottom": 1148.640625,
+          "left": 64.796875
+        },
+        "primary": "#sobre",
+        "title": "112.32px"
+      },
+      "shots": [
+        "inicio-1440-compact.jpg"
+      ],
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "images": [
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        }
+      ],
+      "overflow": false,
+      "methodReferenceWidth": 260,
+      "whyPadding": "0px",
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "cover": {
+        "copy": {
+          "x": 19.5,
+          "y": 96,
+          "width": 351,
+          "height": 389.953125,
+          "top": 96,
+          "right": 370.5,
+          "bottom": 485.953125,
+          "left": 19.5
+        },
+        "photo": {
+          "x": 19.5,
+          "y": 515.953125,
+          "width": 351,
+          "height": 358.796875,
+          "top": 515.953125,
+          "right": 370.5,
+          "bottom": 874.75,
+          "left": 19.5
+        },
+        "model": {
+          "x": 19.5,
+          "y": 1153.109375,
+          "width": 351,
+          "height": 304.1875,
+          "top": 1153.109375,
+          "right": 370.5,
+          "bottom": 1457.296875,
+          "left": 19.5
+        },
+        "art": {
+          "x": 19.5,
+          "y": 1096.921875,
+          "width": 351,
+          "height": 500.875,
+          "top": 1096.921875,
+          "right": 370.5,
+          "bottom": 1597.796875,
+          "left": 19.5
+        },
+        "primary": "#sobre",
+        "title": "52.65px"
+      },
+      "shots": [
+        "inicio-390.jpg",
+        "por-que-biocrab-390.jpg",
+        "investigacion-390.jpg",
+        "metodologia-390.jpg"
+      ],
+      "sections": [
+        "inicio",
+        "sobre",
+        "por-que-biocrab",
+        "innovacion",
+        "investigacion",
+        "del-residuo-al-biomaterial",
+        "metodologia",
+        "recorrido",
+        "comparacion",
+        "impacto-potencial",
+        "aplicaciones-futuras",
+        "vision-futura",
+        "gomitas",
+        "equipo"
+      ],
+      "images": [
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        },
+        {
+          "src": "/_next/image",
+          "ok": true,
+          "fit": "contain"
+        }
+      ],
+      "overflow": false,
+      "methodReferenceWidth": 220,
+      "whyPadding": "0px",
+      "errors": []
+    }
+  ],
+  "sourceCommit": "4fd6ab373a478d90b7a03a3761c39e396b571b1f",
+  "deployment": {
+    "context": "Vercel – biocrab-website",
+    "state": "success",
+    "url": "https://vercel.com/andres-pacheco/biocrab-website/Ad27thhcygDwELod9x1HhuiUG6nd"
+  }
+}
